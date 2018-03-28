@@ -18,6 +18,7 @@ public class PlayerLook : MonoBehaviour {
 	int clicksTillPull = 10;
 	bool forkPulled = false;
 	float clickUpNow;
+	GameObject stabber;
 
 	void Awake(){
 		Cursor.lockState = CursorLockMode.Locked;
@@ -25,7 +26,8 @@ public class PlayerLook : MonoBehaviour {
 	}
 
 	void Start (){
-		
+		stabber = GameObject.Find ("/player/Main Camera/Fork");
+		stabber.SetActive(false);
 		fork = GameObject.Find ("/forkInStone(Clone)/Fork");
 		originalForkPosition = fork.transform.position;
 	}
@@ -51,7 +53,8 @@ public class PlayerLook : MonoBehaviour {
 			}
 			if (Input.GetMouseButtonDown (0) && hit.collider.CompareTag ("fork")) {
 				if (clicksTillPull <= 0) {
-					forkPulled = false;
+					stabber.SetActive(true);
+					forkPulled = true;
 					Destroy (fork);
 				}
 				clicksTillPull--;
