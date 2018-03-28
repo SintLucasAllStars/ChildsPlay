@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/BorisScene.unity
-=======
-- path: Assets/MapScene - Luca.unity
->>>>>>> 1245957270ba3fdf0c430d4fcf20cc759806036f
   isLoaded: 1
   isActive: 1
