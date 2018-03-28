@@ -17,25 +17,36 @@ public class HideAndSeek : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 			if (Physics.Raycast (ray, out hit)) {
-				if (hit.transform.name == "Hide 1") {
+				buffer = hit.collider.gameObject;
+				CheckWin ();
+				/*if (hit.transform.name == "Hide1") {
 					buffer = hidePlaces [0];
+					CheckWin ();
 				}
-				if (hit.transform.name == "Hide 2") {
+				if (hit.transform.name == "Hide2") {
 					buffer = hidePlaces [1];
+					CheckWin ();
 				}
-				if (hit.transform.name == "Hide 3") {
+				if (hit.transform.name == "Hide3") {
 					buffer = hidePlaces [2];
+					CheckWin ();
 				}
-				if (hit.transform.name == "Hide 4") {
+				if (hit.transform.name == "Hide4") {
 					buffer = hidePlaces [3];
-				}
+					CheckWin ();
+				}*/
+
+
 			}
-			if (hidePlaces[Random.Range (0, 4)] == buffer){
-				Debug.Log ("you lost");
-			}
-			else {
-				Debug.Log ("you win");
-			}
+		}
+	}
+
+	void CheckWin(){
+		if (hidePlaces[Random.Range (0, 4)] == buffer){
+			Debug.Log ("you lost");
+		}
+		else {
+			Debug.Log ("you win");
 		}
 	}
 }
