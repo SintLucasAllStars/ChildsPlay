@@ -1,3 +1,5 @@
+## Team: Jorrit, Tijn & Bosko
+
 # ChildsPlay
 
 ![Child's Play](https://images-na.ssl-images-amazon.com/images/I/719AMX2PRKL._SY445_.gif)
