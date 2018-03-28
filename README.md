@@ -11,6 +11,8 @@ You are supposed to create a simple game, based on the mechanics of child's play
 
 The focus of this  is on the mechanics and AI. Graphics and variety of interactions are of less importance. Try to make it interesting but focus on the requirements first.
 
+The game will be single player. The player will play against or with NPC's powered by the best AI you can make.
+
 ## Submitting your work
 
 This project will be developped in teams of two, collaboration and version control will be done through GitHub.
@@ -23,16 +25,34 @@ DO NOT FORGET: Comment your commits properly, you will be graded individualy, ba
 
 ### Hide-and-seek
 https://en.wikipedia.org/wiki/Hide-and-seek
+
+You can choose any of the variants of the game. And even make up your own.
+For the purpose of this assignment, hiding might mean "sneaking as well", meaning the hider(s) can move around during the game trying to avoid the seeker(s)
+The human player could play as a hider or a seeker or both. Depending on your interpretation and adaptation of the game.
+
 ### Tag
 https://en.wikipedia.org/wiki/Tag_(game)
+
+This is a classic, not much to say about it. As an interesting example, PacMan could be seen as a great implementation of Tag.
+
 ### Duck Duck Goose 
 https://childhood101.com/games-for-kids-how-to-play-duck-duck-goose/
+
+This one is less known but still widely played around the world. There is a lot of interesting material on the mechanics of this game.
+
 ### Scarecrow tag
 https://childhood101.com/games-for-kids-how-to-play-scarecrow-tag/
+Same as Tag with an interesting twist.
+
 ### Please mister crocodile
 https://childhood101.com/games-for-kids/
+
+Interpret as you will. This game has some interesting choices and modes for the AI. 
+
 ### Whats the time Mr Wolf
 https://childhood101.com/games-for-kids-how-to-play-whats-the-time-mr-wolf/
+
+The balancing between when, and how many, steps to call and the size of each step have a lot of interesting strategies for the AI.
 
 ## Topics covered in the block
 
