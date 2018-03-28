@@ -195,6 +195,9 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of c0d15ae... M4A1 Model added, Updated summary
 --- !u!1 &946092177
 GameObject:
   m_ObjectHideFlags: 0
