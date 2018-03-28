@@ -1,19 +1,66 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerLook : MonoBehaviour {
 
 	public float mousSensitivity;
 	public Transform playerBoddy;
-
+	Ray pickupCheck;
+	RaycastHit hit;
+	public float checkRange;
+	public Text pickupText;
 	float xAxisClamp= 0f;
+	GameObject fork;
+	Vector3 originalForkPosition;
+	public float forkPulloutSpeed;
+	int clicksTillPull = 10;
+	bool forkPulled = false;
+	float clickUpNow;
 
 	void Awake(){
 		Cursor.lockState = CursorLockMode.Locked;
+		 
+	}
+
+	void Start (){
+		
+		fork = GameObject.Find ("/forkInStone(Clone)/Fork");
+		originalForkPosition = fork.transform.position;
 	}
 
 	void Update () {
+		if (fork != null) {
+			fork.transform.position = new Vector3 (originalForkPosition.x, originalForkPosition.y + ((10 - clicksTillPull) * forkPulloutSpeed), originalForkPosition.z);
+		}
+		if (!forkPulled && clicksTillPull < 10 && Time.time > clickUpNow) {
+			clickUpNow = Time.time + 0.25f;
+			clicksTillPull++;
+
+		}
+		
+		pickupCheck = new Ray (transform.position, transform.forward);
+		if (Physics.Raycast (pickupCheck, out hit, checkRange)) {
+			
+			if (hit.collider.CompareTag ("fork")) {
+				
+				pickupText.text = "pak hem maar";
+			} else{
+				pickupText.text = "";
+			}
+			if (Input.GetMouseButtonDown (0) && hit.collider.CompareTag ("fork")) {
+				if (clicksTillPull <= 0) {
+					forkPulled = false;
+					Destroy (fork);
+				}
+				clicksTillPull--;
+
+			}
+		}  else{
+			pickupText.text = "";
+		}
+
 		if (Input.GetKeyDown (KeyCode.F)) {
 			Cursor.lockState = CursorLockMode.Locked;
 		}
