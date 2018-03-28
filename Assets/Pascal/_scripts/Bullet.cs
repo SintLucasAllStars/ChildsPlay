@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 	float downwardsGravity;
 	float gravityReducer;
+	public AudioClip impact;
 	// Use this for initialization
 	void Start () {
 		downwardsGravity = 0f;
@@ -15,4 +16,9 @@ public class Bullet : MonoBehaviour {
 		downwardsGravity = Mathf.Pow (downwardsGravity, downwardsGravity);
 		transform.position = transform.position + Vector3.forward;
 }
+
+	void OnCollisionEnter(Collision coll){
+		AudioSource.PlayClipAtPoint(impact,transform.position);
+		Destroy (this.gameObject);
+	}
 }
