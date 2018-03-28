@@ -17,6 +17,8 @@ public class Seeker : MonoBehaviour
     public float maxSpeed;
     public float detectionRate;
 
+    public bool godMode;
+
     bool canSee;
 
     float fov = 120f;
@@ -79,6 +81,18 @@ public class Seeker : MonoBehaviour
                     SetMode(Mode.Search);
                 }
                 break;
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (godMode == false)
+        {
+            if (collision.gameObject.CompareTag("Hider"))
+            {
+                HiderBehaviour go = collision.gameObject.GetComponent<HiderBehaviour>();
+                go.currentState = HiderBehaviour.AIstate.captured;
+            }
         }
     }
 
