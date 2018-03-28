@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hide
+  - hidePlace1
+  - hidePlace2
+  - hidePlace3
+  - hidePlace4
   layers:
   - Default
   - TransparentFX
