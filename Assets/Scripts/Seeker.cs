@@ -19,7 +19,7 @@ public class Seeker : MonoBehaviour {
     NavMeshAgent nav;
 
     Vector3 lastSeen;
-
+     
     void Start () {
         nav = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Hider").transform;
@@ -33,7 +33,7 @@ public class Seeker : MonoBehaviour {
     }
 
     void Update () {
-        //Debug.Log(mode);
+        Debug.Log(detectionRate);
         bool canSee = canSeeTarget();
         if (canSee == false && mode != Mode.Chase && detectionRate > 1)
         {
@@ -58,8 +58,8 @@ public class Seeker : MonoBehaviour {
                     SetMode(Mode.Patrol);
                 }
                 break;
-            case Mode.Chase:               
-                nav.speed = patrolSpeed + (maxSpeed - patrolSpeed);
+            case Mode.Chase:
+                nav.speed = maxSpeed;
                 if (canSee)
                 {
                     nav.SetDestination(target.position);
@@ -118,7 +118,7 @@ public class Seeker : MonoBehaviour {
         Vector3 direction = target.position - transform.position;
         if (Physics.Raycast(transform.position, direction, out hit))
         {
-            if (hit.collider.gameObject.CompareTag("Player"))
+            if (hit.collider.gameObject.CompareTag("Hider"))
             {
                 float angle = Vector3.Angle(transform.forward, direction);
                 if (angle < fov / 2)
