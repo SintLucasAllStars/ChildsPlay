@@ -30,6 +30,9 @@ Also, make sure you **put both your names on the description of the pull request
 * The focus of this assignment is **on the mechanics and AI**. everything else will be just extras.
 * Navigation of the NPC's is to be done by Unity's NavMesh
 
+## Deadline
+Pull requests must be in before the end of the day in the 13th of April 2018.
+
 ## Mechanics
 
 ### Hide-and-seek
