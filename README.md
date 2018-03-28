@@ -11,9 +11,28 @@ You are supposed to create a simple game, based on the mechanics of child's play
 
 The focus of this  is on the mechanics and AI. Graphics and variety of interactions are of less importance. Try to make it interesting but focus on the requirements first.
 
+## Submitting your work
+
+This project will be developped in teams of two, collaboration and version control will be done through GitHub.
+
+You need to choose one of the mechanics below (it's possible to combine two if you are feeling brave), fork this repository and develop the game. When you are done, submit a pull request. 
+
+DO NOT FORGET: Comment your commits properly, you will be graded individualy, based on your commits. If all the commits are from one of the team members, the other will fail this module. So **commit often and clear**.
+
 ## Mechanics
 
-WIP
+### Hide-and-seek
+https://en.wikipedia.org/wiki/Hide-and-seek
+### Tag
+https://en.wikipedia.org/wiki/Tag_(game)
+### Duck Duck Goose 
+https://childhood101.com/games-for-kids-how-to-play-duck-duck-goose/
+### Scarecrow tag
+https://childhood101.com/games-for-kids-how-to-play-scarecrow-tag/
+### Please mister crocodile
+https://childhood101.com/games-for-kids/
+### Whats the time Mr Wolf
+https://childhood101.com/games-for-kids-how-to-play-whats-the-time-mr-wolf/
 
 ## Topics covered in the block
 
