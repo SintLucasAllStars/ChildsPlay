@@ -8,6 +8,8 @@ public class Seeker : MonoBehaviour {
     public enum Mode { Patrol, Search, Chase };
     public Mode mode;
 
+    public List<GameObject> hiders = new List<GameObject>();
+
     public Transform target;
 
     public float patrolSpeed;
@@ -22,6 +24,12 @@ public class Seeker : MonoBehaviour {
      
     void Start () {
         nav = GetComponent<NavMeshAgent>();
+        //hiders.Add(GameObject.FindGameObjectsWithTag)("Hider").transform);
+        foreach(GameObject hider in GameObject.FindGameObjectsWithTag("Hider"))
+        {
+            hiders.Add(hider);
+        }
+        //hiders.Add(GameObject.FindGameObjectsWithTag("Hider"));
         target = GameObject.FindGameObjectWithTag("Hider").transform;
 
         patrolSpeed = nav.speed;
