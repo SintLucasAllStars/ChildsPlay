@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 	float currentSideSpeed;
 	public float sprintMultiplier;
 	float currentSprintMulti;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+
 		if (Input.GetKey (KeyCode.LeftShift)) {
 			currentSprintMulti = sprintMultiplier;
 		} else {
