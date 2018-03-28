@@ -33,7 +33,7 @@ public class Seeker : MonoBehaviour {
     }
 
     void Update () {
-        Debug.Log(detectionRate);
+        //Debug.Log(detectionRate);
         bool canSee = canSeeTarget();
         if (canSee == false && mode != Mode.Chase && detectionRate > 1)
         {
