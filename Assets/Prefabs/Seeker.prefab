@@ -457,6 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
+  hiders: []
   target: {fileID: 0}
   patrolSpeed: 10
   maxSpeed: 100
