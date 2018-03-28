@@ -8,6 +8,8 @@ public class HiderBehaviour : MonoBehaviour {
 	public Vector3 startPosition;
 	public Vector3 hidingPosition;
 
+
+
 	private GameObject seeker;
 	private GameManager gm;
 
@@ -23,7 +25,9 @@ public class HiderBehaviour : MonoBehaviour {
 	}
 
 	void Update () {
-		
+
+
+
 	}
 
 }
