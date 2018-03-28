@@ -8,7 +8,7 @@ public class HiderBehaviour : MonoBehaviour {
 	public Vector3 startPosition;
 	public Vector3 hidingPosition;
 
-
+	private NavMeshAgent nma;
 
 	private GameObject seeker;
 	private GameManager gm;
@@ -21,6 +21,7 @@ public class HiderBehaviour : MonoBehaviour {
 		gm = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		startPosition = transform.position;
 		hidingPosition = new Vector3 (Random.Range (-mapSize/2, mapSize/2), 1, Random.Range (-mapSize/2, mapSize/2));
+
 
 	}
 
