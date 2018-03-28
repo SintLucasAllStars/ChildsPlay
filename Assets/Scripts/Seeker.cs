@@ -22,7 +22,7 @@ public class Seeker : MonoBehaviour {
 
     void Start () {
         nav = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Hider").transform;
 
         patrolSpeed = nav.speed;
         maxSpeed = patrolSpeed * 2;
