@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+		public float stamina = 100;
+
         // Use this for initialization
         private void Start()
         {
@@ -61,6 +63,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+
+			if (Input.GetKey(KeyCode.LeftShift) && stamina > 1) 
+			{
+				stamina = stamina - 0.5f;
+				m_RunSpeed = 5;
+			} else {
+				stamina = stamina + 0.25f;
+				m_RunSpeed = 2.5f;
+			}
+
+			if (stamina > 100)
+			{
+				stamina = 100;
+			}
+
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
