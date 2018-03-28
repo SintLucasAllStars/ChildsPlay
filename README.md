@@ -28,6 +28,7 @@ Also, make sure you **put both your names on the description of the pull request
 * The player will play against or with NPC's powered by the best AI you can make.
 * You can adapt the ruleset of the original game but the rules should be clear.
 * The focus of this assignment is **on the mechanics and AI**. everything else will be just extras.
+* Navigation of the NPC's is to be done by Unity's NavMesh
 
 ## Mechanics
 
