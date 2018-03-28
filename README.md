@@ -11,7 +11,7 @@ You are supposed to create a simple game, based on the mechanics of child's play
 
 The focus of this  is on the mechanics and AI. Graphics and variety of interactions are of less importance. Try to make it interesting but focus on the requirements first.
 
-The game will be single player. The player will play against or with NPC's powered by the best AI you can make.
+ 
 
 ## Submitting your work
 
@@ -21,6 +21,13 @@ You need to choose one of the mechanics below (it's possible to combine two if y
 
 **DO NOT FORGET:** Comment your commits properly, you will be graded individualy, based on your commits. If all the commits are from one of the team members, the other will fail this module. So **commit often and clear**.
 Also, make sure you **put both your names on the description of the pull request**.
+
+## Requirements
+
+* The game will be single player.
+* The player will play against or with NPC's powered by the best AI you can make.
+* You can adapt the ruleset of the original game but the rules should be clear.
+* The focus of this assignment is **on the mechanics and AI**. everything else will be just extras.
 
 ## Mechanics
 
