@@ -19,7 +19,7 @@ public class Seeker : MonoBehaviour {
     NavMeshAgent nav;
 
     Vector3 lastSeen;
-
+     
     void Start () {
         nav = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Hider").transform;
