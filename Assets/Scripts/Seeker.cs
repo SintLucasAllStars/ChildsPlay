@@ -45,7 +45,6 @@ public class Seeker : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(mode);
         Eyes();
         if (canSee == false && mode != Mode.Chase && detectionRate > 1)
         {
@@ -91,7 +90,12 @@ public class Seeker : MonoBehaviour
             if (collision.gameObject.CompareTag("Hider"))
             {
                 HiderBehaviour go = collision.gameObject.GetComponent<HiderBehaviour>();
-                go.currentState = HiderBehaviour.AIstate.captured;
+                if (go == null)
+                {
+                    Debug.Log("player hit");
+                }
+                else go.currentState = HiderBehaviour.AIstate.captured;
+                Debug.Log("hit someone");
             }
         }
     }
