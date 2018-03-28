@@ -113,6 +113,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &399431303 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1079913589331004, guid: 79f21d3c8f0f0ea4eb6e4cd50688db15,
+    type: 2}
+  m_PrefabInternal: {fileID: 2078453076}
+--- !u!4 &399431304 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4495089704920496, guid: 79f21d3c8f0f0ea4eb6e4cd50688db15,
+    type: 2}
+  m_PrefabInternal: {fileID: 2078453076}
+--- !u!114 &399431305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399431303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f92237b30a5c54d91eda77c49dad93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1055783166541618, guid: f45f0538ea066264d9d374d142a58981, type: 2}
+  bulletSpawnPoint: {fileID: 693415576}
+--- !u!1 &693415576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 693415577}
+  m_Layer: 0
+  m_Name: bulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693415577
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693415576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0051, y: 0.1177, z: -0.728}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 399431304}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033384739
 GameObject:
   m_ObjectHideFlags: 0
