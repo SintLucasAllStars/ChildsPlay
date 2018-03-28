@@ -19,7 +19,8 @@ This project will be developped in teams of two, collaboration and version contr
 
 You need to choose one of the mechanics below (it's possible to combine two if you are feeling brave), fork this repository and develop the game. When you are done, submit a pull request. 
 
-DO NOT FORGET: Comment your commits properly, you will be graded individualy, based on your commits. If all the commits are from one of the team members, the other will fail this module. So **commit often and clear**.
+**DO NOT FORGET:** Comment your commits properly, you will be graded individualy, based on your commits. If all the commits are from one of the team members, the other will fail this module. So **commit often and clear**.
+Also, make sure you **put both your names on the description of the pull request**.
 
 ## Mechanics
 
