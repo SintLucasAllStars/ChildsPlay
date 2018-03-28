@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1502953513680562, guid: ee2f9c49cbc62c840b1a7173bafeb2fd, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: hidePlace3
       objectReference: {fileID: 0}
     - target: {fileID: 4784250915651662, guid: ee2f9c49cbc62c840b1a7173bafeb2fd, type: 2}
       propertyPath: m_LocalScale.x
@@ -220,7 +220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1825023351250332, guid: 287a29eaad3802347af618c62e2f380a, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: hidePlace1
       objectReference: {fileID: 0}
     - target: {fileID: 4887416995857056, guid: 287a29eaad3802347af618c62e2f380a, type: 2}
       propertyPath: m_LocalScale.y
@@ -334,7 +334,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1125265873057040, guid: bbaa8aeeb6d12254b930074c5a25f017, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: hidePlace2
       objectReference: {fileID: 0}
     - target: {fileID: 4442360389981928, guid: bbaa8aeeb6d12254b930074c5a25f017, type: 2}
       propertyPath: m_LocalScale.x
@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 347117312}
   - component: {fileID: 347117311}
   - component: {fileID: 347117310}
+  - component: {fileID: 347117314}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -432,6 +433,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &347117314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347117309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1ce9a7b7119fe4e89e85e0fc339b53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hidePlaces:
+  - {fileID: 1533574289}
+  - {fileID: 789289596}
+  - {fileID: 563052993}
+  - {fileID: 1204749592}
 --- !u!1 &357085203
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,7 +605,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1227385190101772, guid: 2bf7eacde69a7ae439b4724bd586cda2, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: hidePlace4
       objectReference: {fileID: 0}
     - target: {fileID: 4652091519571408, guid: 2bf7eacde69a7ae439b4724bd586cda2, type: 2}
       propertyPath: m_LocalScale.x
