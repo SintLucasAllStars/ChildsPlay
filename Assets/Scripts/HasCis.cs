@@ -10,6 +10,8 @@ public class HasCis : MonoBehaviour
     Ray ray;
     RaycastHit hit;
 
+    public Animation selected;
+
     // Use this for initialization
     void Start()
     {
@@ -21,7 +23,6 @@ public class HasCis : MonoBehaviour
     {
 
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //hidePlaces = GameObject.FindGameObjectsWithTag("Hide");
 
         if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonDown(0))
         {
@@ -30,6 +31,7 @@ public class HasCis : MonoBehaviour
                 if (hit.collider.gameObject == hidePlaces[i].gameObject)
                 {
                     Debug.Log("This is a hide place");
+                    selected.Play("selected");
                 }
             }
         }
