@@ -1,0 +1,32 @@
+in this game you have to go from point A to point B without being seen(hide and seek),
+if you are seen then the enemy will come after you if the enemy touches you then you die and have to start over(tag).
+if the enemy sees you then you have to hide for 3 seconds where the enemy doesnt see you.
+there are 3 enemys in the level that roam around in a small level.
+the end point is indecated with a light beam that you have to look for.
+the enemys are a little bit faster than the player so you have to be carefull not to get caught.
+
+
+
+
+-camera moves around the player in third person view.
+
+-enemys have two states
+	*enemys can roam around the level(walking speed)
+	*chase mode(runing speed)
+
+-When you hide for 3 second the enemy loses you and switches to walking mode.
+
+-character will have to start over when enemy touches him.
+
+-indecator telling you if youre being chased.
+
+-enemys need pathfinding for when they are in chasse mode.
+
+
+
+
+
+
+
+
+	
