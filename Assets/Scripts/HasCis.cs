@@ -7,11 +7,12 @@ public class HasCis : MonoBehaviour
 {
 
     public GameObject[] hidePlaces = new GameObject[4];
+    public Animation[] selected = new Animation[4];
+
+    public int Lives = 2;
 
     Ray ray;
     RaycastHit hit;
-
-    public Animation selected;
 
     // Use this for initialization
     void Start()
@@ -32,9 +33,17 @@ public class HasCis : MonoBehaviour
                 if (hit.collider.gameObject == hidePlaces[i].gameObject)
                 {
                     Debug.Log("This is a hide place");
-                    selected.Play("selected");
+                    selected[i].Play("Selected");
+                    Debug.Log(hidePlaces[i]);
+
+                    Debug.Log("Ben je verstopt in" + hidePlaces[Random.Range(0,4)]);
                 }
             }
         }
+    }
+
+    public void Seeker()
+    {
+        Debug.Log(Random.Range(0, 4));
     }
 }
