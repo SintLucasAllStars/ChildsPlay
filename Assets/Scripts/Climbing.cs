@@ -11,6 +11,7 @@ public class Climbing : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+
 	}
 	
 	// Update is called once per frame
@@ -20,7 +21,8 @@ public class Climbing : MonoBehaviour {
             regularCam.depth = 0;
             parcourCam.depth = 1;
             rb.isKinematic = true;
-            anim.SetTrigger("Climbable");
+            anim.SetTrigger("Climbup");
+            StartCoroutine(afterClimb());
         }
 	}
     IEnumerator afterClimb(){
