@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Seeker : MonoBehaviour {
+public class Seeker : MonoBehaviour
+{
 
     public enum Mode { Patrol, Search, Chase };
     public Mode mode;
 
-    public List<GameObject> hiders = new List<GameObject>();
+    public GameObject[] testing = new GameObject[7];
+
+   // public List<GameObject> hiders = new List<GameObject>();
 
     public Transform target;
 
@@ -23,14 +26,18 @@ public class Seeker : MonoBehaviour {
     NavMeshAgent nav;
 
     Vector3 lastSeen;
-     
-    void Start () {
+
+    void Start()
+    {
         nav = GetComponent<NavMeshAgent>();
         //hiders.Add(GameObject.FindGameObjectsWithTag)("Hider").transform);
-        foreach(GameObject hider in GameObject.FindGameObjectsWithTag("Hider"))
+
+        testing = GameObject.FindGameObjectsWithTag("Hider");
+
+       /* foreach (GameObject hider in GameObject.FindGameObjectsWithTag("Hider"))
         {
             hiders.Add(hider);
-        }
+        }*/
         //hiders.Add(GameObject.FindGameObjectsWithTag("Hider"));
         target = GameObject.FindGameObjectWithTag("Hider").transform;
 
@@ -42,7 +49,8 @@ public class Seeker : MonoBehaviour {
         StartCoroutine(PatrolBehaviour());
     }
 
-    void Update () {
+    void Update()
+    {
         Debug.Log(mode);
         Eyes();
         //bool canSee = CanSeeTarget();
@@ -157,18 +165,18 @@ public class Seeker : MonoBehaviour {
     public void Eyes()
     {
         RaycastHit hit;
-        foreach (GameObject hiders in hiders)
+        for (int i = 0; i < testing.Length; i++)
         {
-            Debug.DrawRay(transform.position, hiders.transform.position - transform.position);
+            Debug.DrawRay(transform.position, testing[i].transform.position - transform.position);
 
-            if (Physics.Raycast(transform.position, (hiders.transform.position - transform.position), out hit))
+            if (Physics.Raycast(transform.position, (testing[i].transform.position - transform.position), out hit))
             {
                 if (hit.collider.gameObject.CompareTag("Hider"))
                 {
-                    float angle = Vector3.Angle(transform.forward, (hiders.transform.position - transform.position));
+                    float angle = Vector3.Angle(transform.forward, (testing[i].transform.position - transform.position));
                     if (angle < fov / 2)
                     {
-                        target = hiders.transform;        
+                        target = testing[i].transform;
                         canSee = true;
                     }
                     else
@@ -186,6 +194,36 @@ public class Seeker : MonoBehaviour {
                 Debug.Log("I See nothing");
                 canSee = false;
             }
-        }
+        }/*
+        foreach (GameObject hiders in hiders)
+        {
+            Debug.DrawRay(transform.position, hiders.transform.position - transform.position);
+
+            if (Physics.Raycast(transform.position, (hiders.transform.position - transform.position), out hit))
+            {
+                if (hit.collider.gameObject.CompareTag("Hider"))
+                {
+                    float angle = Vector3.Angle(transform.forward, (hiders.transform.position - transform.position));
+                    if (angle < fov / 2)
+                    {
+                        target = hiders.transform;
+                        canSee = true;
+                    }
+                    else
+                    {
+                        canSee = false;
+                    }
+                }
+                else
+                {
+                    canSee = false;
+                }
+            }
+            else
+            {
+                Debug.Log("I See nothing");
+                canSee = false;
+            }
+        }*/
     }
 }
