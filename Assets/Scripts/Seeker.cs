@@ -95,7 +95,7 @@ public class Seeker : MonoBehaviour
                     Debug.Log("player hit");
                 }
                 else go.currentState = HiderBehaviour.AIstate.captured;
-                Debug.Log("hit someone");
+                Debug.Log(HiderBehaviour.AIstate.captured);
             }
         }
     }
