@@ -21,7 +21,6 @@ public class HasCis : MonoBehaviour
     {
 
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //hidePlaces = GameObject.FindGameObjectsWithTag("Hide");
 
         if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonDown(0))
         {

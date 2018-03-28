@@ -7,7 +7,7 @@ public class HideAndSeek : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
+		//hallo
 	}
 	
 	// Update is called once per frame
