@@ -11,8 +11,6 @@ public class Seeker : MonoBehaviour
 
     public GameObject[] testing = new GameObject[7];
 
-   // public List<GameObject> hiders = new List<GameObject>();
-
     public Transform target;
 
     public float patrolSpeed;
@@ -30,15 +28,9 @@ public class Seeker : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        //hiders.Add(GameObject.FindGameObjectsWithTag)("Hider").transform);
 
         testing = GameObject.FindGameObjectsWithTag("Hider");
 
-       /* foreach (GameObject hider in GameObject.FindGameObjectsWithTag("Hider"))
-        {
-            hiders.Add(hider);
-        }*/
-        //hiders.Add(GameObject.FindGameObjectsWithTag("Hider"));
         target = GameObject.FindGameObjectWithTag("Hider").transform;
 
         patrolSpeed = nav.speed;
@@ -53,7 +45,6 @@ public class Seeker : MonoBehaviour
     {
         Debug.Log(mode);
         Eyes();
-        //bool canSee = CanSeeTarget();
         if (canSee == false && mode != Mode.Chase && detectionRate > 1)
         {
             detectionRate = detectionRate - 10 * Time.deltaTime;
@@ -130,38 +121,6 @@ public class Seeker : MonoBehaviour
         }
     }
 
-    /*bool CanSeeTarget()
-    {
-        RaycastHit hit;
-        
-        Vector3 direction = target.position - transform.position;
-        if (Physics.Raycast(transform.position, direction, out hit))
-        {
-            if (hit.collider.gameObject.CompareTag("Hider"))
-            {
-                float angle = Vector3.Angle(transform.forward, direction);
-                if (angle < fov / 2)
-                {
-
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
-            Debug.Log("I See nothing");
-            return false;
-        }       
-    }*/
-
     public void Eyes()
     {
         RaycastHit hit;
@@ -178,6 +137,7 @@ public class Seeker : MonoBehaviour
                     {
                         target = testing[i].transform;
                         canSee = true;
+                        return;
                     }
                     else
                     {
@@ -194,36 +154,6 @@ public class Seeker : MonoBehaviour
                 Debug.Log("I See nothing");
                 canSee = false;
             }
-        }/*
-        foreach (GameObject hiders in hiders)
-        {
-            Debug.DrawRay(transform.position, hiders.transform.position - transform.position);
-
-            if (Physics.Raycast(transform.position, (hiders.transform.position - transform.position), out hit))
-            {
-                if (hit.collider.gameObject.CompareTag("Hider"))
-                {
-                    float angle = Vector3.Angle(transform.forward, (hiders.transform.position - transform.position));
-                    if (angle < fov / 2)
-                    {
-                        target = hiders.transform;
-                        canSee = true;
-                    }
-                    else
-                    {
-                        canSee = false;
-                    }
-                }
-                else
-                {
-                    canSee = false;
-                }
-            }
-            else
-            {
-                Debug.Log("I See nothing");
-                canSee = false;
-            }
-        }*/
+        }
     }
 }
