@@ -16,6 +16,8 @@ public class Seeker : MonoBehaviour {
     public float maxSpeed;
     public float detectionRate;
 
+    bool canSee;
+
     float fov = 120f;
 
     NavMeshAgent nav;
@@ -41,8 +43,9 @@ public class Seeker : MonoBehaviour {
     }
 
     void Update () {
-        //Debug.Log(detectionRate);
-        bool canSee = canSeeTarget();
+        Debug.Log(mode);
+        Eyes();
+        //bool canSee = CanSeeTarget();
         if (canSee == false && mode != Mode.Chase && detectionRate > 1)
         {
             detectionRate = detectionRate - 10 * Time.deltaTime;
@@ -119,10 +122,10 @@ public class Seeker : MonoBehaviour {
         }
     }
 
-    bool canSeeTarget()
+    /*bool CanSeeTarget()
     {
         RaycastHit hit;
-
+        
         Vector3 direction = target.position - transform.position;
         if (Physics.Raycast(transform.position, direction, out hit))
         {
@@ -148,6 +151,41 @@ public class Seeker : MonoBehaviour {
         {
             Debug.Log("I See nothing");
             return false;
+        }       
+    }*/
+
+    public void Eyes()
+    {
+        RaycastHit hit;
+        foreach (GameObject hiders in hiders)
+        {
+            Debug.DrawRay(transform.position, hiders.transform.position - transform.position);
+
+            if (Physics.Raycast(transform.position, (hiders.transform.position - transform.position), out hit))
+            {
+                if (hit.collider.gameObject.CompareTag("Hider"))
+                {
+                    float angle = Vector3.Angle(transform.forward, (hiders.transform.position - transform.position));
+                    if (angle < fov / 2)
+                    {
+                        target = hiders.transform;        
+                        canSee = true;
+                    }
+                    else
+                    {
+                        canSee = false;
+                    }
+                }
+                else
+                {
+                    canSee = false;
+                }
+            }
+            else
+            {
+                Debug.Log("I See nothing");
+                canSee = false;
+            }
         }
     }
 }
