@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class AIBehaviour : MonoBehaviour {
 	public enum Mode {seek, hide, chase};
@@ -12,7 +13,7 @@ public class AIBehaviour : MonoBehaviour {
 
 	public float fov = 120;
 	public float delay;
-
+	public Slider detectionbar;
 
 	void Start () {
 		nav = GetComponent<NavMeshAgent> ();
@@ -21,10 +22,13 @@ public class AIBehaviour : MonoBehaviour {
 	}
 
 	void Update () {
+		
+		detectionbar.value = delay;
 		if (canSeeTarget ()) {
 			mode = Mode.chase;
-		} else
+		} else {
 			mode = Mode.seek;
+		}
 
 		switch (mode) {
 
@@ -50,6 +54,8 @@ public class AIBehaviour : MonoBehaviour {
 		mode = m;
 	}
 
+
+
 	IEnumerator Seekmode () {
 		while (true) {
 			if (mode == Mode.seek) {
@@ -60,6 +66,8 @@ public class AIBehaviour : MonoBehaviour {
 				yield return false;
 		}
 	}
+
+
 	bool canSeeTarget()
 	{
 		RaycastHit hit;
@@ -67,8 +75,10 @@ public class AIBehaviour : MonoBehaviour {
 		Vector3 direction = target.position - transform.position;
 		if(Physics.Raycast(transform.position, direction, out hit))
 		{
+			
 			if(hit.collider.gameObject.CompareTag("Player"))
 			{
+				
 				float angle = Vector3.Angle(transform.forward, direction);
 				if(angle < fov/2)
 				{
@@ -88,6 +98,7 @@ public class AIBehaviour : MonoBehaviour {
 				}
 			} else 
 			{
+				delay = 3;
 				return false;
 			}
 		}
