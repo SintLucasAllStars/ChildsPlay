@@ -15,6 +15,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	void Awake () {
 		Cursor.lockState = CursorLockMode.Locked;
 		rb = GetComponent<Rigidbody> ();
+        CurAni = AniState.Idle;
 	}
     void update(){
 
@@ -62,6 +63,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
         if(horMove != 0 || verMove != 0)
         rb.velocity = (transform.forward * verMove + transform.right * horMove)*speed;
+		rb.velocity = (transform.forward * verMove + transform.right * horMove) * speed;
 
 		transform.Rotate (0, Input.GetAxis ("Mouse X") * mouseSense, 0f);
 		transform.GetChild (0).Rotate (-Input.GetAxis("Mouse Y") * mouseSense,0f,0f);
