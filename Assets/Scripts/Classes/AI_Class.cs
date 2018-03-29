@@ -12,7 +12,7 @@ public class AI_Class{
 	public float fov;
 
 
-	public AI_Class()
+	public AI_Class(int i)
 	{
 		int t = Random.Range(0,3);
 		switch (t)
