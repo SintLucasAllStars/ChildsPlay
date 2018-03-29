@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerBehaviour : MonoBehaviour {
     enum AniState{Idle,Walk,Climb}
     AniState CurAni;
@@ -63,7 +62,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
         if(horMove != 0 || verMove != 0)
         rb.velocity = (transform.forward * verMove + transform.right * horMove)*speed;
-        
 
 		transform.Rotate (0, Input.GetAxis ("Mouse X") * mouseSense, 0f);
 		transform.GetChild (0).Rotate (-Input.GetAxis("Mouse Y") * mouseSense,0f,0f);
@@ -75,3 +73,4 @@ public class PlayerBehaviour : MonoBehaviour {
         canClimb = false;
     }
 }
+
