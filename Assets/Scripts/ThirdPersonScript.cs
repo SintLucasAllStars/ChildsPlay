@@ -5,6 +5,7 @@ using UnityEngine;
 public class ThirdPersonScript : MonoBehaviour {
 
     public int speed;
+    public int turningSpeed;
 	// Use this for initialization
 	void Start () {
 		
@@ -24,13 +25,12 @@ public class ThirdPersonScript : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
+            transform.Rotate(0, -turningSpeed * Time.deltaTime, 0);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-
+            transform.Rotate(0, turningSpeed * Time.deltaTime, 0);
         }
     }
 }
