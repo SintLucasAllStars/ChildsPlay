@@ -15,6 +15,8 @@ public class AIScript : MonoBehaviour {
     public float patrolSpeed;
 
     public float fov = 120;
+    public float reactionTime;
+    public int reactionTimer = 0;
 	// Use this for initialization
 	void Start () {
         nav = GetComponent<NavMeshAgent>();
@@ -31,10 +33,26 @@ public class AIScript : MonoBehaviour {
 	void Update () {
         bool canSee = CanSeeTarget();
 
-        if (canSee && mode != Mode.Chase)
+        if (canSee && mode == Mode.Patrol)
         {
-            SetMode(Mode.Chase);
+            SetMode(Mode.Suspicious);
         }
+        else
+        {
+            if(mode != Mode.Suspicious)
+            {
+                reactionTimer = 0;
+            }
+        }
+
+        if (!canSee)
+        {
+            if(mode == Mode.Suspicious)
+            {
+                SetMode(Mode.Patrol);
+            }
+        }
+
         switch (mode)
         {
             case Mode.Patrol:
@@ -56,6 +74,12 @@ public class AIScript : MonoBehaviour {
                 }
                 break;
             case Mode.Suspicious:
+                reactionTimer++;
+                if (reactionTimer > reactionTime)
+                {
+                    SetMode(Mode.Chase);
+                    reactionTimer = 0;
+                }
                 break;
         }
 
@@ -85,11 +109,16 @@ public class AIScript : MonoBehaviour {
                 nav.speed = patrolSpeed;
                 break;
             case Mode.Search:
+                nav.speed = patrolSpeed;
                 nav.SetDestination(lastSeen);
                 break;
             case Mode.Chase:
                 nav.speed = maxSpeed;
                 lastSeen = target.position;
+                break;
+            case Mode.Suspicious:
+                nav.speed = 0;
+                transform.LookAt(lastSeen);
                 break;
         }
     }
