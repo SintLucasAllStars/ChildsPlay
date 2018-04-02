@@ -14,7 +14,7 @@ public class TerrainGenerator : MonoBehaviour {
 	void Start()
 	{
 		depth = 30;
-		scale = 6f;
+		scale = 3f;
 		Terrain terrain = GetComponent<Terrain>();
 		terrain.terrainData = GenerateTerrain (terrain.terrainData);
 		surface.BuildNavMesh();
