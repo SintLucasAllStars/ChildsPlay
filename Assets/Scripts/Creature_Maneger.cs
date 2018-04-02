@@ -15,46 +15,41 @@ public class Creature_Maneger : MonoBehaviour {
 	//AI
 	private bool onGround;
 	private NavMeshAgent agent;
-	[SerializeField] private Vector3 target;
+	public Vector3 target;
 	[SerializeField] private Vector3 currentPos;
 
 	// Use this for initialization
 	void Start () {
 		agent = GetComponent<NavMeshAgent>();
-		agent.enabled = true;
-		StartCoroutine(FirstTarUpdate());
+		agent.enabled = true;		
+		TarUpdate();
 	}
 	
 	// Update is called once per frame
-	void Update () {		
+	void Update () {	
+		if (Input.GetKey(KeyCode.A))
+		{
+			TarUpdate();
+		}					
+		agent.SetDestination(target);
+		Debug.Log("uodateing destination");
+			
+		/*
 		//currentPos = transform.position;
 		if (currentPos.x == target.x && currentPos.z == target.z)
 		{
 			TarUpdate();
 		}
-		agent.SetDestination(target);
-		Debug.Log(target);
-		Debug.Log(agent.destination);
-				
+		*/		
 	}	
 
 	void TarUpdate()
 	{
-		target = new Vector3(Random.Range(0,250),0,Random.Range(0,250));
-		if (agent.isOnNavMesh)
-		{			
-			agent.SetDestination(target);
-		}
-	}
-
-	IEnumerator FirstTarUpdate()
-	{		
-		yield return new WaitForSeconds(2);
-		target = new Vector3(Random.Range(0,250),0,Random.Range(0,250));
+		target = new Vector3(Random.Range(0,250),0,Random.Range(0,250));			
 		if (agent.isOnNavMesh)
 		{	
-			Debug.Log("moving");		
-			agent.SetDestination(target);
+			Debug.Log( agent.destination);
 		}
 	}
+	
 }
