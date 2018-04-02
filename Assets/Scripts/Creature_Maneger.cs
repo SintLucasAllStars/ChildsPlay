@@ -19,16 +19,22 @@ public class Creature_Maneger : MonoBehaviour {
 	private State myState;
 	private NavMeshAgent agent;
 	private Transform[] hidingplaces;
-	private Vector3 target;
+	public Vector3 target;
 
 	// Use this for initialization
 	void Start () {
 		aI_Class = new AI_Class(1);
+		agent = GetComponent<NavMeshAgent>();
+
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
+		if (Input.GetKeyDown(KeyCode.A))
+		{
+			TargetUpdate();
+		}
 		RaycastHit hit;
 		Vector3 direction = target - transform.position;
 		if (Physics.Raycast(transform.position, direction, out hit))
@@ -68,8 +74,18 @@ public class Creature_Maneger : MonoBehaviour {
 
 	void TargetUpdate()
 	{
-		target = new Vector3(Random.Range(5,-5),0.5f,Random.Range(5,-5f));
-		agent.SetDestination(target);
+		Debug.Log("i have been called");
+		Debug.Log(agent.isOnNavMesh);
+		if(agent.isOnNavMesh)
+		{
+			target = new Vector3(Random.Range(0,250),0,Random.Range(0,250));			
+			agent.SetDestination(target);
+			Debug.Log(target);
+		}
+		else
+		{
+			return;
+		}
 	}
 
 	void GetOOp()

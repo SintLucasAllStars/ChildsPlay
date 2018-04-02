@@ -7,14 +7,14 @@ public class TerrainGenerator : MonoBehaviour {
 
 	public int depth = 30;
 	public float scale = 3f;
-
+	
 	public NavMeshSurface surface;
 
 
 	void Start()
 	{
 		depth = 30;
-		scale = 3f;
+		scale = 6f;
 		Terrain terrain = GetComponent<Terrain>();
 		terrain.terrainData = GenerateTerrain (terrain.terrainData);
 		surface.BuildNavMesh();
@@ -40,6 +40,7 @@ public class TerrainGenerator : MonoBehaviour {
 	}
 	float CalculateHeight (int x, int y)
 	{
+		//Debug.Log(seed);
 		float xCoord = (float)x / width * scale;
 		float yCoord = (float)y / height * scale;
 
