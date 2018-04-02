@@ -15,14 +15,17 @@ public class PlayerBehaviour : MonoBehaviour {
 	void Awake () {
 		Cursor.lockState = CursorLockMode.Locked;
 		rb = GetComponent<Rigidbody> ();
-        CurAni = AniState.Idle;
-	}
-    void update(){
 
+	}
+    void start(){
+        CurAni = AniState.Idle;
+    }
+    void update(){
+        Debug.Log(CurAni);
         switch (CurAni)
         {
             case (AniState.Idle):
-                anim.SetBool("Walking", false);
+                anim.SetBool("Walking",false);
                 anim.SetBool("climbup",false);
                 break;
             case (AniState.Walk):
@@ -30,23 +33,15 @@ public class PlayerBehaviour : MonoBehaviour {
                 break;
             case (AniState.Climb):
                 anim.SetBool("climbup", true);
-                break;
-                
+                break;      
         }
-
         if (canClimb && Input.GetKeyDown(KeyCode.Space) && !isClimbing)
-            Debug.Log("thou shal climb");
+            Debug.Log("thou shall climb");
             isClimbing = true;
             rb.isKinematic = true;
             anim.SetBool("Climbup", true);
             StartCoroutine(afterClimb());
         }
-
-
-//    if(Input.GetKeyDown(KeyCode.W))
-//        Debug.Log("work pls");
-//        anim.SetBool("Walking",true);
-    
     IEnumerator afterClimb(){
         yield return new WaitForSeconds(0.3f);
         anim.SetBool("Climbup", false);
@@ -61,7 +56,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		float horMove = Input.GetAxis("Horizontal");
 		float verMove = Input.GetAxis("Vertical");
 
-        if(horMove != 0 || verMove != 0)
+        if (horMove != 0 || verMove != 0)
+            CurAni = AniState.Walk;
         rb.velocity = (transform.forward * verMove + transform.right * horMove)*speed;
 		rb.velocity = (transform.forward * verMove + transform.right * horMove) * speed;
 
