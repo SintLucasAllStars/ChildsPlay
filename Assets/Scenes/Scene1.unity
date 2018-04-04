@@ -467,8 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d72258df129a341a4b66e56ff45c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 512
-  height: 360
+  width: 256
+  height: 256
   depth: 30
   scale: 3
   surface: {fileID: 1232007888}
@@ -515,8 +515,6 @@ MonoBehaviour:
   AmountOfEnemys: 20
   Enemies: {fileID: 1243125657629380, guid: 64937e97c4e63c344b53302b711e367d, type: 2}
   terrain: {fileID: 1232007885}
-<<<<<<< HEAD
-=======
   Obstacles:
   - {fileID: 1319731277}
   - {fileID: 462427705}
@@ -610,4 +608,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50f797806dcac30478af33a70a1ad8b6, type: 2}
   m_IsPrefabParent: 0
->>>>>>> fb4f82fca0072c3cde70986a96a5861aeb2b9d42
