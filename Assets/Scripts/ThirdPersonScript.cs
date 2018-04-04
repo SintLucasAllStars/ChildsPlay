@@ -18,40 +18,50 @@ public class ThirdPersonScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        //rb.AddForce(-Vector3.up);
         switch (state)
         {
             case State.Walking:
-                speed = 8;
+                //speed = 8;
+                conspicuousness = 1;
                 break;
             case State.sneeking:
                 conspicuousness = 0.5f;
-                speed = 4;
+                //speed = 4;
                 break;
             case State.running:
-                speed = 10;
+                //speed = 10;
                 break;
             default:
                 break;
         }
         if (Input.GetKey(KeyCode.W))
         {
-            rb.velocity = transform.forward * speed;
-        } else if (Input.GetKey(KeyCode.S))
-        {
-            rb.velocity = transform.forward * -speed;
+            //rb.velocity = transform.forward * speed;
+            //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
+            rb.AddForce(transform.forward * speed);
         }
-        else if (Input.GetKey(KeyCode.LeftControl))
+        else if (Input.GetKey(KeyCode.S))
         {
-            state = State.sneeking;
+            //rb.velocity = transform.forward * -speed;
+            //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
+            rb.AddForce(transform.forward * -speed);
         }
-        else
+
+        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
         {
             state = State.Walking;
             rb.velocity = Vector3.zero;
         }
 
-
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            state = State.sneeking;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            state = State.Walking;
+        }
 
         if (Input.GetKey(KeyCode.A))
         {
