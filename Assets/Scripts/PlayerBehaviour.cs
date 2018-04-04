@@ -13,6 +13,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public Animator anim;
 
 	GameObject blinkObject;
+	bool isBlinking = false;
 
 	void Awake () {
 		Cursor.lockState = CursorLockMode.Locked;
@@ -44,24 +45,23 @@ public class PlayerBehaviour : MonoBehaviour {
 //		}
 
 
-		if (Input.GetMouseButtonDown (0))
+		if (Input.GetMouseButtonDown (0) && !isBlinking)
 			blinkObject = Instantiate (Resources.Load<GameObject> ("Blink"));
 
-		if(Input.GetMouseButton(0) && blinkObject != null){
+		if(Input.GetMouseButton(0) && blinkObject != null && !isBlinking){
 			blinkObject.transform.rotation = transform.rotation;
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			if (Physics.Raycast (ray, out hit, 10f))
+			if (Physics.Raycast (ray, out hit, 20f))
 				blinkObject.transform.position = hit.point;
 			else
-				blinkObject.transform.position = ray.GetPoint (10f);
+				blinkObject.transform.position = ray.GetPoint (20f);
 
 			if (Input.GetMouseButtonDown (1)) {
-				transform.position = blinkObject.transform.position;
-				Destroy (blinkObject);
+				StartCoroutine (Blink ());
 			}
 		}
-		if (Input.GetMouseButtonUp (0) && blinkObject != null)
+		if (Input.GetMouseButtonUp (0) && blinkObject != null && !isBlinking)
 			Destroy (blinkObject);
     }
     IEnumerator afterClimb(){
@@ -90,6 +90,30 @@ public class PlayerBehaviour : MonoBehaviour {
 		transform.Rotate (0, Input.GetAxis ("Mouse X") * mouseSense, 0f);
 		transform.GetChild (0).Rotate (-Input.GetAxis("Mouse Y") * mouseSense,0f,0f);
 	}
+	IEnumerator Blink(){
+		isBlinking = true;
+		Vector3 startpos = transform.position;
+		float timer = 0;
+		while (timer < 1f) {
+			transform.position = Vector3.Lerp (startpos, blinkObject.transform.GetChild(0).position, timer);
+			if (timer <= 0.33333f) {
+				Time.timeScale = Mathf.Lerp (1f, 0.25f, timer * 3);
+				Camera.main.fieldOfView = Mathf.Lerp (60,120f,timer*3);
+			} else {
+				Time.timeScale = Mathf.Lerp (0.25f, 1f, (timer - 0.33333f) * 1.5f);
+				Camera.main.fieldOfView = Mathf.Lerp (120,60f,(timer-0.33333f)*1.5f);
+			}	
+			timer += Time.deltaTime;
+			yield return 0;
+		}
+		Time.timeScale = 1f;
+		Camera.main.fieldOfView = 60;
+		transform.position = blinkObject.transform.position;
+
+		Destroy (blinkObject);
+		isBlinking = false;
+	}
+
     void OnTriggerEnter (Collider other){
         canClimb = true;
     }

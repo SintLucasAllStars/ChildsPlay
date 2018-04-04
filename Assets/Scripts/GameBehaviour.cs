@@ -9,7 +9,7 @@ public class GameBehaviour : MonoBehaviour {
 	public float gravity = 4f;
 
 	List<GameObject> enems;
-	int amountEnemies = 3;
+	int amountEnemies = 1;
 	GameObject tagger;
 	GameObject player;
 	void Start () {
@@ -33,6 +33,6 @@ public class GameBehaviour : MonoBehaviour {
 
 	Vector3 GetSpawningPosition(){
 		//Random position where you can spawn;
-		return Vector3.zero;
+		return new Vector3(Random.Range(-2f,2f),2f,Random.Range(-2f,2f));
 	}
 }
