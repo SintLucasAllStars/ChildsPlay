@@ -12,6 +12,7 @@ public class Creature_Maneger : MonoBehaviour {
 	[SerializeField] public static int Chasers;
 	private bool isChaser;
 	public float stamina;
+	
 	public float speed;
 	public float reactionSpeed;
 	public float fov;

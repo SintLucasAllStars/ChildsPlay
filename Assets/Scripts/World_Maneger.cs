@@ -7,10 +7,18 @@ public class World_Maneger : MonoBehaviour {
 	public Transform SpwanPoint;
 	public int AmountOfEnemys;
 	public GameObject Enemies;
+	public Terrain terrain;
+	public GameObject[] Obstacles = new GameObject[3];
 
 	// Use this for initialization
 	void Start () {
 		initSpawn();
+		Vector3 width = terrain.terrainData.size;
+		Debug.Log (width);
+		for (int i = 0; i < 15; i++)
+		{
+			Instantiate(Obstacles[Random.Range(0,3)],new Vector3(Random.Range(0,width.x), Random.Range(0,width.y)),Quaternion.identity);
+		}
 	}
 	
 	// Update is called once per frame
