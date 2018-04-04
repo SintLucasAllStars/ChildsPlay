@@ -5,18 +5,21 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour {
 	RaycastHit Hit;
 	bool groundDetector;
+	private TerrainGenerator terrainGenerator;
 
 	// Use this for initialization
 	void Start () {
 		groundDetector = false;
+		terrainGenerator = GameObject.Find("World").GetComponent<TerrainGenerator>();
+		float y =  terrainGenerator.ReturnHeight(transform.position.x, transform.position.z);
+		transform.position = new Vector3(transform.position.x,y,transform.position.z);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		while (groundDetector == false){
-			transform.Translate(0,1f,0);
-			
-		}
+	/*if(groundDetector == false )	{
+	transform.Translate(0,1f,0);
+	}
 	Debug.DrawRay (transform.position, -Vector3.up * 0.5f);
 		if (Input.GetMouseButton (0)); {
 			Ray myRay = new Ray (transform.position,-Vector3.up);
@@ -28,8 +31,11 @@ public class Obstacle : MonoBehaviour {
 
 					
 					
-				}
-			}	
-		}
+					}
+				}	
+			}
+		}	
+	}*/	
 	}
 }
+
