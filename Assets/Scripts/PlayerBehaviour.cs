@@ -14,6 +14,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	GameObject blinkObject;
 	bool isBlinking = false;
+	float blinkDist = 15f;
 
 	void Awake () {
 		Cursor.lockState = CursorLockMode.Locked;
@@ -52,10 +53,11 @@ public class PlayerBehaviour : MonoBehaviour {
 			blinkObject.transform.rotation = transform.rotation;
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			if (Physics.Raycast (ray, out hit, 20f))
+			blinkObject.transform.GetChild (1).LookAt (transform);
+			if (Physics.Raycast (ray, out hit, blinkDist))
 				blinkObject.transform.position = hit.point;
 			else
-				blinkObject.transform.position = ray.GetPoint (20f);
+				blinkObject.transform.position = ray.GetPoint (blinkDist);
 
 			if (Input.GetMouseButtonDown (1)) {
 				StartCoroutine (Blink ());
