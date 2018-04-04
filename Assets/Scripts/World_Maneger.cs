@@ -18,7 +18,7 @@ public class World_Maneger : MonoBehaviour {
 		Debug.Log (width);
 		for (int i = 0; i < 15; i++)
 		{
-			Instantiate(Obstacles[Random.Range(0,3)],new Vector3(Random.Range(0,width.x), Random.Range(0,width.y)),Quaternion.identity);
+			Instantiate(Obstacles[Random.Range(0,3)],new Vector3(Random.Range(0,width.x),0, Random.Range(0,width.x)),Quaternion.identity);
 		}
 	}
 	
