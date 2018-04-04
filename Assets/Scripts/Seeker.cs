@@ -9,7 +9,7 @@ public class Seeker : MonoBehaviour
     public enum Mode { Patrol, Search, Chase };
     public Mode mode;
 
-    public GameObject[] testing = new GameObject[7];
+    public GameObject[] hiders = new GameObject[7];
 
     public Transform target;
 
@@ -32,7 +32,7 @@ public class Seeker : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
 
-        testing = GameObject.FindGameObjectsWithTag("Hider");
+        hiders = GameObject.FindGameObjectsWithTag("Hider");
 
         target = GameObject.FindGameObjectWithTag("Hider").transform;
 
@@ -143,25 +143,42 @@ public class Seeker : MonoBehaviour
     public void Eyes()
     {
         RaycastHit hit;
-        for (int i = 0; i < testing.Length; i++)
+        for (int i = 0; i < hiders.Length; i++)
         {
-            Debug.DrawRay(transform.position, testing[i].transform.position - transform.position);
+            Debug.DrawRay(transform.position, hiders[i].transform.position - transform.position);
 
-            if (Physics.Raycast(transform.position, (testing[i].transform.position - transform.position), out hit))
+            if (Physics.Raycast(transform.position, (hiders[i].transform.position - transform.position), out hit))
             {
                 if (hit.collider.gameObject.CompareTag("Hider"))
                 {
-                    float angle = Vector3.Angle(transform.forward, (testing[i].transform.position - transform.position));
-                    if (angle < fov / 2)
+                    if (Vector3.Distance(transform.position, hit.collider.transform.position) > 20)
                     {
-                        target = testing[i].transform;
-                        canSee = true;
-                        return;
+                        float angle = Vector3.Angle(transform.forward, (hiders[i].transform.position - transform.position));
+                        if (angle < fov / 4)
+                        {
+                            target = hiders[i].transform;
+                            canSee = true;
+                            return;
+                        }
+                        else
+                        {
+                            canSee = false;
+                        }
                     }
                     else
                     {
-                        canSee = false;
-                    }
+                        float angle = Vector3.Angle(transform.forward, (hiders[i].transform.position - transform.position));
+                        if (angle < fov / 2)
+                        {
+                            target = hiders[i].transform;
+                            canSee = true;
+                            return;
+                        }
+                        else
+                        {
+                            canSee = false;
+                        }
+                    }                  
                 }
                 else
                 {
