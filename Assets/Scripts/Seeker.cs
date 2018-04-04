@@ -16,6 +16,7 @@ public class Seeker : MonoBehaviour
     public float patrolSpeed;
     public float maxSpeed;
     public float detectionRate;
+    public float worldSize;
 
     public bool godMode;
 
@@ -106,7 +107,7 @@ public class Seeker : MonoBehaviour
         {
             if (mode == Mode.Patrol)
             {
-                Vector3 destination = transform.position + new Vector3(Random.Range(-10, 10), 0f, Random.Range(-10, 10));
+                Vector3 destination = new Vector3(Random.Range(-worldSize, worldSize), 0f, Random.Range(-worldSize, worldSize));
                 nav.SetDestination(destination);
             }
             yield return new WaitForSeconds(Random.Range(3, 7));
