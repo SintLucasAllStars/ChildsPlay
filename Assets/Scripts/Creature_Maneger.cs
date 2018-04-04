@@ -12,12 +12,13 @@ public class Creature_Maneger : MonoBehaviour {
 	[SerializeField] public static int Chasers;
 	private bool isChaser;
 	public float stamina;
+	private float baseStamina;
 	public float speed;
 	public float reactionSpeed;
 	public float fov;
 	
 	//AI
-	public enum State{Panic, Scarecrow, running, hiding}
+	public enum State{Panic, Scarecrow, running, walking, hiding}
 	private State myState;
 	private NavMeshAgent agent;
 	private Transform[] hidingplaces;
@@ -60,6 +61,29 @@ public class Creature_Maneger : MonoBehaviour {
 					//a panic mode should be set
 				}
 			}
+		}
+	}
+
+	void Stamina()
+	{
+		if (stamina <= 0)
+		{
+			myState = State.walking;
+			agent.speed = speed / 2;
+		}
+		
+		while (myState == State.walking)
+		{
+			stamina += Time.deltaTime * 3.5f;
+			if (stamina >= baseStamina)
+			{
+				myState = State.running;
+				agent.speed = speed;
+			}
+		}
+		while (myState == State.running)
+		{
+			stamina -= Time.deltaTime * 1.5f; 
 		}
 	}
 

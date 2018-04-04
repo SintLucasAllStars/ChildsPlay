@@ -415,8 +415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d72258df129a341a4b66e56ff45c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 256
-  height: 256
+  width: 512
+  height: 360
   depth: 30
   scale: 3
   surface: {fileID: 1232007888}
@@ -462,3 +462,4 @@ MonoBehaviour:
   SpwanPoint: {fileID: 1107627355}
   AmountOfEnemys: 20
   Enemies: {fileID: 1243125657629380, guid: 64937e97c4e63c344b53302b711e367d, type: 2}
+  terrain: {fileID: 1232007885}

@@ -7,6 +7,7 @@ public class World_Maneger : MonoBehaviour {
 	public Transform SpwanPoint;
 	public int AmountOfEnemys;
 	public GameObject Enemies;
+	public Terrain terrain;
 
 	// Use this for initialization
 	void Start () {
