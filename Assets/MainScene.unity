@@ -220,6 +220,21 @@ Transform:
   m_PrefabParentObject: {fileID: 4129235993899238, guid: 3fc99e8f7db0d664598405d0aa1432ea,
     type: 2}
   m_PrefabInternal: {fileID: 34458771}
+--- !u!1 &37084182 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: 969193058fee96548aeb863e8796d91e, type: 3}
+  m_PrefabInternal: {fileID: 281190122}
+--- !u!114 &37084184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 37084182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db67bfe7ca260643aa1c4d75acdf3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &86883265
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +557,10 @@ Prefab:
     - target: {fileID: 400000, guid: 969193058fee96548aeb863e8796d91e, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 969193058fee96548aeb863e8796d91e, type: 3}
+      propertyPath: m_Name
+      value: doorklink
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 969193058fee96548aeb863e8796d91e, type: 3}
@@ -2284,6 +2303,22 @@ Transform:
   m_PrefabParentObject: {fileID: 4129235993899238, guid: 3fc99e8f7db0d664598405d0aa1432ea,
     type: 2}
   m_PrefabInternal: {fileID: 1769390366}
+--- !u!1 &1772695690 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: 969193058fee96548aeb863e8796d91e, type: 3}
+  m_PrefabInternal: {fileID: 281190122}
+--- !u!65 &1772695694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1772695690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 18.1767, z: 10.000007}
+  m_Center: {x: -149.68, y: 0.1800003, z: 65.87998}
 --- !u!1001 &1793487521
 Prefab:
   m_ObjectHideFlags: 0
