@@ -9,8 +9,10 @@ public class Creature_Maneger : MonoBehaviour {
 	private AI_Class aI_Class;
 
 	public AI_Class.Type TypeKid;
-	public bool isChaser;
+	[SerializeField] public static int Chasers;
+	private bool isChaser;
 	public float stamina;
+	public float speed;
 	public float reactionSpeed;
 	public float fov;
 	
@@ -25,7 +27,9 @@ public class Creature_Maneger : MonoBehaviour {
 	void Start () {
 		aI_Class = new AI_Class(1);
 		agent = GetComponent<NavMeshAgent>();
-
+		agent.enabled = true;
+		TargetUpdate();
+		GetOOp();
 	}
 	
 	// Update is called once per frame
@@ -80,7 +84,7 @@ public class Creature_Maneger : MonoBehaviour {
 		{
 			target = new Vector3(Random.Range(0,250),0,Random.Range(0,250));			
 			agent.SetDestination(target);
-			Debug.Log(target);
+			//Debug.Log(target);
 		}
 		else
 		{
@@ -93,6 +97,8 @@ public class Creature_Maneger : MonoBehaviour {
 		TypeKid = aI_Class.TypeKid;
 		isChaser = aI_Class.isChaser;
 		stamina = aI_Class.stamina;
+		speed = aI_Class.speed;
+		agent.speed = speed;
 		reactionSpeed = aI_Class.reactionSpeed;
 		fov = aI_Class.fov;
 	}

@@ -8,6 +8,7 @@ public class AI_Class{
 	public Type TypeKid;
 	public bool isChaser;
 	public float stamina;
+	public float speed;
 	public float reactionSpeed;
 	public float fov;
 
@@ -20,6 +21,7 @@ public class AI_Class{
 			case 0:
 				TypeKid = Type.FatKid;
 				stamina = 30f;
+				speed = 2.8f;
 				reactionSpeed = 4f;
 				fov = 170f;
 			break;
@@ -27,6 +29,7 @@ public class AI_Class{
 			case 1:
 				TypeKid = Type.FastKid;
 				stamina = 80f;
+				speed = 4.5f;
 				reactionSpeed = 1f;
 				fov = 130f;
 			break;
@@ -34,6 +37,7 @@ public class AI_Class{
 			case 2:
 				TypeKid = Type.NormalKid;
 				stamina = 50f;
+				speed = 3.5f;
 				reactionSpeed = 2f;
 				fov = 150f;
 			break;

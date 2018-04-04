@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class World_Maneger : MonoBehaviour {
 
+	public Transform SpwanPoint;
 	public int AmountOfEnemys;
 	public GameObject Enemies;
 
 	// Use this for initialization
 	void Start () {
-
-	
+		initSpawn();
 	}
 	
 	// Update is called once per frame
@@ -22,9 +22,10 @@ public class World_Maneger : MonoBehaviour {
 	{
 		for (int i = 0; i < AmountOfEnemys; i++)
 		{
+			Vector3 temp = new Vector3(SpwanPoint.position.x, SpwanPoint.position.y, SpwanPoint.position.z + 1);
 			int x = Random.Range(0, 250);
 			int z = Random.Range(0, 250);
-			Instantiate(Enemies,new Vector3(x,20,z),Quaternion.identity);
+			Instantiate(Enemies, temp, Quaternion.identity);
 		}
 	}
 }
