@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
-  productGUID: 00000000000000000000000000000000
+  productGUID: 2558513c30fc6574990642ae9b6218a0
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -638,7 +638,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: 90191b2d-87b5-40d0-ae79-071dbfdd95fc
-  projectName: 
+  projectName: ChildsPlayProject (1)
   organizationId: mneijndorff
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
