@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour {
     enum AniState{Idle,Walk,Climb}
-    AniState curAni;
+    AniState CurAni;
     bool isClimbing = false;
     public bool canClimb;
 	bool isTagger = true;
@@ -17,11 +17,12 @@ public class PlayerBehaviour : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 
 	}
-    void Start(){
-        curAni = AniState.Idle;
+    void start(){
+        CurAni = AniState.Idle;
     }
-    void Update(){
-        switch (curAni)
+    void update(){
+        Debug.Log(CurAni);
+        switch (CurAni)
         {
             case (AniState.Idle):
                 anim.SetBool("Walking",false);
@@ -29,28 +30,21 @@ public class PlayerBehaviour : MonoBehaviour {
                 break;
             case (AniState.Walk):
                 anim.SetBool("Walking", true);
-                anim.SetBool("climbup",false);
                 break;
             case (AniState.Climb):
                 anim.SetBool("climbup", true);
-                anim.SetBool("Walking",false);
                 break;      
         }
         if (canClimb && Input.GetKeyDown(KeyCode.Space) && !isClimbing)
-//            Debug.Log("thou shall climb");
-        {
+            Debug.Log("thou shall climb");
             isClimbing = true;
             rb.isKinematic = true;
-            curAni = AniState.Climb;
+            anim.SetBool("Climbup", true);
             StartCoroutine(afterClimb());
-            }
-        if (Input.anyKey == false)
-            anim.SetBool("Walking",false);
         }
     IEnumerator afterClimb(){
         yield return new WaitForSeconds(0.3f);
-//        anim.SetBool("Climbup", false);
-        curAni = AniState.Walk;
+        anim.SetBool("Climbup", false);
         while (anim.GetCurrentAnimatorStateInfo(0).IsName("Climb2"))
         {
             yield return null;
@@ -63,7 +57,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		float verMove = Input.GetAxis("Vertical");
 
         if (horMove != 0 || verMove != 0)
-            curAni = AniState.Walk;
+            CurAni = AniState.Walk;
         rb.velocity = (transform.forward * verMove + transform.right * horMove)*speed;
 		rb.velocity = (transform.forward * verMove + transform.right * horMove) * speed;
 
