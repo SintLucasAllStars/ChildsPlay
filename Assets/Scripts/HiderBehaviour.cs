@@ -18,9 +18,11 @@ public class HiderBehaviour : MonoBehaviour {
 
 	public float mapSize;
 
+
+
 	void Start () {
 
-		//seeker = GameObject.FindGameObjectWithTag ("Seeker");
+		seeker = GameObject.FindGameObjectWithTag ("Seeker");
 		gm = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		nma = GetComponent<NavMeshAgent> ();
 
@@ -55,14 +57,25 @@ public class HiderBehaviour : MonoBehaviour {
 		if (nma.remainingDistance < 0.5f) {
 			currentState = AIstate.hiding;
 		}
+
 	}
 
 	public void Hiding(){
-		
+
+		RaycastHit hit;
+		Debug.DrawRay (transform.position, seeker.transform.position - transform.position);
+		if (Physics.Raycast(transform.position,(seeker.transform.position - transform.position),out hit)) {
+			Debug.Log ("spotted seeker");
+		}
+
+		Vector3 lookAt = Vector3.RotateTowards (transform.position, seeker.transform.position, 10f, 10f);
+
+		transform.rotation = Quaternion.LookRotation (lookAt);
+
 	}
 
 	public void Captured(){
-		nma.SetDestination (hidingPosition);
+		nma.SetDestination (startPosition);
 	}
 
 }
