@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/JuulScene.unity
+=======
 - path: Assets/BorisScene.unity
+>>>>>>> a7be2b7fc0f17de61319f548bfdccf74130c6c20
   isLoaded: 1
   isActive: 1
