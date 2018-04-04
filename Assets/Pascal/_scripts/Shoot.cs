@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 	public GameObject bullet;
 	public GameObject bulletSpawnPoint;
+	public GameObject parentObject;
 	float timeBetweenShots;
 	float timeBetweenShotsDefault;
 	public AudioSource gunShot;
@@ -29,7 +30,7 @@ public class Shoot : MonoBehaviour {
 	void ShootBullet(){
 		if (timeBetweenShots <= 0f) {
 			gunShot.Play ();
-			Instantiate (bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
+			Instantiate (bullet, bulletSpawnPoint.transform.position, parentObject.transform.rotation);
 			timeBetweenShots = timeBetweenShotsDefault;
 		}
 	}

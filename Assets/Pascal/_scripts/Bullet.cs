@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		downwardsGravity = Mathf.Pow (downwardsGravity, downwardsGravity);
-		transform.position = transform.position + Vector3.forward;
+		transform.position = transform.position + transform.forward * Time.deltaTime * 140f;
 }
 
 	void OnCollisionEnter(Collision coll){
