@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class Creature_Maneger : MonoBehaviour {
 
+	//scripts needed acces
+	private TerrainGenerator terrainGenerator;
+
 	//OOP part
 	private AI_Class aI_Class;
 
@@ -29,6 +32,7 @@ public class Creature_Maneger : MonoBehaviour {
 		aI_Class = new AI_Class(1);
 		agent = GetComponent<NavMeshAgent>();
 		agent.enabled = true;
+		terrainGenerator = GameObject.Find("World").GetComponent<TerrainGenerator>();
 		TargetUpdate();
 		GetOOp();
 	}
@@ -106,9 +110,12 @@ public class Creature_Maneger : MonoBehaviour {
 		Debug.Log(agent.isOnNavMesh);
 		if(agent.isOnNavMesh)
 		{
-			target = new Vector3(Random.Range(0,250),0,Random.Range(0,250));			
+			float x = Random.Range(0,250);
+			float z = Random.Range(0,250);
+			float y = terrainGenerator.ReturnHeight(x,z);
+			target = new Vector3(x,y,z);			
 			agent.SetDestination(target);
-			//Debug.Log(target);
+			
 		}
 		else
 		{

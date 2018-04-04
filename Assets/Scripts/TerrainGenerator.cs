@@ -2,6 +2,8 @@
 using UnityEngine.AI;
 
 public class TerrainGenerator : MonoBehaviour {
+	Terrain terrain;
+
 	public int width = 256;
 	public int height = 256;
 
@@ -13,11 +15,12 @@ public class TerrainGenerator : MonoBehaviour {
 
 	void Start()
 	{
-		depth = 30;
+		//depth = 30;
 		scale = 2.5f;
 		Terrain terrain = GetComponent<Terrain>();
 		terrain.terrainData = GenerateTerrain (terrain.terrainData);
-	//	surface.BuildNavMesh();
+		surface.BuildNavMesh();
+		Debug.Log(ReturnHeight(20,50));
 	}
 
 	TerrainData GenerateTerrain(TerrainData terrainData) {
@@ -45,5 +48,12 @@ public class TerrainGenerator : MonoBehaviour {
 		float yCoord = (float)y / height * scale;
 
 		return Mathf.PerlinNoise (xCoord, yCoord);
+	}
+
+	public float ReturnHeight(float x, float z)
+	{
+		Vector3 pos = new Vector3(x,0,z);
+		pos.y = Terrain.activeTerrain.SampleHeight(pos) + Terrain.activeTerrain.GetPosition().y;
+		return(pos.y);
 	}
 }
