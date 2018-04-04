@@ -19,24 +19,6 @@ public class HideAndSeek : MonoBehaviour {
 			if (Physics.Raycast (ray, out hit)) {
 				buffer = hit.collider.gameObject;
 				CheckWin ();
-				/*if (hit.transform.name == "Hide1") {
-					buffer = hidePlaces [0];
-					CheckWin ();
-				}
-				if (hit.transform.name == "Hide2") {
-					buffer = hidePlaces [1];
-					CheckWin ();
-				}
-				if (hit.transform.name == "Hide3") {
-					buffer = hidePlaces [2];
-					CheckWin ();
-				}
-				if (hit.transform.name == "Hide4") {
-					buffer = hidePlaces [3];
-					CheckWin ();
-				}*/
-
-
 			}
 		}
 	}
