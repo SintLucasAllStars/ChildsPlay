@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MapScene.unity
+- path: Assets/JuulScene.unity
   isLoaded: 1
   isActive: 1
