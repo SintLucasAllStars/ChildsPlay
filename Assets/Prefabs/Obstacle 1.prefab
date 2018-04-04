@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4199563266815332}
+  - component: {fileID: 114704108332492494}
   m_Layer: 0
   m_Name: Obstacle 1
   m_TagString: Untagged
@@ -113,3 +114,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1618890721396230}
   m_Mesh: {fileID: 4300000, guid: c5044664b28fe52499b86cf376a661c1, type: 3}
+--- !u!114 &114704108332492494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1272027551699694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bed980ce50a80a459bf230671344f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
