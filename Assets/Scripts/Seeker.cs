@@ -151,34 +151,37 @@ public class Seeker : MonoBehaviour
             {
                 if (hit.collider.gameObject.CompareTag("Hider"))
                 {
-                    if (Vector3.Distance(transform.position, hit.collider.transform.position) > 20)
+                    if (hit.collider.gameObject.GetComponent<HiderBehaviour>().currentState != HiderBehaviour.AIstate.captured)
                     {
-                        float angle = Vector3.Angle(transform.forward, (hiders[i].transform.position - transform.position));
-                        if (angle < fov / 4)
+                        if (Vector3.Distance(transform.position, hit.collider.transform.position) > 20)
                         {
-                            target = hiders[i].transform;
-                            canSee = true;
-                            return;
+                            float angle = Vector3.Angle(transform.forward, (hiders[i].transform.position - transform.position));
+                            if (angle < fov / 4)
+                            {
+                                target = hiders[i].transform;
+                                canSee = true;
+                                return;
+                            }
+                            else
+                            {
+                                canSee = false;
+                            }
                         }
                         else
                         {
-                            canSee = false;
+                            float angle = Vector3.Angle(transform.forward, (hiders[i].transform.position - transform.position));
+                            if (angle < fov / 2)
+                            {
+                                target = hiders[i].transform;
+                                canSee = true;
+                                return;
+                            }
+                            else
+                            {
+                                canSee = false;
+                            }
                         }
-                    }
-                    else
-                    {
-                        float angle = Vector3.Angle(transform.forward, (hiders[i].transform.position - transform.position));
-                        if (angle < fov / 2)
-                        {
-                            target = hiders[i].transform;
-                            canSee = true;
-                            return;
-                        }
-                        else
-                        {
-                            canSee = false;
-                        }
-                    }                  
+                    }                    
                 }
                 else
                 {
