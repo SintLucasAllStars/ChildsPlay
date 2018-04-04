@@ -485,6 +485,7 @@ MonoBehaviour:
   patrolSpeed: 10
   maxSpeed: 100
   detectionRate: 100
+  worldSize: 45
   godMode: 0
 --- !u!136 &136601606254229880
 CapsuleCollider:
