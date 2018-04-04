@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/main.unity
-=======
-- path: Assets/BorisScene.unity
->>>>>>> 133f210c79bfe58bc5dcbf245d353e9455a2c13c
+- path: Assets/MapScene.unity
   isLoaded: 1
   isActive: 1
