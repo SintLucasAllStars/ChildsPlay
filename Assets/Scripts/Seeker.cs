@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Seeker : MonoBehaviour
 {
 
-    public enum Mode { Patrol, Search, Chase };
+    public enum Mode { Wait, Patrol, Search, Chase };
     public Mode mode;
 
     public GameObject[] hiders = new GameObject[7];
@@ -39,7 +39,9 @@ public class Seeker : MonoBehaviour
         patrolSpeed = nav.speed;
         maxSpeed = patrolSpeed * 2;
 
-        SetMode(Mode.Patrol);
+        SetMode(Mode.Wait);
+
+        StartCoroutine(WaitAtStart());
 
         StartCoroutine(PatrolBehaviour());
     }
@@ -99,6 +101,12 @@ public class Seeker : MonoBehaviour
                 Debug.Log(HiderBehaviour.AIstate.captured);
             }
         }
+    }
+
+    IEnumerator WaitAtStart()
+    {
+        yield return new WaitForSeconds(10f);
+        SetMode(Mode.Patrol);
     }
 
     IEnumerator PatrolBehaviour()
