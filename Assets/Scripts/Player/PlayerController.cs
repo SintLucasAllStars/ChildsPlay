@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	public float speed = 200000;
+	public float speed = 1;
 
 	Rigidbody rb;
 	Vector3 direction;
@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update () {
-		float horizontalMovement = Input.GetAxis ("Horizontal");
-		float verticalMovement = Input.GetAxis ("Vertical");
+		float horizontalMovement = Input.GetAxisRaw ("Horizontal");
+		float verticalMovement = Input.GetAxisRaw ("Vertical");
 
 		direction = (horizontalMovement * transform.right + verticalMovement * transform.forward).normalized;
 	}
