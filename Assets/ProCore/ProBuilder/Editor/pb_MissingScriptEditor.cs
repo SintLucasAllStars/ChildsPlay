@@ -325,7 +325,7 @@ namespace ProBuilder2.EditorCommon
 					Undo.RegisterCompleteObjectUndo(target, "Fix missing reference.");
 				}
 
-				// Debug.Log("Fix: " + (pbObjectMatches > 2 ? "pb_Object" : "pb_Entity") + "  " + ((Component)target).gameObject.name);
+				// Debug.Log("Fix: " + (pbObjectMatches > 2 ? "pb_Object" : "pb_Entity") + "  " + ((Component)chaser).gameObject.name);
 
 				scriptProperty.objectReferenceValue = pbObjectMatches >= 3 ? pb_monoscript : pe_monoscript;
 				scriptProperty.serializedObject.ApplyModifiedProperties();

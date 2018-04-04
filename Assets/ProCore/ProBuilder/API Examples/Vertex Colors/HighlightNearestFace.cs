@@ -55,7 +55,7 @@ public class HighlightNearestFace : MonoBehaviour
 
 		if(target == null)
 		{
-			Debug.LogWarning("Missing the ProBuilder Mesh target!");
+			Debug.LogWarning("Missing the ProBuilder Mesh chaser!");
 			return;
 		}
 
