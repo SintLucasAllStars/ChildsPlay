@@ -38,34 +38,9 @@ public class Creature_Maneger : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () 
+	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.A))
-		{
-			TargetUpdate();
-		}
-		RaycastHit hit;
-		Vector3 direction = target - transform.position;
-		if (Physics.Raycast(transform.position, direction, out hit))
-		{
-			if (hit.transform.gameObject.CompareTag("Wall"))
-			{
-				float angleW = Vector3.Angle(transform.forward,direction);
-				if (fov < angleW / 2)
-				{
-					//targetupdate should be called	
-				}
-			}
-			if (hit.transform.gameObject.CompareTag("Tagger"))
-			{
-				float angleT = Vector3.Angle(transform.forward, direction);
-				if (fov < angleT / 2)
-				{
-					myState = State.Panic;
-					//a panic mode should be set
-				}
-			}
-		}
+		TargetUpdate();
 	}
 
 	void Stamina()
@@ -104,22 +79,48 @@ public class Creature_Maneger : MonoBehaviour {
 		}
 	}
 
+	void CollisionDetection()
+	{		
+		RaycastHit hit;
+		Vector3 direction = target - transform.position;
+		if (Physics.Raycast(transform.position, direction, out hit))
+		{
+			if (hit.transform.gameObject.CompareTag("Wall"))
+			{
+				float angleW = Vector3.Angle(transform.forward,direction);
+				if (fov < angleW / 2)
+				{
+					//targetupdate should be called	
+				}
+			}
+			if (hit.transform.gameObject.CompareTag("Tagger"))
+			{
+				float angleT = Vector3.Angle(transform.forward, direction);
+				if (fov < angleT / 2)
+				{
+					myState = State.Panic;
+					//a panic mode should be set
+				}
+			}
+		}
+	}
+
 	void TargetUpdate()
 	{
 		Debug.Log("i have been called");
 		Debug.Log(agent.isOnNavMesh);
-		if(agent.isOnNavMesh)
+		if (agent.isOnNavMesh)
 		{
-			float x = Random.Range(0,250);
-			float z = Random.Range(0,250);
-			float y = terrainGenerator.ReturnHeight(x,z);
-			target = new Vector3(x,y,z);			
-			agent.SetDestination(target);
-			
-		}
-		else
-		{
-			return;
+			if(agent.remainingDistance <= 0)
+			{
+				float x = Random.Range(0,250);
+				float z = Random.Range(0,250);
+				float y = terrainGenerator.ReturnHeight(x,z);
+				target = new Vector3(x,y,z);	
+				Debug.Log(target);		
+				agent.SetDestination(target);
+
+			}
 		}
 	}
 
