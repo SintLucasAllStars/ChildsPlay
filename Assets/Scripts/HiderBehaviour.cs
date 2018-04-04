@@ -14,14 +14,13 @@ public class HiderBehaviour : MonoBehaviour {
 	private NavMeshAgent nma;
 
 	private GameObject seeker;
+
 	private GameManager gm;
 
 	public float mapSize;
 
-
-
 	void Start () {
-
+		
 		seeker = GameObject.FindGameObjectWithTag ("Seeker");
 		gm = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		nma = GetComponent<NavMeshAgent> ();
@@ -34,7 +33,7 @@ public class HiderBehaviour : MonoBehaviour {
 	}
 
 	void Update () {
-
+		
 		switch (currentState) {
 		case AIstate.moving:
 			Moving ();
@@ -46,13 +45,14 @@ public class HiderBehaviour : MonoBehaviour {
 			Captured ();
 			break;
 		default:
-			Hiding ();
+			Moving ();
 			break;
 		}
 
 	}
 
 	public void Moving(){
+		
 		nma.SetDestination (hidingPosition);
 		if (nma.remainingDistance < 0.5f) {
 			currentState = AIstate.hiding;
@@ -75,7 +75,9 @@ public class HiderBehaviour : MonoBehaviour {
 	}
 
 	public void Captured(){
+		
 		nma.SetDestination (startPosition);
+
 	}
 
 }
