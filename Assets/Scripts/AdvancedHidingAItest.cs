@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class HiderBehaviour : MonoBehaviour {
+public class AdvancedHidingAItest : MonoBehaviour {
 
 	// Enumerators
 	public enum AIstate {moving,hiding,captured};
@@ -21,13 +21,9 @@ public class HiderBehaviour : MonoBehaviour {
 	public float lowestScan;
 	public Vector3 hidingPosition;
 	public Quaternion hidingRadian;
-
-	private Vector3 startPosition;
-
 	private RaycastHit hit;
 
-	private Vector3 raycastTurn;
-	private Quaternion raycastQuaternion;
+	private Vector3 startPosition;
 
 	private NavMeshAgent nma;
 	private GameObject seeker;
@@ -43,51 +39,24 @@ public class HiderBehaviour : MonoBehaviour {
 		hidingPosition = new Vector3 (Random.Range (-45, 45), 0, Random.Range (-45, 45));
 		nma.SetDestination (hidingPosition);
 
-		StartCoroutine (FindHidingPlace ());
-
-		Debug.Log (Vector3.forward + raycastTurn);
-
-	}
-
-	void Update(){
-	
-		switch (currentState) {
-		case AIstate.moving:
-			break;
-		case AIstate.hiding:
-			FindHidingPlace ();
-			break;
-		case AIstate.captured:
-			break;
-		default:
-			break;
-		}
-	
 	}
 
 	IEnumerator FindHidingPlace(){
-
+	
 		while (!isSatisfied) {
-			concealment = 0;
-			raycastTurn = Vector3.zero;
 			for (int i = 0; i < 10; i++) {
 
-				Vector3 dir = Vector3.forward + raycastTurn;
-				
-				if (Physics.Raycast(transform.position,Vector3.forward + raycastTurn,out hit,20f)) {
-					concealment += hit.distance;
-				} else if (Physics.Raycast(transform.position,Vector3.forward + raycastTurn,out hit,20f) == false) {
-					concealment += 20;
-				}
-				Debug.DrawRay (transform.position, Vector3.forward + raycastTurn,Color.green);
-				raycastQuaternion.eulerAngles = new Vector3 (0, 36, 0);
-				raycastTurn += raycastQuaternion.eulerAngles;
+				/*
+
+				Scan 10x, save the best one and save the vector. Then go to it.
+
+				*/
 
 			}
 			yield return new WaitForSeconds (scanRate);
 		}
 
-
+	
 	}
 
 }
