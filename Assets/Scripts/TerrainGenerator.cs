@@ -9,18 +9,17 @@ public class TerrainGenerator : MonoBehaviour
     public int width = 256;
     public int height = 256;
 
-    public int depth = 30;
-    public float scale = 3f;
+    [Range(10, 15)] public int depth;
+    private float scale = 2f;
 
-    public NavMeshSurface surface;
+    private NavMeshSurface surface;     //this script is used for baking navmesh in runtime
 
 
     void Start()
     {
-        //depth = 30;
-        scale = 2.5f;
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
+        surface = GetComponent<NavMeshSurface>();
         surface.BuildNavMesh();
     }
 
@@ -45,13 +44,18 @@ public class TerrainGenerator : MonoBehaviour
     }
     float CalculateHeight(int x, int y)
     {
-        //Debug.Log(seed);
         float xCoord = (float)x / width * scale;
         float yCoord = (float)y / height * scale;
 
         return Mathf.PerlinNoise(xCoord, yCoord);
     }
 
+    /// <summary>
+    /// will give you back the psotion of y postion 
+    /// of the given x z axis
+    /// </summary>
+    /// <param name="X postion"> </param>
+    /// <param name="Z position"></param>
     public float ReturnHeight(float x, float z)
     {
         Vector3 pos = new Vector3(x, 0, z);

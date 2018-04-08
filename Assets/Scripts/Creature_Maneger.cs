@@ -13,19 +13,19 @@ public class Creature_Maneger : MonoBehaviour
     private AI_Class aI_Class;
     public AI_Class.Type TypeKid;
     [SerializeField] public static int Chasers;
-    private bool isChaser;
-    public float stamina;
+    public bool isChaser;
+    private float stamina;
     private float baseStamina;
-    public float speed;
-    public float reactionSpeed;
-    public float fov;
+    private float speed;
+    private float reactionSpeed;
+    private float fov;
     #endregion
 
     #region AI
     public enum State { Chase, Scarecrow, running, walking, hiding }
     public State myState;
     private NavMeshAgent agent;
-    private Transform[] hidingplaces; //still thinking about a better way to let them find hiding places
+    private Transform[] hidingplaces;
     public Vector3 target;
     #endregion
 
@@ -50,7 +50,7 @@ public class Creature_Maneger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TargetUpdate();
+        TargetUpdate(); // this should be removed before the final release 
         Stamina();
     }
 
