@@ -99,13 +99,13 @@ public class HiderBehaviour : MonoBehaviour {
 			concealment = 0;
 			Vector3 dir = Vector3.zero;
 			for (int i = 0; i < 10; i++) {
-				if (Physics.Raycast (transform.position, Vector3.forward + dir, out hit, 20f)) {
+				if (Physics.Raycast (transform.position, dir, out hit, 20f)) {
 					concealment += hit.distance;
 				} else {
 					concealment += 20;
 				}
-				Debug.DrawRay (transform.position, Vector3.forward + dir,Color.red);
-				dir += directionMultiplier;
+				Debug.DrawRay (transform.position, dir,Color.red);
+				dir += Quaternion.AngleAxis(36,transform.up)*transform.forward;
 			}
 			yield return new WaitForSeconds (scanRate);
 		}
