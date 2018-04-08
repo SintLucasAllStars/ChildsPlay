@@ -33,6 +33,8 @@ public class HiderBehaviour : MonoBehaviour {
 	private GameObject seeker;
 	private GameManager gm;
 
+	private Vector3 directionMultiplier;
+
 	void Start(){
 
 		seeker = GameObject.FindGameObjectWithTag ("Seeker");
@@ -43,9 +45,11 @@ public class HiderBehaviour : MonoBehaviour {
 		hidingPosition = new Vector3 (Random.Range (-45, 45), 0, Random.Range (-45, 45));
 		nma.SetDestination (hidingPosition);
 
+		raycastQuaternion.eulerAngles = new Vector3 (0, 36, 0);
+
 		StartCoroutine (FindHidingPlace ());
 
-		Debug.Log (Vector3.forward + raycastTurn);
+		directionMultiplier = new Vector3 (0.3632711f,0,-0.5f);
 
 	}
 
@@ -67,6 +71,7 @@ public class HiderBehaviour : MonoBehaviour {
 
 	IEnumerator FindHidingPlace(){
 
+		/*
 		while (!isSatisfied) {
 			concealment = 0;
 			raycastTurn = Vector3.zero;
@@ -74,15 +79,33 @@ public class HiderBehaviour : MonoBehaviour {
 
 				Vector3 dir = Vector3.forward + raycastTurn;
 				
-				if (Physics.Raycast(transform.position,Vector3.forward + raycastTurn,out hit,20f)) {
+				if (Physics.Raycast(transform.position, dir, out hit,20f)) {
 					concealment += hit.distance;
-				} else if (Physics.Raycast(transform.position,Vector3.forward + raycastTurn,out hit,20f) == false) {
+				} else  {
 					concealment += 20;
 				}
-				Debug.DrawRay (transform.position, Vector3.forward + raycastTurn,Color.green);
-				raycastQuaternion.eulerAngles = new Vector3 (0, 36, 0);
-				raycastTurn += raycastQuaternion.eulerAngles;
 
+				Debug.DrawRay (transform.position, dir ,Color.green);
+				raycastTurn += raycastQuaternion.eulerAngles;
+				//Debug.Log ("RaycastTurn: " + raycastTurn);
+				Debug.Log ("Quaternion: " + raycastQuaternion.eulerAngles);
+
+			}
+			yield return new WaitForSeconds (scanRate);
+		}
+		*/
+
+		while (!isSatisfied) {
+			concealment = 0;
+			Vector3 dir = Vector3.zero;
+			for (int i = 0; i < 10; i++) {
+				if (Physics.Raycast (transform.position, Vector3.forward + dir, out hit, 20f)) {
+					concealment += hit.distance;
+				} else {
+					concealment += 20;
+				}
+				Debug.DrawRay (transform.position, Vector3.forward + dir,Color.red);
+				dir += directionMultiplier;
 			}
 			yield return new WaitForSeconds (scanRate);
 		}
