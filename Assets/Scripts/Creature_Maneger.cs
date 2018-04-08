@@ -11,7 +11,6 @@ public class Creature_Maneger : MonoBehaviour
 
     #region OOP part
     private AI_Class aI_Class;
-
     public AI_Class.Type TypeKid;
     [SerializeField] public static int Chasers;
     private bool isChaser;
@@ -30,6 +29,11 @@ public class Creature_Maneger : MonoBehaviour
     public Vector3 target;
     #endregion
 
+    #region cozmetic stuff
+    //i really dont know how to spell that word
+    private Light mylight;
+    #endregion
+
     // Use this for initialization
     void Start()
     {
@@ -38,6 +42,7 @@ public class Creature_Maneger : MonoBehaviour
         agent.enabled = true;
         terrainGenerator = GameObject.Find("World").GetComponent<TerrainGenerator>();
         myState = State.running;
+
         TargetUpdate();
         GetOOp();
     }
@@ -51,7 +56,7 @@ public class Creature_Maneger : MonoBehaviour
 
     void Stamina()
     {
-        if (stamina <= 0)
+        if (stamina <= 0 && myState == State.running)
         {
             myState = State.walking;
             agent.speed = speed / 2;
@@ -60,21 +65,23 @@ public class Creature_Maneger : MonoBehaviour
         if (myState == State.running)
         {
             stamina -= Time.deltaTime / 3.5f;
+
+        }
+
+        if (myState == State.walking)
+        {
+            stamina += Time.deltaTime * 1.5f;
             if (stamina >= baseStamina)
             {
                 myState = State.running;
                 agent.speed = speed;
             }
         }
-        //if (myState == State.walking)
-        //{
-        ///stamina -= Time.deltaTime * 1.5f; 
-        //}
     }
 
 
 
-    void CollisionDetection()
+    void HidersFinding()
     {
         RaycastHit hit;
         Vector3 direction = target - transform.position;
@@ -111,6 +118,7 @@ public class Creature_Maneger : MonoBehaviour
         TypeKid = aI_Class.TypeKid;
         isChaser = aI_Class.isChaser;
         stamina = aI_Class.stamina;
+        baseStamina = aI_Class.stamina;
         speed = aI_Class.speed;
         agent.speed = speed;
         reactionSpeed = aI_Class.reactionSpeed;
