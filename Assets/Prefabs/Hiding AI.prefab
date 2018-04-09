@@ -91,8 +91,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995361662275510}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.586805, y: 1.5, z: -2.171895}
+  m_LocalRotation: {x: 0, y: 0.95105654, z: 0, w: 0.309017}
+  m_LocalPosition: {x: 16, y: 1, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4143012692341244}
@@ -100,7 +100,7 @@ Transform:
   - {fileID: 4338153061903712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 144, z: 0}
 --- !u!4 &4143012692341244
 Transform:
   m_ObjectHideFlags: 1
@@ -154,7 +154,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d128c431a02a0a4ebaff308020fcb0a, type: 2}
+  - {fileID: 2100000, guid: baff09db516ebcf479a02dfcd01b89b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -328,9 +328,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  satisfactionReq: 80
+  scanRate: 5
+  isSatisfied: 0
+  concealment: 0
+  lowestScan: 0
   hidingPosition: {x: 0, y: 0, z: 0}
-  mapSize: 50
+  hidingRadian: {x: 0, y: 0, z: 0, w: 0}
 --- !u!135 &135247361704140278
 SphereCollider:
   m_ObjectHideFlags: 1

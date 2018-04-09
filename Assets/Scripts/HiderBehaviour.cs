@@ -105,7 +105,7 @@ public class HiderBehaviour : MonoBehaviour {
 					concealment += 20;
 				}
 				Debug.DrawRay (transform.position, dir,Color.red);
-				dir += Quaternion.AngleAxis(36,transform.up)*transform.forward;
+				dir = Quaternion.AngleAxis(36 * i,transform.up)*transform.forward;
 			}
 			yield return new WaitForSeconds (scanRate);
 		}
