@@ -26,14 +26,11 @@ public class HiderBehaviour : MonoBehaviour {
 
 	private RaycastHit hit;
 
-	private Vector3 raycastTurn;
-	private Quaternion raycastQuaternion;
-
 	private NavMeshAgent nma;
 	private GameObject seeker;
 	private GameManager gm;
 
-	private Vector3 directionMultiplier;
+
 
 	void Start(){
 
@@ -45,11 +42,7 @@ public class HiderBehaviour : MonoBehaviour {
 		hidingPosition = new Vector3 (Random.Range (-45, 45), 0, Random.Range (-45, 45));
 		nma.SetDestination (hidingPosition);
 
-		raycastQuaternion.eulerAngles = new Vector3 (0, 36, 0);
-
 		StartCoroutine (FindHidingPlace ());
-
-		directionMultiplier = new Vector3 (0.3632711f,0,-0.5f);
 
 	}
 
@@ -62,6 +55,7 @@ public class HiderBehaviour : MonoBehaviour {
 			FindHidingPlace ();
 			break;
 		case AIstate.captured:
+			nma.SetDestination (startPosition);
 			break;
 		default:
 			break;
@@ -70,30 +64,6 @@ public class HiderBehaviour : MonoBehaviour {
 	}
 
 	IEnumerator FindHidingPlace(){
-
-		/*
-		while (!isSatisfied) {
-			concealment = 0;
-			raycastTurn = Vector3.zero;
-			for (int i = 0; i < 10; i++) {
-
-				Vector3 dir = Vector3.forward + raycastTurn;
-				
-				if (Physics.Raycast(transform.position, dir, out hit,20f)) {
-					concealment += hit.distance;
-				} else  {
-					concealment += 20;
-				}
-
-				Debug.DrawRay (transform.position, dir ,Color.green);
-				raycastTurn += raycastQuaternion.eulerAngles;
-				//Debug.Log ("RaycastTurn: " + raycastTurn);
-				Debug.Log ("Quaternion: " + raycastQuaternion.eulerAngles);
-
-			}
-			yield return new WaitForSeconds (scanRate);
-		}
-		*/
 
 		while (!isSatisfied) {
 			concealment = 0;
