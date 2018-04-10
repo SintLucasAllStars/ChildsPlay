@@ -12,6 +12,10 @@ public class PlayerBehaviour : MonoBehaviour {
 	float mouseSense= 3f;
     public Animator anim;
 
+    public CapsuleCollider jumpCollider;
+    public float jumpForce = 300f;
+    bool hasJumped;
+
 	GameObject blinkObject;
 	bool isBlinking = false;
 	float blinkDist = 15f;
@@ -91,6 +95,11 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		transform.Rotate (0, Input.GetAxis ("Mouse X") * mouseSense, 0f);
 		transform.GetChild (0).Rotate (-Input.GetAxis("Mouse Y") * mouseSense,0f,0f);
+        if (Input.GetKeyDown(KeyCode.Space) && !hasJumped)
+        {
+            rb.AddForce(Vector3.up * jumpForce);
+            hasJumped = true;
+        }
 	}
 	IEnumerator Blink(){
 		isBlinking = true;
@@ -121,6 +130,15 @@ public class PlayerBehaviour : MonoBehaviour {
     }
     void OnTriggerExit (Collider other){
         canClimb = false;
+    }
+        private void OnCollisionEnter(Collision collision)
+    {   
+        foreach (ContactPoint c in collision.contacts)
+            if (c.thisCollider == jumpCollider)
+            {
+                Debug.Log("jump");
+                hasJumped = false;
+            }
     }
 }
 
