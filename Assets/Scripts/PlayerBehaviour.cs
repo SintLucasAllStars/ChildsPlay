@@ -89,7 +89,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		float whY = rb.velocity.y;
 		Vector3 newVelocity = (transform.forward * verMove + transform.right * horMove)*speed;
-		newVelocity.y = whY;
+		newVelocity.y = whY + GameBehaviour.gb.gravity * Time.deltaTime;
 
 		rb.velocity = newVelocity;
 

@@ -6,7 +6,7 @@ public class GameBehaviour : MonoBehaviour {
 
 	public static GameBehaviour gb;
 
-	public float gravity = 4f;
+	public float gravity = 9.8f;
 
 	List<GameObject> enems;
 	int amountEnemies = 1;
