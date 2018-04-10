@@ -10,7 +10,7 @@ public class NavMeshProblem : MonoBehaviour
     public Transform hidingspot;
 	// Use this for initialization
 	void Start () {
-	    nav = nav = GetComponent<NavMeshAgent>();
+	     nav = GetComponent<NavMeshAgent>();
 	    nav.destination = hidingspot.transform.position;
 
 	}

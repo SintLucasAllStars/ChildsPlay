@@ -28126,11 +28126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e7b50211a0f204c87b8009ed8292c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theManager: {fileID: 0}
+  hideSpotRotation: {x: 0, y: 0, z: 0}
   chaser: {fileID: 74859538, guid: 3cb6800accbeecc48929c236d8fb2e29, type: 2}
   light: {fileID: 0}
   mode: 0
   speed: 0
   Sound: 0
+  hideSpots: {fileID: 0}
   hidingspots:
   - {fileID: 0}
   - {fileID: 0}
