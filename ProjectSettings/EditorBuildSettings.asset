@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wait.unity
     guid: dde78b4011106f94cab155e9cf20c80a
+  - enabled: 1
+    path: Assets/Scenes/Gameover.unity
+    guid: b19a8d73f4abd6d44ac615fef4d78aa8
+  - enabled: 1
+    path: Assets/Scenes/Gewonnen.unity
+    guid: e03eeeab610e90e4aa632a4a6d236214

@@ -41,28 +41,24 @@ public class Raycast : MonoBehaviour
     RaycastHit hit;
 
     public Transform test;
+    public int lives = 2;
+
 
     // Use this for initialization
     void Start()
     {
         findString = colors[Random.Range(0, 4)];
-        findText.text = "Vind " + findString;
+        findText.text = "Find " + findString;
         Debug.Log(findString);
 
         if (gameObject.tag == "Computer")
         {
-            //holder = hidePlaces[Random.Range(0, 4)];
+            myColor = chosenBlockimage.gameObject.GetComponent<Image>().color = Color.white;
+            chosenBlockimage.color = myColor;
             test = hidePlaces[Random.Range(0, 4)].transform;
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
-            //agent.SetDestination(holder.transform.position);
             agent.SetDestination(test.transform.position);
-            Debug.Log("TEST");
         }
-
-        //findString = colors.ToString();
-        //Debug.Log(colors);
-        //m_MyColor = Color.red;
-        //chosenBlockimage.color = m_MyColor;
     }
 
     // Update is called once per frame
@@ -78,7 +74,6 @@ public class Raycast : MonoBehaviour
             {
                 if (hit.collider.gameObject == hidePlaces[i].gameObject && hit.transform.tag == findString)
                 {
-                    Debug.Log("Dit is " + hidePlaces[i] + " breng hem naar de tafel.");
                     selected[i].Play("Selected");
                     myColor = hidePlaces[i].gameObject.GetComponent<Renderer>().material.color;
                     chosenBlockimage.color = myColor;
@@ -86,6 +81,7 @@ public class Raycast : MonoBehaviour
                     holder2 = Instantiate(holder, new Vector3(355.31f, 17.11f, 346.4f), Quaternion.identity);
                     holder2.SetActive(false);
                     holder.SetActive(false);
+                    findText.text = "Right click on the podium";
                     //Destroy(holder);
 
                     hold = true;
@@ -101,20 +97,27 @@ public class Raycast : MonoBehaviour
             Place();
         }
 
-        if (!agent.pathPending)
+        if (gameObject.tag == "Computer")
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if (!agent.pathPending)
             {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    transform.LookAt(test);
-                    if (hit.transform.tag == findString)
+                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                     {
-                        Debug.Log("WOEP");
-                    }
-                    else
-                    {
-                        Debug.Log("FOUT");
+                        transform.LookAt(test);
+                        if (hit.transform.tag == findString)
+                        {
+                            myColor = test.gameObject.GetComponent<Renderer>().material.color;
+                            chosenBlockimage.color = myColor;
+                            SceneManager.LoadScene("Gewonnen");
+                        }
+                        else
+                        {
+                            test.tag = "Hide";
+                            lives--;
+                            Next();
+                        }
                     }
                 }
             }
@@ -129,7 +132,7 @@ public class Raycast : MonoBehaviour
         }
         else
         {
-            Debug.Log("Je hebt geen blok in je handen!");
+            Debug.Log("You do not have a block in your hands!");
         }
     }
 
@@ -146,28 +149,24 @@ public class Raycast : MonoBehaviour
         Computer.SetActive(true);
         chosenMenu.SetActive(false);
         MainCamera.SetActive(false);
-
-        if (gameObject.tag == "Computer")
-        {
-            //findString = colors[Random.Range(0, 4)];
-            //findText.text = "Vind " + findString;
-            //NavMeshAgent agent = GetComponent<NavMeshAgent>();
-            //agent.destination = hidePlaces[Random.Range(0, 4)].transform.position;
-            //Debug.Log("TEST");
-        }
     }
 
-    public void Check()
+    public void Next()
     {
-        //if (navAgent.remainingDistance <= float.Epsilon)
         {
-            //Arrived
+            test = hidePlaces[Random.Range(0, 4)].transform;
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.SetDestination(test.transform.position);
+
+            if (lives == 0)
+            {
+                SceneManager.LoadScene("Gameover");
+            }
         }
     }
-
     IEnumerator Pop()
     {
-        wrong.text = "Dit is niet het juiste blok..";
+        wrong.text = "This is the wrong block!";
         yield return new WaitForSeconds(5);
         wrong.text = "";
         StopCoroutine(Pop());
