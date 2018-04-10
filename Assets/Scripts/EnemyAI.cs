@@ -1,35 +1,41 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using Random = UnityEngine.Random;
 
-public class EnemyAI : MonoBehaviour {
-	public enum Mode {Patrol, Search, Chase, Panic,Run,Hide};
+public class EnemyAI : MonoBehaviour
+{
+    public enum Mode
+    {
+        Patrol,
+        Search,
+        Chase,
+        Panic,
+        Run,
+        Hide
+    }
+
+    public Transform chaser;
+    private Vector3 currentHidingSpot;
+    private readonly float fov = 120f;
+    private bool gameStarted = false;
+    public Quaternion hideSpotRotation;
+    public Transform[] hidingspots;
+    public new Light light;
+    public Mode mode;
+    private NavMeshAgent nav;
+    public float Sound;
+    public float speed;
 
     public GameManager theManager;
-	NavMeshAgent nav;
-	float fov = 120f;
-	Vector3 currentHidingSpot;
-    public Quaternion hideSpotRotation;
-	public Transform chaser;
-	public new Light light;
-	public Mode mode;
-	public float speed;
-    public float Sound;
-    public Transform[] hidingspots;
-    private bool gameStarted= false;
 
     // Use this for initialization
     private void Awake()
     {
         mode = Mode.Chase;
         nav = GetComponent<NavMeshAgent>();
-
     }
 
-    void Start ()
+    private void Start()
     {
         SetMode(Mode.Run);
 
@@ -37,14 +43,14 @@ public class EnemyAI : MonoBehaviour {
 
 
         chaser = GameObject.FindGameObjectWithTag("Player").transform;
-       
+
         //StartCoroutine(AiBehaviour());
     }
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	    IfPlayerVisible();
+
+    // Update is called once per frame
+    private void Update()
+    {
+        IfPlayerVisible();
 
         if (mode == Mode.Hide)
         {
@@ -52,81 +58,50 @@ public class EnemyAI : MonoBehaviour {
             transform.rotation = Quaternion.Slerp(transform.rotation, hideSpotRotation, 1 * Time.deltaTime);
         }
 
-	    
-	    
-	        if (nav.remainingDistance <= 5f &&  nav.remainingDistance >=2)
-	        {
-	            SetMode(Mode.Hide);
-	        }
-	    
+
+        if (nav.remainingDistance <= 8f && nav.remainingDistance >= 2) SetMode(Mode.Hide);
     }
 
-    IEnumerator Hiding()
+    private IEnumerator Hiding()
     {
         while (true)
         {
             nav.updatePosition = false;
             nav.updateRotation = false;
             hideSpotRotation = Quaternion.LookRotation(new Vector3(Random.Range(-360, 360), 0, 0) - transform.position);
-            Debug.Log("test");
             yield return new WaitForSeconds(3);
         }
-
     }
 
-    void IfPlayerVisible()
+    private void IfPlayerVisible()
     {
-        bool canSee = canSeeChaser();
-        
+        var canSee = canSeeChaser();
+
         // happens every frame 
         if (canSee && mode == Mode.Hide)
         {
             SetMode(Mode.Run);
             Debug.Log("you got here");
-
         }
 
-        
+
         if (canSee && mode == Mode.Run)
         {
-
             SetMode(Mode.Panic);
             Debug.Log("Panic");
-
-
-
         }
-
-
-        
-            
-        
     }
-
- 
-
-    IEnumerator AiBehaviour()
-	{
-		while(true)
-		{
-			if(mode == Mode.Patrol)
-			{
-				//Vector3 destination = transform.position + new Vector3(Random.Range(-10, 10), 0f, Random.Range(-10, 10));
-				//nav.SetDestination(destination);
-			}
-			yield return new WaitForSeconds(Random.Range(3,7));
-		}
-	}
 
 
    
 
+
     // when you change mode
-	public void SetMode(Mode m)
-	{
-		mode = m;
-		switch (mode)
-		{
+    public void SetMode(Mode m)
+    {
+        mode = m;
+        switch (mode)
+        {
             case Mode.Run:
                 StopCoroutine("Hiding");
                 nav.destination = hidingspots[Random.Range(0, hidingspots.Length)].transform.position;
@@ -145,49 +120,53 @@ public class EnemyAI : MonoBehaviour {
                 StartCoroutine("Hiding");
                 light.color = Color.blue;
                 break;
-		case Mode.Patrol:
-		
-			break;
-		case Mode.Search:
-			break;
-		case Mode.Chase:
-			break;
-		}
-	}
+            case Mode.Patrol:
 
-
-    public void StupidWorkAround()
-    {
-        SetMode(Mode.Run);
+                break;
+            case Mode.Search:
+                break;
+            case Mode.Chase:
+                break;
+        }
     }
 
-    bool canSeeChaser()
-	{
-		RaycastHit hit;
 
-		Vector3 direction = chaser.position - transform.position;
-		if(Physics.Raycast(transform.position, direction, out hit))
-		{
-			if(hit.collider.gameObject.CompareTag("Player"))
-			{
-				float angle = Vector3.Angle(transform.forward, direction);
-				if(angle < fov/2)
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			} else 
-			{
-				return false;
-			}
-		}
-		else
-		{
-			Debug.Log("I See nothing");
-			return false;
-		}
-	}
+    public void HearingLoudNoise()
+    {
+        // run for selecting hidespot and panic to quickly run away
+        SetMode(Mode.Run);
+        SetMode(Mode.Panic);
+
+        // this is for preventing the hiding spot to be the one he is on now.
+        if (nav.destination == transform.position) HearingLoudNoise();
+    }
+
+    public void HearingNormalNoise()
+    {
+        SetMode(Mode.Run);
+        // this is for preventing the hiding spot to be the one he is on now.
+        if (nav.destination == transform.position) HearingNormalNoise();
+    }
+
+    private bool canSeeChaser()
+    {
+        RaycastHit hit;
+
+        var direction = chaser.position - transform.position;
+        if (Physics.Raycast(transform.position, direction, out hit))
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                var angle = Vector3.Angle(transform.forward, direction);
+                if (angle < fov / 2)
+                    return true;
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+
+        Debug.Log("I See nothing");
+        return false;
+    }
 }

@@ -15,9 +15,10 @@ public class GunSound : MonoBehaviour
 	void Update () {
 
 
+        // gunSound ACtivation
 	    if (Input.GetKeyDown(KeyCode.Space))
 	    {
-	       managerInstance.SoundCheck(this.transform.position);
+	       managerInstance.SoundCheck(this.transform.position,5);
 	        Debug.Log("pressed");
 
 
