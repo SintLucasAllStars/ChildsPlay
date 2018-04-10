@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HasCis : MonoBehaviour
 {
@@ -14,10 +15,13 @@ public class HasCis : MonoBehaviour
     Ray ray;
     RaycastHit hit;
 
+    //public Camera cam;
+    //public Transform goal;
+
     // Use this for initialization
     void Start()
     {
-
+        //NavMeshAgent agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame

@@ -9,6 +9,12 @@ TagManager:
   - hidePlace2
   - hidePlace3
   - hidePlace4
+  - Blauw
+  - Geel
+  - Groen
+  - Rood
+  - Table
+  - Computer
   layers:
   - Default
   - TransparentFX
@@ -18,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Computer
   - 
   - 
   - 
