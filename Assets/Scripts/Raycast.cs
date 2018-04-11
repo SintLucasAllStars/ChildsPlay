@@ -32,6 +32,8 @@ public class Raycast : MonoBehaviour
     public Text findText, wrong;
 
     bool hold;
+    public bool check = false;
+    public bool next = false;
 
     public Camera computerCam;
     public Transform goal;
@@ -50,9 +52,16 @@ public class Raycast : MonoBehaviour
         findString = colors[Random.Range(0, 4)];
         findText.text = "Find " + findString;
         Debug.Log(findString);
+        check = true;
+
+        if (MainCamera.activeInHierarchy)
+        {
+            next = true;
+        }
 
         if (gameObject.tag == "Computer")
         {
+            wrong.GetComponent<Text>().enabled = false;
             myColor = chosenBlockimage.gameObject.GetComponent<Image>().color = Color.white;
             chosenBlockimage.color = myColor;
             test = hidePlaces[Random.Range(0, 4)].transform;
@@ -74,6 +83,8 @@ public class Raycast : MonoBehaviour
             {
                 if (hit.collider.gameObject == hidePlaces[i].gameObject && hit.transform.tag == findString)
                 {
+                    wrong.GetComponent<Text>().enabled = false;
+                    Player.tag = "Hide";
                     selected[i].Play("Selected");
                     myColor = hidePlaces[i].gameObject.GetComponent<Renderer>().material.color;
                     chosenBlockimage.color = myColor;
@@ -82,13 +93,16 @@ public class Raycast : MonoBehaviour
                     holder2.SetActive(false);
                     holder.SetActive(false);
                     findText.text = "Right click on the podium";
-                    //Destroy(holder);
 
                     hold = true;
-                }
+}
                 else
                 {
-                    StartCoroutine(Pop());
+                    if (Player.tag == "Player" && check == true)
+                    {
+                        Debug.Log("WOES");
+                        StartCoroutine(Pop());
+                    }
                 }
             }
         }
@@ -114,13 +128,24 @@ public class Raycast : MonoBehaviour
                         }
                         else
                         {
+                            wrong.GetComponent<Text>().enabled = true;
+                            check = true;
                             test.tag = "Hide";
                             lives--;
+                            StartCoroutine(Poppc());
                             Next();
                         }
                     }
                 }
             }
+        }
+
+        if (Input.GetKeyDown("space") && next == true)
+        {
+            Computer.SetActive(true);
+            chosenMenu.SetActive(false);
+            MainCamera.SetActive(false);
+            wrong.GetComponent<Text>().enabled = true;
         }
     }
 
@@ -128,6 +153,8 @@ public class Raycast : MonoBehaviour
     {
         if (hold == true)
         {
+            Player.SetActive(false);
+            MainCamera.SetActive(true);
             Done();
         }
         else
@@ -140,15 +167,6 @@ public class Raycast : MonoBehaviour
     {
         holder.SetActive(true);
         chosenMenu.SetActive(true);
-        MainCamera.SetActive(true);
-        Player.SetActive(false);
-    }
-
-    public void ComputerTurn()
-    {
-        Computer.SetActive(true);
-        chosenMenu.SetActive(false);
-        MainCamera.SetActive(false);
     }
 
     public void Next()
@@ -164,11 +182,31 @@ public class Raycast : MonoBehaviour
             }
         }
     }
+
     IEnumerator Pop()
     {
-        wrong.text = "This is the wrong block!";
-        yield return new WaitForSeconds(5);
-        wrong.text = "";
-        StopCoroutine(Pop());
+        if (Player.tag == "Hide")
+        {
+            check = false;
+        }
+
+        if (Player.tag == "Player" && check == true)
+        {
+            wrong.text = "This is the wrong block!";
+            yield return new WaitForSeconds(5);
+            wrong.text = "";
+            StopCoroutine(Pop());
+        }
+    }
+
+    IEnumerator Poppc()
+    {
+        if (test.tag == "Hide" && check == true)
+        {
+            wrong.text = "This is the wrong block!";
+            yield return new WaitForSeconds(5);
+            wrong.text = "";
+            StopCoroutine(Pop());
+        }
     }
 }
