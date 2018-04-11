@@ -50,9 +50,12 @@ public class HiderBehaviour : MonoBehaviour {
 	
 		switch (currentState) {
 		case AIstate.moving:
+			if (nma.remainingDistance <= 0.5f) {
+				hidingPosition = new Vector3 (Random.Range (-45, 45), 0, Random.Range (-45, 45));
+			}
 			break;
 		case AIstate.hiding:
-			FindHidingPlace ();
+			// sit idle and wait.
 			break;
 		case AIstate.captured:
 			nma.SetDestination (startPosition);
@@ -63,23 +66,31 @@ public class HiderBehaviour : MonoBehaviour {
 	
 	}
 
+	void Scan(){
+
+		concealment = 0;
+		Vector3 dir = Vector3.zero;
+		for (int i = 0; i < 10; i++) {
+			if (Physics.Raycast (transform.position, dir, out hit, 20f)) {
+				concealment += hit.distance;
+			} else {
+				concealment += 20;
+			}
+			dir = Quaternion.AngleAxis(36 * i,transform.up)*transform.forward;
+		}
+
+	}
+
 	IEnumerator FindHidingPlace(){
 
 		while (!isSatisfied) {
-			concealment = 0;
-			Vector3 dir = Vector3.zero;
-			for (int i = 0; i < 10; i++) {
-				if (Physics.Raycast (transform.position, dir, out hit, 20f)) {
-					concealment += hit.distance;
-				} else {
-					concealment += 20;
-				}
-				Debug.DrawRay (transform.position, dir,Color.red);
-				dir = Quaternion.AngleAxis(36 * i,transform.up)*transform.forward;
+			Scan ();
+			if (concealment <= satisfactionReq) {
+				currentState = AIstate.hiding;
+				isSatisfied = true;
 			}
 			yield return new WaitForSeconds (scanRate);
 		}
-
 
 	}
 
