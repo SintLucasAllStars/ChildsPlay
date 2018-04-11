@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 	float moveSpeed;
-	public Camera myCamera;
+	float mouseX;
+	float mouseY;
+	float rotAmountX;
+	float rotAmountY;
+	Vector3 targetRotation;
+	public float mouseSensitivity;
 
 	// Use this for initialization
 	void Start () {
@@ -13,12 +18,6 @@ public class PlayerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.E)) {
-			transform.eulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y + moveSpeed * Time.deltaTime, transform.localEulerAngles.z);
-		}
-		if (Input.GetKey (KeyCode.Q)) {
-			transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y + -moveSpeed * Time.deltaTime, transform.localEulerAngles.z);
-		}
 		if (Input.GetKey (KeyCode.W)) {
 			transform.Translate (0f, 0f, moveSpeed * Time.deltaTime);
 		}
@@ -32,7 +31,23 @@ public class PlayerMove : MonoBehaviour {
 			transform.Translate (moveSpeed * Time.deltaTime, 0f, 0f);
 		}
 
-
+		RotateCamera ();
 
 	}
+
+	void RotateCamera(){
+		mouseX = Input.GetAxis ("Mouse X");
+		mouseY = Input.GetAxis ("Mouse Y");
+
+		rotAmountX = mouseX * mouseSensitivity;
+		rotAmountY = mouseY * mouseSensitivity;
+
+		targetRotation = transform.rotation.eulerAngles;
+		targetRotation.x -= rotAmountY;
+		targetRotation.y += rotAmountX;
+
+		transform.rotation = Quaternion.Euler (targetRotation);
+	}
 }
+
+
