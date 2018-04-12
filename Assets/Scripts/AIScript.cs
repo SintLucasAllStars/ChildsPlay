@@ -13,6 +13,7 @@ public class AIScript : MonoBehaviour {
     public Mode mode;
     public float maxSpeed;
     public float patrolSpeed;
+    float distance;
 
     public float fov = 120;
     public float reactionTime;
@@ -31,6 +32,25 @@ public class AIScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        distance = Vector3.Distance(target.position, transform.position);
+
+        if (distance > 10)
+        {
+            if(ThirdPersonScript.conspicuousness == 1)
+            {
+                mode = Mode.Suspicious;
+            }
+
+            if(ThirdPersonScript.conspicuousness == 0.5f)
+            {
+                mode = Mode.Patrol;
+            }
+
+            if(ThirdPersonScript.conspicuousness == 2)
+            {
+                mode = Mode.Chase;
+            }
+        }
         bool canSee = CanSeeTarget();
 
         if (canSee && mode == Mode.Patrol)
@@ -91,9 +111,9 @@ public class AIScript : MonoBehaviour {
         {
             if (mode == Mode.Patrol)
             {
-                Vector3 destination = new Vector3(Random.Range(-50, 51), 0f, Random.Range(-50, 51));
-                Debug.Log(destination);
-                nav.SetDestination(destination);
+                //Vector3 destination = new Vector3(Random.Range(-50, 51), 0f, Random.Range(-50, 51));
+                //Debug.Log(destination);
+                //nav.SetDestination(destination);
             }
             yield return new WaitForSeconds(Random.Range(3, 7));
         }

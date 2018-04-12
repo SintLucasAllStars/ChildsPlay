@@ -8,7 +8,7 @@ public class ThirdPersonScript : MonoBehaviour {
     State state;
     public int speed;
     public int turningSpeed;
-    public float conspicuousness = 1;
+    public static float conspicuousness = 1;
     Rigidbody rb;   
 
 	// Use this for initialization
@@ -30,6 +30,7 @@ public class ThirdPersonScript : MonoBehaviour {
                 //speed = 4;
                 break;
             case State.running:
+                conspicuousness = 2;
                 //speed = 10;
                 break;
             default:
@@ -59,6 +60,16 @@ public class ThirdPersonScript : MonoBehaviour {
             state = State.sneeking;
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            state = State.Walking;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            state = State.running;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             state = State.Walking;
         }
