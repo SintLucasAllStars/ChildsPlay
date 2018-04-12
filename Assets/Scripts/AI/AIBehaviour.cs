@@ -9,6 +9,7 @@ public class AIBehaviour : MonoBehaviour {
 	public BodyType bodyType;
 
 	public NavMeshAgent agent;
+	public CentralIntelligence centralIntelligence;
 
 	public float normalSpeed;
 	public Vector3 size;

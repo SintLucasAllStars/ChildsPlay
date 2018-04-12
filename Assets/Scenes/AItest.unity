@@ -779,6 +779,7 @@ GameObject:
   - component: {fileID: 1026892526}
   - component: {fileID: 1026892525}
   - component: {fileID: 1026892530}
+  - component: {fileID: 1026892531}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -862,7 +863,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026892524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.1, y: 0.36, z: -12.7}
+  m_LocalPosition: {x: -27.1, y: 0.36, z: -38.02}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
@@ -889,6 +890,25 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1026892531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1026892524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87311b06db3d68147a50c76f693728d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyType: 1
+  agent: {fileID: 0}
+  centralIntelligence: {fileID: 1925770978}
+  normalSpeed: 0
+  size: {x: 0, y: 0, z: 0}
+  guardMode: 0
+  searchSpeed: 0
+  chaseSpeed: 0
 --- !u!1 &1064586723
 GameObject:
   m_ObjectHideFlags: 0
