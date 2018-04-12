@@ -215,6 +215,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -15.422001
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fd01f69244c499e43b79fe4932fa4cdf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fd01f69244c499e43b79fe4932fa4cdf, type: 3}
+      propertyPath: m_TagString
+      value: weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd01f69244c499e43b79fe4932fa4cdf, type: 3}
   m_IsPrefabParent: 0
@@ -2254,6 +2262,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stabSpeed: 10
+--- !u!65 &1335563291
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1335563288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 620.5682, y: 264.4992, z: 875.9946}
+  m_Center: {x: -7.0259967, y: 101.66063, z: 456.70016}
 --- !u!1 &1480664608
 GameObject:
   m_ObjectHideFlags: 0
