@@ -7,9 +7,10 @@ public class GuardAI : AIBehaviour {
 	public enum GuardMode {Normal, Search, Chase};
 	public GuardMode guardMode;
 
+	public CentralIntelligence centralIntelligence;
+
 	public float searchSpeed;
 	public float chaseSpeed;
-
 
 
 	void Start () {
