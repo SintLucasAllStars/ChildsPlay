@@ -47,9 +47,9 @@ public class PlayerLook : MonoBehaviour {
 			
 			if (hit.collider.CompareTag ("fork")) {
 				
-				pickupText.text = "pak hem maar";
+				//pickupText.text = "pak hem maar";
 			} else{
-				pickupText.text = "";
+				//pickupText.text = "";
 			}
 			if (Input.GetMouseButtonDown (0) && hit.collider.CompareTag ("fork")) {
 				if (clicksTillPull <= 0) {
@@ -61,7 +61,7 @@ public class PlayerLook : MonoBehaviour {
 
 			}
 		}  else{
-			pickupText.text = "";
+			//pickupText.text = "";
 		}
 
 		if (Input.GetKeyDown (KeyCode.F)) {
