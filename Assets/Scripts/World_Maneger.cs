@@ -12,7 +12,7 @@ public class World_Maneger : MonoBehaviour
     public Terrain terrain;
     Vector3 width;
 
-    public GameObject[] Obstacles = new GameObject[3];
+    public GameObject[] Obstacles = new GameObject[2];
 
     // Use this for initialization
     void Start()
@@ -34,7 +34,7 @@ public class World_Maneger : MonoBehaviour
     {
         for (int i = 0; i < AmountOfEnemys; i++)
         {
-            Vector3 temp = new Vector3(SpwanPoint.position.x, SpwanPoint.position.y, SpwanPoint.position.z + 1);
+            Vector3 temp = new Vector3(width.x / 2, 0, width.z / 2);
             Instantiate(Enemies, temp, Quaternion.identity);
         }
     }
@@ -43,7 +43,7 @@ public class World_Maneger : MonoBehaviour
     {
         for (int i = 0; i < AmountOfObstacles; i++)
         {
-            Instantiate(Obstacles[Random.Range(0, 3)], new Vector3(Random.Range(0, width.x), 0, Random.Range(0, width.x)), Quaternion.identity);
+            Instantiate(Obstacles[Random.Range(0, 2)], new Vector3(Random.Range(0, width.x - 10), 0, Random.Range(0, width.x - 10)), Quaternion.identity);
         }
     }
 }

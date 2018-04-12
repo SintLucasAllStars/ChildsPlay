@@ -6,8 +6,8 @@ public class TerrainGenerator : MonoBehaviour
 {
     Terrain terrain;
 
-    public int width = 256;
-    public int height = 256;
+    public int width;
+    public int height;
 
     [Range(10, 15)] public int depth;
     private float scale = 2f;

@@ -8,30 +8,32 @@ public class Creature_Maneger : MonoBehaviour
 
     //objects needed acces
     private TerrainGenerator terrainGenerator;
+    private World_Maneger world_Maneger;
 
     #region OOP part
     private AI_Class aI_Class;
     public AI_Class.Type TypeKid;
-    [SerializeField] public static int Chasers;
-    public bool isChaser;
-    private float stamina;
-    private float baseStamina;
+    public static bool isChaser;
+    private float stamina, baseStamina; // this works but i dont know how and why
     private float speed;
     private float reactionSpeed;
     private float fov;
     #endregion
 
     #region AI
-    public enum State { Chase, Scarecrow, running, walking, hiding }
-    public State myState;
+    private enum State { Chase, Scarecrow, running, walking, hiding }
+    [SerializeField] private State myState;
     private NavMeshAgent agent;
-    private Transform[] hidingplaces;
-    public Vector3 target;
+    private int width;
+    public GameObject[] hidingplaces;
+    private Vector3 target;
     #endregion
 
     #region cozmetic stuff
     //i really dont know how to spell that word
     private Light mylight;
+    //the colors will display the state of the player as a visual repensentation
+    [SerializeField] private Color[] lightColors = new Color[3];
     #endregion
 
     // Use this for initialization
@@ -41,8 +43,10 @@ public class Creature_Maneger : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.enabled = true;
         terrainGenerator = GameObject.Find("World").GetComponent<TerrainGenerator>();
+        world_Maneger = GameObject.Find("World").GetComponent<World_Maneger>();
         myState = State.running;
-
+        width = terrainGenerator.width;
+        hidingplaces = new GameObject[world_Maneger.AmountOfObstacles];
         TargetUpdate();
         GetOOp();
     }
@@ -50,10 +54,10 @@ public class Creature_Maneger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TargetUpdate(); // this should be removed before the final release 
         Stamina();
     }
 
+    //takes of stamina and stamina regen.
     void Stamina()
     {
         if (stamina <= 0 && myState == State.running)
@@ -79,8 +83,6 @@ public class Creature_Maneger : MonoBehaviour
         }
     }
 
-
-
     void HidersFinding()
     {
         RaycastHit hit;
@@ -98,14 +100,19 @@ public class Creature_Maneger : MonoBehaviour
         }
     }
 
+    //the basic funtion of this script is as follows
+    //it will get a random postion in the world and move towards it
+    //how it should work in the final release is as follows
+    //it should update in the start and stay at that given position until
+    //he gets tagged by a tagger. and will have a favor to certian positions
     void TargetUpdate()
     {
         if (agent.isOnNavMesh)
         {
             if (agent.remainingDistance <= 0)
             {
-                float x = Random.Range(0, 250);
-                float z = Random.Range(0, 250);
+                float x = Random.Range(0, width);
+                float z = Random.Range(0, width);
                 float y = terrainGenerator.ReturnHeight(x, z);
                 target = new Vector3(x, y, z);
                 agent.SetDestination(target);
@@ -113,6 +120,7 @@ public class Creature_Maneger : MonoBehaviour
         }
     }
 
+    //gets all the oop vars for this particeuler creature
     void GetOOp()
     {
         TypeKid = aI_Class.TypeKid;
