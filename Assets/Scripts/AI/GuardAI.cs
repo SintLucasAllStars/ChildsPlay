@@ -32,14 +32,14 @@ public class GuardAI : AIBehaviour {
 		agent = GetComponent<NavMeshAgent> ();
 
 		bodyType = (BodyType)Random.Range (0, 3);
-		SetMode (GuardMode.Search);
+		SetMode (GuardMode.Normal);
 
 		sectorCount = centralIntelligence.sectorVectors.GetLength(0);
 		changeSectorTime = Time.time + Random.Range (15, 30);
 		changeSectorCounter = changeSectorTime;
 
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
-		searchPlayer = false;
+		searchPlayer = true;
 
 		switch (bodyType) {
 		case BodyType.Fat:
