@@ -28,12 +28,17 @@ public class GuardAI : AIBehaviour {
 
 
 	void Start () {
+
 		agent = GetComponent<NavMeshAgent> ();
+
 		bodyType = (BodyType)Random.Range (0, 3);
-		guardMode = GuardMode.Normal;
+		SetMode (GuardMode.Search);
+
 		sectorCount = centralIntelligence.sectorVectors.GetLength(0);
 		changeSectorTime = Time.time + Random.Range (15, 30);
 		changeSectorCounter = changeSectorTime;
+
+		player = GameObject.FindGameObjectWithTag ("Player").transform;
 		searchPlayer = false;
 
 		switch (bodyType) {
@@ -41,25 +46,24 @@ public class GuardAI : AIBehaviour {
 			normalSpeed = 2f;
 			searchSpeed = 2f;
 			chaseSpeed = 3f;
-			fov = 90;
+			fov = 60;
 			transform.localScale = new Vector3 (2.5f, 1.8f, 2.5f);
 			break;
 		case BodyType.Normal:
 			normalSpeed = 2.5f;
 			searchSpeed = 3f;
 			chaseSpeed = 5f;
-			fov = 120;
+			fov = 90;
 			transform.localScale = new Vector3 (1.8f, 1.8f, 1.8f);
 			break;
 		case BodyType.Aggressive:
 			normalSpeed = 2.5f;
 			searchSpeed = 4f;
 			chaseSpeed = 6f;
-			fov = 180;
+			fov = 120;
 			transform.localScale = new Vector3 (1.8f, 2f, 1.8f);
 			break;
 		}
-		SetMode (GuardMode.Normal);
 	}
 
 	void Update () {
@@ -68,23 +72,28 @@ public class GuardAI : AIBehaviour {
 		switch (guardMode) {
 		case GuardMode.Normal:
 			changeSectorCounter += Time.deltaTime;
-			if (agent.remainingDistance < 0.5f)
+			if (agent.remainingDistance < 0.5f) {
 				WalkInSector ();
+			}
 			if (changeSectorTime < changeSectorCounter) {
 				SelectSector ();
-				changeSectorTime = Time.time + Random.Range (30, 60);
+				changeSectorTime = Time.time + Random.Range (15, 30);
 			}
-			if (searchPlayer == true) {
+			if ((seePlayer == true) && (searchPlayer == true)) {
 				SetMode (GuardMode.Chase);
 			}
 			break;
 		case GuardMode.Search:
-			//get the latest seen position of the player and set the destination on that position.
+			if (agent.remainingDistance < 0.5) {
+				agent.SetDestination (new Vector3 (transform.position.x + Random.Range (-10, 10), transform.position.y + Random.Range (-10, 10), transform.position.z + Random.Range (-10, 10)));
+			}
+			if (seePlayer) {
+				SetMode (GuardMode.Chase);
+			}
 			break;
 		case GuardMode.Chase:
-			//get the position of the player and set the destination on that position.
+			agent.SetDestination (player.position);
 			break;
-
 		}
 	}
 
@@ -98,9 +107,11 @@ public class GuardAI : AIBehaviour {
 		case GuardMode.Search:
 			guardMode = GuardMode.Search;
 			agent.speed = searchSpeed;
+			agent.SetDestination (centralIntelligence.GetLastPosition());
 
 			break;
 		case GuardMode.Chase:
+			Alerted ();
 			guardMode = GuardMode.Chase;
 			agent.speed = chaseSpeed;
 
@@ -116,12 +127,18 @@ public class GuardAI : AIBehaviour {
 	public void WalkInSector () {
 		agent.SetDestination (centralIntelligence.MoveToSector (currentSector));
 	}
+
+	public void Alerted () {
+		SetMode (GuardMode.Search);
+	}
+
 	public bool SeePlayer () {
 		Vector3 direction = player.position - transform.position;
 		if (Physics.Raycast (transform.position, direction, out hit)) {
 			if (hit.collider.gameObject.CompareTag ("Player")) {
 				float angle = Vector3.Angle (transform.forward, direction);
 				if (angle < fov) {
+					Debug.Log ("Can see");
 					return true;
 				} else {
 					return false;
@@ -130,6 +147,7 @@ public class GuardAI : AIBehaviour {
 				return false;
 			}
 		} else {
+			Debug.Log ("Can't see");
 			return false;
 		}
 	}
