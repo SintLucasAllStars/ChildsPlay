@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
 	private GameObject player;
+	private Vector3 target;
 	
 	private enum EnemyState
 	{
@@ -25,12 +27,15 @@ public class Enemy : MonoBehaviour
 	void Start ()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
+		target = player.transform.position;
 		
 		nodeDiameter = nodeRadius * 2;
 		gridSizeX = Mathf.RoundToInt(worldSize.x/nodeDiameter);
 		gridSizeY = Mathf.RoundToInt(worldSize.y/nodeDiameter);
 		
 		state = EnemyState.Roam;
+
+		StartCoroutine(RoamBehaviour());
 	}
 	
 	void Update ()
@@ -69,12 +74,24 @@ public class Enemy : MonoBehaviour
 	{
 		if (state == EnemyState.Chase)
 		{
+			target = player.transform.position;
 			updatePath();
+			if (path.Count == 0)
+			{
+				Debug.Log("Target reached");
+				return;
+			}
 			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 3f*Time.deltaTime);
 		}
 		else
 		{
-			// todo move randomly
+			updatePath();
+			if (path.Count == 0)
+			{
+				Debug.Log("Target reached");
+				return;
+			}
+			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 3f*Time.deltaTime);
 		}
 	}
 
@@ -82,6 +99,18 @@ public class Enemy : MonoBehaviour
 	{
 		createGrid();
 		findPath();
+	}
+	
+	IEnumerator RoamBehaviour()
+	{
+		while(true)
+		{
+			if(state == EnemyState.Roam)
+			{
+				target = transform.position + new Vector3(Random.Range(-10, 10), 0f, Random.Range(-10, 10));
+			}
+			yield return new WaitForSeconds(Random.Range(3,7));
+		}
 	}
 
 	private void createGrid()
@@ -150,7 +179,7 @@ public class Enemy : MonoBehaviour
 		// Start node
 		Node startNode = nodeFromWorldPos(transform.position);
 		// End node
-		Node endNode = nodeFromWorldPos(player.transform.position);
+		Node endNode = nodeFromWorldPos(target);
 		
 		// A list of all open nodes
 		List<Node> openNodes = new List<Node>();
@@ -246,7 +275,7 @@ public class Enemy : MonoBehaviour
 
 		if (grid != null)
 		{
-			Node playerNode = nodeFromWorldPos(player.transform.position);
+			Node playerNode = nodeFromWorldPos(target);
 			
 			foreach (Node n in grid)
 			{
