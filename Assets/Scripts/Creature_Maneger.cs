@@ -57,10 +57,9 @@ public class Creature_Maneger : MonoBehaviour
         hidingplaces = new GameObject[world_Maneger.AmountOfObstacles];
 
         //running initial functions
-        NewPosition();
         GetOOp();
+        IsTaggerPresent();
 
-        // checking if there are other chasers
 
     }
 
@@ -68,6 +67,10 @@ public class Creature_Maneger : MonoBehaviour
     void Update()
     {
         Stamina();
+        if (TypeKid == AI_Class.Type.Chaser)
+        {
+            //HidersFinding();
+        }
     }
 
     #region General functions
@@ -112,6 +115,26 @@ public class Creature_Maneger : MonoBehaviour
             }
         }
     }
+
+    //will check if there is a tagger present and if there isn't it will assign one
+    void IsTaggerPresent()
+    {
+        if (AmountOfChaser == 0)
+        {
+            TypeKid = AI_Class.Type.Chaser;
+            AmountOfChaser++;
+            Debug.Log(Time.realtimeSinceStartup);
+            StartCoroutine(WaitBegin(20f));
+        }
+        if (TypeKid == AI_Class.Type.Chaser)
+        {
+            StartCoroutine(WaitBegin(10f));
+
+        }
+        else
+            NewPosition();
+    }
+
     #endregion
 
     #region ChaserSpecific
@@ -126,8 +149,10 @@ public class Creature_Maneger : MonoBehaviour
 
     void HidersFinding()
     {
+        NewPosition();
         RaycastHit hit;
         Vector3 direction = target - transform.position;
+        Debug.DrawRay(transform.position, direction, Color.green, 50f);
         if (Physics.Raycast(transform.position, direction, out hit))
         {
             if (hit.transform.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Tagger"))
@@ -149,7 +174,7 @@ public class Creature_Maneger : MonoBehaviour
         TypeKid = aI_Class.TypeKid;
         if (TypeKid == AI_Class.Type.Chaser)
         {
-            if (AmountOfChaser > 1)
+            if (AmountOfChaser > 0)
             {
                 TypeKid = AI_Class.Type.FastKid;
             }
@@ -158,11 +183,18 @@ public class Creature_Maneger : MonoBehaviour
                 AmountOfChaser++;
             }
         }
-
         stamina = aI_Class.stamina;
         baseStamina = aI_Class.stamina;
         speed = aI_Class.speed;
         agent.speed = speed;
         fov = aI_Class.fov;
+    }
+
+    IEnumerator WaitBegin(float waitAmount)
+    {
+        yield return new WaitForSecondsRealtime(waitAmount);
+        HidersFinding();
+        Debug.Log("gewacht");
+        StopCoroutine(WaitBegin(0));
     }
 }
