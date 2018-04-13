@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/het is hier geen zandbak jongens.unity
+  isLoaded: 1
+  isActive: 1
