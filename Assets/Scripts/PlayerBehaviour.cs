@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour {
     enum AniState{Idle,Walk,Climb}
-    AniState CurAni;
-    bool isClimbing = false;
-    public bool canClimb;
-	bool isTagger = true;
+//    AniState CurAni;
+//    bool isClimbing = false;
+//    public bool canClimb;
 	Rigidbody rb;
-	public float speed;
+	float speed = 1.5f;
 	float mouseSense= 3f;
     public Animator anim;
 
-    public CapsuleCollider jumpCollider;
-    public float jumpForce = 300f;
-    bool hasJumped;
+	public bool isGrounded = false;
+    float jumpForce = 7.5f;
 
 	GameObject blinkObject;
 	bool isBlinking = false;
@@ -26,7 +24,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	}
     void Start(){
-        CurAni = AniState.Idle;
+//        CurAni = AniState.Idle;
     }
     void Update(){
 //		switch (CurAni) {
@@ -70,36 +68,43 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (Input.GetMouseButtonUp (0) && blinkObject != null && !isBlinking)
 			Destroy (blinkObject);
     }
-    IEnumerator afterClimb(){
-        yield return new WaitForSeconds(0.3f);
-        anim.SetBool("Climbup", false);
-        while (anim.GetCurrentAnimatorStateInfo(0).IsName("Climb2"))
-        {
-            yield return null;
-        }
-        rb.isKinematic = false;
-        isClimbing = false;
-    }
+//    IEnumerator afterClimb(){
+//        yield return new WaitForSeconds(0.3f);
+//        anim.SetBool("Climbup", false);
+//        while (anim.GetCurrentAnimatorStateInfo(0).IsName("Climb2"))
+//        {
+//            yield return null;
+//        }
+//        rb.isKinematic = false;
+//        isClimbing = false;
+//    }
 	void FixedUpdate () {
-		float horMove = Input.GetAxis("Horizontal");
-		float verMove = Input.GetAxis("Vertical");
+		if (isBlinking)
+			return;
+		if (isGrounded) {
+			if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift))
+				speed = 25f;
+			else
+				speed = 15f;
 
-        if (horMove != 0 || verMove != 0)
-            CurAni = AniState.Walk;
+			float horMove = Input.GetAxis ("Horizontal");
+			float verMove = Input.GetAxis ("Vertical");
 
-		float whY = rb.velocity.y;
-		Vector3 newVelocity = (transform.forward * verMove + transform.right * horMove)*speed;
-		newVelocity.y = whY + GameBehaviour.gb.gravity * Time.deltaTime;
+//			if (horMove != 0 || verMove != 0)
+//				CurAni = AniState.Walk;
 
-		rb.velocity = newVelocity;
+			float whY = rb.velocity.y;
+			Vector3 newVelocity = (transform.forward * verMove + transform.right * horMove) * speed;
+			newVelocity.y = whY + GameBehaviour.gb.gravity * Time.deltaTime;
 
+			rb.velocity = newVelocity;
+
+			if (Input.GetKeyDown(KeyCode.Space))
+				rb.AddForce(transform.up * jumpForce);
+		} else
+			rb.velocity += new Vector3(0f,GameBehaviour.gb.gravity * Time.deltaTime,0f);
 		transform.Rotate (0, Input.GetAxis ("Mouse X") * mouseSense, 0f);
 		transform.GetChild (0).Rotate (-Input.GetAxis("Mouse Y") * mouseSense,0f,0f);
-        if (Input.GetKeyDown(KeyCode.Space) && !hasJumped)
-        {
-            rb.AddForce(Vector3.up * jumpForce);
-            hasJumped = true;
-        }
 	}
 	IEnumerator Blink(){
 		isBlinking = true;
@@ -120,25 +125,25 @@ public class PlayerBehaviour : MonoBehaviour {
 		Time.timeScale = 1f;
 		Camera.main.fieldOfView = 60;
 		transform.position = blinkObject.transform.position;
-
+		rb.velocity = Vector3.zero;
 		Destroy (blinkObject);
 		isBlinking = false;
 	}
 
-    void OnTriggerEnter (Collider other){
-        canClimb = true;
-    }
-    void OnTriggerExit (Collider other){
-        canClimb = false;
-    }
-        private void OnCollisionEnter(Collision collision)
-    {   
-        foreach (ContactPoint c in collision.contacts)
-            if (c.thisCollider == jumpCollider)
-            {
-                Debug.Log("jump");
-                hasJumped = false;
-            }
-    }
+//    void OnTriggerEnter (Collider other){
+//        canClimb = true;
+//    }
+//    void OnTriggerExit (Collider other){
+//        canClimb = false;
+//    }
+//        private void OnCollisionEnter(Collision collision)
+//    {   
+//        foreach (ContactPoint c in collision.contacts)
+//            if (c.thisCollider == jumpCollider)
+//            {
+//                Debug.Log("jump");
+//                hasJumped = false;
+//            }
+//    }
 }
 

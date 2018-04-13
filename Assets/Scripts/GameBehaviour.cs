@@ -20,7 +20,7 @@ public class GameBehaviour : MonoBehaviour {
 		DontDestroyOnLoad (this);
 
 
-		player = Instantiate (Resources.Load<GameObject> ("Prefabs/Jimmy"), GetSpawningPosition(), Quaternion.identity);
+		player = Instantiate (Resources.Load<GameObject> ("Prefabs/Jimmy"));
 		enems = new List<GameObject> (amountEnemies);
 		for (int i = 0; i < amountEnemies; i++)
 			enems.Add (Instantiate (Resources.Load<GameObject> ("Prefabs/ShadowJimmy"), GetSpawningPosition (), Quaternion.identity));
