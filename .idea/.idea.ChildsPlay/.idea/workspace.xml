@@ -2,12 +2,737 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2334209-0b20-4395-a361-2f3d063da16a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Node.cs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Node.cs.meta" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChildsPlay/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ChildsPlay/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChildsPlay/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ChildsPlay/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Lion_Statue.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Lion_Statue.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Lion_Statue_2.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Lion_Statue_2.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Lion_statue.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Lion_statue.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Materials.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Materials/Material__Block.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Materials/Material__Block.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Materials/Material__Lion.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Materials/Material__Lion.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Block.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Block/Stone_Block_Albedo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Block/Stone_Block_Albedo.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Block/Stone_Block_MetallicSmoothness.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Block/Stone_Block_MetallicSmoothness.tga.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Block/Stone_Block_Normal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Block/Stone_Block_Normal.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion/Lion_Statue_Albedo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion/Lion_Statue_Albedo.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion/Lion_Statue_MetalicSmoothness.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion/Lion_Statue_MetalicSmoothness.tga.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion/Lion_Statue_Normal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion/Lion_Statue_Normal.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion/Lion_Statue_Occlusion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Lion_Statue/Textures/Lion/Lion_Statue_Occlusion.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Main.unity" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Main.unity.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Plugins.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/HistogramCompute.compute" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/HistogramCompute.compute.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/HistogramRender.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/HistogramRender.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/ParadeRender.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/ParadeRender.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/VectorscopeCompute.compute" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/VectorscopeCompute.compute.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/VectorscopeRender.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/VectorscopeRender.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/WaveformCompute.compute" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/WaveformCompute.compute.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/WaveformRender.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/Monitors/WaveformRender.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/UI.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/UI/CurveBackground.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/UI/CurveBackground.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/UI/MotionBlendingIcon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/UI/MotionBlendingIcon.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/UI/Trackball.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor Resources/UI/Trackball.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Attributes.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/AntialiasingModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/AntialiasingModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/BloomModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/BloomModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/BuiltinDebugViewsEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/BuiltinDebugViewsEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/ChromaticAberrationEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/ChromaticAberrationEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/ColorGradingModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/ColorGradingModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/DefaultPostFxModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/DefaultPostFxModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/DepthOfFieldModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/DepthOfFieldModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/DitheringModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/DitheringModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/FogModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/FogModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/GrainModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/GrainModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/MotionBlurModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/MotionBlurModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/ScreenSpaceReflectionModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/ScreenSpaceReflectionModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/UserLutModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/UserLutModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/VignetteModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Models/VignetteModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors/HistogramMonitor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors/HistogramMonitor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors/ParadeMonitor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors/ParadeMonitor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors/VectorscopeMonitor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors/VectorscopeMonitor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors/WaveformMonitor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Monitors/WaveformMonitor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingBehaviourEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingBehaviourEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingFactory.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingFactory.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingInspector.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingInspector.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingModelEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingModelEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingMonitor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessingMonitor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PropertyDrawers.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PropertyDrawers/GetSetDrawer.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PropertyDrawers/GetSetDrawer.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PropertyDrawers/TrackballGroupDrawer.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PropertyDrawers/TrackballGroupDrawer.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/CurveEditor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/CurveEditor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/EditorGUIHelper.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/EditorGUIHelper.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/EditorResources.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/EditorResources.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/FxStyles.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/FxStyles.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/ReflectionUtils.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/ReflectionUtils.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/COPYING.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/COPYING.txt.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_0.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_1.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_10.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_11.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_12.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_13.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_14.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_15.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_16.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_17.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_18.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_19.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_2.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_20.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_21.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_22.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_23.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_24.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_25.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_26.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_27.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_28.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_29.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_3.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_30.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_31.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_32.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_33.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_34.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_35.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_36.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_37.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_38.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_39.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_4.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_40.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_41.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_42.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_43.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_44.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_45.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_46.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_47.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_48.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_49.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_5.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_50.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_51.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_51.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_52.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_53.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_54.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_54.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_55.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_56.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_57.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_58.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_58.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_59.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_6.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_60.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_61.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_62.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_63.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_63.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_7.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_8.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_9.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Bluenoise64/LICENSE.txt.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ACES.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ACES.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/AmbientOcclusion.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/AmbientOcclusion.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Blit.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Blit.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Bloom.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Bloom.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Bloom.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Bloom.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/BuiltinDebugViews.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/BuiltinDebugViews.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ColorGrading.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ColorGrading.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Common.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Common.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/DepthOfField.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/DepthOfField.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/DepthOfField.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/DepthOfField.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/DiskKernels.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/DiskKernels.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/EyeAdaptation.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/EyeAdaptation.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/EyeAdaptation.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/EyeAdaptation.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/EyeHistogram.compute" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/EyeHistogram.compute.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/FXAA.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/FXAA.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/FXAA3.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/FXAA3.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Fog.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Fog.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/GrainGen.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/GrainGen.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/LutGen.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/LutGen.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/MotionBlur.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/MotionBlur.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/MotionBlur.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/MotionBlur.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ScreenSpaceRaytrace.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ScreenSpaceRaytrace.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/TAA.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/TAA.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/TAA.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/TAA.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Tonemapping.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Tonemapping.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Uber.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/Uber.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/UberSecondPass.cginc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Resources/Shaders/UberSecondPass.cginc.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/GetSetAttribute.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/GetSetAttribute.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/MinAttribute.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/MinAttribute.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/TrackballAttribute.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/TrackballAttribute.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/BloomComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/BloomComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/ColorGradingComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/ColorGradingComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/DitheringComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/DitheringComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/FogComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/FogComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/FxaaComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/FxaaComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/GrainComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/GrainComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/MotionBlurComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/MotionBlurComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/TaaComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/TaaComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/UserLutComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/UserLutComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/VignetteComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Components/VignetteComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/AntialiasingModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/AntialiasingModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/BloomModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/BloomModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/ColorGradingModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/ColorGradingModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/DepthOfFieldModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/DepthOfFieldModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/DitheringModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/DitheringModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/EyeAdaptationModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/EyeAdaptationModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/FogModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/FogModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/GrainModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/GrainModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/MotionBlurModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/MotionBlurModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/UserLutModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/UserLutModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/VignetteModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Models/VignetteModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingBehaviour.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingBehaviour.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingComponent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingComponent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingContext.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingContext.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingModel.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingProfile.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessingProfile.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/ColorGradingCurve.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/ColorGradingCurve.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/GraphicsUtils.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/GraphicsUtils.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/MaterialFactory.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/MaterialFactory.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/RenderTextureFactory.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/RenderTextureFactory.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/LUTs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/LUTs/NeutralLUT_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/LUTs/NeutralLUT_16.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/LUTs/NeutralLUT_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/LUTs/NeutralLUT_32.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt00.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt01.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt02.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt03.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_BlueRed.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_BlueRed.tga.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_GreenPurple.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_GreenPurple.tga.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_PurpleGreen.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_PurpleGreen.tga.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_RedBlue.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_RedBlue.tga.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/CustomMotionVectorDebugProfile.asset" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/CustomMotionVectorDebugProfile.asset.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/ExampleScene.unity" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/ExampleScene.unity.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/ExampleWheelController.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/ExampleWheelController.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugMotionVectors.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugMotionVectors.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugQuad.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugQuad.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials/UVChecker.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials/UVChecker.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials/WheelMotionVectors.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Materials/WheelMotionVectors.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Models.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Models/WheelMovecs.FBX" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Models/WheelMovecs.FBX.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Shaders.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Shaders/CustomMotionVectorTexture.shader" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Shaders/CustomMotionVectorTexture.shader.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Textures.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Textures/DebugMotionVectors.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Textures/DebugMotionVectors.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Textures/UVChecker.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Textures/UVChecker.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Textures/WheelMotionVectors.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/PostProcessing/Utilities/CustomMotionTexture/Textures/WheelMotionVectors.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Footstep01.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Footstep01.wav.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Footstep02.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Footstep02.wav.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Footstep03.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Footstep03.wav.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Footstep04.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Footstep04.wav.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Jump.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Jump.wav.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Land.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Audio/Land.wav.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/FirstPersonCharacterGuidelines.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/FirstPersonCharacterGuidelines.txt.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Prefabs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Prefabs/FPSController.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Prefabs/FPSController.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Prefabs/RigidBodyFPSController.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Prefabs/RigidBodyFPSController.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/HeadBob.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/HeadBob.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Materials.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Materials/RollerBallGrey.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Materials/RollerBallGrey.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Materials/RollerBallWhite.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Materials/RollerBallWhite.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Models.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Models/RollerBall.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Models/RollerBall.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Prefabs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Prefabs/RollerBall.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Prefabs/RollerBall.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/RollerBallGuidelines.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/RollerBallGuidelines.txt.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Scripts.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Scripts/Ball.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Scripts/Ball.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Scripts/BallUserControl.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Scripts/BallUserControl.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Textures.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Textures/RollerBallAlbedo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Textures/RollerBallAlbedo.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Textures/RollerBallSpecularGloss.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/RollerBall/Textures/RollerBallSpecularGloss.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidCrouch.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidCrouch.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidIdle.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidIdle.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidIdleJumpUp.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidIdleJumpUp.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidJumpAndFall.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidJumpAndFall.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidMidAir.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidMidAir.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidRun.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidRun.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidRunTurn.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidRunTurn.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidRunTurnSharp.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidRunTurnSharp.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidStandTurn.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidStandTurn.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidWalk.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidWalk.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurn.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurn.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurnSharp.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animation/HumanoidWalkTurnSharp.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanGrey.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanGrey.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanWhite.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanWhite.mat.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Models.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Models/Ethan.fbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Models/Ethan.fbx.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Prefabs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Prefabs/AIThirdPersonController.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Prefabs/AIThirdPersonController.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Prefabs/ThirdPersonController.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Prefabs/ThirdPersonController.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/AICharacterControl.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/AICharacterControl.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Textures.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Textures/EthanNormals.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Textures/EthanNormals.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Textures/EthanOcclusion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Textures/EthanOcclusion.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/ThirdPersonCharacterGuidelines.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/ThirdPersonCharacterGuidelines.txt.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/CrossPlatformInputGuidelines.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/CrossPlatformInputGuidelines.txt.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/CarTiltControls.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/CarTiltControls.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileTiltControlRig.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileTiltControlRig.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/InputAxisScrollbar.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/InputAxisScrollbar.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/MobileControlRig.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/MobileControlRig.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorOverSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorOverSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorUpSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorUpSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowOverSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowOverSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowUpSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowUpSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeOverSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeOverSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeUpSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeUpSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonCameraCycleUpSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonCameraCycleUpSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonResetSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonResetSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonSpacebarSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonSpacebarSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickOverSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickOverSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickUpSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickUpSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleFullUpSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleFullUpSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleSlowUpSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleSlowUpSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/SliderBackgroundSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/SliderBackgroundSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/SliderHandleSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/SliderHandleSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/TouchpadSprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/TouchpadSprite.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Editor.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Editor/CrossPlatformInput.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Bouncy.physicmaterial" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Bouncy.physicmaterial.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Ice.physicmaterial" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Ice.physicmaterial.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/MaxFriction.physicMaterial" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/MaxFriction.physicMaterial.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Metal.physicmaterial" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Metal.physicmaterial.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Rubber.physicmaterial" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Rubber.physicmaterial.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Wood.physicmaterial" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/Wood.physicmaterial.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/ZeroFriction.physicMaterial" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/PhysicsMaterials/ZeroFriction.physicMaterial.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/ActivateTrigger.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/ActivateTrigger.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/AlphaButtonClickMask.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/AlphaButtonClickMask.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/AutoMobileShaderSwitch.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/AutoMobileShaderSwitch.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/AutoMoveAndRotate.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/AutoMoveAndRotate.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/CameraRefocus.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/CameraRefocus.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/CurveControlledBob.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/CurveControlledBob.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/DragRigidbody.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/DragRigidbody.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/DynamicShadowSettings.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/DynamicShadowSettings.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/EventSystemChecker.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/EventSystemChecker.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/FOVKick.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/FOVKick.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/FPSCounter.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/FPSCounter.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/FollowTarget.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/FollowTarget.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/ForcedReset.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/ForcedReset.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/LerpControlledBob.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/LerpControlledBob.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/ObjectResetter.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/ObjectResetter.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/ParticleSystemDestroyer.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/ParticleSystemDestroyer.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/PlatformSpecificContent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/PlatformSpecificContent.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/Prefabs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/SimpleActivatorMenu.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/SimpleActivatorMenu.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/SimpleMouseRotator.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/SimpleMouseRotator.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/SmoothFollow.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/SmoothFollow.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/TimedObjectActivator.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/TimedObjectActivator.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/TimedObjectDestructor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/TimedObjectDestructor.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/WaypointCircuit.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/WaypointCircuit.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/WaypointProgressTracker.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Standard Assets/Utility/WaypointProgressTracker.cs.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.ChildsPlay/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ChildsPlay/.idea/contentModel.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.ChildsPlay/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ChildsPlay/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,16 +743,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CameraMovement.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CameraMovement.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
-                <marker date="1522228453491" expanded="false" signature="6:78" ph="..." />
-                <marker date="1522228453491" expanded="true" signature="124:536" ph="{...}" />
-                <marker date="1522228453491" expanded="true" signature="293:325" ph="{...}" />
-                <marker date="1522228453491" expanded="true" signature="378:534" ph="{...}" />
+                <marker date="1522224769379" expanded="false" signature="6:78" ph="..." />
+                <marker date="1522224769379" expanded="true" signature="124:536" ph="{...}" />
+                <marker date="1522224769379" expanded="true" signature="293:325" ph="{...}" />
+                <marker date="1522224769379" expanded="true" signature="378:534" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Finish.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Finish.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <marker date="1523653642566" expanded="true" signature="6:113" ph="..." />
+                <marker date="1523653642566" expanded="true" signature="151:248" ph="{...}" />
+                <marker date="1523653642566" expanded="true" signature="191:246" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -36,109 +775,9 @@
       <file leaf-file-name="Enemy.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
+            <state relative-caret-position="840">
               <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
-              <folding>
-                <marker date="1522845256381" expanded="true" signature="6:52" ph="..." />
-                <marker date="1522845256381" expanded="true" signature="88:4722" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="144:167" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="433:466" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="484:713" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="544:600" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="656:692" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="743:803" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="830:957" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="866:914" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="921:954" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="985:1021" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="1049:1577" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="1245:1571" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="1288:1567" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="1621:2027" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="2072:2499" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="2152:2475" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="2189:2471" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="2220:2247" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="2411:2466" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="2524:4174" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="2982:4171" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="3113:3309" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="3259:3304" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="3506:3611" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="3670:4167" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="3739:3766" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="3930:4162" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="4110:4156" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="4217:4439" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="4327:4398" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="4489:4718" ph="{...}" />
-                <marker date="1522845256381" expanded="true" signature="4624:4674" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThirdPersonUserControl.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-787">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1517260873000" expanded="false" signature="6:78" ph="..." />
-                <marker date="1517260873000" expanded="true" signature="132:2800" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="244:2798" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="776:1493" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="875:950" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="967:1317" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="1525:1672" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="1560:1662" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="1764:2792" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="2085:2328" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="2345:2517" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThirdPersonCharacter.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1517260873000" expanded="true" signature="72:7194" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="247:7192" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="1094:1514" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="1573:2383" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="1582:1736" ph="/* convert the world relative moveInput vector into a local-relative ... */" />
-                <marker date="1517260873000" expanded="true" signature="2120:2172" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="2180:2220" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="2430:3108" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="2465:2620" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="2628:3104" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="2944:2994" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="3147:3581" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="3219:3577" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="3535:3572" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="3619:4877" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="3919:3986" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="3991:4247" ph="/* calculate which leg is behind, so as to leave that leg trailing in the jump animation ... */" />
-                <marker date="1517260873000" expanded="true" signature="4462:4517" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="4522:4693" ph="/* the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector, ... */" />
-                <marker date="1517260873000" expanded="true" signature="4736:4792" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="4800:4873" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="4911:5188" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="5244:5622" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="5394:5618" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="5655:5918" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="5951:6369" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="5959:6098" ph="/* we implement this function to override the default root motion. ... */" />
-                <marker date="1517260873000" expanded="true" signature="6141:6365" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="6398:7189" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="6662:6841" ph="/* 0.1f is a small offset to start the ray from inside the character ... */" />
-                <marker date="1517260873000" expanded="true" signature="6957:7068" ph="{...}" />
-                <marker date="1517260873000" expanded="true" signature="7076:7185" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,13 +785,9 @@
       <file leaf-file-name="Node.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Node.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="987">
+            <state relative-caret-position="705">
               <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding>
-                <marker date="1522844948708" expanded="true" signature="37:458" ph="{...}" />
-                <marker date="1522844948708" expanded="true" signature="251:388" ph="{...}" />
-                <marker date="1522844948708" expanded="true" signature="412:454" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,11 +798,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Finish.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -175,6 +809,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Note.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Finish.cs" />
       </list>
     </option>
   </component>
@@ -205,27 +840,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="ChildsPlay (4 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ChildsPlay (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="ChildsPlay (4 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ChildsPlay (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="ChildsPlay (4 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ChildsPlay (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="ChildsPlay (4 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ChildsPlay (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
@@ -236,7 +872,6 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,7 +889,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Unity Debug.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -272,11 +907,12 @@
       <updated>1522224735136</updated>
       <workItem from="1522224740131" duration="881000" />
       <workItem from="1522843913801" duration="2145000" />
+      <workItem from="1523652339962" duration="1248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3026000" />
+    <option name="totallyTimeSpent" value="4274000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -288,28 +924,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -327,69 +963,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        <state relative-caret-position="105">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <marker date="1522228453491" expanded="false" signature="6:78" ph="..." />
-            <marker date="1522228453491" expanded="true" signature="124:536" ph="{...}" />
-            <marker date="1522228453491" expanded="true" signature="293:325" ph="{...}" />
-            <marker date="1522228453491" expanded="true" signature="378:534" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Node.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <marker date="1522844948708" expanded="true" signature="37:458" ph="{...}" />
-            <marker date="1522844948708" expanded="true" signature="251:388" ph="{...}" />
-            <marker date="1522844948708" expanded="true" signature="412:454" ph="{...}" />
+            <marker date="1522224769379" expanded="false" signature="6:78" ph="..." />
+            <marker date="1522224769379" expanded="true" signature="124:536" ph="{...}" />
+            <marker date="1522224769379" expanded="true" signature="293:325" ph="{...}" />
+            <marker date="1522224769379" expanded="true" signature="378:534" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
+        <state relative-caret-position="840">
           <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
-          <folding>
-            <marker date="1522845256381" expanded="true" signature="6:52" ph="..." />
-            <marker date="1522845256381" expanded="true" signature="88:4722" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="144:167" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="433:466" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="484:713" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="544:600" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="656:692" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="743:803" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="830:957" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="866:914" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="921:954" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="985:1021" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="1049:1577" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="1245:1571" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="1288:1567" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="1621:2027" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="2072:2499" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="2152:2475" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="2189:2471" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="2220:2247" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="2411:2466" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="2524:4174" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="2982:4171" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="3113:3309" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="3259:3304" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="3506:3611" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="3670:4167" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="3739:3766" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="3930:4162" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="4110:4156" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="4217:4439" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="4327:4398" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="4489:4718" ph="{...}" />
-            <marker date="1522845256381" expanded="true" signature="4624:4674" ph="{...}" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -397,72 +994,84 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1517260873000" expanded="true" signature="72:7194" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="247:7192" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="1094:1514" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="1573:2383" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="1582:1736" ph="/* convert the world relative moveInput vector into a local-relative ... */" />
-            <marker date="1517260873000" expanded="true" signature="2120:2172" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="2180:2220" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="2430:3108" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="2465:2620" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="2628:3104" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="2944:2994" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="3147:3581" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="3219:3577" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="3535:3572" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="3619:4877" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="3919:3986" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="3991:4247" ph="/* calculate which leg is behind, so as to leave that leg trailing in the jump animation ... */" />
-            <marker date="1517260873000" expanded="true" signature="4462:4517" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="4522:4693" ph="/* the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector, ... */" />
-            <marker date="1517260873000" expanded="true" signature="4736:4792" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="4800:4873" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="4911:5188" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="5244:5622" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="5394:5618" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="5655:5918" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="5951:6369" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="5959:6098" ph="/* we implement this function to override the default root motion. ... */" />
-            <marker date="1517260873000" expanded="true" signature="6141:6365" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="6398:7189" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="6662:6841" ph="/* 0.1f is a small offset to start the ray from inside the character ... */" />
-            <marker date="1517260873000" expanded="true" signature="6957:7068" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="7076:7185" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Node.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-787">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="705">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Finish.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <marker date="1517260873000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1517260873000" expanded="true" signature="132:2800" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="244:2798" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="776:1493" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="875:950" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="967:1317" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="1525:1672" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="1560:1662" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="1764:2792" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="2085:2328" ph="{...}" />
-            <marker date="1517260873000" expanded="true" signature="2345:2517" ph="{...}" />
+            <marker date="1523653642566" expanded="true" signature="6:113" ph="..." />
+            <marker date="1523653642566" expanded="true" signature="151:248" ph="{...}" />
+            <marker date="1523653642566" expanded="true" signature="191:246" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="588">
+          <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
           <folding>
-            <marker date="1522228453491" expanded="false" signature="6:78" ph="..." />
-            <marker date="1522228453491" expanded="true" signature="124:536" ph="{...}" />
-            <marker date="1522228453491" expanded="true" signature="293:325" ph="{...}" />
-            <marker date="1522228453491" expanded="true" signature="378:534" ph="{...}" />
+            <marker date="1522224769379" expanded="false" signature="6:78" ph="..." />
+            <marker date="1522224769379" expanded="true" signature="124:536" ph="{...}" />
+            <marker date="1522224769379" expanded="true" signature="293:325" ph="{...}" />
+            <marker date="1522224769379" expanded="true" signature="378:534" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Node.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <marker date="1522224769379" expanded="false" signature="6:78" ph="..." />
+            <marker date="1522224769379" expanded="true" signature="124:536" ph="{...}" />
+            <marker date="1522224769379" expanded="true" signature="293:325" ph="{...}" />
+            <marker date="1522224769379" expanded="true" signature="378:534" ph="{...}" />
           </folding>
         </state>
       </provider>
