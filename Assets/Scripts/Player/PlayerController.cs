@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	public float speed = 1;
+	public float speed;
 
 	Rigidbody rb;
 	Vector3 direction;
 
 	void Start () {
+		speed = 1000;
 		rb = GetComponent<Rigidbody> ();
 	}
 

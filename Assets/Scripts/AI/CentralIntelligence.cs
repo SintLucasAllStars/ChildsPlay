@@ -23,7 +23,11 @@ public class CentralIntelligence : MonoBehaviour {
 
 	public Vector3 MoveToSector (int s) {
 		Vector3 destination = new Vector3 (Random.Range (sectorVectors [s, 0].x, sectorVectors [s, 1].x), Random.Range (sectorVectors [s, 0].y, sectorVectors [s, 1].y), Random.Range (sectorVectors [s, 0].z, sectorVectors [s, 1].z));
-		Debug.Log (destination);
+		return destination;
+	}
+
+	public Vector3 MoveInSector (int s) {
+		Vector3 destination = new Vector3 (Random.Range (sectorVectors [s, 0].x, sectorVectors [s, 1].x), Random.Range (sectorVectors [s, 0].y, sectorVectors [s, 1].y), Random.Range (sectorVectors [s, 0].z, sectorVectors [s, 1].z));
 		return destination;
 	}
 }
