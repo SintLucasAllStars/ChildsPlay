@@ -11,7 +11,7 @@ public class AIBehaviour : MonoBehaviour {
 	public Transform target;
 	public Mode mode;
     public Transform player;
-    public float runDistance;
+    float runDistance;
 	public float fov = 120;
 	public float delay;
 
