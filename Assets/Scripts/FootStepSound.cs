@@ -13,7 +13,7 @@ public class FootStepSound : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-	    if (Input.GetKeyDown(KeyCode.Return))
+		if (Input.GetKeyDown(KeyCode.W))
 	    {
 	        managerInstance.SoundCheck(this.transform.position, 1);
 	        Debug.Log("pressed");

@@ -169,4 +169,10 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("I See nothing");
         return false;
     }
+
+	void OnCollisionEnter(Collision coll){
+		if (coll.gameObject.tag == "Bullet") {
+			Destroy (this.gameObject);
+		}
+	}
 }

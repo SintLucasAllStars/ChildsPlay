@@ -8,12 +8,14 @@ public class PlayerMove : MonoBehaviour {
 	float mouseY;
 	float rotAmountX;
 	float rotAmountY;
+	float xAxisClamp;
 	Vector3 targetRotation;
 	public float mouseSensitivity;
 
 	// Use this for initialization
 	void Start () {
 		moveSpeed = 20f;
+		xAxisClamp = 0f;
 	}
 	
 	// Update is called once per frame
@@ -42,10 +44,19 @@ public class PlayerMove : MonoBehaviour {
 		rotAmountX = mouseX * mouseSensitivity;
 		rotAmountY = mouseY * mouseSensitivity;
 
+		xAxisClamp -= rotAmountY;
+
 		targetRotation = transform.rotation.eulerAngles;
 		targetRotation.x -= rotAmountY;
 		targetRotation.y += rotAmountX;
 
+		if (xAxisClamp > 90) {
+			xAxisClamp = 90;
+			targetRotation.x = 90;
+		} else if (xAxisClamp < -90) {
+			xAxisClamp = -90;
+			targetRotation.x = 270;
+		}
 		transform.rotation = Quaternion.Euler (targetRotation);
 	}
 }
