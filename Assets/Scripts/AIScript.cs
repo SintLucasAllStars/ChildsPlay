@@ -34,7 +34,7 @@ public class AIScript : MonoBehaviour {
 	void Update () {
         distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance > 10)
+        if (distance < 10)
         {
             if(ThirdPersonScript.conspicuousness == 1)
             {
@@ -49,6 +49,7 @@ public class AIScript : MonoBehaviour {
             if(ThirdPersonScript.conspicuousness == 2)
             {
                 mode = Mode.Chase;
+                transform.LookAt(target.transform);
             }
         }
         bool canSee = CanSeeTarget();
