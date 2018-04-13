@@ -111,7 +111,7 @@ public class GuardAI : AIBehaviour {
 
 			break;
 		case GuardMode.Chase:
-			Alerted ();
+			AlertGuards ();
 			guardMode = GuardMode.Chase;
 			agent.speed = chaseSpeed;
 
@@ -126,6 +126,10 @@ public class GuardAI : AIBehaviour {
 
 	public void WalkInSector () {
 		agent.SetDestination (centralIntelligence.MoveToSector (currentSector));
+	}
+
+	public void AlertGuards () {
+		centralIntelligence.Alert (player.position);
 	}
 
 	public void Alerted () {
