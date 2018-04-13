@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		moveSpeed = 20f;
+		moveSpeed = 40f;
 		xAxisClamp = 0f;
 	}
 	

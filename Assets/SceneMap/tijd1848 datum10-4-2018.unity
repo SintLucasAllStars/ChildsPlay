@@ -114,7 +114,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 9e011a9e2f7226744b55ce4c97263876, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5ca93c403f4a56a409f521d477a6a947, type: 2}
 --- !u!1 &5013117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,35 +1917,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61312681}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &63769932 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1913589065087984, guid: a160f7e1a1061494880949d5fc8003a3,
-    type: 2}
-  m_PrefabInternal: {fileID: 163140715}
---- !u!114 &63769940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 63769932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b658b1fc44e9ae4bb592e05a764715f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  managerInstance: {fileID: 0}
---- !u!114 &63769941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 63769932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2fc67deec4e0143b287ca10b671aae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  managerInstance: {fileID: 0}
 --- !u!1 &68815051
 GameObject:
   m_ObjectHideFlags: 0
@@ -5213,7 +5184,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4527227377734556, guid: a160f7e1a1061494880949d5fc8003a3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 16.80252
+      value: 17.89
       objectReference: {fileID: 0}
     - target: {fileID: 4527227377734556, guid: a160f7e1a1061494880949d5fc8003a3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5238,10 +5209,6 @@ Prefab:
     - target: {fileID: 4527227377734556, guid: a160f7e1a1061494880949d5fc8003a3, type: 2}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1913589065087984, guid: a160f7e1a1061494880949d5fc8003a3, type: 2}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a160f7e1a1061494880949d5fc8003a3, type: 2}
@@ -56613,11 +56580,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1091074927}
     m_Modifications:
-    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
-        type: 2}
-      propertyPath: hidingspots.Array.size
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 4637935960429744, guid: a08787f151402bf4f815dc4b9d230213, type: 2}
       propertyPath: m_LocalPosition.x
       value: -114.81305
@@ -56650,10 +56612,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1686406234816642, guid: a08787f151402bf4f815dc4b9d230213, type: 2}
-      propertyPath: m_Name
-      value: Hider (6)
-      objectReference: {fileID: 0}
+    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
+        type: 2}
+      propertyPath: hidingspots.Array.data[0]
+      value: 
+      objectReference: {fileID: 1267836225}
+    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
+        type: 2}
+      propertyPath: hidingspots.Array.data[1]
+      value: 
+      objectReference: {fileID: 89171689}
+    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
+        type: 2}
+      propertyPath: hidingspots.Array.data[2]
+      value: 
+      objectReference: {fileID: 1273961645}
+    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
+        type: 2}
+      propertyPath: hidingspots.Array.data[3]
+      value: 
+      objectReference: {fileID: 2125254114}
     - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
         type: 2}
       propertyPath: hidingspots.Array.data[4]
@@ -56676,35 +56654,6 @@ Prefab:
       objectReference: {fileID: 1035633834}
     - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
         type: 2}
-      propertyPath: hidingspots.Array.data[0]
-      value: 
-      objectReference: {fileID: 1267836225}
-    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
-        type: 2}
-      propertyPath: hidingspots.Array.data[1]
-      value: 
-      objectReference: {fileID: 89171689}
-    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
-        type: 2}
-      propertyPath: hidingspots.Array.data[2]
-      value: 
-      objectReference: {fileID: 1273961645}
-    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
-        type: 2}
-      propertyPath: hidingspots.Array.data[3]
-      value: 
-      objectReference: {fileID: 2125254114}
-    - target: {fileID: 1686406234816642, guid: a08787f151402bf4f815dc4b9d230213, type: 2}
-      propertyPath: m_TagString
-      value: Hider
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
-        type: 2}
-      propertyPath: mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895682162554810, guid: a08787f151402bf4f815dc4b9d230213,
-        type: 2}
       propertyPath: hidingspots.Array.data[8]
       value: 
       objectReference: {fileID: 432171596}
@@ -56723,6 +56672,10 @@ Prefab:
       propertyPath: hidingspots.Array.data[11]
       value: 
       objectReference: {fileID: 593002519}
+    - target: {fileID: 1686406234816642, guid: a08787f151402bf4f815dc4b9d230213, type: 2}
+      propertyPath: m_Name
+      value: Hider (6)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a08787f151402bf4f815dc4b9d230213, type: 2}
   m_IsPrefabParent: 0

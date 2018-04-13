@@ -1,22 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public List<EnemyAI> hiderAis;
 
-    public GameObject[] hiders;
+    public List<GameObject> hiders;
 
     public Transform SoundLocation;
 
     // Use this for initialization
     private void Start()
     {
-        hiders = GameObject.FindGameObjectsWithTag("Hider");
-        for (var i = 0; i < hiders.Length; i++)
+        Cursor.lockState = CursorLockMode.Locked;
+        hiders = GameObject.FindGameObjectsWithTag("Hider").ToList();
+        for (var i = 0; i < hiders.Count; i++)
         {
             hiderAis.Add(hiders[i].GetComponent<EnemyAI>());
-
+            
         }
     }
 
@@ -40,16 +42,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void SoundCheck(Vector3 soundLocation, int modif)
     {
+      
         int soundLevel;
         var soundBaseLevel = 0;
         var modifier = 0;
 
         modifier = modif;
 
-
         float distanceToSound;
         Debug.Log("before for loop");
-        for (var i = 0; i < hiders.Length; i++)
+        for (var i = 0; i < hiders.Count; i++)
         {
             // baseSoundlevel based on distance
 
@@ -76,5 +78,6 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("after for loop");
     }
-    
+
+
 }

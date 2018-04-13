@@ -28,9 +28,13 @@ public class Shoot : MonoBehaviour {
 	}
 
 	void ShootBullet(){
-		if (timeBetweenShots <= 0f) {
+		if (timeBetweenShots <= 0f)
+		{
+		    var gunSoundCheck = GameObject.Find("Player").GetComponent<GunSound>();
 			gunShot.Play ();
-			Instantiate (bullet, bulletSpawnPoint.transform.position, parentObject.transform.rotation);
+		    gunSoundCheck.GunSoundCheck();
+
+            Instantiate (bullet, bulletSpawnPoint.transform.position, parentObject.transform.rotation);
 			timeBetweenShots = timeBetweenShotsDefault;
 		}
 	}

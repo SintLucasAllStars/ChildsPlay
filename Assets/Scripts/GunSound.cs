@@ -16,12 +16,17 @@ public class GunSound : MonoBehaviour
 
 
         // gunSound ACtivation
-		if (Input.GetKeyDown(KeyCode.Mouse0))
-	    {
-	       managerInstance.SoundCheck(this.transform.position,5);
-	        Debug.Log("pressed");
+		
+    }
+
+  public  void GunSoundCheck()
+    {
+        
+        
+            managerInstance.SoundCheck(this.transform.position, 5);
+            Debug.Log("pressed");
 
 
-        }
+        
     }
 }

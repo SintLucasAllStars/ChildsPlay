@@ -171,7 +171,10 @@ public class EnemyAI : MonoBehaviour
     }
 
 	void OnCollisionEnter(Collision coll){
-		if (coll.gameObject.tag == "Bullet") {
+		if (coll.gameObject.tag == "Bullet")
+		{
+		    theManager.hiders.Remove(this.gameObject);
+		    theManager.hiderAis.Remove(this.GetComponent<EnemyAI>());
 			Destroy (this.gameObject);
 		}
 	}

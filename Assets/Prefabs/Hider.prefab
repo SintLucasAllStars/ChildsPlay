@@ -86,8 +86,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1686406234816642}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.703903, y: 14.41, z: -124.64}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -114.81305, y: -224.43463, z: -233.5679}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4276285923408862}
   - {fileID: 4956011435794044}
@@ -263,18 +263,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e7b50211a0f204c87b8009ed8292c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theManager: {fileID: 0}
-  hideSpotRotation: {x: 0, y: 0, z: 0, w: 0}
   chaser: {fileID: 0}
-  light: {fileID: 108948776329821550}
-  mode: 4
-  speed: 0
-  Sound: 0
+  hideSpotRotation: {x: 0, y: 0, z: 0, w: 0}
   hidingspots:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  light: {fileID: 108948776329821550}
+  mode: 2
+  Sound: 0
+  speed: 0
+  theManager: {fileID: 0}
 --- !u!136 &136842121846721684
 CapsuleCollider:
   m_ObjectHideFlags: 1
