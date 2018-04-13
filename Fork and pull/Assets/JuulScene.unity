@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2690,9 +2690,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1812065169
@@ -2809,6 +2809,11 @@ Prefab:
         type: 2}
       propertyPath: forkPositions.Array.data[3].z
       value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375489053763970, guid: c910b53e8b63a47468a91a8229241c23,
+        type: 2}
+      propertyPath: sneakMultiplier
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114868060717174172, guid: c910b53e8b63a47468a91a8229241c23, type: 2}

@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
 	float currentSideSpeed;
 	public float sprintMultiplier;
 	float currentSprintMulti;
+	public float sneakMultiplier;
+	float currentSneakMulti;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +27,13 @@ public class PlayerMovement : MonoBehaviour {
 		} else {
 			currentSprintMulti = 1f;
 		}
+
+		if (Input.GetKey (KeyCode.Space)) {
+			currentSneakMulti = sneakMultiplier;
+		} else {
+			currentSneakMulti = 1f;
+		}
+
 		if (Input.GetKey (KeyCode.W)) {
 			currentForSpeed = forwardSpeed*currentSprintMulti;
 		} else if (Input.GetKey (KeyCode.S)) {
