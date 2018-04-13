@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ThirdPersonScript : MonoBehaviour {
 
-    enum State { Walking, sneeking, running}
-    State state;
-    public int speed;
+    public enum State { Walking, sneeking, running}
+    public State state;
+    public float speed;
+    public float setSpeed;
     public int turningSpeed;
     public static float conspicuousness = 1;
     Rigidbody rb;   
 
 	// Use this for initialization
 	void Start () {
+        setSpeed = speed;
         rb = GetComponent<Rigidbody>();
 	}
 	
@@ -22,37 +24,47 @@ public class ThirdPersonScript : MonoBehaviour {
         switch (state)
         {
             case State.Walking:
-                //speed = 8;
+                speed = setSpeed;
                 conspicuousness = 1;
                 break;
             case State.sneeking:
+                speed = setSpeed / 2;
                 conspicuousness = 0.5f;
                 //speed = 4;
                 break;
             case State.running:
                 conspicuousness = 2;
-                //speed = 10;
+                speed = setSpeed * 1.5f;
                 break;
             default:
                 break;
         }
         if (Input.GetKey(KeyCode.W))
         {
+            transform.Translate(speed * Time.deltaTime, 0 , 0);
             //rb.velocity = transform.forward * speed;
             //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
-            rb.AddForce(transform.forward * speed);
+            //rb.AddForce(transform.forward * speed);
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            //rb.velocity = transform.forward * -speed;
+            transform.Translate(-speed * Time.deltaTime, 0, 0);            //rb.velocity = transform.forward * -speed;
             //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
-            rb.AddForce(transform.forward * -speed);
+            //rb.AddForce(transform.forward * -speed);
         }
 
-        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+        if (Input.GetKey(KeyCode.A))
         {
-            state = State.Walking;
-            rb.velocity = Vector3.zero;
+            transform.Translate(0, 0, speed * Time.deltaTime);            //rb.velocity = transform.forward * -speed;
+            //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
+            //rb.AddForce(transform.forward * -speed);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(0, 0, -speed * Time.deltaTime);             //rb.velocity = transform.forward * -speed;
+            //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
+            //rb.AddForce(transform.forward * -speed);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -74,14 +86,14 @@ public class ThirdPersonScript : MonoBehaviour {
             state = State.Walking;
         }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(0, -turningSpeed * Time.deltaTime, 0);
-        }
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    transform.Rotate(0, -turningSpeed * Time.deltaTime, 0);
+        //}
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(0, turningSpeed * Time.deltaTime, 0);
-        }
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    transform.Rotate(0, turningSpeed * Time.deltaTime, 0);
+        //}
     }
 }
