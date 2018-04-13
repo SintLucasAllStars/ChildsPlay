@@ -18,6 +18,8 @@ public class GuardAI : AIBehaviour {
 	public float changeSectorCounter;
 	public float changeSectorTime;
 
+	public float stopSearch;
+
 	int sectorCount;
 	int currentSector;
 
@@ -84,6 +86,9 @@ public class GuardAI : AIBehaviour {
 			}
 			break;
 		case GuardMode.Search:
+			if (Time.time > stopSearch) {
+				SetMode (GuardMode.Normal);
+			}
 			if (agent.remainingDistance < 0.5) {
 				agent.SetDestination (new Vector3 (transform.position.x + Random.Range (-10, 10), transform.position.y + Random.Range (-10, 10), transform.position.z + Random.Range (-10, 10)));
 			}
@@ -107,7 +112,8 @@ public class GuardAI : AIBehaviour {
 		case GuardMode.Search:
 			guardMode = GuardMode.Search;
 			agent.speed = searchSpeed;
-			agent.SetDestination (centralIntelligence.GetLastPosition());
+			agent.SetDestination (centralIntelligence.GetLastPosition ());
+			stopSearch = Time.time + Random.Range (30, 45);
 
 			break;
 		case GuardMode.Chase:
@@ -134,6 +140,7 @@ public class GuardAI : AIBehaviour {
 
 	public void Alerted () {
 		SetMode (GuardMode.Search);
+		searchPlayer = true;
 	}
 
 	public bool SeePlayer () {
