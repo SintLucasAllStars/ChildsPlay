@@ -5,7 +5,7 @@ using UnityEngine;
 public class Camerascript : MonoBehaviour {
 
     public GameObject player;
-    Vector3 distance = new Vector3(0, 8, 0);
+    Vector3 vieuwDistance = new Vector3(0, 20, 0);
 
     private void Start()
     {
@@ -13,6 +13,6 @@ public class Camerascript : MonoBehaviour {
     }
 
     void FixedUpdate () {
-            transform.position = Vector3.Lerp(transform.position, player.transform.position + distance, 0.3f);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position + vieuwDistance, 0.3f);
 	}
 }
