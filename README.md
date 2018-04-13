@@ -1,4 +1,5 @@
 ## Team: Jorrit, Tijn & Bosko
+What did we make: We made a kind of mix with hide and seek and tag. There's AI that goes to hide and an AI that goes to seek them and tag them out. You can read through our commits to see what we all did, but we split it up in 3 main tasks: Jorrit spent time on the seeker, Tijn spent time on the Hider AI and Bosko did some world-creation and spent time on player interactions and helping us out with the AI.
 
 # ChildsPlay
 
