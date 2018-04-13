@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-	public GameObject player;
+	private GameObject player;
 	
 	private enum EnemyState
 	{
@@ -24,6 +24,12 @@ public class Enemy : MonoBehaviour
 
 	void Start ()
 	{
+		player = GameObject.FindGameObjectWithTag("Player");
+		
+		nodeDiameter = nodeRadius * 2;
+		gridSizeX = Mathf.RoundToInt(worldSize.x/nodeDiameter);
+		gridSizeY = Mathf.RoundToInt(worldSize.y/nodeDiameter);
+		
 		state = EnemyState.Roam;
 	}
 	
@@ -43,10 +49,20 @@ public class Enemy : MonoBehaviour
 		
 		MoveEnemy();
 	}
-
-	private bool CanSeePlayer()
+	
+	bool CanSeePlayer()
 	{
-		return false; // todo check if enemy can see player
+		RaycastHit hit;
+
+		Vector3 direction = player.transform.position - transform.position;
+		if(Physics.Raycast(transform.position, direction, out hit))
+		{
+			if(hit.collider.gameObject.Equals(player))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private void MoveEnemy()
@@ -54,7 +70,7 @@ public class Enemy : MonoBehaviour
 		if (state == EnemyState.Chase)
 		{
 			updatePath();
-			// todo follow path
+			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 3f*Time.deltaTime);
 		}
 		else
 		{
@@ -222,6 +238,41 @@ public class Enemy : MonoBehaviour
 			return 14 * disY + 10 * (disX - disY);
 		}
 		return 14 * disX + 10 * (disY - disX);
+	}
+	
+	private void OnDrawGizmos()
+	{
+		Gizmos.DrawWireCube(transform.position, new Vector3(worldSize.x, 1, worldSize.y));
+
+		if (grid != null)
+		{
+			Node playerNode = nodeFromWorldPos(player.transform.position);
+			
+			foreach (Node n in grid)
+			{
+
+				if (n == playerNode)
+				{
+					Gizmos.color = Color.yellow;
+					Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
+				}
+
+				if (path != null && path.Contains(n))
+				{
+					Gizmos.color = Color.blue;
+					Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
+				}
+				else
+				{
+					Gizmos.color = n.walkable ? Color.green : Color.red;
+					
+					Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
+				}
+				
+			}
+			
+		}
+		
 	}
 	
 }
