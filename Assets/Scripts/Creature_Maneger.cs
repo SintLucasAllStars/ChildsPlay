@@ -24,9 +24,10 @@ public class Creature_Maneger : MonoBehaviour
     [SerializeField] private State myState;
     private NavMeshAgent agent;
     private int width;
-    public GameObject[] hidingplaces;
+    public GameObject[] Players;
     private Vector3 target;
     private Vector3 targetTagger;
+    private bool waiting = false;
     #endregion
 
     #region cozmetic stuff
@@ -54,7 +55,8 @@ public class Creature_Maneger : MonoBehaviour
         //setting variable
         myState = State.running;
         width = terrainGenerator.width;
-        hidingplaces = new GameObject[world_Maneger.AmountOfObstacles];
+        Players = new GameObject[world_Maneger.AmountOfEnemys];
+        Players = GameObject.FindGameObjectsWithTag("Player");
 
         //running initial functions
         GetOOp();
@@ -67,9 +69,9 @@ public class Creature_Maneger : MonoBehaviour
     void Update()
     {
         Stamina();
-        if (TypeKid == AI_Class.Type.Chaser)
+        if (TypeKid == AI_Class.Type.Chaser && waiting)
         {
-            //HidersFinding();
+            HidersFinding();
         }
     }
 
@@ -123,11 +125,12 @@ public class Creature_Maneger : MonoBehaviour
         {
             TypeKid = AI_Class.Type.Chaser;
             AmountOfChaser++;
-            Debug.Log(Time.realtimeSinceStartup);
+            this.gameObject.tag = "Tagger";
             StartCoroutine(WaitBegin(20f));
         }
         if (TypeKid == AI_Class.Type.Chaser)
         {
+            this.gameObject.tag = "Player";
             StartCoroutine(WaitBegin(10f));
 
         }
@@ -140,10 +143,13 @@ public class Creature_Maneger : MonoBehaviour
     #region ChaserSpecific
     void ChasePlayer()
     {
+        RaycastHit hit;
         if (myState == State.Chase)
         {
             agent.SetDestination(targetTagger);
             Debug.Log(targetTagger);
+
+
         }
     }
 
@@ -151,21 +157,31 @@ public class Creature_Maneger : MonoBehaviour
     {
         NewPosition();
         RaycastHit hit;
-        Vector3 direction = target - transform.position;
-        Debug.DrawRay(transform.position, direction, Color.green, 50f);
-        if (Physics.Raycast(transform.position, direction, out hit))
+        for (int i = 0; i < Players.Length; i++)
         {
-            if (hit.transform.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Tagger"))
+            Debug.DrawRay(transform.position, Players[i].transform.position - transform.position);
+            // am i proud of this if stament no does it work HECK yea 
+            if (Physics.Raycast(transform.position, (Players[i].transform.position - transform.position), out hit) && hit.collider.gameObject.CompareTag("Player") && hit.collider.gameObject.GetComponent<Creature_Maneger>().myState != State.Scarecrow)
             {
-                float angleT = Vector3.Angle(transform.forward, direction);
-                if (fov < angleT / 2)
+                if (Vector3.Distance(transform.position, hit.collider.transform.position) > 10)
                 {
-                    myState = State.Chase;
-                    targetTagger = hit.transform.position;
+                    float angle = Vector3.Angle(transform.forward, (Players[i].transform.position - transform.position));
+                    if (angle < fov / 2)
+                    {
+                        myState = State.Chase;
+                        targetTagger = hit.transform.position;
+                        ChasePlayer();
+                    }
+                    else
+                    {
+                        myState = State.running;
+                    }
                 }
             }
         }
     }
+
+
     #endregion
 
     //gets all the oop vars for this particeuler creature
@@ -194,7 +210,21 @@ public class Creature_Maneger : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(waitAmount);
         HidersFinding();
-        Debug.Log("gewacht");
+        waiting = true;
         StopCoroutine(WaitBegin(0));
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (TypeKid == AI_Class.Type.Chaser)
+        {
+            Creature_Maneger creature = col.gameObject.GetComponent<Creature_Maneger>();
+            if (col.gameObject.CompareTag("Player") && creature.myState != State.Scarecrow)
+            {
+                creature.myState = State.Scarecrow;
+            }
+            else
+                HidersFinding();
+        }
     }
 }
