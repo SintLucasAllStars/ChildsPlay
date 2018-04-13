@@ -43,10 +43,20 @@ public class Enemy : MonoBehaviour
 		
 		MoveEnemy();
 	}
-
-	private bool CanSeePlayer()
+	
+	bool CanSeePlayer()
 	{
-		return false; // todo check if enemy can see player
+		RaycastHit hit;
+
+		Vector3 direction = player.transform.position - transform.position;
+		if(Physics.Raycast(transform.position, direction, out hit))
+		{
+			if(hit.collider.gameObject.Equals(player))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private void MoveEnemy()
