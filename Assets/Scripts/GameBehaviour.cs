@@ -12,6 +12,8 @@ public class GameBehaviour : MonoBehaviour {
 	int amountEnemies = 1;
 	GameObject tagger;
 	GameObject player;
+
+    public float SpawnHeight;
 	void Start () {
 		if (GameBehaviour.gb == null)
 			GameBehaviour.gb = this;
@@ -33,6 +35,6 @@ public class GameBehaviour : MonoBehaviour {
 
 	Vector3 GetSpawningPosition(){
 		//Random position where you can spawn;
-		return new Vector3(Random.Range(-2f,2f),2f,Random.Range(-2f,2f));
+        return new Vector3(Random.Range(-2f,2f),SpawnHeight,Random.Range(-2f,2f));
 	}
 }

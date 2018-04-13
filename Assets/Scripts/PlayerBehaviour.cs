@@ -47,11 +47,20 @@ public class PlayerBehaviour : MonoBehaviour {
 //		StartCoroutine (afterClimb ());
 //		}
 
+        if (Input.GetKeyDown(KeyCode.E)){
+        
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Runner")
+                Debug.Log("Jimmy NO!!");
+            else
+                Debug.Log("Did not Hit");
+        }
 
-		if (Input.GetMouseButtonDown (0) && !isBlinking)
+		if (Input.GetMouseButtonDown (1) && !isBlinking)
 			blinkObject = Instantiate (Resources.Load<GameObject> ("Blink"));
 
-		if(Input.GetMouseButton(0) && blinkObject != null && !isBlinking){
+		if(Input.GetMouseButton(1) && blinkObject != null && !isBlinking){
 			blinkObject.transform.rotation = transform.rotation;
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -61,11 +70,11 @@ public class PlayerBehaviour : MonoBehaviour {
 			else
 				blinkObject.transform.position = ray.GetPoint (blinkDist);
 
-			if (Input.GetMouseButtonDown (1)) {
+			if (Input.GetMouseButtonDown (0)) {
 				StartCoroutine (Blink ());
 			}
 		}
-		if (Input.GetMouseButtonUp (0) && blinkObject != null && !isBlinking)
+		if (Input.GetMouseButtonUp (1) && blinkObject != null && !isBlinking)
 			Destroy (blinkObject);
     }
 //    IEnumerator afterClimb(){
