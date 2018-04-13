@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243125657629380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100, y: 9.55, z: 71.923}
+  m_LocalPosition: {x: 17.53058, y: 2.1558728, z: 28.203106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,9 +110,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TypeKid: 0
-  isChaser: 0
   myState: 0
-  target: {x: 0, y: 0, z: 0}
+  hidingplaces: []
+  lightColors:
+  - {r: 0.10234957, g: 0.8679245, b: 0.11649763, a: 0}
+  - {r: 0.8584906, g: 0.10123708, b: 0.10123708, a: 0}
+  - {r: 0.101960786, g: 0.101960786, b: 0.8627451, a: 0}
 --- !u!195 &195471679038386810
 NavMeshAgent:
   m_ObjectHideFlags: 1

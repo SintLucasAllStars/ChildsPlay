@@ -13,10 +13,9 @@ public class Creature_Maneger : MonoBehaviour
     #region OOP part
     private AI_Class aI_Class;
     public AI_Class.Type TypeKid;
-    public static bool isChaser;
+    public static int AmountOfChaser;
     private float stamina, baseStamina; // this works but i dont know how and why
-    private float speed;
-    private float reactionSpeed;
+    [SerializeField] private float speed;
     private float fov;
     #endregion
 
@@ -27,28 +26,42 @@ public class Creature_Maneger : MonoBehaviour
     private int width;
     public GameObject[] hidingplaces;
     private Vector3 target;
+    private Vector3 targetTagger;
     #endregion
 
     #region cozmetic stuff
     //i really dont know how to spell that word
     private Light mylight;
     //the colors will display the state of the player as a visual repensentation
-    [SerializeField] private Color[] lightColors = new Color[3];
+    [SerializeField] [Tooltip("0 = Hidden  1 = running  2 = Scarecrow")] private Color[] lightColors = new Color[3];
     #endregion
 
     // Use this for initialization
     void Start()
     {
+        //setup oop
         aI_Class = new AI_Class(1);
+
+        //setup Navmesh
         agent = GetComponent<NavMeshAgent>();
         agent.enabled = true;
+
+        //objects needed acces
         terrainGenerator = GameObject.Find("World").GetComponent<TerrainGenerator>();
         world_Maneger = GameObject.Find("World").GetComponent<World_Maneger>();
+        mylight = GetComponent<Light>();
+
+        //setting variable
         myState = State.running;
         width = terrainGenerator.width;
         hidingplaces = new GameObject[world_Maneger.AmountOfObstacles];
-        TargetUpdate();
+
+        //running initial functions
+        NewPosition();
         GetOOp();
+
+        // checking if there are other chasers
+
     }
 
     // Update is called once per frame
@@ -57,6 +70,7 @@ public class Creature_Maneger : MonoBehaviour
         Stamina();
     }
 
+    #region General functions
     //takes of stamina and stamina regen.
     void Stamina()
     {
@@ -83,29 +97,8 @@ public class Creature_Maneger : MonoBehaviour
         }
     }
 
-    void HidersFinding()
-    {
-        RaycastHit hit;
-        Vector3 direction = target - transform.position;
-        if (Physics.Raycast(transform.position, direction, out hit))
-        {
-            if (hit.transform.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Tagger"))
-            {
-                float angleT = Vector3.Angle(transform.forward, direction);
-                if (fov < angleT / 2)
-                {
-                    myState = State.Chase;
-                }
-            }
-        }
-    }
-
-    //the basic funtion of this script is as follows
-    //it will get a random postion in the world and move towards it
-    //how it should work in the final release is as follows
-    //it should update in the start and stay at that given position until
-    //he gets tagged by a tagger. and will have a favor to certian positions
-    void TargetUpdate()
+    //is used for any navmesh agent that needs a new position inside of the world
+    void NewPosition()
     {
         if (agent.isOnNavMesh)
         {
@@ -119,17 +112,57 @@ public class Creature_Maneger : MonoBehaviour
             }
         }
     }
+    #endregion
+
+    #region ChaserSpecific
+    void ChasePlayer()
+    {
+        if (myState == State.Chase)
+        {
+            agent.SetDestination(targetTagger);
+            Debug.Log(targetTagger);
+        }
+    }
+
+    void HidersFinding()
+    {
+        RaycastHit hit;
+        Vector3 direction = target - transform.position;
+        if (Physics.Raycast(transform.position, direction, out hit))
+        {
+            if (hit.transform.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Tagger"))
+            {
+                float angleT = Vector3.Angle(transform.forward, direction);
+                if (fov < angleT / 2)
+                {
+                    myState = State.Chase;
+                    targetTagger = hit.transform.position;
+                }
+            }
+        }
+    }
+    #endregion
 
     //gets all the oop vars for this particeuler creature
     void GetOOp()
     {
         TypeKid = aI_Class.TypeKid;
-        isChaser = aI_Class.isChaser;
+        if (TypeKid == AI_Class.Type.Chaser)
+        {
+            if (AmountOfChaser > 1)
+            {
+                TypeKid = AI_Class.Type.FastKid;
+            }
+            else
+            {
+                AmountOfChaser++;
+            }
+        }
+
         stamina = aI_Class.stamina;
         baseStamina = aI_Class.stamina;
         speed = aI_Class.speed;
         agent.speed = speed;
-        reactionSpeed = aI_Class.reactionSpeed;
         fov = aI_Class.fov;
     }
 }

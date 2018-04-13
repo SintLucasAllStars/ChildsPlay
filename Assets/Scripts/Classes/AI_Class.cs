@@ -5,9 +5,8 @@ using UnityEngine;
 public class AI_Class
 {
 
-    public enum Type { FatKid, FastKid, NormalKid };
+    public enum Type { FatKid, FastKid, NormalKid, Chaser };
     public Type TypeKid;
-    public bool isChaser;
     public float stamina;
     public float speed;
     public float reactionSpeed;
@@ -19,14 +18,13 @@ public class AI_Class
 	*/
     public AI_Class(int i)
     {
-        int t = Random.Range(0, 3);
+        int t = Random.Range(0, 4);
         switch (t)
         {
             case 0:
                 TypeKid = Type.FatKid;
                 stamina = 4f;
                 speed = 2.8f;
-                reactionSpeed = 4f;
                 fov = 170f;
                 break;
 
@@ -34,7 +32,6 @@ public class AI_Class
                 TypeKid = Type.FastKid;
                 stamina = 11;
                 speed = 4.5f;
-                reactionSpeed = 1f;
                 fov = 130f;
                 break;
 
@@ -42,12 +39,16 @@ public class AI_Class
                 TypeKid = Type.NormalKid;
                 stamina = 6f;
                 speed = 3.5f;
-                reactionSpeed = 2f;
                 fov = 150f;
                 break;
-
+            case 3:
+                TypeKid = Type.Chaser;
+                stamina = 12;
+                speed = 4.2f;
+                fov = 145f;
+                break;
             default:
-                Debug.Log("POP GOES THE WEAZEL");
+                Debug.LogWarning("the switch is onable to reach a certian case");
                 break;
         }
     }
