@@ -12,7 +12,7 @@ the enemys are a little bit faster than the player so you have to be carefull no
 
 -enemys have two states
 	*enemys can roam around the level(walking speed)
-	*chase mode(runing speed)
+	*chase mode(runing speed)	
 
 -When you hide for 3 second the enemy loses you and switches to walking mode.
 
