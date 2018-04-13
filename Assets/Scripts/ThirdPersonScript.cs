@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ThirdPersonScript : MonoBehaviour {
     public int health = 4;
-    public enum State { Walking, sneeking, running}
+    public enum State { Walking, sneeking, running, hiding}
     public State state;
     public float speed;
     public float setSpeed;
@@ -14,6 +14,26 @@ public class ThirdPersonScript : MonoBehaviour {
     public static float conspicuousness = 1;
     Rigidbody rb;
     public Text healthTxt;
+
+
+#region  Variables for my part of the script.  #Jesper
+    public GameObject hidingObject;
+
+	bool foundHidingSpot;
+
+	float range;
+	
+	GameObject target;
+	GameObject emptyTarget;
+	public Vector3 targetxyz;
+	public Vector3 emtpyTargetxyz;
+
+
+	//UI Elements
+	public Text pressToText;
+
+	RaycastHit hit;
+#endregion
     
     
 
@@ -21,6 +41,13 @@ public class ThirdPersonScript : MonoBehaviour {
 	void Start () {
         setSpeed = speed;
         rb = GetComponent<Rigidbody>();
+
+#region My part of the Start(). #Jesper
+        range = 12f;
+
+        pressToText.text = " ";
+#endregion
+
 	}
 	
 	// Update is called once per frame
@@ -45,6 +72,10 @@ public class ThirdPersonScript : MonoBehaviour {
             case State.running:
                 conspicuousness = 2;
                 speed = setSpeed * 1.5f;
+                break;
+            case State.hiding:
+                conspicuousness = 0.1f;
+                speed = 0;
                 break;
             default:
                 break;
@@ -110,7 +141,39 @@ public class ThirdPersonScript : MonoBehaviour {
         //{
         //    transform.Rotate(0, turningSpeed * Time.deltaTime, 0);
         //}
+
+
+#region  My part of the Update().  #Jesper 
+        if (Physics.Raycast(transform.position, transform.forward, out hit, range))
+		{
+			CheckForHidingSpot();
+		}
+        if(hit.collider == null)
+        {
+            ResetUI();
+        }
+			
+		//Moves to targets position when there is a target.		#Jesper
+		if(target != null)
+		{
+			transform.position = Vector3.MoveTowards(transform.position, targetxyz, speed * Time.deltaTime);
+		}
+		//When on hiding position, displays option to leave hiding spot.	#Jesper
+		if (transform.position == targetxyz)
+		{
+            state = State.hiding;
+			pressToText.text = "Press E to leave";
+			if(Input.GetKey(KeyCode.E))
+			{
+				ResetHidingSpot();
+				LeaveHidingSpot();
+				ColliderOn();
+                ResetUI();
+			}
+		}	
+#endregion	
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -119,4 +182,82 @@ public class ThirdPersonScript : MonoBehaviour {
             health--;
         }
     }
+
+    //Raycast that checks for hidingspots.	#Jesper
+	void CheckForHidingSpot()
+	{
+			if (hit.transform.tag == "Hidingspot")
+			{
+				pressToText.text = "Press E to Hide";
+				if(Input.GetKey(KeyCode.E))
+				{
+					Debug.Log(hit.transform.tag);
+					hidingObject = hit.transform.gameObject;
+					ColliderOff();
+					SetHidingSpot();
+				}
+				
+			}
+			else
+			{
+				Debug.Log("Keep Looking");
+			}
+	}
+
+#region My Methods. #Jesper
+	//Sets hidingspot you see as target.	#Jesper
+	void SetHidingSpot()
+	{
+		target = hidingObject;
+		targetxyz = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+	}
+	//Empties your target.	#Jesper
+	void ResetHidingSpot()
+	{
+		
+		target = emptyTarget;
+		targetxyz = emtpyTargetxyz;
+	}
+
+	//Turns collider of the hidingspot off so "Player" can hide in the hidingspot.	#Jesper
+	void ColliderOff()
+	{
+		Collider tempCollider;
+
+		tempCollider = hidingObject.GetComponent<Collider>();
+
+		tempCollider.enabled = false;
+	}
+	//Turns Collider of the hidingspot back on so "Player" can hide again in the hidingspot.	#Jesper
+	void ColliderOn()
+	{
+		Collider tempCollider;
+
+		tempCollider = hidingObject.GetComponent<Collider>();
+
+		tempCollider.enabled = true;
+	}
+	
+	//I tried making a bool of both the ColliderOff() and ColliderOn() methods but didn't manage to make it work//
+
+
+	//leaves hidingspot. #Jesper
+	void LeaveHidingSpot()
+	{
+        float x, y, z;
+
+        x = transform.position.x;
+        y = transform.position.y;
+        z = transform.position.z;
+
+		transform.position = new Vector3(x, y, z - 2f);
+        
+        state = State.Walking;
+	}
+    // Resets UI Elemnts. #Jesper
+    void ResetUI()
+    {
+        pressToText.text = " ";
+    }
+#endregion
 }

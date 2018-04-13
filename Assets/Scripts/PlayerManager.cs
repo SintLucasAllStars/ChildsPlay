@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour {
 
 	public GameObject hidingObject;
 
-	public bool colliderSwitch;
+	bool foundHidingSpot;
 
 	float range;
 	float speed;
@@ -27,6 +27,7 @@ public class PlayerManager : MonoBehaviour {
 	{
 		range = 12f;
 		speed = 7f;
+
 
 		pressToText.text = " ";
 	}
@@ -58,6 +59,7 @@ public class PlayerManager : MonoBehaviour {
 			{
 				ResetHidingSpot();
 				LeaveHidingSpot();
+				ColliderOn();
 			}
 		}		
 	}
@@ -72,10 +74,8 @@ public class PlayerManager : MonoBehaviour {
 				{
 					Debug.Log(hit.transform.tag);
 					hidingObject = hit.transform.gameObject;
-					colliderSwitch = false;
-					ColliderCheck();
+					ColliderOff();
 					SetHidingSpot();
-				
 				}
 				
 			}
@@ -91,42 +91,42 @@ public class PlayerManager : MonoBehaviour {
 		target = hidingObject;
 		targetxyz = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 	}
-	//Empties your hidingobject and target.	#Jesper
+	//Empties your target.	#Jesper
 	void ResetHidingSpot()
 	{
+		
 		target = emptyTarget;
 		targetxyz = emtpyTargetxyz;
 	}
 
-	
-
-	void LeaveHidingSpot()
-	{
-		for(int i = 0; i < 15; i++)
-		{
-		transform.Translate(Vector3.forward * speed * Time.deltaTime);
-		}
-		
-		ColliderCheck();
-	}
-	//Checks if collider of the hidingspot should be on to be able detect it or should not be on to be able to hide in hidingspot.	#Jesper
-	void ColliderCheck()
+	//Turns collider of the hidingspot off so "Player" can hide in the hidingspot.	#Jesper
+	void ColliderOff()
 	{
 		Collider tempCollider;
 
 		tempCollider = hidingObject.GetComponent<Collider>();
 
-		if (colliderSwitch = true)
-		{
-					Debug.Log("hij zou aan moeten staan");
+		tempCollider.enabled = false;
+	}
+	//Turns Collider of the hidingspot back on so "Player" can hide again in the hidingspot.	#Jesper
+	void ColliderOn()
+	{
+		Collider tempCollider;
 
-			tempCollider.enabled = true;
-		}
-		else if (colliderSwitch = false)
-		{
-					Debug.Log("hij zou uit moeten staan nu");
+		tempCollider = hidingObject.GetComponent<Collider>();
 
-			tempCollider.enabled = false;
+		tempCollider.enabled = true;
+	}
+	
+	//I tried making a bool of both the ColliderOff() and ColliderOn() methods but didn't manage to make it work//
+
+
+	//
+	void LeaveHidingSpot()
+	{
+		for(int i = 0; i < 15; i++)
+		{
+		transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 	}
 
