@@ -9,8 +9,20 @@ public class CentralIntelligence : MonoBehaviour {
 
 	List<GuardAI> guards;
 
+    public static CentralIntelligence instance;
 
-	void Awake () {
+    void Awake () {
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
 		sector = new Vector3[4];
 		sectorVectors = new Vector3[sector.Length, 2];
 	}
