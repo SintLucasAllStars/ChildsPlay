@@ -12,7 +12,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public Animator anim;
 
 	public bool isGrounded = false;
-    float jumpForce = 7.5f;
+    float jumpForce = 10f;
 
 	GameObject blinkObject;
 	bool isBlinking = false;
@@ -83,10 +83,9 @@ public class PlayerBehaviour : MonoBehaviour {
 			return;
 		if (isGrounded) {
 			if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift))
-				speed = 25f;
+				speed = 20f;
 			else
-				speed = 15f;
-
+				speed = 12.5f;
 			float horMove = Input.GetAxis ("Horizontal");
 			float verMove = Input.GetAxis ("Vertical");
 
