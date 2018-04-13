@@ -52,7 +52,7 @@ public class PlayerBehaviour : MonoBehaviour {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Runner")
-                Debug.Log("Jimmy NO!!");
+                Destroy (hit.transform.gameObject);
             else
                 Debug.Log("Did not Hit");
         }
