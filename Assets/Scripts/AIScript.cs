@@ -22,7 +22,7 @@ public class AIScript : MonoBehaviour {
 	void Start () {
         nav = GetComponent<NavMeshAgent>();
         patrolSpeed = nav.speed;
-        maxSpeed = patrolSpeed * 2;
+        maxSpeed = patrolSpeed * 1.5f;
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
         SetMode(Mode.Patrol);
@@ -33,20 +33,25 @@ public class AIScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         distance = Vector3.Distance(target.position, transform.position);
-
         if (distance < 10)
         {
-            if(ThirdPersonScript.conspicuousness == 1)
+            if (ThirdPersonScript.conspicuousness == 1 && mode == Mode.Patrol)
             {
                 mode = Mode.Suspicious;
+                transform.LookAt(target.transform);
             }
 
-            if(ThirdPersonScript.conspicuousness == 0.5f)
+            if (ThirdPersonScript.conspicuousness == 0.5f && mode == Mode.Patrol)
             {
                 mode = Mode.Patrol;
             }
 
-            if(ThirdPersonScript.conspicuousness == 2)
+            if (ThirdPersonScript.conspicuousness == 0.5f && mode == Mode.Chase)
+            {
+                mode = Mode.Search;
+            }
+
+            if (ThirdPersonScript.conspicuousness == 2)
             {
                 mode = Mode.Chase;
                 transform.LookAt(target.transform);
@@ -85,6 +90,7 @@ public class AIScript : MonoBehaviour {
                 }
                 break;
             case Mode.Chase:
+                reactionTime = 300;
                 if (CanSeeTarget())
                 {
                     nav.SetDestination(target.position);
@@ -112,11 +118,12 @@ public class AIScript : MonoBehaviour {
         {
             if (mode == Mode.Patrol)
             {
-                //Vector3 destination = new Vector3(Random.Range(-50, 51), 0f, Random.Range(-50, 51));
-                //Debug.Log(destination);
-                //nav.SetDestination(destination);
+                Vector3 destination = new Vector3(Random.Range(0, -201), 0f, Random.Range(0, -200));
+                Debug.Log(destination);
+                nav.SetDestination(destination);
             }
-            yield return new WaitForSeconds(Random.Range(3, 7));
+            
+            yield return new WaitForSeconds(Random.Range(20, 30));
         }
 
     }

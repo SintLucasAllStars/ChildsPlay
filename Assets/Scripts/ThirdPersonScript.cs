@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ThirdPersonScript : MonoBehaviour {
-
+    public int health = 4;
     public enum State { Walking, sneeking, running}
     public State state;
     public float speed;
     public float setSpeed;
     public int turningSpeed;
     public static float conspicuousness = 1;
-    Rigidbody rb;   
+    Rigidbody rb;
+    public Text healthTxt;
+    
+    
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +25,11 @@ public class ThirdPersonScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        healthTxt.text = health.ToString();
+        if(health == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
         //rb.AddForce(-Vector3.up);
         switch (state)
         {
@@ -41,31 +51,36 @@ public class ThirdPersonScript : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(speed * Time.deltaTime, 0 , 0);
+            transform.Translate(0, 0, speed * Time.deltaTime);
+
             //rb.velocity = transform.forward * speed;
             //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
             //rb.AddForce(transform.forward * speed);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(-speed * Time.deltaTime, 0, 0);            //rb.velocity = transform.forward * -speed;
+            transform.Translate(0, 0, -speed * Time.deltaTime);
+           //rb.velocity = transform.forward * -speed;
             //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
             //rb.AddForce(transform.forward * -speed);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(0, 0, speed * Time.deltaTime);            //rb.velocity = transform.forward * -speed;
+            transform.Translate(-speed * Time.deltaTime, 0, 0);
+            //rb.velocity = transform.forward * -speed;
             //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
             //rb.AddForce(transform.forward * -speed);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(0, 0, -speed * Time.deltaTime);             //rb.velocity = transform.forward * -speed;
+            transform.Translate(speed * Time.deltaTime, 0, 0);
+            //rb.velocity = transform.forward * -speed;
             //rb.velocity = rb.velocity + Vector3.up * Physics.gravity.y;
             //rb.AddForce(transform.forward * -speed);
         }
+
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -95,5 +110,13 @@ public class ThirdPersonScript : MonoBehaviour {
         //{
         //    transform.Rotate(0, turningSpeed * Time.deltaTime, 0);
         //}
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            health--;
+        }
     }
 }
