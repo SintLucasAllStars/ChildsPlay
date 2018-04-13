@@ -78,7 +78,6 @@ public class Enemy : MonoBehaviour
 			updatePath();
 			if (path.Count == 0)
 			{
-				Debug.Log("Target reached");
 				return;
 			}
 			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 3f*Time.deltaTime);
@@ -88,7 +87,6 @@ public class Enemy : MonoBehaviour
 			updatePath();
 			if (path.Count == 0)
 			{
-				Debug.Log("Target reached");
 				return;
 			}
 			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 3f*Time.deltaTime);
