@@ -19,13 +19,16 @@ public class PlayerLook : MonoBehaviour {
 	bool forkPulled = false;
 	float clickUpNow;
 	GameObject stabber;
+    public static bool hasFork;
 
-	void Awake(){
+
+    void Awake(){
 		Cursor.lockState = CursorLockMode.Locked;
 		 
 	}
 
 	void Start (){
+        hasFork = true;
 		stabber = GameObject.Find ("/player/Main Camera/Fork");
 		stabber.SetActive(false);
 		fork = GameObject.Find ("/forkInStone(Clone)/Fork");

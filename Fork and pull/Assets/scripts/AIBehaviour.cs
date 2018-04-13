@@ -10,10 +10,10 @@ public class AIBehaviour : MonoBehaviour {
 	NavMeshAgent nav;
 	public Transform target;
 	public Mode mode;
-
+    public Transform player;
+    public float runDistance;
 	public float fov = 120;
 	public float delay;
-	public Slider detectionbar;
 
 	void Start () {
 		nav = GetComponent<NavMeshAgent> ();
@@ -23,12 +23,20 @@ public class AIBehaviour : MonoBehaviour {
 
 	void Update () {
 		
-		detectionbar.value = delay;
 		if (canSeeTarget ()) {
-			mode = Mode.chase;
+            if (!PlayerLook.hasFork)
+            {
+                mode = Mode.chase;
+            }
 		} else {
-			mode = Mode.seek;
-		}
+            if (!PlayerLook.hasFork)
+            {
+                mode = Mode.seek;
+            } else
+            {
+                mode = Mode.hide;
+            }
+        }
 
 		switch (mode) {
 
@@ -57,13 +65,33 @@ public class AIBehaviour : MonoBehaviour {
 
 
 	IEnumerator Seekmode () {
-		while (true) {
-			if (mode == Mode.seek) {
-				Vector3 destination = transform.position + new Vector3 (Random.Range (-10, 10), 1, Random.Range (-10, 10));
-				nav.SetDestination (destination);
-				yield return new WaitForSeconds (Random.Range (1, 4));
-			} else
-				yield return false;
+        while (true)
+        {
+            switch (mode)
+            {
+
+                case Mode.seek:
+                    Vector3 destination = transform.position + new Vector3(Random.Range(-10, 10), 1, Random.Range(-10, 10));
+                    nav.SetDestination(destination);
+                    yield return new WaitForSeconds(Random.Range(1, 4));
+                    break;
+
+                case Mode.hide:
+                    float distance = Vector3.Distance(transform.position, player.transform.position);
+                    if(distance < runDistance)
+                    {
+                        Vector3 dirToPlayer = transform.position - player.transform.position;
+                        Vector3 newPos = transform.position + dirToPlayer;
+                        nav.SetDestination(newPos);
+                    }
+
+                    break;
+                case Mode.chase:
+                    nav.SetDestination(target.position);
+                    break;
+
+            }
+            yield return false;
 		}
 	}
 
@@ -107,6 +135,10 @@ public class AIBehaviour : MonoBehaviour {
 			return false;
 		}
 	}
+    Vector3 ReturnPosition(Vector3 pos)
+    {
+        return pos;
+    }
 
 
 		
