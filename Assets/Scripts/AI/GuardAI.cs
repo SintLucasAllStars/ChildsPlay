@@ -34,7 +34,6 @@ public class GuardAI : AIBehaviour {
 		agent = GetComponent<NavMeshAgent> ();
 
 		bodyType = (BodyType)Random.Range (0, 3);
-		SetMode (GuardMode.Normal);
 
 		sectorCount = centralIntelligence.sectorVectors.GetLength(0);
 		changeSectorTime = Time.time + Random.Range (15, 30);
@@ -66,6 +65,7 @@ public class GuardAI : AIBehaviour {
 			transform.localScale = new Vector3 (1.8f, 2f, 1.8f);
 			break;
 		}
+		SetMode (GuardMode.Normal);
 	}
 
 	void Update () {
@@ -81,7 +81,7 @@ public class GuardAI : AIBehaviour {
 				SelectSector ();
 				changeSectorTime = Time.time + Random.Range (15, 30);
 			}
-			if ((seePlayer == true) && (searchPlayer == true)) {
+			if (seePlayer == true && searchPlayer == true) {
 				SetMode (GuardMode.Chase);
 			}
 			break;
@@ -128,10 +128,12 @@ public class GuardAI : AIBehaviour {
 	public void SelectSector () {
 		currentSector = Random.Range (0, sectorCount);
 		agent.SetDestination (centralIntelligence.MoveToSector (currentSector));
+		Debug.Log ("desination Set");
 	}
 
 	public void WalkInSector () {
 		agent.SetDestination (centralIntelligence.MoveToSector (currentSector));
+		Debug.Log ("desination Set in Sector");
 	}
 
 	public void AlertGuards () {
