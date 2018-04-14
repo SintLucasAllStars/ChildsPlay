@@ -19,9 +19,9 @@ public class EnemyAI : MonoBehaviour
 
 	public LayerMask wallMask;
 	public Vector2 worldSize;
-	public float nodeRadius;
+	public float walkableRadius;
 	private Walkable[,] grid;
-	private float nodeDiameter;
+	private float walkableDiameter;
 	private int gridSizeX, gridSizeY;
 
 	void Start ()
@@ -29,9 +29,9 @@ public class EnemyAI : MonoBehaviour
 		player = GameObject.FindGameObjectWithTag("Player");
 		target = player.transform.position;
 		
-		nodeDiameter = nodeRadius * 2;
-		gridSizeX = Mathf.RoundToInt(worldSize.x/nodeDiameter);
-		gridSizeY = Mathf.RoundToInt(worldSize.y/nodeDiameter);
+		walkableDiameter = walkableRadius * 2;
+		gridSizeX = Mathf.RoundToInt(worldSize.x/walkableDiameter);
+		gridSizeY = Mathf.RoundToInt(worldSize.y/walkableDiameter);
 		
 		state = EnemyState.Roam;
 
@@ -80,7 +80,7 @@ public class EnemyAI : MonoBehaviour
 			{
 				return;
 			}
-			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 3f*Time.deltaTime);
+			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 2f*Time.deltaTime);
 		}
 		else
 		{
@@ -89,7 +89,7 @@ public class EnemyAI : MonoBehaviour
 			{
 				return;
 			}
-			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 3f*Time.deltaTime);
+			transform.position = Vector3.MoveTowards(transform.position, path[0].worldPos, 2f*Time.deltaTime);
 		}
 	}
 
@@ -121,15 +121,15 @@ public class EnemyAI : MonoBehaviour
 		{
 			for (int y = 0; y < gridSizeY; y++)
 			{
-				Vector3 worldPoint = bottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
-				bool walkable = !Physics.CheckSphere(worldPoint, nodeRadius, wallMask);
+				Vector3 worldPoint = bottomLeft + Vector3.right * (x * walkableDiameter + walkableRadius) + Vector3.forward * (y * walkableDiameter + walkableRadius);
+				bool walkable = !Physics.CheckSphere(worldPoint, walkableRadius, wallMask);
 				grid[x,y] = new Walkable(walkable, worldPoint, x, y);
 			}
 		}
 		
 	}
 
-	public Walkable nodeFromWorldPos(Vector3 pos)
+	public Walkable walkableFromWorldPos(Vector3 pos)
 	{
 		float percentX, percentY;
 		percentX = (pos.x - transform.position.x + worldSize.x / 2) / worldSize.x;
@@ -145,7 +145,7 @@ public class EnemyAI : MonoBehaviour
 		return grid[x, y];
 	}
 
-	public List<Walkable> getNeighbours(Walkable node)
+	public List<Walkable> getNeighbours(Walkable walkable)
 	{
 		List<Walkable> neighbours = new List<Walkable>();
 
@@ -159,8 +159,8 @@ public class EnemyAI : MonoBehaviour
 				}
 				int checkX, checkY;
 
-				checkX = node.gridX + x;
-				checkY = node.gridY + y;
+				checkX = walkable.gridX + x;
+				checkY = walkable.gridY + y;
 
 				if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
 				{
@@ -174,24 +174,24 @@ public class EnemyAI : MonoBehaviour
 	public void findPath()
 	{
 		
-		// Start node
-		Walkable startWalkable = nodeFromWorldPos(transform.position);
-		// End node
-		Walkable endWalkable = nodeFromWorldPos(target);
+		// Start walkable
+		Walkable startWalkable = walkableFromWorldPos(transform.position);
+		// End walkable
+		Walkable endWalkable = walkableFromWorldPos(target);
 		
-		// A list of all open nodes
+		// A list of all open walkables
 		List<Walkable> openWalkables = new List<Walkable>();
-		// A hashset of all closed nodes
+		// A hashset of all closed walkables
 		HashSet<Walkable> closedWalkables = new HashSet<Walkable>();
 		
-		// Add start node to open nodes
+		// Add start walkable to open walkables
 		openWalkables.Add(startWalkable);
 
-		// While there are open nodes keep looping
+		// While there are open walkables keep looping
 		while (openWalkables.Count > 0)
 		{
 			
-			// Get the node with the lowers f cost
+			// Get the walkable with the lowers f cost
 			Walkable currentWalkable = openWalkables[0];
 			for (int i = 0; i < openWalkables.Count; i++)
 			{
@@ -201,14 +201,14 @@ public class EnemyAI : MonoBehaviour
 				}
 			}
 
-			// Remove node from open nodes and add to close nodes
+			// Remove walkable from open walkables and add to close walkables
 			openWalkables.Remove(currentWalkable);
 			closedWalkables.Add(currentWalkable);
 
-			// If node is end node finished path
+			// If walkable is end walkable finished path
 			if (currentWalkable == endWalkable)
 			{
-				// A list with all the nodes used in the path
+				// A list with all the walkables used in the path
 				path = getPath(currentWalkable);
 				return;
 			}
@@ -254,11 +254,11 @@ public class EnemyAI : MonoBehaviour
 
 	}
 
-	private int getDistance(Walkable nodeA, Walkable nodeB)
+	private int getDistance(Walkable walkableA, Walkable walkableB)
 	{
 		int disX, disY;
-		disX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
-		disY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
+		disX = Mathf.Abs(walkableA.gridX - walkableB.gridX);
+		disY = Mathf.Abs(walkableA.gridY - walkableB.gridY);
 
 		if (disX > disY)
 		{
@@ -273,7 +273,7 @@ public class EnemyAI : MonoBehaviour
 
 		if (grid != null)
 		{
-			Walkable playerWalkable = nodeFromWorldPos(target);
+			Walkable playerWalkable = walkableFromWorldPos(target);
 			
 			foreach (Walkable n in grid)
 			{
@@ -281,19 +281,19 @@ public class EnemyAI : MonoBehaviour
 				if (n == playerWalkable)
 				{
 					Gizmos.color = Color.yellow;
-					Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
+					Gizmos.DrawCube(n.worldPos, Vector3.one * (walkableDiameter - .1f));
 				}
 
 				if (path != null && path.Contains(n))
 				{
 					Gizmos.color = Color.blue;
-					Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
+					Gizmos.DrawCube(n.worldPos, Vector3.one * (walkableDiameter - .1f));
 				}
 				else
 				{
 					Gizmos.color = n.walkable ? Color.green : Color.red;
 					
-					Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
+					Gizmos.DrawCube(n.worldPos, Vector3.one * (walkableDiameter - .1f));
 				}
 				
 			}
