@@ -1543,10 +1543,9 @@ GameObject:
   - component: {fileID: 628780644}
   - component: {fileID: 628780643}
   - component: {fileID: 628780648}
-  - component: {fileID: 628780649}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1648,17 +1647,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &628780649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 628780642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 260a766af96f58942818e7f9f90ad57e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &631794076
 GameObject:
   m_ObjectHideFlags: 0
@@ -4118,6 +4106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1838045917}
   - component: {fileID: 1838045918}
+  - component: {fileID: 1838045919}
   m_Layer: 0
   m_Name: EthanBody
   m_TagString: Untagged
@@ -4256,6 +4245,17 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0009998977, y: 0.007603839, z: 0.00028842688}
     m_Extent: {x: 0.80239844, y: 0.23826995, z: 0.5723474}
   m_DirtyAABB: 0
+--- !u!114 &1838045919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1838045916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260a766af96f58942818e7f9f90ad57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852221837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4906,7 +4906,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980189973}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
