@@ -3,15 +3,8 @@
  * are available in the project.
  */
 
-using UnityEngine;
 using UnityEditor;
-using ProBuilder2.Common;
-using ProBuilder2.EditorCommon;
-using ProBuilder2.MeshOperations;
-using System.Collections.Generic;
-using System;
-using System.Linq;
-using System.Reflection;
+
 #if PROBUILDER_FBX_ENABLED
 using Unity.FbxSdk;
 using FbxExporters;
@@ -20,23 +13,25 @@ using FbxExporters.Editor;
 
 namespace ProBuilder2.Common
 {
-	/*
-	* Options when exporting FBX files.
-	*/
-	public class pb_FbxOptions
-	{
-		public bool quads;
-	}
+    /*
+    * Options when exporting FBX files.
+    */
+    public class pb_FbxOptions
+    {
+        public bool quads;
+    }
 
-	[InitializeOnLoad]
-	public static class pb_Fbx
-	{
-		private static bool m_FbxIsLoaded = false;
+    [InitializeOnLoad]
+    public static class pb_Fbx
+    {
+        static pb_Fbx()
+        {
+            FbxEnabled = false;
+        }
 
-		public static bool FbxEnabled { get { return m_FbxIsLoaded; } }
+        public static bool FbxEnabled { get; private set; }
 
 #if PROBUILDER_FBX_ENABLED
-
 		private static pb_FbxOptions m_FbxOptions = new pb_FbxOptions() {
 			quads = true
 		};
@@ -94,5 +89,5 @@ namespace ProBuilder2.Common
 			// pb_Log.Debug("instance updated: " + go.name);
 		}
 #endif
-	}
+    }
 }

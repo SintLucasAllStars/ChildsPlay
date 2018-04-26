@@ -1,14 +1,13 @@
-using UnityEngine;
+using System;
 using UnityEditor;
-using System.Collections;
-using ProBuilder2.Common;
-using ProBuilder2.EditorCommon;
 
 namespace ProBuilder2.Actions
 {
-	/**
-	 *	See MenuActions/Export/ExportAsset.cs
-	 */
-	[System.Obsolete]
-	public class pb_MakeMeshAsset : Editor {}
+    /**
+     *	See MenuActions/Export/ExportAsset.cs
+     */
+    [Obsolete]
+    public class pb_MakeMeshAsset : Editor
+    {
+    }
 }

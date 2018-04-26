@@ -11,7 +11,6 @@
 // #define PROBUILDER_API_EXAMPLE
 
 #if PROBUILDER_API_EXAMPLE
-
 using UnityEngine;
 using UnityEditor;
 using ProBuilder2.Common;
@@ -134,4 +133,3 @@ namespace MySpecialNamespace.Actions
 	}
 }
 #endif
-

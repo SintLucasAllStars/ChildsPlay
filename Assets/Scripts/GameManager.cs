@@ -15,11 +15,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         hiders = GameObject.FindGameObjectsWithTag("Hider").ToList();
-        for (var i = 0; i < hiders.Count; i++)
-        {
-            hiderAis.Add(hiders[i].GetComponent<EnemyAI>());
-            
-        }
+        for (var i = 0; i < hiders.Count; i++) hiderAis.Add(hiders[i].GetComponent<EnemyAI>());
     }
 
     // Update is called once per frame
@@ -29,20 +25,17 @@ public class GameManager : MonoBehaviour
 
 
     /// <summary>
-    /// SoundCheck checks the loudness of the sound based on distance and type of sound.
-    /// (soundLevel = soundBaseLevel * modifier)
-    ///
-    /// adding additional sounds is easy make a if statement with as condition the Soundlevel and specify at which level what action the ai needs to take.  
-    /// 
-    /// Examples at the bottom of SoundCheck
-    /// 
-    /// right now we only have 2 outcomes.
-    /// 1. normal noise or not a loud noise (that is still heard) ai just runs to a different hiding spot
-    /// 2. loud noise ai runs really fast to a different hiding spot
+    ///     SoundCheck checks the loudness of the sound based on distance and type of sound.
+    ///     (soundLevel = soundBaseLevel * modifier)
+    ///     adding additional sounds is easy make a if statement with as condition the Soundlevel and specify at which level
+    ///     what action the ai needs to take.
+    ///     Examples at the bottom of SoundCheck
+    ///     right now we only have 2 outcomes.
+    ///     1. normal noise or not a loud noise (that is still heard) ai just runs to a different hiding spot
+    ///     2. loud noise ai runs really fast to a different hiding spot
     /// </summary>
     public void SoundCheck(Vector3 soundLocation, int modif)
     {
-      
         int soundLevel;
         var soundBaseLevel = 0;
         var modifier = 0;
@@ -78,6 +71,4 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("after for loop");
     }
-
-
 }

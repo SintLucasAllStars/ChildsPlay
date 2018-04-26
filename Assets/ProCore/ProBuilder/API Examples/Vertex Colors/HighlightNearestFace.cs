@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using ProBuilder2.Common;
+﻿using ProBuilder2.Common;
+using UnityEngine;
 
 /**
  *	Move a sphere around the surface of a ProBuilder mesh, changing the
@@ -11,115 +10,118 @@ using ProBuilder2.Common;
  */
 public class HighlightNearestFace : MonoBehaviour
 {
-	// The distance covered by the plane.
-	public float travel = 50f;
-	// The speed at which the sphere will move.
-	public float speed = .2f;
-	// ProBuilder mesh component
-	private pb_Object target;
-	// The nearest face to this sphere.
-	private pb_Face nearest = null;
+    // The nearest face to this sphere.
+    private pb_Face nearest;
 
-	void Start()
-	{
-		// Generate a 50x50 plane with 25 subdivisions, facing up, with no smoothing applied.
-		target = pb_ShapeGenerator.PlaneGenerator(travel, travel, 25, 25, ProBuilder2.Common.Axis.Up, false);
+    // The speed at which the sphere will move.
+    public float speed = .2f;
 
-		target.SetFaceMaterial(target.faces, pb_Constant.DefaultMaterial);
+    // ProBuilder mesh component
+    private pb_Object target;
 
-		target.transform.position = new Vector3(travel * .5f, 0f, travel * .5f);
+    // The distance covered by the plane.
+    public float travel = 50f;
 
-		// Rebuild the mesh (apply pb_Object data to UnityEngine.Mesh)
-		target.ToMesh();
+    private void Start()
+    {
+        // Generate a 50x50 plane with 25 subdivisions, facing up, with no smoothing applied.
+        target = pb_ShapeGenerator.PlaneGenerator(travel, travel, 25, 25, Axis.Up, false);
 
-		// Rebuild UVs, Colors, Collisions, Normals, and Tangents
-		target.Refresh();
+        target.SetFaceMaterial(target.faces, pb_Constant.DefaultMaterial);
 
-		// Orient the camera in a good position
-		Camera cam = Camera.main;
-		cam.transform.position = new Vector3(25f, 40f, 0f);
-		cam.transform.localRotation = Quaternion.Euler( new Vector3(65f, 0f, 0f) );
-	}
+        target.transform.position = new Vector3(travel * .5f, 0f, travel * .5f);
 
-	void Update()
-	{
-		float time = Time.time * speed;
+        // Rebuild the mesh (apply pb_Object data to UnityEngine.Mesh)
+        target.ToMesh();
 
-		Vector3 position = new Vector3(
-			Mathf.PerlinNoise(time, time) * travel,
-			2,
-			Mathf.PerlinNoise(time + 1f, time + 1f) * travel
-			);
+        // Rebuild UVs, Colors, Collisions, Normals, and Tangents
+        target.Refresh();
 
-		transform.position = position;
+        // Orient the camera in a good position
+        var cam = Camera.main;
+        cam.transform.position = new Vector3(25f, 40f, 0f);
+        cam.transform.localRotation = Quaternion.Euler(new Vector3(65f, 0f, 0f));
+    }
 
-		if(target == null)
-		{
-			Debug.LogWarning("Missing the ProBuilder Mesh chaser!");
-			return;
-		}
+    private void Update()
+    {
+        var time = Time.time * speed;
 
-		// instead of testing distance by converting each face's center to world space,
-		// convert the world space of this object to the pb-Object local transform.
-		Vector3 pbRelativePosition = target.transform.InverseTransformPoint(transform.position);
+        var position = new Vector3(
+            Mathf.PerlinNoise(time, time) * travel,
+            2,
+            Mathf.PerlinNoise(time + 1f, time + 1f) * travel
+        );
 
-		// reset the last colored face to white
-		if(nearest != null)
-			target.SetFaceColor(nearest, Color.white);
+        transform.position = position;
 
-		// iterate each face in the pb_Object looking for the one nearest
-		// to this object.
-		int faceCount = target.faces.Length;
-		float smallestDistance = Mathf.Infinity;
-		nearest = target.faces[0];
+        if (target == null)
+        {
+            Debug.LogWarning("Missing the ProBuilder Mesh chaser!");
+            return;
+        }
 
-		for(int i = 0; i < faceCount; i++)
-		{
-			float distance = Vector3.Distance(pbRelativePosition, FaceCenter(target, target.faces[i]));
+        // instead of testing distance by converting each face's center to world space,
+        // convert the world space of this object to the pb-Object local transform.
+        var pbRelativePosition = target.transform.InverseTransformPoint(transform.position);
 
-			if(distance < smallestDistance)
-			{
-				smallestDistance = distance;
-				nearest = target.faces[i];
-			}
-		}
+        // reset the last colored face to white
+        if (nearest != null)
+            target.SetFaceColor(nearest, Color.white);
 
-		// Set a single face's vertex colors.  If you're updating more than one face, consider using
-		// the pb_Object.SetColors(Color[] colors); function instead.
-		target.SetFaceColor(nearest, Color.blue);
+        // iterate each face in the pb_Object looking for the one nearest
+        // to this object.
+        var faceCount = target.faces.Length;
+        var smallestDistance = Mathf.Infinity;
+        nearest = target.faces[0];
 
-		// Apply the stored vertex color array to the Unity mesh.
-		target.RefreshColors();
-	}
+        for (var i = 0; i < faceCount; i++)
+        {
+            var distance = Vector3.Distance(pbRelativePosition, FaceCenter(target, target.faces[i]));
 
-	/**
-	 *	Returns the average of each vertex position in a face.
-	 *	In local space.
-	 */
-	private Vector3 FaceCenter(pb_Object pb, pb_Face face)
-	{
-		Vector3[] vertices = pb.vertices;
+            if (distance < smallestDistance)
+            {
+                smallestDistance = distance;
+                nearest = target.faces[i];
+            }
+        }
 
-		Vector3 average = Vector3.zero;
+        // Set a single face's vertex colors.  If you're updating more than one face, consider using
+        // the pb_Object.SetColors(Color[] colors); function instead.
+        target.SetFaceColor(nearest, Color.blue);
 
-		// face holds triangle data.  distinctIndices is a
-		// cached collection of the distinct indices that
-		// make up the triangles. Ex:
-		// tris = {0, 1, 2, 2, 3, 0}
-		// distinct indices = {0, 1, 2, 3}
-		foreach(int index in face.distinctIndices)
-		{
-			average.x += vertices[index].x;
-			average.y += vertices[index].y;
-			average.z += vertices[index].z;
-		}
+        // Apply the stored vertex color array to the Unity mesh.
+        target.RefreshColors();
+    }
 
-		float len = (float) face.distinctIndices.Length;
+    /**
+     *	Returns the average of each vertex position in a face.
+     *	In local space.
+     */
+    private Vector3 FaceCenter(pb_Object pb, pb_Face face)
+    {
+        var vertices = pb.vertices;
 
-		average.x /= len;
-		average.y /= len;
-		average.z /= len;
+        var average = Vector3.zero;
 
-		return average;
-	}
+        // face holds triangle data.  distinctIndices is a
+        // cached collection of the distinct indices that
+        // make up the triangles. Ex:
+        // tris = {0, 1, 2, 2, 3, 0}
+        // distinct indices = {0, 1, 2, 3}
+        foreach (var index in face.distinctIndices)
+        {
+            average.x += vertices[index].x;
+            average.y += vertices[index].y;
+            average.z += vertices[index].z;
+        }
+
+        var len = face.distinctIndices.Length;
+
+        average.x /= len;
+        average.y /= len;
+        average.z /= len;
+
+        return average;
+    }
 }

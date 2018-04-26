@@ -14,9 +14,10 @@ public class EnemyAI : MonoBehaviour
         Hide
     }
 
+    private readonly float fov = 120f;
+
     public Transform chaser;
     private Vector3 currentHidingSpot;
-    private readonly float fov = 120f;
     private bool gameStarted = false;
     public Quaternion hideSpotRotation;
     public Transform[] hidingspots;
@@ -71,7 +72,11 @@ public class EnemyAI : MonoBehaviour
             hideSpotRotation = Quaternion.LookRotation(new Vector3(Random.Range(-360, 360), 0, 0) - transform.position);
             yield return new WaitForSeconds(3);
         }
+
+        
     }
+
+    
 
     private void IfPlayerVisible()
     {
@@ -91,9 +96,6 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("Panic");
         }
     }
-
-
-   
 
 
     // when you change mode
@@ -170,12 +172,13 @@ public class EnemyAI : MonoBehaviour
         return false;
     }
 
-	void OnCollisionEnter(Collision coll){
-		if (coll.gameObject.tag == "Bullet")
-		{
-		    theManager.hiders.Remove(this.gameObject);
-		    theManager.hiderAis.Remove(this.GetComponent<EnemyAI>());
-			Destroy (this.gameObject);
-		}
-	}
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.tag == "Bullet")
+        {
+            theManager.hiders.Remove(gameObject);
+            theManager.hiderAis.Remove(GetComponent<EnemyAI>());
+            Destroy(gameObject);
+        }
+    }
 }

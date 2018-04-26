@@ -1,24 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour {
-	float downwardsGravity;
-	float gravityReducer;
-	public AudioClip impact;
-	// Use this for initialization
-	void Start () {
-		downwardsGravity = 0f;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		downwardsGravity = Mathf.Pow (downwardsGravity, downwardsGravity);
-		transform.position = transform.position + transform.forward * Time.deltaTime * 140f;
-}
+public class Bullet : MonoBehaviour
+{
+    private float downwardsGravity;
+    private float gravityReducer;
 
-	void OnCollisionEnter(Collision coll){
-		AudioSource.PlayClipAtPoint(impact,transform.position);
-		Destroy (this.gameObject);
-	}
+    public AudioClip impact;
+
+    // Use this for initialization
+    private void Start()
+    {
+        downwardsGravity = 0f;
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        downwardsGravity = Mathf.Pow(downwardsGravity, downwardsGravity);
+        transform.position = transform.position + transform.forward * Time.deltaTime * 140f;
+    }
+
+    private void OnCollisionEnter(Collision coll)
+    {
+        AudioSource.PlayClipAtPoint(impact, transform.position);
+        Destroy(gameObject);
+    }
 }
