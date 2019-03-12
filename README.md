@@ -31,7 +31,7 @@ Also, make sure you **put both your names on the description of the pull request
 * Navigation of the NPC's is to be done by Unity's NavMesh
 
 ## Deadline
-Pull requests must be in before the end of the day in the 13th of April 2018.
+Pull requests must be in before the end of the day in the 2nd of April 2019.
 
 ## Mechanics
 
