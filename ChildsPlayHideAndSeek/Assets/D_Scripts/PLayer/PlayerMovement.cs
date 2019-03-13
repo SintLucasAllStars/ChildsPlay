@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform Target_Looking;
 
     //Movement stuff
-    private float speed_Moving = 0.5f;
+    public Camera cam;
+    public NavMeshAgent agent;
+    private float speed_Moving = 1.5f;
     #endregion
 
     #region Shooting stuff
@@ -43,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         Shooting();
         Looking();
         Moving();
+
     }
 
 
@@ -60,9 +64,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Moving()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1))
         {
-            transform.Translate(Vector3.forward * speed_Moving);
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                agent.speed = speed_Moving;
+                agent.SetDestination(hit.point);
+            }
         }
     }
 
