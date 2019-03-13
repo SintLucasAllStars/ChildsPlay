@@ -16,8 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform Target_Looking;
 
     //Movement stuff
-    public Transform Target_Moving;
-    private float speed_Movement = 100;
+    private float speed_Moving = 0.5f;
     #endregion
 
     #region Shooting stuff
@@ -43,22 +42,28 @@ public class PlayerMovement : MonoBehaviour
     {
         Shooting();
         Looking();
-        //Moving();
+        Moving();
     }
 
 
     void Looking()
     {
-        //Always looking at the mouse:
-        if (Target_Looking != null)
+        if (Input.GetMouseButton(1))
         {
-            transform.LookAt(Target_Looking);
+            //Always looking at the mouse:
+            if (Target_Looking != null)
+            {
+                transform.LookAt(Target_Looking);
+            }
         }
     }
 
     void Moving()
     {
-          transform.position = Vector3.MoveTowards(Target_Moving.transform.position, Target_Moving.transform.position, Time.deltaTime * speed_Movement);
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector3.forward * speed_Moving);
+        }
     }
 
     void Shooting()
