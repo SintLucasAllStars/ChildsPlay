@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     //Movement stuff
     public Camera cam;
     public NavMeshAgent agent;
-    private float speed_Moving = 1.5f;
+    private float speed_Moving = 3.5f;
     #endregion
 
     #region Shooting stuff
@@ -52,14 +52,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Looking()
     {
-        if (Input.GetMouseButton(1))
-        {
-            //Always looking at the mouse:
-            if (Target_Looking != null)
-            {
-                transform.LookAt(Target_Looking);
-            }
-        }
+        //if (Input.GetMouseButton(1))
+        //{
+        //    //Always looking at the mouse:
+        //    if (Target_Looking != null)
+        //    {
+        //        transform.LookAt(Target_Looking);
+        //    }
+        //}
+
+        transform.LookAt(Target_Looking);
     }
 
     void Moving()

@@ -6,28 +6,19 @@ using UnityEngine.AI;
 public class PeachMovement : MonoBehaviour
 {
 
-    public Camera cam;
-
     public NavMeshAgent agent;
+
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Slime");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                agent.SetDestination(hit.point);
-            }
-        }
+        agent.SetDestination(player.transform.position);
     }
 }

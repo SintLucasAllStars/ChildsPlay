@@ -7,11 +7,15 @@ public class MovePoint : MonoBehaviour
     public GameObject movementPoint;
     public GameObject Lookingblock;
 
+    private GameObject go;
+
+    private void Start()
+    {
+        go = Instantiate(movementPoint, Lookingblock.transform.position, Quaternion.identity);
+    }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Instantiate(movementPoint, Lookingblock.transform.position, Quaternion.identity);
-        }
+        go.transform.position = Input.mousePosition;
     }
 }
