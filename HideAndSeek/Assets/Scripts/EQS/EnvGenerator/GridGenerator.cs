@@ -6,20 +6,21 @@ public class GridGenerator : EnvQueryGenerator
 {
 
     private int GridSize;
-
+    private Transform querierPos;
 
     public GridGenerator()
     {
         this.GridSize = 10;
     }
 
-    public GridGenerator(int Size)
+    public GridGenerator(int Size, Transform QueryPos)
     {
         this.GridSize = Size;
+        this.querierPos = QueryPos;
     }
 
 
-    public List<EnvQueryItem> Items(Transform Positions)
+    public List<EnvQueryItem> Items(Transform QuerierPos)
     {
 
 
@@ -30,7 +31,7 @@ public class GridGenerator : EnvQueryGenerator
         {
             for (int z = 0; z < GridSize; z++)
             {
-                NewItems.Add(new EnvQueryItem(new Vector3(x, 0, z)));
+                NewItems.Add(new EnvQueryItem(new Vector3(x, 0, z), QuerierPos));
             }
         }
 

@@ -7,15 +7,13 @@ public class EnvQuerySystem : MonoBehaviour
     EnvQueryGenerator Generator;
 
     List<EnvQueryItem> QueryItems;
+    public Transform Querier;
 
 
     private void Awake()
     {
-        Generator = new GridGenerator(10);
-        if (Generator != null)
-        {
-            QueryItems = Generator.Items(transform);
-        }
+       
+        
     }
 
     // Start is called before the first frame update
@@ -43,12 +41,19 @@ public class EnvQuerySystem : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Generator = new GridGenerator(10, Querier);
+
+        if (Generator != null)
+        {
+            QueryItems = Generator.Items(transform);
+        }
+
         if (QueryItems != null)
         {
             foreach (EnvQueryItem item in QueryItems)
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(item.location, 0.25f);
+                Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
             }
         }
        
