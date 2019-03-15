@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    public bool isDead;
     public GameObject gun;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        ActivateGun(false);
+        SetGunActive(false);
+        
     }
 
     // Update is called once per frame
@@ -20,18 +20,19 @@ public class Player : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Gun"))
         {
-            ActivateGun(true);
-            Destroy(other);
+            Destroy(other.gameObject);
+            SetGunActive(true);
         }
     }
 
-
-    public void ActivateGun(bool b)
+    public void SetGunActive(bool b)
     {
         gun.SetActive(b);
     }
+
 }
