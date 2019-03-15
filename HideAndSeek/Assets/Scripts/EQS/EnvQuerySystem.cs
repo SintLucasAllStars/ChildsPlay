@@ -43,7 +43,7 @@ public class EnvQuerySystem : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Generator = new GridGenerator(GridSize, Querier, Enemy);
+        Generator = new GridGenerator(GridSize, Querier);
 
         if (Generator != null)
         {
@@ -54,9 +54,9 @@ public class EnvQuerySystem : MonoBehaviour
         {
             foreach (EnvQueryItem item in QueryItems)
             {
-                float distance = (item.GetWorldLocation() - Enemy.position).magnitude;
+                
 
-                if (distance < 5)
+                if (item.RunConditionCheck(Enemy))
                 {
                     Gizmos.color = Color.red;
                     Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);

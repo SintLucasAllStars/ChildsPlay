@@ -17,20 +17,19 @@ public class EnvQueryItem
         
     }
 
-    public void RunConditionCheck(Transform enemy)
+    public bool RunConditionCheck(Transform enemy)
     {
 
         //Do a Check Over Here 
-        float EnemyDistance = (enemy.position - location).magnitude;
-        if (EnemyDistance < 100)
+        float distance = (enemy.position - GetWorldLocation()).magnitude;
+        if(distance < 10)
         {
-            EnemyNearby = true;
+            return true;
         }
         else
         {
-            EnemyNearby = false;
+            return false;
         }
-        Debug.Log(EnemyDistance);
     }
 
     public Vector3 GetWorldLocation()
