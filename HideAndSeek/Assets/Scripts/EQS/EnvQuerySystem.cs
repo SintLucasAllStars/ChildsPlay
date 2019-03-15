@@ -8,6 +8,8 @@ public class EnvQuerySystem : MonoBehaviour
 
     List<EnvQueryItem> QueryItems;
     public Transform Querier;
+    public Transform Enemy;
+    public int GridSize;
 
 
     private void Awake()
@@ -33,7 +35,7 @@ public class EnvQuerySystem : MonoBehaviour
         {
             foreach (EnvQueryItem item in QueryItems)
             {
-                item.RunConditionCheck();
+                item.RunConditionCheck(Enemy);
             }
         }
     }
@@ -41,7 +43,7 @@ public class EnvQuerySystem : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Generator = new GridGenerator(10, Querier);
+        Generator = new GridGenerator(GridSize, Querier, Enemy);
 
         if (Generator != null)
         {
@@ -52,8 +54,19 @@ public class EnvQuerySystem : MonoBehaviour
         {
             foreach (EnvQueryItem item in QueryItems)
             {
-                Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                float distance = (item.GetWorldLocation() - Enemy.position).magnitude;
+
+                if (distance < 5)
+                {
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                }
+                else
+                {
+                    Gizmos.color = Color.blue;
+                    Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                }
+               
             }
         }
        

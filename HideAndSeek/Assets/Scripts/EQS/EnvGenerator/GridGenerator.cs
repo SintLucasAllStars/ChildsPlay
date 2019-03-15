@@ -7,16 +7,18 @@ public class GridGenerator : EnvQueryGenerator
 
     private int GridSize;
     private Transform querierPos;
+    private Transform EnemyT;
 
     public GridGenerator()
     {
         this.GridSize = 10;
     }
 
-    public GridGenerator(int Size, Transform QueryPos)
+    public GridGenerator(int Size, Transform QueryPos, Transform EnemyT)
     {
         this.GridSize = Size;
         this.querierPos = QueryPos;
+        this.EnemyT = EnemyT;
     }
 
 

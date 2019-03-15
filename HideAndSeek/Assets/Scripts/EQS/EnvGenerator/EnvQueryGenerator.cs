@@ -5,7 +5,7 @@ using UnityEngine;
 public interface EnvQueryGenerator
 {
 
-   List<EnvQueryItem> Items(Transform Positions); 
+   List<EnvQueryItem> Items(Transform QuerierPos); 
 
 
 }
