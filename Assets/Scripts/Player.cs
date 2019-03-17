@@ -5,19 +5,24 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject gun;
+    public GameObject bulletPrefab;
+    public Transform shootOffset;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        SetGunActive(false);
-        
+        gun.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0) && gun.activeSelf == true)
+        {
+            Debug.Log("Player shooting");
+            Instantiate(bulletPrefab, transform.position, shootOffset.rotation);
+        }
     }
 
 
@@ -26,13 +31,9 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Gun"))
         {
             Destroy(other.gameObject);
-            SetGunActive(true);
+            gun.SetActive(true);
         }
     }
 
-    public void SetGunActive(bool b)
-    {
-        gun.SetActive(b);
-    }
 
 }
