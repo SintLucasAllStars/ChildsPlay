@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public GameObject gun;
     public GameObject bulletPrefab;
     public Transform shootOffset;
-    public bool hit;
+    public bool hit; //this bool should be changed by the bullet script
 
     bool hasShot;
 
