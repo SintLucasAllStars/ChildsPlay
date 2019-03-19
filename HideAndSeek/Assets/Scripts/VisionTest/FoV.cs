@@ -17,6 +17,7 @@ public class FoV : MonoBehaviour
 	{
 		foreach (Transform target in m_Targets)
 		{
+			m_Seen = false;
 			Debug.Log("looping through targets");
 			hider = target.gameObject;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
@@ -25,8 +26,12 @@ public class FoV : MonoBehaviour
 				Debug.Log("In Angle");
 				if(Physics.Raycast(transform.position, dirToTarget, out RaycastHit hit, m_ViewRadius))
 				{
-					Debug.Log("target found");
-					m_Seen = true;
+					Debug.Log("Hit somthing");
+					if(hit.collider.name == "Target")
+					{
+						Debug.Log("Found target");
+						m_Seen = true;
+					}
 				}
 			}
 		}
