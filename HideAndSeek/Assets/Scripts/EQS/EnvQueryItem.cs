@@ -19,23 +19,36 @@ public class EnvQueryItem
 
     public bool RunConditionCheck(Transform enemy)
     {
+        Ray ray = new Ray(GetWorldLocation(), (enemy.position - GetWorldLocation()));
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 10))
+        {
+            if (hit.collider.CompareTag("Seeker"))
+            {
+                return true;
+            }
+        }
+        return false;
 
         //Do a Check Over Here 
-        float distance = (enemy.position - GetWorldLocation()).magnitude;
-        if(distance < 10)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        //float distance = (enemy.position - GetWorldLocation()).magnitude;
+        //if(distance < 4)
+        //{
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
     }
 
     public Vector3 GetWorldLocation()
     {
         return QuerierT.position + location;
     }
+
+
+
 
     
 

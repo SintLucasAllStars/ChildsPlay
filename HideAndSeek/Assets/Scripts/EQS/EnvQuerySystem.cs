@@ -31,13 +31,13 @@ public class EnvQuerySystem : MonoBehaviour
         // Update is called once per frame
     void Update()
     {
-        if (QueryItems != null)
-        {
-            foreach (EnvQueryItem item in QueryItems)
-            {
-                item.RunConditionCheck(Enemy);
-            }
-        }
+       // if (QueryItems != null)
+       // {
+       //    foreach (EnvQueryItem item in QueryItems)
+        //    {
+        //        item.RunConditionCheck(Enemy);
+        //    }
+      //  }
     }
 
 
@@ -54,19 +54,33 @@ public class EnvQuerySystem : MonoBehaviour
         {
             foreach (EnvQueryItem item in QueryItems)
             {
+
+                var col = Physics.OverlapSphere(item.GetWorldLocation(), .25f);
                 
 
-                if (item.RunConditionCheck(Enemy))
+                if (col.Length > 0)
                 {
-                    Gizmos.color = Color.red;
-                    Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                    
+
+                   Gizmos.color = Color.yellow;
+                   Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
                 }
                 else
                 {
-                    Gizmos.color = Color.blue;
-                    Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                    
+
+                    if (item.RunConditionCheck(Enemy))
+                    {
+                        Gizmos.color = Color.red;
+                        Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                    }
+                    else
+                    {
+                        Gizmos.color = Color.blue;
+                        Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                    }
                 }
-               
+
             }
         }
        

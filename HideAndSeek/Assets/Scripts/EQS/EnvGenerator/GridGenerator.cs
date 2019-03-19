@@ -33,7 +33,11 @@ public class GridGenerator : EnvQueryGenerator
         {
             for (int z = 0; z < GridSize; z++)
             {
-                NewItems.Add(new EnvQueryItem(new Vector3(x, 0, z), QuerierPos));
+               
+                    NewItems.Add(new EnvQueryItem(new Vector3(x, 0, z), QuerierPos));
+               
+            
+                
             }
         }
 
