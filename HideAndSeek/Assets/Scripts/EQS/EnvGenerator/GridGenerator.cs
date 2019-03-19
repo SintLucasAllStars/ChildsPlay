@@ -29,12 +29,12 @@ public class GridGenerator : EnvQueryGenerator
         List<EnvQueryItem> NewItems = new List<EnvQueryItem>();
 
 
-        for (int x = 0; x < GridSize; x++)
+        for (int x = -GridSize /2; x < GridSize/ 2; x++)
         {
-            for (int z = 0; z < GridSize; z++)
+            for (int z = -GridSize / 2; z < GridSize / 2; z++)
             {
                
-                    NewItems.Add(new EnvQueryItem(new Vector3(x, 0, z), QuerierPos));
+                    NewItems.Add(new EnvQueryItem(new Vector3(x + .5f, 0, z + .5f), QuerierPos));
                
             
                 
