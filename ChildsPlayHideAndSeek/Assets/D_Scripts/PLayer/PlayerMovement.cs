@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         canShoot = true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Shooting();
         Looking();
