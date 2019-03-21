@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         Shooting();
         Looking();
         Moving();
-
+        Inventory();
     }
 
 
@@ -76,6 +76,43 @@ public class PlayerMovement : MonoBehaviour
                 agent.speed = speed_Moving;
                 agent.SetDestination(hit.point);
             }
+        }
+    }
+
+    void Inventory()
+    {
+        if (Input.GetKeyDown(KeyCode.I) && TijdelijkeGameManager.Inventory_B == false)
+        {
+            TijdelijkeGameManager.Inventory_B = true;
+            canShoot = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && TijdelijkeGameManager.Inventory_B == true)
+        {
+            TijdelijkeGameManager.Inventory_B = false;
+            canShoot = true;
+        }
+        if(Input.GetKeyDown(KeyCode.I) && TijdelijkeGameManager.Inventory_B == true)
+        {
+            TijdelijkeGameManager.Inventory_B = false;
+            canShoot = true;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Shop")
+        {
+            TijdelijkeGameManager.shopCanvas_B = true;
+            canShoot = false;
+        }
+        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Shop")
+        {
+            TijdelijkeGameManager.shopCanvas_B = false;
+            canShoot = true;
         }
     }
 
