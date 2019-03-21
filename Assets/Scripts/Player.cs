@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     }
 
-    void DropWeapon()
+    public void DropWeapon()
     {
         Debug.Log("Dropped weapon");
         _droppedgun = Instantiate(gunDropPrefab, transform.position, transform.rotation);
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         //droppedgun.GetComponent<MeshCollider>().convex = true;
         Rigidbody rb = _droppedgun.GetComponent<Rigidbody>();
         rb.AddForce(Vector3.forward * 10);
-        Invoke("ActivateDropWeapon", 0.5f);
+        Invoke("ActivateDropWeapon", 1);
 
         gun.SetActive(false);
         hasShot = false;
@@ -57,6 +57,11 @@ public class Player : MonoBehaviour
     {
         _droppedgun.GetComponent<BoxCollider>().isTrigger = true;
     }
+    
+    void Die()
+    {
+        Debug.Log("Player died");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -64,6 +69,11 @@ public class Player : MonoBehaviour
         {
             Destroy(other.gameObject);
             gun.SetActive(true);
+        }
+
+        if (other.CompareTag("Bullet") && gun.activeInHierarchy == false)
+        {
+            Die();
         }
     }
 
