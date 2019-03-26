@@ -315,7 +315,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23df9b3acc50fe44a5225b81e31a3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 0}
+  gun: {fileID: 1934763802}
+  bulletPrefab: {fileID: 4552591850520492115, guid: e99035d658142744abbea0c6635e5746,
+    type: 3}
+  shootOffset: {fileID: 1426244362}
+  hit: 0
+  dropRange: 0
 --- !u!23 &119500689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -361,6 +366,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100006}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1426244361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426244362}
+  m_Layer: 0
+  m_Name: ShootOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426244362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426244361}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.153, y: 0, z: 0.153}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1934763808}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1134200562903251366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,6 +407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PewPew
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134200564192075452, guid: 5acdc291f86c16d4480815804dd6d1a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1134200564192075398, guid: 5acdc291f86c16d4480815804dd6d1a9,
         type: 3}
@@ -428,18 +468,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
       objectReference: {fileID: 0}
-    - target: {fileID: 1134200564192075392, guid: 5acdc291f86c16d4480815804dd6d1a9,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1134200564192075395, guid: 5acdc291f86c16d4480815804dd6d1a9,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
+--- !u!1 &1934763802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1134200564192075452, guid: 5acdc291f86c16d4480815804dd6d1a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134200562903251366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1934763808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1134200564192075398, guid: 5acdc291f86c16d4480815804dd6d1a9,

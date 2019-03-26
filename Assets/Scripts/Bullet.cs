@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        
+        Destroy(this.gameObject, 2);
     }
 
     // Update is called once per frame
@@ -17,4 +17,5 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
+
 }
