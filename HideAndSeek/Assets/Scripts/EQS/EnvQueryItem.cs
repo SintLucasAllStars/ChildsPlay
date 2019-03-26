@@ -7,6 +7,7 @@ public class EnvQueryItem
    public Vector3 location;
    public Transform QuerierT;
     public bool EnemyNearby;
+    public bool IsColliding;
    
     
 

@@ -64,6 +64,7 @@ public class EnvQuerySystem : MonoBehaviour
 
                    Gizmos.color = Color.yellow;
                    Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                    Gizmos.color = Color.magenta;
                 }
                 else
                 {
