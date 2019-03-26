@@ -20,12 +20,16 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public NavMeshAgent agent;
     private float speed_Moving = 3.5f;
+
+    //Audio Stuff
+    AudioSource audioSource;
+    public AudioClip Spit;
     #endregion
 
     #region Shooting stuff
     public GameObject Ball_Pfb;
     public Transform SpawnLocation;
-    private bool canShoot;
+    public static bool canShoot;
     #endregion
 
     void Start()
@@ -36,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         Mouth001_Obj.SetActive(true);
         Mouth002_Obj.SetActive(false);
         canShoot = true;
@@ -46,21 +51,11 @@ public class PlayerMovement : MonoBehaviour
         Shooting();
         Looking();
         Moving();
-        Inventory();
     }
 
 
     void Looking()
     {
-        //if (Input.GetMouseButton(1))
-        //{
-        //    //Always looking at the mouse:
-        //    if (Target_Looking != null)
-        //    {
-        //        transform.LookAt(Target_Looking);
-        //    }
-        //}
-
         transform.LookAt(Target_Looking);
     }
 
@@ -79,23 +74,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Inventory()
+    public static void Inventory()
     {
-        if (Input.GetKeyDown(KeyCode.I) && TijdelijkeGameManager.Inventory_B == false)
-        {
-            TijdelijkeGameManager.Inventory_B = true;
-            canShoot = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Escape) && TijdelijkeGameManager.Inventory_B == true)
-        {
-            TijdelijkeGameManager.Inventory_B = false;
-            canShoot = true;
-        }
-        if(Input.GetKeyDown(KeyCode.I) && TijdelijkeGameManager.Inventory_B == true)
-        {
-            TijdelijkeGameManager.Inventory_B = false;
-            canShoot = true;
-        }
+        canShoot = !canShoot;
     }
 
     private void OnTriggerStay(Collider other)
@@ -133,6 +114,8 @@ public class PlayerMovement : MonoBehaviour
         canShoot = false;
         Mouth001_Obj.SetActive(false);
         Mouth002_Obj.SetActive(true);
+        audioSource.clip = Spit;
+        audioSource.Play();
         Instantiate(Ball_Pfb, SpawnLocation.transform.position, SpawnLocation.transform.rotation);
         yield return new WaitForSeconds(1);
         Mouth001_Obj.SetActive(true);
@@ -140,5 +123,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(1);
         canShoot = true;
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Loot")
+        {
+            Destroy(collision.gameObject);
+            ShopScript.coins_Int += 15;
+        }
     }
 }
