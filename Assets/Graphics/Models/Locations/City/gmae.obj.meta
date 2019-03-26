@@ -1,0 +1,338 @@
+fileFormatVersion: 2
+guid: 6f0c27fd30892ea4883192d793eaf15d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: default
+    100002: //RootNode
+    400000: default
+    400002: //RootNode
+    2100000: wall
+    2100002: building10
+    2100004: building11
+    2100006: building_7
+    2100008: buildings12
+    2100010: hosptial
+    2100012: building13
+    2100014: shop4
+    2100016: buitding4
+    2100018: building3
+    2100020: building3low
+    2100022: shop2
+    2100024: shop3
+    2100026: building5
+    2100028: building1
+    2100030: shop5
+    2100032: building8
+    2100034: building2
+    2100036: building9
+    2100038: CEMENT
+    2100040: BUILDING14
+    2100042: building15
+    2100044: building17
+    2100046: Material
+    2100048: shop1
+    2100050: building_6
+    2100052: None
+    2100054: crossroad.001
+    2100056: shop6
+    2100058: CEMENT.001
+    2100060: concrete
+    2100062: parking
+    2100064: stadium_lower
+    2100066: stadium_door
+    2100068: stadium_upper
+    2100070: crossroad
+    2100072: HOSPITALTEXT
+    2100074: road
+    2100076: concrete.002
+    2100078: concrete.001
+    2300000: default
+    3300000: default
+    4300000: default
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BUILDING14
+    second: {fileID: 2100000, guid: 2fc838b5b6a341e45afa23f962449de9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CEMENT
+    second: {fileID: 2100000, guid: 96b68e2a1a132ad47b876a07d6b974cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CEMENT.001
+    second: {fileID: 2100000, guid: 96b68e2a1a132ad47b876a07d6b974cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HOSPITALTEXT
+    second: {fileID: 2100000, guid: db7b62593db2e794c975145d8db54ca2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building1
+    second: {fileID: 2100000, guid: 43826eea6f02b2245a8f82500bb2c05f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building10
+    second: {fileID: 2100000, guid: c8b088757247d4f4486e2f9d5b10f1ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building11
+    second: {fileID: 2100000, guid: 328a31c777f6d8942b679c35e3f17db7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building13
+    second: {fileID: 2100000, guid: be9baf3c7ce8a2d47998c96ed661a1cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building15
+    second: {fileID: 2100000, guid: bc594962e5353b04cbc8612c4ea190e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building17
+    second: {fileID: 2100000, guid: 3171ff5b04f243a4d87443e48b6daabd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building2
+    second: {fileID: 2100000, guid: 03cff87eca24a834a87f58ecb6f8827a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building3
+    second: {fileID: 2100000, guid: 6490c525e346b884ea932bf3633c9284, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building3low
+    second: {fileID: 2100000, guid: e4dd99194c3c63847abcda45f6548162, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building5
+    second: {fileID: 2100000, guid: bf17c39d66c15b74ea131d580edcf5ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building8
+    second: {fileID: 2100000, guid: 0d12d989e90a57f4db17d3fba366ab8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building9
+    second: {fileID: 2100000, guid: 0d12d989e90a57f4db17d3fba366ab8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building_6
+    second: {fileID: 2100000, guid: d9dedf65bfcd9dd4fa0d81f7a26bafd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building_7
+    second: {fileID: 2100000, guid: f59dbee0aa4528143b7e87f820b13614, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buildings12
+    second: {fileID: 2100000, guid: 1e05e1f42305be345ac9088167a785c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buitding4
+    second: {fileID: 2100000, guid: dff25af1e85a4fa4eb6599589f417b61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete
+    second: {fileID: 2100000, guid: 784496ee59a43ab4db90ec3fe54bac85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete.001
+    second: {fileID: 2100000, guid: 784496ee59a43ab4db90ec3fe54bac85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete.002
+    second: {fileID: 2100000, guid: 784496ee59a43ab4db90ec3fe54bac85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crossroad
+    second: {fileID: 2100000, guid: 5aa19751d5236e34fa41443619391a7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crossroad.001
+    second: {fileID: 2100000, guid: 78a5b5a07166b174ab86159278bc2828, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hosptial
+    second: {fileID: 2100000, guid: db7b62593db2e794c975145d8db54ca2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: parking
+    second: {fileID: 2100000, guid: 32156fdd8db5e484fa41c385b3afe95a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: road
+    second: {fileID: 2100000, guid: 5aa19751d5236e34fa41443619391a7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shop1
+    second: {fileID: 2100000, guid: d9dd186b2c122ec4cb97e89108eb2fa5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shop2
+    second: {fileID: 2100000, guid: a2668bc1014d97d4f80f060ba142b306, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shop3
+    second: {fileID: 2100000, guid: 849772c7c5d18654da529c9a5527c4f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shop4
+    second: {fileID: 2100000, guid: d2b46e029c30f3946b0cfddf48673240, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shop5
+    second: {fileID: 2100000, guid: 86c8be523d436f642b393414d0df2d8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shop6
+    second: {fileID: 2100000, guid: 4dea2f5dba4b81f4a9b2ce03f4400b9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stadium_door
+    second: {fileID: 2100000, guid: 81fe833f0ea09dc48959389123e3a9a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stadium_lower
+    second: {fileID: 2100000, guid: 7d51c01df7dab0248ab3b4bb365853e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stadium_upper
+    second: {fileID: 2100000, guid: 3cb1d35d5f8aec7448c4e320dd9c3e1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall
+    second: {fileID: 2100000, guid: 23f827806fb8b2f4a837a0f6018df696, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
