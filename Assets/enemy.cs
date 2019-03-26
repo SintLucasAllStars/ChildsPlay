@@ -1,16 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class enemy : MonoBehaviour
 {
-    public int speed;
-    public GameObject player;
+    bool close;
+    [SerializeField]
+    Transform destination;
 
-    void Update()
+    NavMeshAgent navMeshAgent;
+
+    // Use this for initialization
+    void Start()
     {
-        Vector3 localPosition = player.transform.position - transform.position;
-        localPosition = localPosition.normalized; // The normalized direction in LOCAL space
-        transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
+
+        navMeshAgent = this.GetComponent<NavMeshAgent>();
+        close = false;
+
+    }
+
+    private void Update()
+    {
+        if (close == true)
+        {
+
+            if (navMeshAgent == null)
+            {
+                //Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
+            }
+            else
+            {
+                SetDestination();
+            }
+        }
+    }
+
+    private void SetDestination()
+    {
+        if (destination != null)
+        {
+            Vector3 targetVector = destination.transform.position;
+            navMeshAgent.SetDestination(targetVector);
+        }
     }
 }
