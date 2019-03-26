@@ -14,7 +14,12 @@ public class Children : MonoBehaviour
     GameObject Player;
     Vector3 posPlayer;
     Vector3 newLocation;
-   
+    bool m_allowedMove = true;
+
+    private GameObject Manager;
+    public float m_speed = 0.02f;
+
+
 
 
 
@@ -29,9 +34,11 @@ public class Children : MonoBehaviour
       
         //palt de navmeshagent voor movement en maakt een nieuwe random locatie aan om naar toe tegaan
         agent = gameObject.GetComponent<NavMeshAgent>();
-        Rlocation = new Vector3(posX, -3.87f, posZ);
+        Rlocation = new Vector3(Random.Range(-6, 6), -3.87f, Random.Range(-6, 6));
         //vind de player 
         Player = GameObject.FindGameObjectWithTag("Player");
+
+        Manager = GameObject.FindGameObjectWithTag("K_m");
 
     }
 
@@ -44,7 +51,7 @@ public class Children : MonoBehaviour
       //  agent.SetDestination(Rlocation);
         //berekent hoe ver de player van he kind vandaan is 
         distance = Vector3.Distance(transform.position, posPlayer);
-        if(distance < 5)
+        if(distance < 5 && m_allowedMove)
         {
                       
             move();
@@ -52,6 +59,7 @@ public class Children : MonoBehaviour
             Debug.DrawRay(transform.position, forward, Color.green);
             agent.Stop();
             changeLocation = true;
+            Debug.Log("??");
             if (changeLocation)
             {
                 posX = Random.Range(-4, 4);
@@ -73,21 +81,27 @@ public class Children : MonoBehaviour
        
 
 
-        //debug .log if Random pos
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-           
-            Rlocation = new Vector3(posX, -3.87f, posZ);
-        }
     }
     // nieuwe positie aanmaken
     void move()
     {
         transform.rotation = Quaternion.LookRotation(transform.position - posPlayer).normalized;
-        transform.Translate(0, 0, 0.02f);
+        transform.Translate(0, 0, m_speed);
        // Vector3 RunTo = transform.position + transform.forward * multiplyBy;
     }
-   
-    
-   
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+            Debug.Log("Kindaangeraakt WEEWOOO");
+            gameObject.GetComponent<Renderer>().material.color = Color.black;
+            m_allowedMove = false;
+            agent.Stop();
+            Manager.GetComponent<ChildManager>().IncreaseSpeed();
+            //send msg to GameManager
+        }
+    }
+
+
+
 }

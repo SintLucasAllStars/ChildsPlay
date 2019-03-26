@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Kinderen
+  - K_m
   layers:
   - Default
   - TransparentFX
