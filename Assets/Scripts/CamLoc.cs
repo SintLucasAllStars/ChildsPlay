@@ -9,7 +9,10 @@ public class CamLoc : MonoBehaviour
 
     public float m_distance;          // The distance between the player and the camera
     private float m_distanceOrigin;   // The distance set in the editor
+
     public int m_height;            // The height the camera is above the player
+
+    public bool m_isTitle;          // If this is checked then the camera will rotate around the player ASAP
 
     // Start is called before the first frame update
     void Start()
@@ -33,38 +36,41 @@ public class CamLoc : MonoBehaviour
         }
 
         // The camera can be turned left/right when pressing the keys
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if(m_isTitle == false)
         {
-            Player.m_idle = 1;
-            transform.RotateAround(m_player.transform.position, Vector3.down, 90);
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Player.m_idle = 1;
-            transform.RotateAround(m_player.transform.position, Vector3.up, 90);
-        }
-
-        // The camera can zoom in/out
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Player.m_idle = 1;
-            if (m_distance > m_distanceOrigin / 1.5f)
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                m_distance = m_distance / 1.5f;
+                Player.m_idle = 1;
+                transform.RotateAround(m_player.transform.position, Vector3.down, 90);
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Player.m_idle = 1;
-            if(m_distance < m_distanceOrigin * 1.5f)
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                m_distance = m_distance * 1.5f;
+                Player.m_idle = 1;
+                transform.RotateAround(m_player.transform.position, Vector3.up, 90);
+            }
+
+            // The camera can zoom in/out
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Player.m_idle = 1;
+                if (m_distance > m_distanceOrigin / 1.5f)
+                {
+                    m_distance = m_distance / 1.5f;
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Player.m_idle = 1;
+                if (m_distance < m_distanceOrigin * 1.5f)
+                {
+                    m_distance = m_distance * 1.5f;
+                }
             }
         }
 
         // If the player has been idle for too long, the camera will rotate around the player
         // 
-        if (Player.m_idle <= 0)
+        if (Player.m_idle <= 0 || m_isTitle == true)
         {
             transform.RotateAround(m_player.transform.position, Vector3.down, 20 * Time.deltaTime);
         }
