@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
     public GameObject gun;
     public GameObject gunDropPrefab;
     public GameObject bulletPrefab;
     public Transform shootOffset;
+
+
+
     public bool hit = false; //this bool should be changed by the bullet script
     public float dropRange;
 
@@ -42,9 +46,6 @@ public class Player : MonoBehaviour
         Debug.Log("Dropped weapon");
         _droppedgun = Instantiate(gunDropPrefab, transform.position, transform.rotation);
 
-        //GameObject droppedgun = Instantiate(gun, transform.position, transform.rotation);
-        //droppedgun.AddComponent<Rigidbody>();
-        //droppedgun.GetComponent<MeshCollider>().convex = true;
         Rigidbody rb = _droppedgun.GetComponent<Rigidbody>();
         rb.AddForce(Vector3.forward * 10);
         Invoke("ActivateDropWeapon", 1);
