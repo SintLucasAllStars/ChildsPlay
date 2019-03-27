@@ -7,8 +7,8 @@ public class Children : MonoBehaviour
 {
     public NavMeshAgent agent;
     public float distance;
-    private float posX;
-    private float posZ;
+    public float posX;
+    public float posZ;
     bool changeLocation;
     Vector3 Rlocation;
     GameObject Player;
@@ -40,6 +40,7 @@ public class Children : MonoBehaviour
 
         Manager = GameObject.FindGameObjectWithTag("K_m");
 
+        StartCoroutine("ChangeCoords");
     }
 
     // Update is called once per frame
@@ -59,7 +60,7 @@ public class Children : MonoBehaviour
             Debug.DrawRay(transform.position, forward, Color.green);
             agent.Stop();
             changeLocation = true;
-            Debug.Log("??");
+
             if (changeLocation)
             {
                 posX = Random.Range(-4, 4);
@@ -93,14 +94,27 @@ public class Children : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            Debug.Log("Kindaangeraakt WEEWOOO");
-            gameObject.GetComponent<Renderer>().material.color = Color.black;
+        
+            
+            //gameObject.GetComponent<Renderer>().material.color = Color.black;
             m_allowedMove = false;
             agent.Stop();
-            Manager.GetComponent<ChildManager>().IncreaseSpeed();
+            gameObject.GetComponentInChildren<Renderer>().material.color = Color.red;
+             Manager.GetComponent<ChildManager>().IncreaseSpeed();
             //send msg to GameManager
         }
     }
+    IEnumerator ChangeCoords()
+    {
+       
+        posX = Random.Range(-4, 4);
+        posZ = Random.Range(-4, 4);
+        Rlocation = new Vector3(posX, -3.87f, posZ);
+        agent.SetDestination(Rlocation);
+        yield return new WaitForSeconds(9);
+        
+    }
+  
 
 
 
