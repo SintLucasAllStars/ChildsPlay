@@ -7,6 +7,7 @@ public class ChildManager : MonoBehaviour
     //list van de kinderen
     private List<GameObject> m_Children = new List<GameObject>();
     public GameObject m_prefab;
+    public GameObject m_KermitPrefab;
     private Vector3 m_randomVector;
     private int count;
 
@@ -36,6 +37,15 @@ public class ChildManager : MonoBehaviour
 
             m_randomVector = new Vector3(Random.Range(-6, 6), -3.87f, Random.Range(-6, 6));
             GameObject g = Instantiate(m_prefab, m_randomVector, transform.rotation);
+            m_Children.Add(g);
+
+
+        }
+        for (int i = 0; i < 7; i++)
+        {
+
+            m_randomVector = new Vector3(Random.Range(-6, 6), -3.87f, Random.Range(-6, 6));
+            GameObject g = Instantiate(m_KermitPrefab, m_randomVector, transform.rotation);
             m_Children.Add(g);
 
 
