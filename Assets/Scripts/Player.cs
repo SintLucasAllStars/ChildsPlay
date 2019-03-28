@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public bool hit = false; //this bool should be changed by the bullet script
     public float dropRange;
 
-    bool hasShot;
+    public bool hasShot;
     GameObject _droppedgun;
 
     // Start is called before the first frame update
