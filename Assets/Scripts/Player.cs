@@ -53,5 +53,9 @@ public class Player : Person
         }
     }
 
+    public void RecieveWeapon()
+    {
+        //get weapon
+    }
 
 }

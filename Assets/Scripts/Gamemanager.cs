@@ -15,16 +15,14 @@ public class Gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allPlayers.Add(GameObject.FindGameObjectWithTag("Player"));
+        allPlayers.Add(GameObject.FindObjectOfType<Player>().GetComponent<GameObject>());
         allPlayers.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 
-        allPlayers[Random.Range(0, allPlayers.Count)].SendMessage("RecieveWeapon");
     }
 
     // Update is called once per frame
     void Update()
     {
-        #region starting the game
         if (Input.GetKey(KeyCode.R))
             playerReady = true;
 
@@ -35,26 +33,13 @@ public class Gamemanager : MonoBehaviour
 
             Time.timeScale = 0;
         }
-        else if (startTimer <= 0)
+        else if(startTimer <= 0)
         {
             UICount.text = "";
             readyInfo.text = "";
             Time.timeScale = 1;
         }
         else
-            Time.timeScale = 0;
-        #endregion
-
-    }
-
-    public void CheckDeath(GameObject person)
-    {
-        for (int i = 0; i < allPlayers.Count; i++)
-        {
-            if(allPlayers[i] == person)
-            {
-                allPlayers.RemoveAt(i);
-            }
-        }
+            Time.timeScale = 0; 
     }
 }
