@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1412020755, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1412020755, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
       propertyPath: m_Center.x

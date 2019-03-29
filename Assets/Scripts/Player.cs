@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
 
     public void RecieveWeapon()
     {
+        Debug.Log(gameObject.name + "got weapon");
         //get weapon
     }
 
