@@ -8,6 +8,8 @@ public class enemy : MonoBehaviour
     bool close;
     [SerializeField]
     Transform destination;
+    public Transform player;
+    float distance;
 
     NavMeshAgent navMeshAgent;
 
@@ -20,8 +22,18 @@ public class enemy : MonoBehaviour
 
     }
 
+
     private void Update()
     {
+        distance =Vector3.Distance(transform.position,destination.position);
+        if (distance <= 10)
+        {
+            close = true;
+        }
+        else
+        {
+            close = false;
+        }
         if (close == true)
         {
 
