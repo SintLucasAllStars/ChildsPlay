@@ -39,6 +39,8 @@ public class Cutscene : MonoBehaviour
 
         transform.LookAt(m_aziz.transform);
 
+        GameManager.m_day++;
+
     }
 
     // Update is called once per frame

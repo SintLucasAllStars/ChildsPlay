@@ -28,6 +28,9 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Setting the time
+        m_totalTime = 30 + Mathf.Round(GameManager.m_day * 20) + Random.Range(1, 11);
+
         // Playing the background music
         m_aud = GetComponent<AudioSource>();
         m_aud.clip = m_pizza;

@@ -13,10 +13,12 @@ public class ChildManager : MonoBehaviour
 
     private Vector3 m_randomVector;
 
-    public int count;
+    public float count; // Amount of customers that are spawned in
 
     void Start()
     {
+
+        count = 1 + Mathf.Round(GameManager.m_day / 2) + Random.Range(0, 3);
 
         SpawnKinderen();
 
