@@ -83,5 +83,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void RecieveWeapon()
+    {
+        //get weapon
+    }
 
 }
