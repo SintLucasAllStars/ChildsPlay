@@ -55,6 +55,7 @@ public class Player : Person
 
     public void RecieveWeapon()
     {
+        Debug.Log(gameObject.name + "got weapon");
         //get weapon
     }
 
