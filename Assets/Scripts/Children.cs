@@ -14,10 +14,12 @@ public class Children : MonoBehaviour
     GameObject Player;
     Vector3 posPlayer;
     Vector3 newLocation;
-    bool m_allowedMove = true;
+    public bool m_allowedMove;
+
+    private int wanderRadius;
 
     private GameObject Manager;
-    public float m_speed = 0.02f;
+    public float m_speed;
 
 
 
@@ -27,20 +29,26 @@ public class Children : MonoBehaviour
     public float multiplyBy;
 
 
-        void Start()
+    void Start()
     {
+        m_allowedMove = true;
+        wanderRadius = 50;
         changeLocation = false;
         multiplyBy = 0.2f;
+        m_speed = Random.Range(0.05f, 0.15f);
       
         //palt de navmeshagent voor movement en maakt een nieuwe random locatie aan om naar toe tegaan
         agent = gameObject.GetComponent<NavMeshAgent>();
-        Rlocation = new Vector3(Random.Range(-6, 6), -3.87f, Random.Range(-6, 6));
+
+        //Rlocation = new Vector3(Random.Range(-70, 50), 0.377809f, Random.Range(-50, 60));
+        Rlocation = RandomNavSphere(transform.position, wanderRadius, -1);
+        agent.SetDestination(Rlocation);
+
         //vind de player 
-        Player = GameObject.FindGameObjectWithTag("Player");
-
-        Manager = GameObject.FindGameObjectWithTag("K_m");
-
+        Player = GameObject.Find("Player");
+        Manager = GameObject.Find("Main_Camera");
         StartCoroutine("ChangeCoords");
+
     }
 
     // Update is called once per frame
@@ -48,11 +56,13 @@ public class Children : MonoBehaviour
     {
         //pakt de player transform
         posPlayer = Player.GetComponent<Transform>().position;
+
         //loopt naar de nieuwe positie
       //  agent.SetDestination(Rlocation);
+
         //berekent hoe ver de player van he kind vandaan is 
         distance = Vector3.Distance(transform.position, posPlayer);
-        if(distance < 5 && m_allowedMove)
+        if(distance < 10 && m_allowedMove)
         {
                       
             move();
@@ -65,7 +75,8 @@ public class Children : MonoBehaviour
             {
                 posX = Random.Range(-4, 4);
                 posZ = Random.Range(-4, 4);
-                Rlocation = new Vector3(posX, -3.87f, posZ);
+                Rlocation = RandomNavSphere(transform.position, wanderRadius, -1);
+                agent.SetDestination(Rlocation);
                 changeLocation = false;
             }
 
@@ -79,8 +90,12 @@ public class Children : MonoBehaviour
             agent.Resume();
 
         }
-       
 
+        // In case the customer falls off the map or spawns on a building
+        if (transform.position.y <= -2 || transform.position.y >= 10)
+        {
+            transform.position = new Vector3(Random.Range(-70, 50), -0.125f, Random.Range(-50, 60));
+        }
 
     }
     // nieuwe positie aanmaken
@@ -94,27 +109,47 @@ public class Children : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-        
-            
             //gameObject.GetComponent<Renderer>().material.color = Color.black;
             m_allowedMove = false;
             agent.Stop();
             gameObject.GetComponentInChildren<Renderer>().material.color = Color.red;
-             Manager.GetComponent<ChildManager>().IncreaseSpeed();
+            //Manager.GetComponent<ChildManager>().IncreaseSpeed();
             //send msg to GameManager
         }
+
+        if(coll.gameObject.tag == "Building")
+        {
+            transform.position = new Vector3(Random.Range(-70, 50), -0.125f, Random.Range(-50, 60));
+        }
+
     }
+
     IEnumerator ChangeCoords()
     {
-       
-        posX = Random.Range(-4, 4);
-        posZ = Random.Range(-4, 4);
-        Rlocation = new Vector3(posX, -3.87f, posZ);
+        /*
+         posX = Random.Range(-4, 4);
+         posZ = Random.Range(-4, 4);
+         Rlocation = new Vector3(posX, -3.87f, posZ);
+         agent.SetDestination(Rlocation);
+         */
+        Rlocation = RandomNavSphere(transform.position, wanderRadius, -1);
         agent.SetDestination(Rlocation);
         yield return new WaitForSeconds(9);
         
     }
-  
+
+    public static Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask)
+    {
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
+
+        randomDirection += origin;
+
+        NavMeshHit navHit;
+
+        NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
+
+        return navHit.position;
+    }
 
 
 

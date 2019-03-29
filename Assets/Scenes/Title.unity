@@ -1307,7 +1307,7 @@ Canvas:
   m_GameObject: {fileID: 378419859}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1976240362}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -3462,22 +3462,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -7.152846e-15
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -1.8724004e-29
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 2.635161e-15
-      objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5
@@ -3533,6 +3517,22 @@ PrefabInstance:
     - target: {fileID: 400166, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -7.152846e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1.8724004e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 2.635161e-15
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 19b4b87a324c2a640ab9fb88f3144a89, type: 3}
       propertyPath: m_Controller
@@ -4977,6 +4977,7 @@ GameObject:
   - component: {fileID: 1976240362}
   - component: {fileID: 1976240361}
   - component: {fileID: 1976240364}
+  - component: {fileID: 1976240365}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5064,6 +5065,18 @@ MonoBehaviour:
   m_distance: 5
   m_height: -1
   m_isTitle: 1
+--- !u!114 &1976240365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976240360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014deea9c2c52a741ac6560a6e1d4443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2036384320
 GameObject:
   m_ObjectHideFlags: 0

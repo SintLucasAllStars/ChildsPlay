@@ -2,36 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HUD : MonoBehaviour
 {
 
-    public Text m_time;
-    public Text m_peopleText;
+    public Text m_time; // The Timer on screen, displays how much time is left
+    public Text m_peopleText; // Display how many people are left to catch
 
-    public float m_miliseconds;
-    public float m_seconds;
-    public float m_minutes;
+    public Slider m_slider; // Fancy slider underneath m_timer
 
-    public GameObject[] m_peopleList;
-    public int m_peopleAmount;
+    public float m_totalTime; // The total amount of time the player is given (in seconds)
+    private float m_miliseconds; // Miliseconds, used to calculate the passing of time
+    private float m_seconds; // The amount of displayed given seconds
+    private float m_minutes; // The amount of displayed given minutes
 
-    private AudioSource m_aud;
-    public AudioClip m_pizza;
+    private GameObject[] m_peopleList; // Array of all the customers on the map
+    public int m_peopleAmount; // The total number of customers/people that haven't been caught
 
-    public bool m_lose;
+    private AudioSource m_aud; // Audio Source
+    public AudioClip m_pizza; // The infamous Pizza Theme
+
+    public bool m_lose; // A bool that switches on when the player loses
 
     // Start is called before the first frame update
     void Start()
     {
+        // Playing the background music
         m_aud = GetComponent<AudioSource>();
         m_aud.clip = m_pizza;
         m_aud.Play();
+
+        // Setting the slider max value
+        m_slider.maxValue = m_totalTime;
+
+        // Converting the total time to minutes & seconds
+        m_minutes = Mathf.Floor(m_totalTime / 60);
+        m_seconds = m_totalTime - m_minutes * 60;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        m_slider.value = m_totalTime;
+
         if(m_miliseconds < 0 && m_lose == false)
         {
             m_miliseconds = 1;
@@ -47,15 +63,18 @@ public class HUD : MonoBehaviour
                 {
                     m_seconds = 59;
                     m_minutes--;
+                    m_totalTime--;
                 }
             }
             else
             {
                 m_seconds--;
+                m_totalTime--;
             }
         }
         else
         {
+            // Music fades out as the timer reaches 0
             if(m_minutes == 0 && m_seconds == 0 && m_miliseconds > 0 && m_lose == false)
             {
                 m_aud.pitch = m_miliseconds;
@@ -63,7 +82,7 @@ public class HUD : MonoBehaviour
             m_miliseconds -= Time.deltaTime * 1;
         }
 
-        // Update the timer
+        // Update the timer display
         if(m_minutes < 10 && m_seconds < 10)
         {
             m_time.text = "0" + m_minutes.ToString() + ":0" + m_seconds.ToString();
@@ -85,6 +104,13 @@ public class HUD : MonoBehaviour
         m_peopleList = GameObject.FindGameObjectsWithTag("Customer");
         m_peopleAmount = m_peopleList.Length;
         m_peopleText.text = m_peopleAmount.ToString();
+
+        // If there are no customers left, 
+        // the player wins and is loaded into a different scene
+        if(m_peopleAmount <= 0)
+        {
+            SceneManager.LoadScene("Pizzaria");
+        }
 
     }
 }

@@ -6,15 +6,19 @@ public class ChildManager : MonoBehaviour
 {
     //list van de kinderen
     private List<GameObject> m_Children = new List<GameObject>();
-    public GameObject m_prefab;
-    public GameObject m_KermitPrefab;
+
+    // public GameObject m_prefab;
+    // public GameObject m_KermitPrefab;
+    public GameObject[] m_customers;
+
     private Vector3 m_randomVector;
-    private int count;
+
+    public int count;
 
     void Start()
     {
-        SpawnKinderen();
 
+        SpawnKinderen();
 
     }
 
@@ -23,38 +27,54 @@ public class ChildManager : MonoBehaviour
     {
       
 
+
     }
 
     //houd de kinderen aantall
     public void ChildrenCount() {
+
         count = m_Children.Count;
         Debug.Log(count);
+
     }
     private void SpawnKinderen()
     {
+
+        for (int i = 0; i < count; i++) // Repeat this equal to the amount of customers you want
+        {
+
+            int c = Random.Range(0, m_customers.Length); // Generate a random number equal to amount of prefabs
+
+            m_randomVector = new Vector3(Random.Range(-70, 50), -0.125f, Random.Range(-50, 60)); // Set random location
+            GameObject g = Instantiate(m_customers[c], m_randomVector, transform.rotation); // Spawn in the random prefab
+            m_Children.Add(g); // Add to array
+
+        }
+
+        /*
         for (int i = 0; i < 5; i++)
         {
 
-            m_randomVector = new Vector3(Random.Range(-6, 6), -3.87f, Random.Range(-6, 6));
+            m_randomVector = new Vector3(Random.Range(-70, 50), 1, Random.Range(-50, 60));
             GameObject g = Instantiate(m_prefab, m_randomVector, transform.rotation);
             m_Children.Add(g);
-
 
         }
         for (int i = 0; i < 7; i++)
         {
 
-            m_randomVector = new Vector3(Random.Range(-6, 6), -3.87f, Random.Range(-6, 6));
+            m_randomVector = new Vector3(Random.Range(-70, 50), 1, Random.Range(-50, 60));
             GameObject g = Instantiate(m_KermitPrefab, m_randomVector, transform.rotation);
             m_Children.Add(g);
 
-
         }
+        */
+
     }
+    /*
     public void IncreaseSpeed()
     {
-        int happend;
-        happend = 0;
+        int happend = 0;
         happend += 1;
         switch (happend)
         {
@@ -104,7 +124,7 @@ public class ChildManager : MonoBehaviour
       
 
     }
-
+    */
 
 
 
