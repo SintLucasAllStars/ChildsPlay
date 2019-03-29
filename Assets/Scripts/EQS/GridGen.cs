@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridGen : MonoBehaviour
+public class GridGen : IQGenerator
 {
-	int GridSize;
-	Transform queruerPos; 
+	private int GridSize;
+	private Transform QuePos; 
 	
 	public GridGen()
 	{
 		this.GridSize = 10; 
 	}
 
-	public GridGen(int Size, Transform QYpos)
+	public GridGen(int Size, Transform QueryPos)
 	{
 		this.GridSize = Size;
-		this.queruerPos = QYpos; 
+		this.QuePos = QueryPos; 
 	}
 
-	public List<EQSItem> Items(Transform QPosition)
+	public List<EQSItem> Items(Transform Qposition)
 	{
 		List<EQSItem> NewItems = new List<EQSItem>();
 
@@ -26,18 +26,11 @@ public class GridGen : MonoBehaviour
 		{
 			for (int z = -GridSize /2; z < GridSize /2; z++)
 			{
-				NewItems.Add(new EQSItem(new Vector3(x + .5f, 0, z + .5f), queruerPos);
+				NewItems.Add(new EQSItem(new Vector3(x + .5f, 0, z + .5f), Qposition));
 
 			}
 		}
 		return NewItems;
-	}
-	
-	private void OnDrawGizmos()
-	{
-		Gizmos.DrawSphere(transform.position, 1f);
-		Gizmos.color = Color.yellow; 
-
 	}
 
 }

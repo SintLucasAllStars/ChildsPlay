@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface QGenerator
+public interface IQGenerator
 {
 	List<EQSItem> Items(Transform QPosition);
 

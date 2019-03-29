@@ -6,8 +6,6 @@ public class EQSItem
 {
 	public Vector3 l;
 	public Transform QT;
-	public bool EnemyClose;
-	public bool IsColliding;
 
 	public Vector3 GetWorldLocation()
 	{
@@ -22,13 +20,13 @@ public class EQSItem
 	}
 
 
-	public bool RunCheck(Transform enemy)
+	public bool RunCheck(Transform target)
 	{
-		Ray ray = new Ray(GetWorldLocation(), (enemy.position - GetWorldLocation()));
+		Ray ray = new Ray(GetWorldLocation(), (target.position - GetWorldLocation()));
 
 		if (Physics.Raycast(ray, out RaycastHit hit, 10))
 		{
-			if (hit.collider.CompareTag("Player"))
+			if (hit.collider.CompareTag("Seeker"))
 			{
 				return true; 
 			}

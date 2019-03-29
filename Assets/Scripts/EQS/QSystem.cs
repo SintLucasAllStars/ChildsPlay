@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class QSystem: MonoBehaviour
 {
-	QGenerator gen;
+	IQGenerator gen;
 
 	List<EQSItem> Qitems;
 	public Transform Qr;
-	public Transform Enemy;
+	public Transform target;
 	public int GridSize;
 
 	public void OnDrawGizmos()
@@ -17,6 +17,7 @@ public class QSystem: MonoBehaviour
 
 		if (gen != null)
 		{
+
 			Qitems = gen.Items(transform);
 		}
 
@@ -35,7 +36,7 @@ public class QSystem: MonoBehaviour
 				}else
 				{
 
-					if (item.RunCheck(enemy))
+					if (item.RunCheck(target))
 					{
 						Gizmos.color = Color.red;
 						Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
