@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IQueryGenerator
 {
-    
+	//List<AEnvQueryItem> Item();
+	AEnvQueryItem[,] Item();
 }

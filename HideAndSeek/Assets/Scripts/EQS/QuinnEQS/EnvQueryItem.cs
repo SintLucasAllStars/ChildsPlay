@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnvQueryItem 
 {
-   public Vector3 location;
-   public Transform QuerierT;
+	public Vector3 location;
+	public Transform QuerierT;
     public bool EnemyNearby;
     public bool IsColliding;
    
@@ -13,7 +13,7 @@ public class EnvQueryItem
 
     public EnvQueryItem(Vector3 NewPosition, Transform QuerierPos)
     {
-       this.location = NewPosition;
+		this.location = NewPosition;
         this.QuerierT = QuerierPos;
         
     }
