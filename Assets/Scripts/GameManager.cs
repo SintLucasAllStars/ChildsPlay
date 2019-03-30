@@ -7,11 +7,15 @@ public class GameManager : MonoBehaviour
     public static GameManager m_instance;
 
     public static int m_day = 0; // The current cycle/wave, is used to calculate things like amount of customers and time
+    public static int m_bestDay; // The best streak the player has ever managed to achieve
+
+    public static bool m_won;
+    public static bool m_lost;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        m_bestDay = PlayerPrefs.GetInt("m_bestDay");
 
         // Check if instance already exists
         if(m_instance == null)
@@ -32,5 +36,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+        if(m_day > m_bestDay && m_won == true)
+        {
+            m_bestDay = m_day;
+            PlayerPrefs.SetInt("m_bestDay", m_bestDay);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 }

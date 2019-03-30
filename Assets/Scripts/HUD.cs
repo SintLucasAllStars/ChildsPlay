@@ -23,13 +23,11 @@ public class HUD : MonoBehaviour
     private AudioSource m_aud; // Audio Source
     public AudioClip m_pizza; // The infamous Pizza Theme
 
-    public bool m_lose; // A bool that switches on when the player loses
-
     // Start is called before the first frame update
     void Start()
     {
         // Setting the time
-        m_totalTime = 30 + Mathf.Round(GameManager.m_day * 20) + Random.Range(1, 11);
+        m_totalTime = 30 + Mathf.Round(GameManager.m_day / 2) * 9 + Random.Range(0, 10);
 
         // Playing the background music
         m_aud = GetComponent<AudioSource>();
@@ -51,7 +49,7 @@ public class HUD : MonoBehaviour
 
         m_slider.value = m_totalTime;
 
-        if(m_miliseconds < 0 && m_lose == false)
+        if(m_miliseconds < 0 && GameManager.m_lost == false)
         {
             m_miliseconds = 1;
 
@@ -59,8 +57,8 @@ public class HUD : MonoBehaviour
             {
                 if (m_minutes < 1) // If Minute is equal/lower than q as well, lose. Else make Minute go down.
                 {
-                    Debug.Log("Player Lost");
-                    m_lose = true;
+                    GameManager.m_lost = true;
+                    SceneManager.LoadScene("Hotel");
                 }
                 else
                 {
@@ -78,7 +76,7 @@ public class HUD : MonoBehaviour
         else
         {
             // Music fades out as the timer reaches 0
-            if(m_minutes == 0 && m_seconds == 0 && m_miliseconds > 0 && m_lose == false)
+            if(m_minutes == 0 && m_seconds == 0 && m_miliseconds > 0 && GameManager.m_lost == false)
             {
                 m_aud.pitch = m_miliseconds;
             }
@@ -112,6 +110,7 @@ public class HUD : MonoBehaviour
         // the player wins and is loaded into a different scene
         if(m_peopleAmount <= 0)
         {
+            GameManager.m_won = true;
             SceneManager.LoadScene("Pizzaria");
         }
 

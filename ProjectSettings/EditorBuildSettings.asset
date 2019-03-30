@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/City.unity
     guid: 8c02d601c66b9ac42ae0c4eef2f819cc
+  - enabled: 1
+    path: Assets/Scenes/Hotel.unity
+    guid: 681c13cd97853184d8e162de85001c49
   m_configObjects: {}
