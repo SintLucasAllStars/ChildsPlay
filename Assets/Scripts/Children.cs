@@ -20,6 +20,7 @@ public class Children : MonoBehaviour
 
     private GameObject Manager;
     public float m_speed;
+    public Material m_caught;
 
 
 
@@ -32,10 +33,10 @@ public class Children : MonoBehaviour
     void Start()
     {
         m_allowedMove = true;
-        wanderRadius = 50;
+        wanderRadius = 100;
         changeLocation = false;
         multiplyBy = 0.2f;
-        m_speed = Random.Range(0.05f, 0.15f);
+        m_speed = Random.Range(0.2f, 0.4f);
       
         //palt de navmeshagent voor movement en maakt een nieuwe random locatie aan om naar toe tegaan
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -62,7 +63,7 @@ public class Children : MonoBehaviour
 
         //berekent hoe ver de player van he kind vandaan is 
         distance = Vector3.Distance(transform.position, posPlayer);
-        if(distance < 10 && m_allowedMove)
+        if(distance < 25 && m_allowedMove)
         {
                       
             move();
@@ -112,7 +113,7 @@ public class Children : MonoBehaviour
             //gameObject.GetComponent<Renderer>().material.color = Color.black;
             m_allowedMove = false;
             agent.Stop();
-            gameObject.GetComponentInChildren<Renderer>().material.color = Color.red;
+            gameObject.GetComponentInChildren<Renderer>().material = new Material(m_caught);
             //Manager.GetComponent<ChildManager>().IncreaseSpeed();
             //send msg to GameManager
         }

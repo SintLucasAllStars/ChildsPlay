@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Customer
       objectReference: {fileID: 0}
+    - target: {fileID: 15263356871803749, guid: b1de8e22da12857498ce9eaee74838a3,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 15263356871803750, guid: b1de8e22da12857498ce9eaee74838a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -77,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 15263356871803753, guid: b1de8e22da12857498ce9eaee74838a3,
+        type: 3}
+      propertyPath: m_caught
+      value: 
+      objectReference: {fileID: 2100000, guid: 1595f0b0293b9af428490a9b87222ea3, type: 2}
     - target: {fileID: 15263356871803755, guid: b1de8e22da12857498ce9eaee74838a3,
         type: 3}
       propertyPath: m_Size.x
