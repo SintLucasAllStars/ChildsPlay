@@ -45,6 +45,16 @@ public class Gamemanager : MonoBehaviour
             Time.timeScale = 0;
         #endregion
 
+    }
 
+    public void CheckDeath(GameObject person)
+    {
+        for (int i = 0; i < allPlayers.Count; i++)
+        {
+            if(allPlayers[i] == person)
+            {
+                allPlayers.RemoveAt(i);
+            }
+        }
     }
 }
