@@ -16,7 +16,7 @@ public class Player : Person
     public float dropRange;
 
     public bool hasShot;
-    GameObject _droppedgun;
+    public GameObject _droppedgun;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +31,8 @@ public class Player : Person
 
         if (Input.GetMouseButtonDown(0) && gun.activeSelf == true && !hasShot)
         {
-            //DropWeapon();
             Debug.Log("Player shooting");
-            Instantiate(bulletPrefab, transform.position, shootOffset.rotation);
+            Instantiate(bulletPrefab, shootOffset.position, shootOffset.rotation);
             hasShot = true;
 
             StartCoroutine(DropWeapon(shootOffset.position, gun, hasShot));
@@ -56,18 +55,22 @@ public class Player : Person
 
     void ActivateDropWeapon()
     {
-        _droppedgun.GetComponent<BoxCollider>().isTrigger = true;
+        if (_droppedgun != null)
+        {
+            _droppedgun.GetComponent<BoxCollider>().isTrigger = true;
+        }
     }
-    
+
     void Die()
     {
         Debug.Log("Player died");
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Gun"))
+        if (other.CompareTag("Gun") && Input.GetKey(KeyCode.E))
         {
+            Debug.Log("Picked up gun");
             Destroy(other.gameObject);
             gun.SetActive(true);
         }

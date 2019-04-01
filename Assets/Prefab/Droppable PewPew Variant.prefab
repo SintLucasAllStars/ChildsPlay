@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1134200564192075395, guid: 5acdc291f86c16d4480815804dd6d1a9,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1412020755, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -89,6 +94,10 @@ PrefabInstance:
     - target: {fileID: 1412020755, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
       propertyPath: m_Center.x
       value: -0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412020755, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
+      propertyPath: m_Center.x
+      value: -0.27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
