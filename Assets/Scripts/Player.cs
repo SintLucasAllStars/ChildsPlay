@@ -34,7 +34,6 @@ public class Player : Person
 
             StartCoroutine(DropWeapon(shootOffset.position, gun));
         }
-
     }
 
 
@@ -51,12 +50,6 @@ public class Player : Person
         {
             Die(gameObject);
         }
-    }
-
-    public void RecieveWeapon()
-    {
-        Debug.Log(gameObject.name + "got weapon");
-        //get weapon
     }
 
 }

@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
 {
-    List<GameObject> allPlayers = new List<GameObject>();
+    public List<GameObject> allPlayers = new List<GameObject>();
     public Text UICount;
     public Text readyInfo;
 
     float startTimer = 3;
     bool playerReady;
+    bool gameStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,30 +20,35 @@ public class Gamemanager : MonoBehaviour
         allPlayers.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 
         allPlayers[Random.Range(0, allPlayers.Count)].SendMessage("RecieveWeapon");
+
     }
 
     // Update is called once per frame
     void Update()
     {
         #region starting the game
-        if (Input.GetKey(KeyCode.R))
-            playerReady = true;
-
-        if (startTimer >= 0 && playerReady)
+        if (!gameStarted)
         {
-            startTimer -= Time.unscaledDeltaTime;
-            UICount.text = Mathf.RoundToInt(startTimer).ToString();
+            if (Input.GetKey(KeyCode.R))
+                playerReady = true;
 
-            Time.timeScale = 0;
+            if (startTimer >= 0 && playerReady)
+            {
+                startTimer -= Time.unscaledDeltaTime;
+                UICount.text = Mathf.RoundToInt(startTimer).ToString();
+
+                Time.timeScale = 0;
+            }
+            else if (startTimer <= 0)
+            {
+                UICount.text = "";
+                readyInfo.text = "";
+                Time.timeScale = 1;
+                gameStarted = true;
+            }
+            else
+                Time.timeScale = 0;
         }
-        else if (startTimer <= 0)
-        {
-            UICount.text = "";
-            readyInfo.text = "";
-            Time.timeScale = 1;
-        }
-        else
-            Time.timeScale = 0;
         #endregion
 
     }

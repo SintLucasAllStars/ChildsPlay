@@ -18,19 +18,23 @@ public class SphereTriggerSlowMo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!slowMoStart)
+        if(slowMoBar != null)
         {
-            slowMoBar.value += Time.unscaledDeltaTime;
-        }
-        else
-        {
-            slowMoBar.value -= Time.unscaledDeltaTime;
-        }
+            if (!slowMoStart)
+            {
+                slowMoBar.value += Time.unscaledDeltaTime;
+            }
+            else
+            {
+                slowMoBar.value -= Time.unscaledDeltaTime;
+            }
 
-        if(slowMoBar.value <= 0)
-        {
-            Debug.Log("No slowmo left");
+            if (slowMoBar.value <= 0)
+            {
+                //Debug.Log("No slowmo left");
+            }
         }
+        
     }
 
 
@@ -45,11 +49,6 @@ public class SphereTriggerSlowMo : MonoBehaviour
             slowMoStart = true;
         }
     }
-
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    slowMoBar.value -= Time.unscaledDeltaTime;
-    //}
 
     private void OnTriggerExit(Collider other)
     {

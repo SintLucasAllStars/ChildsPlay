@@ -9,18 +9,6 @@ public class Person : MonoBehaviour
     public GameObject gunDropPrefab;
     public bool hasShot;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public IEnumerator DropWeapon(Vector3 dropOffset, GameObject g)
     {
         yield return new WaitForSeconds(2);
@@ -49,5 +37,6 @@ public class Person : MonoBehaviour
         Gamemanager gm = GameObject.FindObjectOfType<Gamemanager>().GetComponent<Gamemanager>();
 
         gm.CheckDeath(person);
+        Destroy(person);
     }
 }
