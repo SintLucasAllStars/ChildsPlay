@@ -6,16 +6,13 @@ public class Player : Person
 {
 
     public GameObject gun;
-    public GameObject gunDropPrefab;
     public GameObject bulletPrefab;
     public Transform shootOffset;
-
-
 
     public bool hit = false; //this bool should be changed by the bullet script
     public float dropRange;
 
-    public bool hasShot;
+
     public GameObject _droppedgun;
 
     // Start is called before the first frame update
@@ -35,36 +32,11 @@ public class Player : Person
             Instantiate(bulletPrefab, shootOffset.position, shootOffset.rotation);
             hasShot = true;
 
-            StartCoroutine(DropWeapon(shootOffset.position, gun, hasShot));
+            StartCoroutine(DropWeapon(shootOffset.position, gun));
         }
 
     }
 
-    //public void DropWeapon()
-    //{
-    //    Debug.Log("Dropped weapon");
-    //    _droppedgun = Instantiate(gunDropPrefab, transform.position, transform.rotation);
-
-    //    Rigidbody rb = _droppedgun.GetComponent<Rigidbody>();
-    //    rb.AddForce(Vector3.forward * 10);
-    //    Invoke("ActivateDropWeapon", 1);
-
-    //    gun.SetActive(false);
-    //    hasShot = false;
-    //}
-
-    void ActivateDropWeapon()
-    {
-        if (_droppedgun != null)
-        {
-            _droppedgun.GetComponent<BoxCollider>().isTrigger = true;
-        }
-    }
-
-    void Die()
-    {
-        Debug.Log("Player died");
-    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -77,7 +49,7 @@ public class Player : Person
 
         if (other.CompareTag("Bullet") && gun.activeInHierarchy == false)
         {
-            Die();
+            Die(gameObject);
         }
     }
 
