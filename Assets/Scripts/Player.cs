@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Person
 {
 
     public GameObject gun;
@@ -36,23 +36,23 @@ public class Player : MonoBehaviour
             Instantiate(bulletPrefab, transform.position, shootOffset.rotation);
             hasShot = true;
 
-            Invoke("DropWeapon", 2);
+            StartCoroutine(DropWeapon(shootOffset.position, gun, hasShot));
         }
 
     }
 
-    public void DropWeapon()
-    {
-        Debug.Log("Dropped weapon");
-        _droppedgun = Instantiate(gunDropPrefab, transform.position, transform.rotation);
+    //public void DropWeapon()
+    //{
+    //    Debug.Log("Dropped weapon");
+    //    _droppedgun = Instantiate(gunDropPrefab, transform.position, transform.rotation);
 
-        Rigidbody rb = _droppedgun.GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.forward * 10);
-        Invoke("ActivateDropWeapon", 1);
+    //    Rigidbody rb = _droppedgun.GetComponent<Rigidbody>();
+    //    rb.AddForce(Vector3.forward * 10);
+    //    Invoke("ActivateDropWeapon", 1);
 
-        gun.SetActive(false);
-        hasShot = false;
-    }
+    //    gun.SetActive(false);
+    //    hasShot = false;
+    //}
 
     void ActivateDropWeapon()
     {

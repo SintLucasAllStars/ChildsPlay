@@ -20,10 +20,26 @@ public class Person : MonoBehaviour
         
     }
 
-    public void DropWeapon()
+    //public void DropWeapon(Vector3 dropOffset, GameObject g, bool shot)
+    //{
+    //    Debug.Log("Dropped weapon");
+    //    droppedgun = Instantiate(gunDropPrefab, dropOffset, transform.rotation);
+
+    //    Rigidbody rb = droppedgun.GetComponent<Rigidbody>();
+    //    rb.AddForce(transform.forward * 1000);
+
+    //    //calling ActivateDropWeapon
+    //    //Invoke("ActivateDropWeapon", 0.5f);
+
+    //    g.SetActive(false);
+    //    shot = false;
+    //}
+
+    public IEnumerator DropWeapon(Vector3 dropOffset, GameObject g, bool shot)
     {
+        yield return new WaitForSeconds(2);
         Debug.Log("Dropped weapon");
-        droppedgun = Instantiate(gunDropPrefab, shootOffset.position, transform.rotation);
+        droppedgun = Instantiate(gunDropPrefab, dropOffset, transform.rotation);
 
         Rigidbody rb = droppedgun.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * 1000);
@@ -31,8 +47,9 @@ public class Person : MonoBehaviour
         //calling ActivateDropWeapon
         //Invoke("ActivateDropWeapon", 0.5f);
 
-        gun.SetActive(false);
-        hasShot = false;
+        g.SetActive(false);
+        shot = false;
+
     }
 
     public void RecieveWeapon()
