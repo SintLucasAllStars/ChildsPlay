@@ -29,4 +29,9 @@ public class AI : MonoBehaviour
 	}
 
 
+    public void RecieveWeapon()
+    {
+        //get weapon
+    }
+
 }
