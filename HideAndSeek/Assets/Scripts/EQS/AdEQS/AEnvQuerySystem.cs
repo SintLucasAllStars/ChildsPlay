@@ -7,7 +7,9 @@ public class AEnvQuerySystem : MonoBehaviour
 	private IQueryGenerator generator;
 
 	private AEnvQueryItem[,] queryItems;
-	public Transform querier;
+    public List<AEnvQueryItem> hideLocations = new List<AEnvQueryItem>();
+
+    public Transform querier;
 	public Transform enemy;
 	public int gridSize;
 
@@ -109,6 +111,7 @@ public class AEnvQuerySystem : MonoBehaviour
 							{
 								Gizmos.color = Color.magenta;
 								Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+                                hideLocations.Add(queryItems[x, z]);
 							}
 							else
 							{

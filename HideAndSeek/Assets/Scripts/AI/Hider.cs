@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Hider : Humanoid
 {
-    List<EnvQueryItem> hideLocations = new List<EnvQueryItem>();
-    public EnvQuerySystem EQSSystem;
+    public AEnvQuerySystem EQSSystem;
 
     GameObject Seeker;
 
@@ -14,6 +13,7 @@ public class Hider : Humanoid
     {
        Seeker = GameObject.FindGameObjectWithTag("Seeker");
         FindNewLocation();
+        EQSSystem = AEnvQuerySystem.Instance;
     }
 
     // Update is called once per frame
@@ -28,14 +28,10 @@ public class Hider : Humanoid
 
     void FindNewLocation()
     {
-        foreach (EnvQueryItem item in EQSSystem.QueryItems)
-        {
-            if (item.EnemyNearby == false && item.IsColliding == false)
-            {
-                hideLocations.Add(item);
-            }
-        }
-        MoveTo(hideLocations[Random.Range(0, hideLocations.Count)].GetWorldLocation());
+        int index = Random.Range(0, EQSSystem.hideLocations.Count);
+        Debug.Log(EQSSystem.hideLocations.Count);
+        Vector3 newLoc = EQSSystem.hideLocations[index].GetWorldLocation();
+        MoveTo(newLoc);
     }
 
     void LookForSeeker()
