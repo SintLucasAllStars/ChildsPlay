@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Humanoid : MonoBehaviour
 {
    
-    NavMeshAgent agent;
+    protected NavMeshAgent agent;
     public float speed;
 
     private void Awake()

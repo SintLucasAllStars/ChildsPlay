@@ -45,12 +45,24 @@ public class AEnvQuerySystem : MonoBehaviour
 		{
 			queryItems = generator.Item();
 		}
+
+		ReCalcutalePoints();
 	}
 
 	private void Update()
 	{
+		if(Input.GetKeyDown(KeyCode.R))
+		{
+			ReCalcutalePoints();
+		}
+	}
+
+	public void ReCalcutalePoints()
+	{
 		if (queryItems != null)
 		{
+			hideLocations.Clear();
+
 			for (int x = 0; x <= gridSize; x++)
 			{
 				for (int z = 0; z <= gridSize; z++)
@@ -58,24 +70,24 @@ public class AEnvQuerySystem : MonoBehaviour
 					if (queryItems[x, z].IsColliding)
 					{
 						CheckNeighbors(x, z);
-						Debug.Log("Is colliding");
+						//Debug.Log("Is colliding");
 					}
 					else
 					{
 						if (queryItems[x, z].IsEnemyNearby)
 						{
-							Debug.Log("Enemy is nearby");
+							//Debug.Log("Enemy is nearby");
 						}
 						else
 						{
 							if (queryItems[x, z].IsNextToWall)
 							{
-								Debug.Log("Is next to wall");
+								//Debug.Log("Is next to wall");
 								hideLocations.Add(queryItems[x, z]);
 							}
 							else
 							{
-								Debug.Log("Normal point");
+								//Debug.Log("Normal point");
 							}
 						}
 					}
