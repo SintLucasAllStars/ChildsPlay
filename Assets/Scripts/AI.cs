@@ -18,18 +18,6 @@ public class AI : MonoBehaviour
 		Agent = GetComponent<NavMeshAgent>();
 		system = GameObject.FindWithTag("EQS").GetComponent<QSystem>();
 		FindLoc(); 
-		//foreach (EQSItem item in system.Qitems)
-		//{
-		//	Debug.Log("1");
-		//	if (item.CanHide == true && item.IsColiding == false)
-		//	{
-		//		Debug.Log("2");
-		//		HideLoc.Add(item);
-		//		Debug.Log(item);
-		//	}
-
-
-		//}
 		
 	}
 
@@ -55,10 +43,5 @@ public class AI : MonoBehaviour
 			Agent.destination = NewLoc;
 		}
 	}
-
-    public void RecieveWeapon()
-    {
-
-    }
 
 }
