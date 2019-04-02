@@ -7,6 +7,7 @@ public class AI : Person
 {
 	NavMeshAgent Agent;
 	Vector3 TargetPos;
+	public FOV fov; 
 	public QSystem system;
 	float speed;
     FOV mFov;
@@ -27,7 +28,7 @@ public class AI : Person
 
     private void Update()
     {
-
+	
         //if ai has gun find person to shoot
         if (gun.activeSelf)
         {
