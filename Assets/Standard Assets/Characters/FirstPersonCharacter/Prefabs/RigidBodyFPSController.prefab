@@ -315,10 +315,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23df9b3acc50fe44a5225b81e31a3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasShot: 0
+  gunDropPrefab: {fileID: 5767052128997215709, guid: 7d7a4575df0da1f408e267d486ffe6a5,
+    type: 3}
   gun: {fileID: 1934763802}
+  shootOffset: {fileID: 1426244362}
   bulletPrefab: {fileID: 4552591850520492115, guid: e99035d658142744abbea0c6635e5746,
     type: 3}
-  shootOffset: {fileID: 1426244362}
   hit: 0
   dropRange: 0
 --- !u!23 &119500689
@@ -389,13 +392,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426244361}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.153, y: 0, z: 0.153}
+  m_LocalRotation: {x: -0.000000029802319, y: 0.7071071, z: -0.000000029800983, w: 0.7071065}
+  m_LocalPosition: {x: 0.15300012, y: -0.000000074505806, z: 0.153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1934763808}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!1001 &1134200562903251366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -407,11 +410,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PewPew
-      objectReference: {fileID: 0}
-    - target: {fileID: 1134200564192075452, guid: 5acdc291f86c16d4480815804dd6d1a9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1134200564192075398, guid: 5acdc291f86c16d4480815804dd6d1a9,
         type: 3}
@@ -468,7 +466,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1412020754, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
+    - {fileID: 1412020755, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5acdc291f86c16d4480815804dd6d1a9, type: 3}
 --- !u!1 &1934763802 stripped
 GameObject:

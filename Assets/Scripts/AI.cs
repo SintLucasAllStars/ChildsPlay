@@ -36,7 +36,12 @@ public class AI : Person
             }
         }
 
-        
+        //if(function && !hasShot)
+        {
+            Shoot(transform);
+        }
+
+
     }
 
     void FindLoc()
@@ -62,44 +67,17 @@ public class AI : Person
 		}
 	}
 
-    void PlayerInRange()
+    void Shoot(Transform target)
     {
-
+        Shoot();
+        transform.LookAt(target);
     }
 
-    protected bool CanSeePlayer()
+    private void OnTriggerEnter(Collider other)
     {
-        RaycastHit hit;
-        Gamemanager gm = GameObject.FindObjectOfType<Gamemanager>();
-        Transform target = GetClosestEnemy(gm.allPlayers);
-        Vector3 rayDirection = target.position - transform.position;
-
-        if ((Vector3.Angle(rayDirection, transform.forward)) <= 90 * 0.5f)
+        if (other.CompareTag("Gun"))
         {
-            // Detect if player is within the field of view 
-            if (Physics.Raycast(transform.position, rayDirection, out hit, 20))
-            {
-                return (hit.transform.CompareTag("Player"));
-            }
+            EquipWeapon(other.gameObject);
         }
-
-        return false;
-    }
-
-    Transform GetClosestEnemy(GameObject[] enemies)
-    {
-        Transform tMin = null;
-        float minDist = Mathf.Infinity;
-        Vector3 currentPos = transform.position;
-        foreach (GameObject t in enemies)
-        {
-            float dist = Vector3.Distance(t.transform.position, currentPos);
-            if (dist < minDist)
-            {
-                tMin = t.transform;
-                minDist = dist;
-            }
-        }
-        return tMin;
     }
 }

@@ -6,9 +6,10 @@ public class Person : MonoBehaviour
 {
     public bool hasShot;
 
-    [HideInInspector]
     public GameObject gunDropPrefab;
     public GameObject gun;
+    public Transform shootOffset;
+    public GameObject bulletPrefab;
 
     public IEnumerator DropWeapon(Vector3 dropOffset, GameObject g)
     {
@@ -42,7 +43,21 @@ public class Person : MonoBehaviour
         Destroy(person);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void Shoot()
+    {
+        Instantiate(bulletPrefab, shootOffset.position, shootOffset.rotation);
+        hasShot = true;
+
+        StartCoroutine(DropWeapon(shootOffset.position, gun));
+    }
+
+    public void EquipWeapon(GameObject gunOnGround)
+    {
+        Destroy(gunOnGround);
+        gun.SetActive(true);
+    }
+
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bullet") && gun.activeInHierarchy == false)
         {

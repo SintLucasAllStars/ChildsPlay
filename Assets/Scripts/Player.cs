@@ -6,11 +6,6 @@ public class Player : Person
 {
 
     public bool hit = false; //this bool should be changed by the bullet script
-
-    public GameObject bulletPrefab;
-    public Transform shootOffset;
-
-
     public float dropRange;
 
 
@@ -30,10 +25,7 @@ public class Player : Person
         if (Input.GetMouseButtonDown(0) && gun.activeSelf == true && !hasShot)
         {
             Debug.Log("Player shooting");
-            Instantiate(bulletPrefab, shootOffset.position, shootOffset.rotation);
-            hasShot = true;
-
-            StartCoroutine(DropWeapon(shootOffset.position, gun));
+            Shoot();
         }
     }
 
@@ -43,9 +35,7 @@ public class Player : Person
         if (other.CompareTag("Gun") && Input.GetKey(KeyCode.E))
         {
             Debug.Log("Picked up gun");
-            Destroy(other.gameObject);
-            gun.SetActive(true);
+            EquipWeapon(other.gameObject);
         }
     }
-
 }
