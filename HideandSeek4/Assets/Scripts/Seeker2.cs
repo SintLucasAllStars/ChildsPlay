@@ -6,10 +6,15 @@ public class Seeker2 : MonoBehaviour
 {
     RaycastHit hit;
 
-    
+
+    public Light zaklamp;
+
+    public int aanuit = 0;
+
     void Start()
     {
-     
+
+        zaklamp.intensity = 0;
     }
 
  
@@ -26,6 +31,25 @@ public class Seeker2 : MonoBehaviour
                 //   Debug.Log("Gevonden");
                 hit.transform.SendMessage("HitByRay");
             }
+        }
+
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+
+
+
+            if (aanuit % 2 == 0)
+            {
+                zaklamp.intensity = 3;
+            }
+
+            if (aanuit % 2 == 1)
+            {
+                zaklamp.intensity = 0;
+            }
+
+            aanuit++;
+
         }
     }
 }
