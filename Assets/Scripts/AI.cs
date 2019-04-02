@@ -18,40 +18,45 @@ public class AI : Person
     private void Start()
 	{
 		system.Check();
-		Agent = GetComponent<NavMeshAgent>();
+        gun.SetActive(false);
+        Agent = GetComponent<NavMeshAgent>();
 		system = GameObject.FindWithTag("EQS").GetComponent<QSystem>();
         Agent.destination = seekingPoint[Random.Range(0, seekingPoint.Length)];
         mFov = GetComponent<FOV>();
 
-        //FindLoc();
     }
 
     private void Update()
     {
 	
         //if ai has gun find person to shoot
-        if (gun.activeSelf)
+        if (gun.activeSelf && GameObject.FindGameObjectWithTag("Gun") == null)
         {
             if (Vector3.Distance(transform.position, Agent.destination) < 3)
             {
                 Agent.destination = seekingPoint[Random.Range(0, seekingPoint.Length)];
             }
         }
+        else if(GameObject.FindGameObjectWithTag("Gun") != null)
+        {
+            Agent.destination = GameObject.FindGameObjectWithTag("Gun").transform.position;
+        }
+        else
+        {
+            FindLoc();
+        }
 
-        if(mFov.m_See && !hasShot)
+        if(mFov.m_See && !hasShot && gun.activeSelf)
         {
             Debug.Log("Found player");
             Shoot(transform);
         }
-
-
     }
 
     void FindLoc()
 	{
 		Vector3 NewLoc;
-
-		foreach (EQSItem item in system.Qitems)
+        foreach (EQSItem item in system.Qitems)
 		{
 			Debug.Log(item.CanHide);
 

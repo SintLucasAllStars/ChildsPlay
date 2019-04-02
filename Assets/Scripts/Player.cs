@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player : Person
 {
     public bool hit = false; //this bool should be changed by the bullet script
     public float dropRange;
+
+    private void Start()
+    {
+        gun.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +33,9 @@ public class Player : Person
             Debug.Log("Picked up gun");
             EquipWeapon(other.gameObject);
         }
-
+        if (other.gameObject.CompareTag("Bullet") && gun.activeInHierarchy == false)
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 }
