@@ -87,7 +87,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 					{
 						Vector3 hidingSpot = RandomHidingSpot();
 						agent.SetDestination(hidingSpot + new Vector3(UnityEngine.Random.Range(-2f, 2f), 0f, UnityEngine.Random.Range(-2f, 2f)));
-																		
 					}
 					break;
 				case Mode.Chasing:
@@ -100,7 +99,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 					}
 					else
 					{
-						//setMode(Mode.Seeking);
+						
 						setMode(Mode.InvestigatingLKP);
 						agent.speed = 0.75f;
 					}
@@ -115,7 +114,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 					}
 					break;
 				case Mode.InvestigatingAroundLKP:
-					setMode(Mode.Seeking);
 					//Investigating around the last known position. 
 
 					break;
@@ -138,17 +136,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				case Mode.Seeking:
 					Vector3 hidingSpot = ClosestHidingSpot(transform.position);
 					agent.SetDestination(hidingSpot + new Vector3(UnityEngine.Random.Range(-2f, 2f), 0f, UnityEngine.Random.Range(-2f, 2f)));
-					
 					break;
 				case Mode.Chasing:
-					
 					break;
 				case Mode.InvestigatingLKP:
 					agent.SetDestination(lastKnowPositionVec);
 					break;
 				case Mode.InvestigatingAroundLKP:
 					//After couple of seconds return to seeking.
-					//setMode(Mode.Seeking);
+					setMode(Mode.Seeking);
 					break; 
 			}
 			seekingMode = m;
@@ -156,7 +152,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				
 		Vector3 ClosestHidingSpot(Vector3 pos)
 		{
-			float shortestDistance = 1000000000000000f;
+			float shortestDistance = 1000;
 			Vector3 closest = new Vector3();
 
 			for (int i = 0; i < hidingPlaces.Length; i++)

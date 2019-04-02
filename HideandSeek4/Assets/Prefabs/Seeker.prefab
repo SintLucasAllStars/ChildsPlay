@@ -1684,8 +1684,8 @@ GameObject:
   - component: {fileID: 1685985045898337844}
   - component: {fileID: 1685985045906972798}
   - component: {fileID: 1685985045876883394}
+  - component: {fileID: 1685985045901886880}
   - component: {fileID: 1685985045901807400}
-  - component: {fileID: 4530578482464717608}
   m_Layer: 0
   m_Name: Seeker
   m_TagString: Untagged
@@ -1781,6 +1781,24 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1685985045901886880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685985045895315974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5335f0882fe4d478883cc8c58ce906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  hiders: []
+  hidingPlaces: []
+  range: 50
+  fov: 100
+  seekingMode: 0
 --- !u!114 &1685985045901807400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,24 +1819,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.2
---- !u!114 &4530578482464717608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685985045895315974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5cc06ccbadfce48beee6b1a153dadf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  hiders: []
-  hidingPlaces: []
-  range: 50
-  fov: 100
-  seekingMode: 0
+  m_FootstepSounds: []
 --- !u!1 &1685985045895316104
 GameObject:
   m_ObjectHideFlags: 0
