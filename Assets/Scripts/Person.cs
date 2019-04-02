@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
-    public GameObject gun;
-    public GameObject gunDropPrefab;
     public bool hasShot;
+
+    [HideInInspector]
+    public GameObject gunDropPrefab;
+    public GameObject gun;
 
     public IEnumerator DropWeapon(Vector3 dropOffset, GameObject g)
     {

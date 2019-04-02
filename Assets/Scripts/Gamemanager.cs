@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
 {
-    public List<GameObject> allPlayers = new List<GameObject>();
+    public GameObject[] allPlayers;
     public Text UICount;
     public Text readyInfo;
 
@@ -16,9 +16,6 @@ public class Gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allPlayers.Add(GameObject.FindObjectOfType<Player>().GetComponent<GameObject>());
-
-        allPlayers[Random.Range(0, allPlayers.Count)].SendMessage("RecieveWeapon");
 
     }
 
@@ -76,11 +73,11 @@ public class Gamemanager : MonoBehaviour
 
     public void CheckDeath(GameObject person)
     {
-        for (int i = 0; i < allPlayers.Count; i++)
+        for (int i = 0; i < allPlayers.Length; i++)
         {
             if(allPlayers[i] == person)
             {
-                allPlayers.RemoveAt(i);
+                allPlayers[i] = null;
             }
         }
     }
