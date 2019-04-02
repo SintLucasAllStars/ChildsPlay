@@ -33,8 +33,20 @@ public class EQSItem
 				return true; 
 			}
 		}
-
 		return false; 
 	}
 
+    public bool SeeShootable(Transform target)
+    {
+        Ray ray = new Ray(GetWorldLocation(), (target.position - GetWorldLocation()));
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 10))
+        {
+            if (hit.collider.CompareTag("Seeker"))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

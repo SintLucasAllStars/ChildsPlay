@@ -34,13 +34,14 @@ public class Person : MonoBehaviour
         //get weapon
     }
 
-    public void Die(GameObject person)
+    public void Die()
     {
-        Debug.Log(person.name +  " died");
-        Gamemanager gm = GameObject.FindObjectOfType<Gamemanager>().GetComponent<Gamemanager>();
+        Debug.Log(gameObject.name +  " died");
+        Gamemanager gm = GameObject.FindObjectOfType<Gamemanager>();
 
-        gm.CheckDeath(person);
-        Destroy(person);
+        Debug.Log("I died");
+        gm.CheckDeath(gameObject);
+        Destroy(gameObject);
     }
 
     public void Shoot()
@@ -57,11 +58,11 @@ public class Person : MonoBehaviour
         gun.SetActive(true);
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Bullet") && gun.activeInHierarchy == false)
+        if (other.gameObject.CompareTag("Bullet") && gun.activeInHierarchy == false)
         {
-            Die(gameObject);
+            Die();
         }
     }
 }

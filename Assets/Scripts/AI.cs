@@ -38,7 +38,7 @@ public class AI : Person
 
         //if(function && !hasShot)
         {
-            Shoot(transform);
+            //Shoot(transform);
         }
 
 
@@ -78,6 +78,12 @@ public class AI : Person
         if (other.CompareTag("Gun"))
         {
             EquipWeapon(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("F");
+            Die();
         }
     }
 }
