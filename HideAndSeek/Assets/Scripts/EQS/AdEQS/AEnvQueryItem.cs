@@ -9,6 +9,19 @@ public class AEnvQueryItem
 	private Transform querier;
 	private Transform enemy;
 
+	private bool isNextToWall;
+	public bool IsNextToWall
+	{
+		get
+		{
+			return isNextToWall;
+		}
+		set
+		{
+			isNextToWall = value;
+		}
+	}
+
 	private bool isEnemyNearby;
 	public bool IsEnemyNearby
 	{
@@ -42,8 +55,8 @@ public class AEnvQueryItem
 		this.location = location;
 		this.querier = querier;
 		this.enemy = enemy;
-		column = (int)location.z;
-		row = (int)location.x;
+		column = (int)location.z + 25;
+		row = (int)location.x + 25;
 	}
 
 	private bool CheckForEnemy()

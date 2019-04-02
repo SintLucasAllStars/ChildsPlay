@@ -18,18 +18,18 @@ public class FoV : MonoBehaviour
 		foreach (Transform target in m_Targets)
 		{
 			m_Seen = false;
-			Debug.Log("looping through targets");
+			//Debug.Log("looping through targets");
 			hider = target.gameObject;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 			if (Vector3.Angle(transform.forward, dirToTarget) < m_ViewAngle / 2)
 			{
-				Debug.Log("In Angle");
+				//Debug.Log("In Angle");
 				if(Physics.Raycast(transform.position, dirToTarget, out RaycastHit hit, m_ViewRadius))
 				{
-					Debug.Log("Hit somthing");
+					//Debug.Log("Hit somthing");
 					if(hit.collider.name == "Target")
 					{
-						Debug.Log("Found target");
+						//Debug.Log("Found target");
 						m_Seen = true;
 					}
 				}
