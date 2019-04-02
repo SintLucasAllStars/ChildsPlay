@@ -90,22 +90,22 @@ public class AEnvQuerySystem : MonoBehaviour
 			{
 				for (int z = 0; z <= gridSize; z++)
 				{
-					if(queryItems[x, z].IsEnemyNearby)
+					if (queryItems[x, z].IsColliding)
 					{
-						Gizmos.color = Color.red;
+						Gizmos.color = Color.yellow;
 						Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+						CheckNeighbors(x, z);
 					}
 					else
 					{
-						if(queryItems[x, z].IsColliding)
+						if (queryItems[x, z].IsEnemyNearby)
 						{
-							Gizmos.color = Color.yellow;
+							Gizmos.color = Color.red;
 							Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-							CheckNeighbors(x, z);
 						}
 						else
 						{
-							if(queryItems[x, z].IsNextToWall)
+							if (queryItems[x, z].IsNextToWall)
 							{
 								Gizmos.color = Color.magenta;
 								Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
