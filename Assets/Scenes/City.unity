@@ -8052,7 +8052,7 @@ MonoBehaviour:
   m_peopleText: {fileID: 739873060}
   m_slider: {fileID: 1906540748}
   m_totalTime: 69
-  m_peopleAmount: 0
+  m_peopleAmount: 13
   m_pizza: {fileID: 8300000, guid: 4bfd7a84eb411514cb33b9c426b03211, type: 3}
 --- !u!135 &2062571176
 SphereCollider:
@@ -8272,9 +8272,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_customers:
-  - {fileID: 3687821200665962184, guid: df6ce3e0279b12c45b94f6684334f059, type: 3}
-  - {fileID: 688608122419877723, guid: 69c8162ed1674724aa2c0e92126bb0c3, type: 3}
-  count: 10
+  - {fileID: 6400129341523313067, guid: e2286ada31c41bd4a82bd2387b76ae6e, type: 3}
+  - {fileID: 1781965557066175009, guid: eedbc49ca5a0fcc499c61f725c413902, type: 3}
+  - {fileID: 8917776420302266867, guid: d2f82af36c81c3a4d8ffb0bc6c8de760, type: 3}
+  - {fileID: 1047214791273798646, guid: ee75edc3df8587f48a2fecac26b2bac9, type: 3}
+  - {fileID: 4287754858544490920, guid: 7ccd54e2ad1ae09449e1bd7ccbaa3304, type: 3}
+  - {fileID: 8531130990142870619, guid: 52996beb88db1db4ca8f14e04a26e74b, type: 3}
+  - {fileID: 7539143295733634744, guid: d1e24af027db339458f01a48faf8af02, type: 3}
+  - {fileID: 573853537140340096, guid: 7204d254d3a85a6419dc59d131fe7e48, type: 3}
+  - {fileID: 5286435177475714608, guid: 20043f5b5769b904d8f5e85ccf4819bc, type: 3}
+  - {fileID: 8433631886895654260, guid: ce9400655522ec84fa65716df49b1e5e, type: 3}
+  - {fileID: 6715532868919191675, guid: 0aeee7a50f13d1f49b5c50e083d7d353, type: 3}
+  count: 3
 --- !u!1 &2081911686
 GameObject:
   m_ObjectHideFlags: 0
