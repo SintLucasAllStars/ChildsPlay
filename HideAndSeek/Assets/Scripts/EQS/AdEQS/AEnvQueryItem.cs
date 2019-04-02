@@ -75,7 +75,7 @@ public class AEnvQueryItem
 
 	private bool CheckForCollision()
 	{
-		if(Physics.CheckSphere(GetWorldLocation(), .25f))
+		if(Physics.CheckSphere(GetWorldLocation(), .25f, LayerMask.NameToLayer("Obstacle")))
 		{
 			return true;
 		}

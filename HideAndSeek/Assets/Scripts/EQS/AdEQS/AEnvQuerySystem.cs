@@ -86,7 +86,7 @@ public class AEnvQuerySystem : MonoBehaviour
 		}
 	}
 
-	private void OnDrawGizmos()
+	private void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.R))
 		{
@@ -104,51 +104,71 @@ public class AEnvQuerySystem : MonoBehaviour
 			{
 				for (int z = 0; z <= gridSize; z++)
 				{
+					//queryItems[x, z].IsNextToWall = false;
+
 					if (queryItems[x, z].IsColliding)
 					{
 						CheckNeighbors(x, z);
-						Debug.Log("Is colliding");
+						//Debug.Log("Is colliding");
 					}
 					else
 					{
 						if (queryItems[x, z].IsEnemyNearby)
 						{
-							Debug.Log("Enemy is nearby");
+							//Debug.Log("Enemy is nearby");
 						}
 						else
 						{
 							if (queryItems[x, z].IsNextToWall)
 							{
                                 hideLocations.Add(queryItems[x, z]);
-                                Debug.Log("Is next to wall");
+                                //Debug.Log("Is next to wall");
                             }
 							else
 							{
-								Debug.Log("Normal point");
+								//Debug.Log("Normal point");
 							}
 						}
 					}
+				}
+			}
+		}
+	}
 
-					//if (queryItems[x, z].IsColliding)
-					//{
-					//	Gizmos.color = Color.yellow;
-					//	Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-					//	//check neighbors and change color
-					//	CheckNeighbors(x, z);
-					//}
-					//else
-					//{
-					//	if (queryItems[x, z].IsEnemyNearby)
-					//	{
-					//		Gizmos.color = Color.red;
-					//		Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-					//	}
-					//	else
-					//	{
-					//		Gizmos.color = Color.blue;
-					//		Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-					//	}
-					//}
+	private void OnDrawGizmos()
+	{
+		if (queryItems != null)
+		{
+			for (int x = 0; x <= gridSize; x++)
+			{
+				for (int z = 0; z <= gridSize; z++)
+				{
+					if (queryItems[x, z].IsColliding)
+					{
+						Gizmos.color = Color.yellow;
+						Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+					}
+					else
+					{
+						if (queryItems[x, z].IsEnemyNearby)
+						{
+							Gizmos.color = Color.red;
+							Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+						}
+						else
+						{
+							if (queryItems[x, z].IsNextToWall)
+							{
+								Gizmos.color = Color.magenta;
+								Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+							}
+							else
+							{
+								Gizmos.color = Color.blue;
+								Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+							}
+						}
+					}
 				}
 			}
 		}

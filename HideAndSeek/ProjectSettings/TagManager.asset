@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Seeker
   - EQS
+  - Obstacle
   layers:
   - Default
   - TransparentFX
