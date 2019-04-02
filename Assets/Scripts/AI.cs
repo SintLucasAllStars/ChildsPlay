@@ -9,6 +9,7 @@ public class AI : Person
 	Vector3 TargetPos;
 	public QSystem system;
 	float speed;
+    FOV mFov;
 
 	List<EQSItem> HideLoc = new List<EQSItem>();
     public Vector3[] seekingPoint;
@@ -19,7 +20,7 @@ public class AI : Person
 		Agent = GetComponent<NavMeshAgent>();
 		system = GameObject.FindWithTag("EQS").GetComponent<QSystem>();
         Agent.destination = seekingPoint[Random.Range(0, seekingPoint.Length)];
-
+        mFov = GetComponent<FOV>();
 
         //FindLoc();
     }
@@ -36,9 +37,10 @@ public class AI : Person
             }
         }
 
-        //if(function && !hasShot)
+        if(mFov.m_See && !hasShot)
         {
-            //Shoot(transform);
+            Debug.Log("Found player");
+            Shoot(transform);
         }
 
 

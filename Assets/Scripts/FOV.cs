@@ -11,7 +11,7 @@ public class FOV : MonoBehaviour
 	public float m_ViewRad = 10f;
 	public float m_ViewAngle = 30f;
 
-	private bool m_See;
+	public bool m_See;
 
 	private void Update()
 	{
@@ -25,8 +25,9 @@ public class FOV : MonoBehaviour
 			{
 				if (Physics.Raycast(transform.position, dirToTarget, out RaycastHit hit, m_ViewRad))
 				{
-					if (hit.collider.name == "")
+					if (hit.collider.name == "Player")
 					{
+                        Debug.Log("Found player");
 						m_See = true; 
 					}
 				}
@@ -37,7 +38,7 @@ public class FOV : MonoBehaviour
 	private void OnDrawGizmos()
 	{
 		Gizmos.color = Color.white;
-		Gizmos.DrawWireSphere(transform.position, , m_ViewRad);
+		Gizmos.DrawWireSphere(transform.position, m_ViewRad);
 
 		float AngleInDegree = (m_ViewAngle / 2);
 		Vector3 viewAngleA = new Vector3(Mathf.Sin(AngleInDegree * Mathf.Deg2Rad), 0, Mathf.Cos(AngleInDegree * Mathf.Deg2Rad));
