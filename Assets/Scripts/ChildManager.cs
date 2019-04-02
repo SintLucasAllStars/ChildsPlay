@@ -15,8 +15,15 @@ public class ChildManager : MonoBehaviour
 
     void Start()
     {
-
-        count = 1 + Mathf.Round(GameManager.m_day / 2) + Random.Range(0, 3);
+        if(GameManager.m_day == 1)
+        {
+            count = 1;
+        }
+        else
+        {
+            count = 1 + Mathf.Round(GameManager.m_day / 2) + Random.Range(0, 3);
+        }
+        
 
         SpawnKinderen();
 
