@@ -44,43 +44,20 @@ public class AEnvQuerySystem : MonoBehaviour
 		if (generator != null)
 		{
 			queryItems = generator.Item();
-		}
-	}
-
-	private void Update()
-	{
-		if (queryItems != null)
-		{
-			for (int x = 0; x <= gridSize; x++)
-			{
-				for (int z = 0; z <= gridSize; z++)
-				{
-					if (queryItems[x, z].IsColliding)
-					{
-						CheckNeighbors(x, z);
-						Debug.Log("Is colliding");
-					}
-					else
-					{
-						if (queryItems[x, z].IsEnemyNearby)
-						{
-							Debug.Log("Enemy is nearby");
-						}
-						else
-						{
-							if (queryItems[x, z].IsNextToWall)
-							{
-								Debug.Log("Is next to wall");
-								hideLocations.Add(queryItems[x, z]);
-							}
-							else
-							{
-								Debug.Log("Normal point");
-							}
-						}
-					}
-				}
-			}
+			//if(queryItems != null)
+			//{
+			//	for (int x = 0; x < gridSize; x++)
+			//	{
+			//		for (int z = 0; z < gridSize; z++)
+			//		{
+			//			isColliding = queryItems[x, z].IsColliding;
+			//			if(isColliding)
+			//			{
+			//				queryItems[x, z].CheckForNeighbor;
+			//			}
+			//		}
+			//	}
+			//}
 		}
 	}
 
@@ -109,63 +86,63 @@ public class AEnvQuerySystem : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		//if (queryItems != null)
-		//{
-		//	for (int x = 0; x <= gridSize; x++)
-		//	{
-		//		for (int z = 0; z <= gridSize; z++)
-		//		{
-		//			if (queryItems[x, z].IsColliding)
-		//			{
-		//				Gizmos.color = Color.yellow;
-		//				Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-		//				CheckNeighbors(x, z);
-		//			}
-		//			else
-		//			{
-		//				if (queryItems[x, z].IsEnemyNearby)
-		//				{
-		//					Gizmos.color = Color.red;
-		//					Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-		//				}
-		//				else
-		//				{
-		//					if (queryItems[x, z].IsNextToWall)
-		//					{
-		//						Gizmos.color = Color.magenta;
-		//						Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-  //                              hideLocations.Add(queryItems[x, z]);
-		//					}
-		//					else
-		//					{
-		//						Gizmos.color = Color.blue;
-		//						Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-		//					}
-		//				}
-		//			}
+		if (queryItems != null)
+		{
+			for (int x = 0; x <= gridSize; x++)
+			{
+				for (int z = 0; z <= gridSize; z++)
+				{
+					if (queryItems[x, z].IsColliding)
+					{
+						Gizmos.color = Color.yellow;
+						Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+						CheckNeighbors(x, z);
+					}
+					else
+					{
+						if (queryItems[x, z].IsEnemyNearby)
+						{
+							Gizmos.color = Color.red;
+							Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+						}
+						else
+						{
+							if (queryItems[x, z].IsNextToWall)
+							{
+								Gizmos.color = Color.magenta;
+								Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+                                hideLocations.Add(queryItems[x, z]);
+							}
+							else
+							{
+								Gizmos.color = Color.blue;
+								Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+							}
+						}
+					}
 
-		//			//if (queryItems[x, z].IsColliding)
-		//			//{
-		//			//	Gizmos.color = Color.yellow;
-		//			//	Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-		//			//	//check neighbors and change color
-		//			//	CheckNeighbors(x, z);
-		//			//}
-		//			//else
-		//			//{
-		//			//	if (queryItems[x, z].IsEnemyNearby)
-		//			//	{
-		//			//		Gizmos.color = Color.red;
-		//			//		Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-		//			//	}
-		//			//	else
-		//			//	{
-		//			//		Gizmos.color = Color.blue;
-		//			//		Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
-		//			//	}
-		//			//}
-		//		}
-		//	}
-		//}
+					//if (queryItems[x, z].IsColliding)
+					//{
+					//	Gizmos.color = Color.yellow;
+					//	Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+					//	//check neighbors and change color
+					//	CheckNeighbors(x, z);
+					//}
+					//else
+					//{
+					//	if (queryItems[x, z].IsEnemyNearby)
+					//	{
+					//		Gizmos.color = Color.red;
+					//		Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+					//	}
+					//	else
+					//	{
+					//		Gizmos.color = Color.blue;
+					//		Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+					//	}
+					//}
+				}
+			}
+		}
 	}
 }
