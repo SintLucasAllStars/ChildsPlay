@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Humanoid : MonoBehaviour
 {
-
+   
     NavMeshAgent agent;
     public float speed;
 
@@ -13,8 +13,11 @@ public class Humanoid : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+       
+       
     }
 
+   
     protected void MoveTo(Vector3 Pos)
     {
         agent.destination = Pos;
