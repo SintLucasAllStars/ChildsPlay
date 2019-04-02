@@ -5,68 +5,43 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    NavMeshAgent _agent;
-    Vector3 _target;
-    GameObject _player;
+	NavMeshAgent Agent;
+	Vector3 TargetPos;
+	public QSystem system;
+	float speed;
 
+	List<EQSItem> HideLoc = new List<EQSItem>();
 
-    public float fieldOfViewDegrees;
-    public float visibilityDistance;
+	private void Start()
+	{
+		system.Check();
+		Agent = GetComponent<NavMeshAgent>();
+		system = GameObject.FindWithTag("EQS").GetComponent<QSystem>();
+		FindLoc(); 
+		
+	}
 
+	void FindLoc()
+	{
+		Vector3 NewLoc;
 
-    public Vector3 test;
-    enum AiState
-    {
-        Walking,
-        Running,
-        Searching //for enemy to shoote
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        _player = GameObject.Find("Player");
-    }
+		foreach (EQSItem item in system.Qitems)
+		{
+			Debug.Log(item.CanHide);
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (CanSeePlayer())
-        {
-            Debug.Log("I can see the player");
-        }
-        DrawDebugFOV();
-    }
+			if (item.CanHide == true && item.IsColiding == false)
+			{
+				HideLoc.Add(item);
+			}
+		}
 
-    bool CanSeePlayer()
-    {
-        RaycastHit hit;
-        Vector3 rayDirection = _player.transform.position - transform.position;
-
-
-        if ((Vector3.Angle(rayDirection, transform.forward)) <= fieldOfViewDegrees * 0.5f)
-        {
-            // Detect if player is within the field of view
-            if (Physics.Raycast(transform.position, rayDirection, out hit, visibilityDistance))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    //this is WIP
-    void DrawDebugFOV()
-    {
-        Vector3 rayDirection = _player.transform.position - transform.position;
-
-        Debug.DrawLine(transform.position,rayDirection - test);
-        
-    }
-
-    public void RecieveWeapon()
-    {
-        //get weapon
-    }
+		if (HideLoc.Count > 0)
+		{ 
+			int index = Random.Range(0, HideLoc.Count);
+			Debug.Log(index);
+			NewLoc = HideLoc[index].GetWorldLocation();
+			Agent.destination = NewLoc;
+		}
+	}
 
 }
