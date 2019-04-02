@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Person
 {
-    public GameObject gun;
-    public GameObject gunDropPrefab;
+
     public GameObject bulletPrefab;
     public Transform shootOffset;
+
     public bool hit = false; //this bool should be changed by the bullet script
     public float dropRange;
 
-    bool hasShot;
-    GameObject _droppedgun;
+
+    public GameObject _droppedgun;
 
     // Start is called before the first frame update
     void Start()
@@ -27,55 +27,23 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && gun.activeSelf == true && !hasShot)
         {
-            //DropWeapon();
             Debug.Log("Player shooting");
-            Instantiate(bulletPrefab, transform.position, shootOffset.rotation);
+            Instantiate(bulletPrefab, shootOffset.position, shootOffset.rotation);
             hasShot = true;
 
-            Invoke("DropWeapon", 2);
+            StartCoroutine(DropWeapon(shootOffset.position, gun));
         }
-
     }
 
-    public void DropWeapon()
-    {
-        Debug.Log("Dropped weapon");
-        _droppedgun = Instantiate(gunDropPrefab, transform.position, transform.rotation);
 
-        //GameObject droppedgun = Instantiate(gun, transform.position, transform.rotation);
-        //droppedgun.AddComponent<Rigidbody>();
-        //droppedgun.GetComponent<MeshCollider>().convex = true;
-        Rigidbody rb = _droppedgun.GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.forward * 10);
-        Invoke("ActivateDropWeapon", 1);
-
-        gun.SetActive(false);
-        hasShot = false;
-    }
-
-    void ActivateDropWeapon()
+    private void OnTriggerStay(Collider other)
     {
-        _droppedgun.GetComponent<BoxCollider>().isTrigger = true;
-    }
-    
-    void Die()
-    {
-        Debug.Log("Player died");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Gun"))
+        if (other.CompareTag("Gun") && Input.GetKey(KeyCode.E))
         {
+            Debug.Log("Picked up gun");
             Destroy(other.gameObject);
             gun.SetActive(true);
         }
-
-        if (other.CompareTag("Bullet") && gun.activeInHierarchy == false)
-        {
-            Die();
-        }
     }
-
 
 }

@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Seeker
   - EQS
+  - Enemy
   layers:
   - Default
   - TransparentFX
