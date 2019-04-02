@@ -79,10 +79,8 @@ public class AI : Person
         {
             EquipWeapon(other.gameObject);
         }
-
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet") && gun.activeInHierarchy == false)
         {
-            Debug.Log("F");
             Die();
         }
     }

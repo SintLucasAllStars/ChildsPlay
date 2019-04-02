@@ -11,6 +11,11 @@ public class Person : MonoBehaviour
     public Transform shootOffset;
     public GameObject bulletPrefab;
 
+    private void Start()
+    {
+        gun.SetActive(false);
+    }
+
     public IEnumerator DropWeapon(Vector3 dropOffset, GameObject g)
     {
         yield return new WaitForSeconds(2);
@@ -29,8 +34,6 @@ public class Person : MonoBehaviour
 
     public void RecieveWeapon()
     {
-        Debug.Log(gameObject.name + "got weapon");
-        gameObject.tag = "Seeker";
         //get weapon
     }
 
@@ -58,11 +61,4 @@ public class Person : MonoBehaviour
         gun.SetActive(true);
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Bullet") && gun.activeInHierarchy == false)
-        {
-            Die();
-        }
-    }
 }

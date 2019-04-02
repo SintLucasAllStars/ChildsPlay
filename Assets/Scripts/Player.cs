@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class Player : Person
 {
-
     public bool hit = false; //this bool should be changed by the bullet script
     public float dropRange;
-
-
-    //public GameObject _droppedgun;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        gun.SetActive(false);
-    }
 
     // Update is called once per frame
     void Update()
@@ -37,5 +27,6 @@ public class Player : Person
             Debug.Log("Picked up gun");
             EquipWeapon(other.gameObject);
         }
+
     }
 }
