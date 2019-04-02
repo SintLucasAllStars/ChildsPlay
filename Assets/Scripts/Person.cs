@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Person : MonoBehaviour
@@ -11,10 +12,6 @@ public class Person : MonoBehaviour
     public Transform shootOffset;
     public GameObject bulletPrefab;
 
-    private void Start()
-    {
-        gun.SetActive(false);
-    }
 
     public IEnumerator DropWeapon(Vector3 dropOffset, GameObject g)
     {
@@ -60,5 +57,6 @@ public class Person : MonoBehaviour
         Destroy(gunOnGround);
         gun.SetActive(true);
     }
+
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
@@ -47,24 +48,10 @@ public class Gamemanager : MonoBehaviour
         }
         #endregion
 
-        //give everyone weapon is there are less then 4 players
-        if (allPlayers.Count < 4)
-        {
-            for (int i = 0; i < allPlayers.Count; i++)
-            {
 
-                if (allPlayers[i].GetComponent<Player>() != null)
-                {
-                    var script = allPlayers[i].GetComponent<Player>();
-                    script.RecieveWeapon();
-                }
-                else
-                {
-                    //might need to change
-                    var script = allPlayers[i].GetComponent<AI>();
-                    script.RecieveWeapon();
-                }
-            }
+        if(allPlayers.Count < 1)
+        {
+            SceneManager.LoadScene("Lose");
         }
     }
 
