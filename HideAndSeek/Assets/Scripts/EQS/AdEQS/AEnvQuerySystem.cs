@@ -59,6 +59,8 @@ public class AEnvQuerySystem : MonoBehaviour
 			//	}
 			//}
 		}
+
+		ReCalcutalePoints();
 	}
 
 	private void CheckNeighbors(int x, int z)
@@ -86,37 +88,43 @@ public class AEnvQuerySystem : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
+		if(Input.GetKeyDown(KeyCode.R))
+		{
+			ReCalcutalePoints();
+		}
+	}
+
+	public void ReCalcutalePoints()
+	{
 		if (queryItems != null)
 		{
+			hideLocations.Clear();
+
 			for (int x = 0; x <= gridSize; x++)
 			{
 				for (int z = 0; z <= gridSize; z++)
 				{
 					if (queryItems[x, z].IsColliding)
 					{
-						Gizmos.color = Color.yellow;
-						Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
 						CheckNeighbors(x, z);
+						Debug.Log("Is colliding");
 					}
 					else
 					{
 						if (queryItems[x, z].IsEnemyNearby)
 						{
-							Gizmos.color = Color.red;
-							Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+							Debug.Log("Enemy is nearby");
 						}
 						else
 						{
 							if (queryItems[x, z].IsNextToWall)
 							{
-								Gizmos.color = Color.magenta;
-								Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
                                 hideLocations.Add(queryItems[x, z]);
-							}
+                                Debug.Log("Is next to wall");
+                            }
 							else
 							{
-								Gizmos.color = Color.blue;
-								Gizmos.DrawWireSphere(queryItems[x, z].GetWorldLocation(), 0.25f);
+								Debug.Log("Normal point");
 							}
 						}
 					}

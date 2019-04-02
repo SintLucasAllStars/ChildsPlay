@@ -12,9 +12,10 @@ public class Hider : Humanoid
     void Start()
     {
        Seeker = GameObject.FindGameObjectWithTag("Seeker");
-        FindNewLocation();
+        
         EQSSystem = AEnvQuerySystem.Instance;
-    }
+		FindNewLocation();
+	}
 
     // Update is called once per frame
     void Update()
