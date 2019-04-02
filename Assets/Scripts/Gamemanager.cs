@@ -65,7 +65,7 @@ public class Gamemanager : MonoBehaviour
                 {
                     //might need to change
                     var script = allPlayers[i].GetComponent<AI>();
-                    script.RecieveWeapon();
+                    //script.RecieveWeapon();
                 }
 
 
