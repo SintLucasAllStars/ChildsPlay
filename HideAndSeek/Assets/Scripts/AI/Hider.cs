@@ -30,6 +30,7 @@ public class Hider : Humanoid
     {
         int index = Random.Range(0, EQSSystem.hideLocations.Count);
         Debug.Log(EQSSystem.hideLocations.Count);
+
         Vector3 newLoc = EQSSystem.hideLocations[index].GetWorldLocation();
         MoveTo(newLoc);
     }
