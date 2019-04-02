@@ -5,6 +5,7 @@ using UnityEngine;
 public class QSystem : MonoBehaviour
 {
 	IQGenerator gen;
+
 	public List<EQSItem> Qitems;
 	public Transform Qr;
 	public Transform target;
@@ -16,7 +17,6 @@ public class QSystem : MonoBehaviour
 
 		if (gen != null)
 		{
-
 			Qitems = gen.Items(transform);
 		}
 
@@ -25,37 +25,50 @@ public class QSystem : MonoBehaviour
 
 	public void Update()
 	{
+		Check();
+	}
+
+	public void Check()
+	{
 		if (Qitems != null)
 		{
 			foreach (EQSItem item in Qitems)
 			{
 				var col = Physics.OverlapSphere(item.GetWorldLocation(), .25f);
-
 				if (col.Length > 0)
 				{
-
 					item.IsColiding = true;
-
 				}
 				else
 				{
 
-					if (item.RunCheck(target))
+					if (item.SeeSeeker(target))
 					{
+
 						item.CanHide = false;
+
 					}
 					else
 					{
 						item.CanHide = true;
-					}
 
+					}
 				}
 			}
 		}
 	}
+	
+
 
 	public void OnDrawGizmos()
 	{
+		gen = new GridGen(GridSize, Qr);
+
+		if (gen != null)
+		{
+			Qitems = gen.Items(transform);
+		}
+
 		if (Qitems != null)
 		{
 			foreach (EQSItem item in Qitems)
@@ -72,7 +85,7 @@ public class QSystem : MonoBehaviour
 				else
 				{
 
-					if (item.RunCheck(target))
+					if (item.SeeSeeker(target))
 					{
 
 						Gizmos.color = Color.red;
@@ -87,6 +100,9 @@ public class QSystem : MonoBehaviour
 					}
 
 				}
+
+
+
 			}
 		}
 	}

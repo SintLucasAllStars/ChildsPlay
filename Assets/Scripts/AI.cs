@@ -14,19 +14,46 @@ public class AI : MonoBehaviour
 
 	private void Start()
 	{
+		system.Check();
 		Agent = GetComponent<NavMeshAgent>();
 		system = GameObject.FindWithTag("EQS").GetComponent<QSystem>();
+		FindLoc(); 
+		//foreach (EQSItem item in system.Qitems)
+		//{
+		//	Debug.Log("1");
+		//	if (item.CanHide == true && item.IsColiding == false)
+		//	{
+		//		Debug.Log("2");
+		//		HideLoc.Add(item);
+		//		Debug.Log(item);
+		//	}
+
+
+		//}
+		
+	}
+
+	void FindLoc()
+	{
+		Vector3 NewLoc;
+
 		foreach (EQSItem item in system.Qitems)
 		{
+			Debug.Log(item.CanHide);
+
 			if (item.CanHide == true && item.IsColiding == false)
 			{
 				HideLoc.Add(item);
 			}
-
-
 		}
-		Agent.SetDestination(HideLoc[Random.Range(0, HideLoc.Count)].GetWorldLocation());
-	}
 
+		if (HideLoc.Count > 0)
+		{ 
+			int index = Random.Range(0, HideLoc.Count);
+			Debug.Log(index);
+			NewLoc = HideLoc[index].GetWorldLocation();
+			Agent.destination = NewLoc;
+		}
+	}
 
 }

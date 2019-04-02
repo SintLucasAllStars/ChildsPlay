@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class EQSItem 
 {
-	public Vector3 l;
+	public Vector3 loc;
 	public Transform QT;
 	public bool CanHide;
 	public bool IsColiding; 
 
 	public Vector3 GetWorldLocation()
 	{
-		return QT.position + l;
+		return QT.position + loc;
 	}
 
 
 	public EQSItem(Vector3 NewPos, Transform QPos)
 	{
-		this.l = NewPos;
+		this.loc = NewPos;
 		this.QT = QPos; 
 	}
 
 
-	public bool RunCheck(Transform target)
+	public bool SeeSeeker(Transform target)
 	{
 		Ray ray = new Ray(GetWorldLocation(), (target.position - GetWorldLocation()));
 
