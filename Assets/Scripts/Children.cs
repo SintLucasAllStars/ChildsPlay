@@ -36,7 +36,7 @@ public class Children : MonoBehaviour
         wanderRadius = 100;
         changeLocation = false;
         multiplyBy = 0.2f;
-        m_speed = Random.Range(0.08f, 0.375f);
+        m_speed = Random.Range(0.08f, 0.32f);
       
         //palt de navmeshagent voor movement en maakt een nieuwe random locatie aan om naar toe tegaan
         agent = gameObject.GetComponent<NavMeshAgent>();

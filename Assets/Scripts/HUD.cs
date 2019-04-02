@@ -27,7 +27,7 @@ public class HUD : MonoBehaviour
     void Start()
     {
         // Setting the time
-        m_totalTime = 30 + Mathf.Round(GameManager.m_day / 2) * 9 + Random.Range(0, 10);
+        m_totalTime = 30 + Mathf.Round(GameManager.m_day / 2) * 9 + Random.Range(0, 17);
 
         // Playing the background music
         m_aud = GetComponent<AudioSource>();
