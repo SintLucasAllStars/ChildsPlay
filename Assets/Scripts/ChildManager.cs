@@ -7,7 +7,7 @@ public class ChildManager : MonoBehaviour
     //list of the customers
     private List<GameObject> m_Children = new List<GameObject>();
 
-    public GameObject[] m_customers;
+    public GameObject[] m_customers; // Customers
 
     private Vector3 m_randomVector;
 
