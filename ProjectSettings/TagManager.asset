@@ -7,6 +7,7 @@ TagManager:
   - Gun
   - Bullet
   - Seeker
+  - EQS
   layers:
   - Default
   - TransparentFX

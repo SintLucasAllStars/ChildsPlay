@@ -6,6 +6,8 @@ public class EQSItem
 {
 	public Vector3 l;
 	public Transform QT;
+	public bool CanHide;
+	public bool IsColiding; 
 
 	public Vector3 GetWorldLocation()
 	{
