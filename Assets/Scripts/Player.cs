@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : Person
 {
 
-    public GameObject gun;
     public GameObject bulletPrefab;
     public Transform shootOffset;
 
@@ -44,11 +43,6 @@ public class Player : Person
             Debug.Log("Picked up gun");
             Destroy(other.gameObject);
             gun.SetActive(true);
-        }
-
-        if (other.CompareTag("Bullet") && gun.activeInHierarchy == false)
-        {
-            Die(gameObject);
         }
     }
 

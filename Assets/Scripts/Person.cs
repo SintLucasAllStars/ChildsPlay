@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
-
-    public GameObject droppedgun;
+    public GameObject gun;
     public GameObject gunDropPrefab;
     public bool hasShot;
 
@@ -13,7 +12,7 @@ public class Person : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Debug.Log("Dropped weapon");
-        droppedgun = Instantiate(gunDropPrefab, dropOffset, transform.rotation);
+        GameObject droppedgun = Instantiate(gunDropPrefab, dropOffset, transform.rotation);
 
         Rigidbody rb = droppedgun.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * 1000);
@@ -38,5 +37,13 @@ public class Person : MonoBehaviour
 
         gm.CheckDeath(person);
         Destroy(person);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet") && gun.activeInHierarchy == false)
+        {
+            Die(gameObject);
+        }
     }
 }

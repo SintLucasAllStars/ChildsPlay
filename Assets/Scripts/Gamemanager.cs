@@ -51,6 +51,26 @@ public class Gamemanager : MonoBehaviour
         }
         #endregion
 
+        if(allPlayers.Count < 4)
+        {
+            for (int i = 0; i < allPlayers.Count; i++)
+            {
+                
+                if(allPlayers[i].GetComponent<Player>() != null)
+                {
+                    var script = allPlayers[i].GetComponent<Player>();
+                    script.RecieveWeapon();
+                }
+                else
+                {
+                    //might need to change
+                    var script = allPlayers[i].GetComponent<AI>();
+                    script.RecieveWeapon();
+                }
+
+
+            }
+        }
     }
 
     public void CheckDeath(GameObject person)
