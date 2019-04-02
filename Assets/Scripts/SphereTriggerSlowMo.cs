@@ -5,37 +5,9 @@ using UnityEngine;
 
 public class SphereTriggerSlowMo : MonoBehaviour
 {
-
-    public Slider slowMoBar;
     public bool slowMoStart;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        slowMoBar = GameObject.FindObjectOfType<Slider>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(slowMoBar != null)
-        {
-            if (!slowMoStart)
-            {
-                slowMoBar.value += Time.unscaledDeltaTime;
-            }
-            else
-            {
-                slowMoBar.value -= Time.unscaledDeltaTime;
-            }
-
-            if (slowMoBar.value <= 0)
-            {
-                //Debug.Log("No slowmo left");
-            }
-        }
-        
-    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -43,7 +15,7 @@ public class SphereTriggerSlowMo : MonoBehaviour
         
         if (other.CompareTag("Bullet"))
         {
-            Time.timeScale = 0.25f;
+            Time.timeScale = 0.15f;
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
             slowMoStart = true;

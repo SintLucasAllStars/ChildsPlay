@@ -30,7 +30,7 @@ public class AI : Person
     {
 	
         //if ai has gun find person to shoot
-        if (gun.activeSelf && GameObject.FindGameObjectWithTag("Gun") == null)
+        if (gun.activeSelf)
         {
             if (Vector3.Distance(transform.position, Agent.destination) < 3)
             {
@@ -41,14 +41,17 @@ public class AI : Person
         {
             Agent.destination = GameObject.FindGameObjectWithTag("Gun").transform.position;
         }
-        else
+        else if(GameObject.FindGameObjectWithTag("Gun") == null)
         {
-            FindLoc();
+            if (Vector3.Distance(transform.position, Agent.destination) < 3)
+            {
+                Agent.destination = seekingPoint[Random.Range(0, seekingPoint.Length)];
+            }
         }
 
         if(mFov.m_See && !hasShot && gun.activeSelf)
         {
-            Debug.Log("Found player");
+            //Debug.Log("Found player");
             Shoot(transform);
         }
     }
@@ -58,7 +61,7 @@ public class AI : Person
 		Vector3 NewLoc;
         foreach (EQSItem item in system.Qitems)
 		{
-			Debug.Log(item.CanHide);
+			//Debug.Log(item.CanHide);
 
 			if (item.CanHide == true && item.IsColiding == false)
 			{
@@ -69,7 +72,7 @@ public class AI : Person
 		if (HideLoc.Count > 0)
 		{ 
 			int index = Random.Range(0, HideLoc.Count);
-			Debug.Log(index);
+			//Debug.Log(index);
 			NewLoc = HideLoc[index].GetWorldLocation();
 			Agent.destination = NewLoc;
 		}

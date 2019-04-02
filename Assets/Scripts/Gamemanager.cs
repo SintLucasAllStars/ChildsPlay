@@ -42,6 +42,7 @@ public class Gamemanager : MonoBehaviour
                 readyInfo.text = "";
                 Time.timeScale = 1;
                 gameStarted = true;
+                allPlayers[Random.Range(0, allPlayers.Count)].SendMessage("RecieveWeapon");
             }
             else
                 Time.timeScale = 0;
@@ -49,9 +50,9 @@ public class Gamemanager : MonoBehaviour
         #endregion
 
 
-        if(allPlayers.Count < 1)
+        if(allPlayers.Count == 1)
         {
-            SceneManager.LoadScene("Lose");
+            SceneManager.LoadScene("Win");
         }
     }
 

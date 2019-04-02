@@ -31,7 +31,7 @@ public class Person : MonoBehaviour
 
     public void RecieveWeapon()
     {
-        //get weapon
+        gun.SetActive(true);
     }
 
     public void Die()

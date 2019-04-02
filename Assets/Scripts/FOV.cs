@@ -27,7 +27,7 @@ public class FOV : MonoBehaviour
 				{
 					if (hit.collider.name == "Player")
 					{
-                        Debug.Log("Found player");
+                        //Debug.Log("Found player");
 						m_See = true; 
 					}
 				}

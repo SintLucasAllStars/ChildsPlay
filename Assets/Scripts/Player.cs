@@ -23,6 +23,7 @@ public class Player : Person
             Debug.Log("Player shooting");
             Shoot();
         }
+
     }
 
 
@@ -35,7 +36,7 @@ public class Player : Person
         }
         if (other.gameObject.CompareTag("Bullet") && gun.activeInHierarchy == false)
         {
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("Loss");
         }
     }
 }
