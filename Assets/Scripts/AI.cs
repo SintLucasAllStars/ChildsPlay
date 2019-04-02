@@ -11,17 +11,22 @@ public class AI : Person
 	float speed;
 
 	List<EQSItem> HideLoc = new List<EQSItem>();
+    public Vector3[] seekingPoint;
 
-	private void Start()
+    private void Start()
 	{
 		system.Check();
 		Agent = GetComponent<NavMeshAgent>();
 		system = GameObject.FindWithTag("EQS").GetComponent<QSystem>();
-		FindLoc(); 
-		
-	}
+		FindLoc();
+    }
 
-	void FindLoc()
+    private void Update()
+    {
+        
+    }
+
+    void FindLoc()
 	{
 		Vector3 NewLoc;
 
@@ -43,5 +48,27 @@ public class AI : Person
 			Agent.destination = NewLoc;
 		}
 	}
+
+    void ShootPlayer()
+    {
+
+    }
+
+    //protected bool CanSeePlayer()
+    //{
+    //    RaycastHit hit;
+    //    Vector3 rayDirection = Player.transform.position - transform.position;
+
+    //    if ((Vector3.Angle(rayDirection, transform.forward)) <= 60 * 0.5f)
+    //    {
+    //        // Detect if player is within the field of view
+    //        if (Physics.Raycast(transform.position, rayDirection, out hit, 10))
+    //        {
+    //            return (hit.transform.CompareTag("Player"));
+    //        }
+    //    }
+
+    //    return false;
+    //}
 
 }

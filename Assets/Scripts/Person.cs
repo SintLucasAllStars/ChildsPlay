@@ -27,6 +27,7 @@ public class Person : MonoBehaviour
     public void RecieveWeapon()
     {
         Debug.Log(gameObject.name + "got weapon");
+        gameObject.tag = "Seeker";
         //get weapon
     }
 

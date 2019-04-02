@@ -16,8 +16,7 @@ public class Gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allPlayers.Add(GameObject.FindGameObjectWithTag("Player"));
-        allPlayers.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        allPlayers.Add(GameObject.FindObjectOfType<Player>().GetComponent<GameObject>());
 
         allPlayers[Random.Range(0, allPlayers.Count)].SendMessage("RecieveWeapon");
 
@@ -51,26 +50,28 @@ public class Gamemanager : MonoBehaviour
         }
         #endregion
 
-        if(allPlayers.Count < 4)
-        {
-            for (int i = 0; i < allPlayers.Count; i++)
-            {
+        //give everyone weapon is there are less then 4 players
+        //if(allPlayers.Count < 4)
+        //{
+        //    for (int i = 0; i < allPlayers.Count; i++)
+        //    {
                 
-                if(allPlayers[i].GetComponent<Player>() != null)
-                {
-                    var script = allPlayers[i].GetComponent<Player>();
-                    script.RecieveWeapon();
-                }
-                else
-                {
-                    //might need to change
-                    var script = allPlayers[i].GetComponent<AI>();
-                    script.RecieveWeapon();
-                }
+        //        if(allPlayers[i].GetComponent<Player>() != null)
+        //        {
+        //            var script = allPlayers[i].GetComponent<Player>();
+        //            script.RecieveWeapon();
+        //        }
+        //        else
+        //        {
+        //            //might need to change
+        //            var script = allPlayers[i].GetComponent<AI>();
+        //            script.RecieveWeapon();
+
+        //        }
 
 
-            }
-        }
+        //    }
+        //}
     }
 
     public void CheckDeath(GameObject person)
