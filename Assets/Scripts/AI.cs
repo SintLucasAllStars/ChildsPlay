@@ -19,6 +19,8 @@ public class AI : Person
 		Agent = GetComponent<NavMeshAgent>();
 		system = GameObject.FindWithTag("EQS").GetComponent<QSystem>();
         Agent.destination = seekingPoint[Random.Range(0, seekingPoint.Length)];
+
+
         //FindLoc();
     }
 
@@ -34,10 +36,7 @@ public class AI : Person
             }
         }
 
-        if (CanSeePlayer())
-        {
-            Debug.Log("Player is fucked");
-        }
+        
     }
 
     void FindLoc()
@@ -62,6 +61,11 @@ public class AI : Person
 			Agent.destination = NewLoc;
 		}
 	}
+
+    void PlayerInRange()
+    {
+
+    }
 
     protected bool CanSeePlayer()
     {
