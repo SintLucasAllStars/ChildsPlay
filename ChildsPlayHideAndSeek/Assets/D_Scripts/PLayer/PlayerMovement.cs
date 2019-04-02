@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     //Audio Stuff
     AudioSource audioSource;
     public AudioClip Spit;
+    public AudioClip Collecting;
     #endregion
 
     #region Shooting stuff
@@ -129,6 +130,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Loot")
         {
+            audioSource.clip = Collecting;
+            audioSource.Play();
             Destroy(collision.gameObject);
             ShopScript.coins_Int += 15;
         }

@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - Enemy
   - Loot
+  - BlokHigh
+  - BlokLow
   layers:
   - Default
   - TransparentFX
