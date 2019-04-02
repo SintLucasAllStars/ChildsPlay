@@ -1,2 +1,0 @@
-C:\Users\sanne\Documents\Hideandseek3\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
-C:\Users\sanne\Documents\Hideandseek3\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
