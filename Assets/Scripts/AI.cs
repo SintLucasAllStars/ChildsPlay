@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
 
-public class AI : MonoBehaviour
+public class AI : Person
 {
 	NavMeshAgent Agent;
 	Vector3 TargetPos;
