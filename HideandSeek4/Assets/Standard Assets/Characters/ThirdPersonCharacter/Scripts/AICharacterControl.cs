@@ -61,21 +61,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             curtime = Time.time;
             curtime1 = Time.time;
 
-           
-
-            InvokeRepeating("geraakt", 1.0f, 2.0f);
+            InvokeRepeating("OnTriggerEnter", 1.0f, 2.0f);
             InvokeRepeating("HitByRay", 1.0f, 2.0f);
-          
-            //goOtherSide();
 
         }
 
 
         private void Update()
         {
-         
-           // agent.SetDestination(goOtherSide());
-
 
             if (Mathf.Abs(agent.remainingDistance - agent.stoppingDistance) < 1 && (Time.time - timeprevious > 1) && playercoll)
             {
@@ -145,20 +138,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             return DesPos;
         }
 
-
-
         //private Vector3 goOtherSide()
         //{
-        //    Vector3 nieuwedes = agent.destination;
-        //    //GameObject targetobject1 = gameObject;    //getrandomtarget; // zoiets?
-        //    //targetobject1.transform.position = nieuwedes;
-        //    Vector3 ObjPos1 = nieuwedes;
-        //    Vector3 SeekPos1 = seeker1.transform.position;
 
-        //    Vector3 DesVect1 = SeekPos1 - ObjPos1;
 
-        //    Vector3 DesPos1 = ObjPos1 + (DesVect1.normalized * -1);
-        //    return DesPos1;
+        //    GameObject targetobject = 
+
+        //    Vector3 ObjPos = targetobject.transform.position;
+        //    Vector3 SeekPos = seeker1.transform.position;
+
+        //    Vector3 DesVect = SeekPos - ObjPos;
+
+        //    Vector3 DesPos = ObjPos + (DesVect.normalized * -1);
         //}
 
         private void OnTriggerEnter(Collider other)
@@ -176,23 +167,23 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         }
 
 
-        //private void OnTriggerStay(Collider other)
-        //{
-        //    if (other.tag == "Player")
-        //    {
-        //        //geraakt();
-        //        agent.SetDestination(getrandomtarget());
-        //        playercoll = true;
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.tag == "Player")
+            {
+                //geraakt();
+                agent.SetDestination(getrandomtarget());
+                playercoll = true;
 
-        //    }
-        //}
+            }
+        }
 
 
-        //void geraakt()
-        //{
-        //    Debug.Log("Go somewhere else");
-        //    agent.SetDestination(getrandomtarget());
-        //}
+        void geraakt()
+        {
+            Debug.Log("Go somewhere else");
+            agent.SetDestination(getClosestDest());
+        }
 
 
         void HitByRay()
@@ -204,8 +195,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //geraakt();
            //maak ray kleiner en add dat die persoon af is.
         }
-
-   
     }
 
 
