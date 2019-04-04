@@ -11,6 +11,7 @@ public class Seeker : MonoBehaviour
 	//modifiers
 	public float walkSpeed;
 	public float runSpeed;
+	private float Gravity = 9.81f;
 	public float sensivityX;
 	public float sensivityY;
 	public float maxStamina = 100f;
@@ -98,6 +99,7 @@ public class Seeker : MonoBehaviour
 		float moveVer = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 		moveDir = new Vector3(moveHor, 0f, moveVer);
 		moveDir = transform.TransformDirection(moveDir);
+		moveDir.y = 0f;
 
 		charaCon.Move(moveDir);
 	}
