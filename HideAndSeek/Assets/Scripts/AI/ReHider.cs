@@ -18,6 +18,10 @@ public class ReHider : Humanoid
 
     private void Update()
     {
+        if (Seeker && EQS)
+        {
+
+        
         SimpleSight();
         
         if (seekerSeen)
@@ -25,15 +29,20 @@ public class ReHider : Humanoid
             StartCoroutine(RunAwayDelay());
         }
 
-       Debug.Log("SeekerSeen = " + seekerSeen);
+            //Debug.Log("SeekerSeen = " + seekerSeen);
+        }
     }
 
     private void FindNewLocation()
     {
-        Debug.Log(EQS.hideLocations.Count);
+        if (EQS)
+        {
+        
+        //Debug.Log(EQS.hideLocations.Count);
         int index = Random.Range(0, EQS.hideLocations.Count);
         Vector3 newLoc = EQS.hideLocations[index].GetWorldLocation();
         MoveTo(newLoc);
+        }
     }
 
     //OldFunction
