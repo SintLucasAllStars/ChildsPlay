@@ -102,4 +102,12 @@ public class ReHider : Humanoid
         seekerSeen = false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Seeker"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 }
