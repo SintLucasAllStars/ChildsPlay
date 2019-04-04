@@ -14,6 +14,9 @@ public class Seeker : MonoBehaviour
 	public float sensivityY;
 	public float maxStamina = 100f;
 	private float stamina = 100;
+	private float timer;
+	private float cooldown = 1.3f;
+	private bool isRunning = false;
 
 	//movement
 	private float speed;
@@ -49,19 +52,33 @@ public class Seeker : MonoBehaviour
 		Move();
 		Look();
 
-		if(Input.GetKey(KeyCode.LeftShift))
+		if(isRunning)
 		{
-			Stamina -= (12.5f * Time.deltaTime);
+			Stamina -= ((100f / 6f) * Time.deltaTime);
+			timer = 0f;
 		}
 		else
 		{
-			Stamina += (12.5f * Time.deltaTime);
+			if(timer >= cooldown)
+			{
+				Stamina += ((100f / 6f) * Time.deltaTime);
+			}
+			else
+			{
+				timer += Time.deltaTime;
+			}
 		}
 	}
 
 	private void Move()
 	{
-		speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+		speed = walkSpeed;
+		isRunning = false;
+		if(Input.GetKey(KeyCode.LeftShift) && Stamina >= 0.1f)
+		{
+			speed = runSpeed;
+			isRunning = true;
+		}
 		float moveHor = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		float moveVer = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 		moveDir = new Vector3(moveHor, 0f, moveVer);
