@@ -18,16 +18,19 @@ public class ReHider : Humanoid
 
     private void Update()
     {
-        if (Seeker && EQS)
-        {
+		if (Seeker && EQS)
+		{
+			SimpleSight();
+		}
+		else if(Seeker == null)
+		{
+			Seeker = GameObject.FindGameObjectWithTag("Seeker");
+		}
 
-        
-        SimpleSight();
-        
         if (seekerSeen)
         {
             StartCoroutine(RunAwayDelay());
-        }
+        
 
             //Debug.Log("SeekerSeen = " + seekerSeen);
         }

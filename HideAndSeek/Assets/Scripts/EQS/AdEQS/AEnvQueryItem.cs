@@ -61,13 +61,16 @@ public class AEnvQueryItem
 
 	private bool CheckForEnemy()
 	{
-		Ray ray = new Ray(GetWorldLocation() + new Vector3(0,1,0), (enemy.position - GetWorldLocation()));
-
-		if(Physics.Raycast(ray, out RaycastHit hit, 10)) //change maxDistance
+		if(enemy != null)
 		{
-			if(hit.collider.CompareTag("Seeker"))
+			Ray ray = new Ray(GetWorldLocation() + new Vector3(0, 1, 0), (enemy.position - GetWorldLocation()));
+
+			if (Physics.Raycast(ray, out RaycastHit hit, 10)) //change maxDistance
 			{
-				return true;
+				if (hit.collider.CompareTag("Seeker"))
+				{
+					return true;
+				}
 			}
 		}
 		return false;
