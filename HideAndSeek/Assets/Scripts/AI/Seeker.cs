@@ -12,10 +12,27 @@ public class Seeker : MonoBehaviour
 	public float runSpeed;
 	public float sensivityX;
 	public float sensivityY;
+	public float maxStamina = 100f;
+	private float stamina = 100;
 
 	//movement
 	private float speed;
 	private Vector3 moveDir;
+	private float Stamina
+	{
+		get
+		{
+			return stamina;
+		}
+		set
+		{
+			if(stamina != value)
+			{
+				stamina = value;
+				UIManager.Instance.OnStaminaChanged(stamina);
+			}
+		}
+	}
 
 	//look rotation
 	private float minimumY = -60f;
@@ -31,6 +48,15 @@ public class Seeker : MonoBehaviour
 	{
 		Move();
 		Look();
+
+		if(Input.GetKey(KeyCode.LeftShift))
+		{
+			Stamina -= (12.5f * Time.deltaTime);
+		}
+		else
+		{
+			Stamina += (12.5f * Time.deltaTime);
+		}
 	}
 
 	private void Move()
@@ -50,5 +76,10 @@ public class Seeker : MonoBehaviour
 		rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
 
 		transform.eulerAngles = new Vector3(-rotationY, transform.eulerAngles.y + Input.GetAxis("Mouse X") * sensivityX, 0f);
+	}
+
+	private void LateUpdate()
+	{
+		Stamina = Mathf.Clamp(Stamina, 0f, maxStamina);
 	}
 }
