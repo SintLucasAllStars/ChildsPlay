@@ -6,6 +6,7 @@ public class Seeker : MonoBehaviour
 {
 	//controller
 	private CharacterController charaCon;
+	private BoxCollider col;
 
 	//modifiers
 	public float walkSpeed;
@@ -17,6 +18,8 @@ public class Seeker : MonoBehaviour
 	private float timer;
 	private float cooldown = 1.3f;
 	private bool isRunning = false;
+	private float attackTimer;
+	private float attackCooldown = 1.6f;
 
 	//movement
 	private float speed;
@@ -45,12 +48,24 @@ public class Seeker : MonoBehaviour
 	private void Awake()
 	{
 		charaCon = GetComponent<CharacterController>();
+		col = GetComponent<BoxCollider>();
+		col.enabled = false;
 	}
 
 	private void Update()
 	{
 		Move();
 		Look();
+
+		if (Input.GetMouseButtonDown(0) && attackTimer >= attackCooldown)
+		{
+			Attack();
+			attackTimer = 0f;
+		}
+		else
+		{
+			attackTimer += Time.deltaTime;
+		}
 
 		if(isRunning)
 		{
@@ -98,5 +113,17 @@ public class Seeker : MonoBehaviour
 	private void LateUpdate()
 	{
 		Stamina = Mathf.Clamp(Stamina, 0f, maxStamina);
+	}
+
+	private void Attack()
+	{
+		StartCoroutine(AttackCollider());
+	}
+
+	private IEnumerator AttackCollider()
+	{
+		col.enabled = true;
+		yield return new WaitForSeconds(1.5f);
+		col.enabled = false;
 	}
 }
