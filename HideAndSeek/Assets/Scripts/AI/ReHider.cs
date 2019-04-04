@@ -25,7 +25,7 @@ public class ReHider : Humanoid
             StartCoroutine(RunAwayDelay());
         }
 
-       //Debug.Log("SeekerSeen = " + seekerSeen);
+       Debug.Log("SeekerSeen = " + seekerSeen);
     }
 
     private void FindNewLocation()
@@ -74,7 +74,7 @@ public class ReHider : Humanoid
 
         float angle = Vector3.Angle(playerDir, transform.forward);
 
-        if(angle >= -45 && angle <= 45)
+        if(angle >= -90 && angle <= 90)
         {
             Ray ray = new Ray(transform.position + new Vector3(0,1,0), playerDir);
 
@@ -102,6 +102,9 @@ public class ReHider : Humanoid
         seekerSeen = false;
     }
 
+
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Seeker"))
@@ -109,5 +112,4 @@ public class ReHider : Humanoid
             Destroy(this.gameObject);
         }
     }
-
 }
