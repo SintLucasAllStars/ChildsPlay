@@ -7,6 +7,7 @@ TagManager:
   - Seeker
   - EQS
   - Obstacle
+  - Hider
   layers:
   - Default
   - TransparentFX
