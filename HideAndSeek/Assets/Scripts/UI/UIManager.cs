@@ -23,23 +23,49 @@ public class UIManager : MonoBehaviour
 	#endregion
 
 	public Slider slider;
+	public Text backText, frontText, countFrontText, countBackText;
 
+	//slider variables
 	private bool staminaChanging = false;
 	private float curStamina = 100f;
 	private float targetAmount;
 	private float timer;
 	private float cooldown = .4f;
 
+	//text variables
+	private float targetTime = 15f;
+	private float myDeltaTime = 100f;
+
 	private void Start()
 	{
 		//slider = GetComponentInChildren<Slider>();
 		slider.value = curStamina;
+		slider.gameObject.SetActive(false);
+		countBackText.enabled = false;
+		countFrontText.enabled = false;
 	}
 
 	private void Update()
 	{
 		if(staminaChanging)
 			staminaChanging = ChangeStamina();
+
+		if(myDeltaTime <= 0f)
+		{
+			backText.enabled = false;
+			frontText.enabled = false;
+			slider.gameObject.SetActive(true);
+			countBackText.enabled = true;
+			countFrontText.enabled = true;
+			countBackText.text = GameManager.Instance.hiders.Length.ToString("0");
+			countFrontText.text = GameManager.Instance.hiders.Length.ToString("0");
+		}
+		else
+		{
+			myDeltaTime = targetTime - Time.time;
+			backText.text = myDeltaTime.ToString("0");
+			frontText.text = myDeltaTime.ToString("0");
+		}
 	}
 
 	public void OnStaminaChanged(float _stamina)

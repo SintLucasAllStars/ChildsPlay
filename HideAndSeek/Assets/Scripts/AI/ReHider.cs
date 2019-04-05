@@ -104,7 +104,7 @@ public class ReHider : Humanoid
     IEnumerator RunAwayDelay()
     {
         RunAway();
-		agent.speed = 6;
+		agent.speed = 7;
 		yield return new WaitForSeconds(3);
 		agent.speed = speed;
 		yield return new WaitForSeconds(7);

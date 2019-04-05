@@ -11,7 +11,6 @@ public class Seeker : MonoBehaviour
 	//modifiers
 	public float walkSpeed;
 	public float runSpeed;
-	private float Gravity = 9.81f;
 	public float sensivityX;
 	public float sensivityY;
 	public float maxStamina = 100f;
