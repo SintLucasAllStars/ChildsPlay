@@ -86,7 +86,7 @@ public class ReHider : Humanoid
 
         float angle = Vector3.Angle(playerDir, transform.forward);
 
-        if(angle >= -90 && angle <= 90)
+        if(angle >= -300 && angle <= 300)
         {
             Ray ray = new Ray(transform.position + new Vector3(0,1,0), playerDir);
 
@@ -109,8 +109,10 @@ public class ReHider : Humanoid
     IEnumerator RunAwayDelay()
     {
         RunAway();
-        yield return new WaitForSeconds(4);
+        agent.speed = 8;
+        yield return new WaitForSeconds(10);
         FindNewLocation();
+        agent.speed = speed;
         seekerSeen = false;
     }
 
