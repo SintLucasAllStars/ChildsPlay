@@ -15,6 +15,7 @@ public class AGridGenerator : IQueryGenerator
 		this.gridSize = gridSize;
 	}
 
+	//create and return a two dementional array of EnvQueryItem points
 	public AEnvQueryItem[,] Item()
 	{
 		AEnvQueryItem[,] newItems = new AEnvQueryItem[gridSize + 1, gridSize + 1];

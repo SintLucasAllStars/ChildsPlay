@@ -9,6 +9,7 @@ public class AEnvQueryItem
 	private Transform querier;
 	private Transform enemy;
 
+	//few property practices
 	private bool isNextToWall;
 	public bool IsNextToWall
 	{
@@ -50,6 +51,7 @@ public class AEnvQueryItem
 		}
 	}
 
+	//Set-Up item
 	public AEnvQueryItem(Vector3 location, Transform querier, Transform enemy)
 	{
 		this.location = location;

@@ -32,6 +32,7 @@ public class AEnvQuerySystem : MonoBehaviour
 		}
 		/////////////////////
 
+		//create new two dementional array of EnvQueryItem points
 		queryItems = new AEnvQueryItem[gridSize + 1, gridSize + 1];
 
 		if (querier == null)
@@ -39,10 +40,12 @@ public class AEnvQuerySystem : MonoBehaviour
 			querier = transform;
 		}
 
+		//Set-Up Grid
 		generator = new AGridGenerator(querier, enemy, gridSize);
 
 		if (generator != null)
 		{
+			//create Grid from array
 			queryItems = generator.Item();
 			//if(queryItems != null)
 			//{
@@ -83,14 +86,6 @@ public class AEnvQuerySystem : MonoBehaviour
 		if ((z - 1) >= 0 && (!queryItems[x, z - 1].IsColliding && !queryItems[x, z - 1].IsEnemyNearby))
 		{
 			queryItems[x, z - 1].IsNextToWall = true;
-		}
-	}
-
-	private void Update()
-	{
-		if(Input.GetKeyDown(KeyCode.R))
-		{
-			ReCalcutalePoints();
 		}
 	}
 
@@ -135,6 +130,7 @@ public class AEnvQuerySystem : MonoBehaviour
 		}
 	}
 
+	/*
 	private void OnDrawGizmos()
 	{
 		if (queryItems != null)
@@ -173,4 +169,5 @@ public class AEnvQuerySystem : MonoBehaviour
 			}
 		}
 	}
+	*/
 }

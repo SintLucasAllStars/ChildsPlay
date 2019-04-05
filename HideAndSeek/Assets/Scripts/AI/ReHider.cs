@@ -14,6 +14,7 @@ public class ReHider : Humanoid
         EQS = AEnvQuerySystem.Instance;
         Seeker = GameObject.FindGameObjectWithTag("Seeker");
         FindNewLocation();
+		speed = 5;
     }
 
     private void Update()
@@ -30,9 +31,6 @@ public class ReHider : Humanoid
         if (seekerSeen)
         {
             StartCoroutine(RunAwayDelay());
-        
-
-            //Debug.Log("SeekerSeen = " + seekerSeen);
         }
     }
 
@@ -77,7 +75,6 @@ public class ReHider : Humanoid
         Vector3 newPos = transform.position + distToSeeker;
 
         agent.destination = newPos;
-        
     }
 
     private void SimpleSight()
@@ -102,22 +99,18 @@ public class ReHider : Humanoid
                 }
             }
         }
-
-
     }
 
     IEnumerator RunAwayDelay()
     {
         RunAway();
-        agent.speed = 8;
-        yield return new WaitForSeconds(10);
+		agent.speed = 6;
+		yield return new WaitForSeconds(3);
+		agent.speed = speed;
+		yield return new WaitForSeconds(7);
         FindNewLocation();
-        agent.speed = speed;
         seekerSeen = false;
     }
-
-
-    
 
     private void OnTriggerEnter(Collider other)
     {

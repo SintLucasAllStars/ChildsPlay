@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	public static GameManager Instance;
-
 	public Transform[] spawnHiders;
 	public Transform spawnSeeker;
 
@@ -14,6 +12,9 @@ public class GameManager : MonoBehaviour
 	public GameObject preSeeker;
 
 	private bool gameHasStarted = false;
+
+	#region Singleton + SetUp
+	public static GameManager Instance;
 
 	private void Awake()
 	{
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 
 		StartCoroutine(Spawn());
 	}
+	#endregion
 
 	private IEnumerator Spawn()
 	{
