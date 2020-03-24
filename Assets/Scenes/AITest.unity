@@ -1371,7 +1371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727041641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 1.1, z: 30.5}
+  m_LocalPosition: {x: 2.3, y: 1.1, z: 29.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1521,10 +1521,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMesh: {fileID: 1823968694}
   destination: {fileID: 1727041641}
+  idleDestination: {x: 0, y: 0, z: 0}
+  idleSpeed: 2
   chaseSpeed: 7
   FOV: 180
   range: 40
   angleToTarget: 0
+  waitTime: 3
 --- !u!195 &1823968694
 NavMeshAgent:
   m_ObjectHideFlags: 0
