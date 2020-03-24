@@ -11,6 +11,7 @@ public class playerBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Every movement
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -28,8 +29,6 @@ public class playerBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(0.01f, 0, 0);
-
         }
-
     }
 }
