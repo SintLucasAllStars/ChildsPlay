@@ -30,7 +30,7 @@ public class playerCamera : MonoBehaviour
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
 
-        pitch = Mathf.Clamp(pitch, -45, 70);
+        pitch = Mathf.Clamp(pitch, 0, 25);
 
         transform.eulerAngles = new Vector3(0f, yaw, 0f);
         cam.transform.eulerAngles = new Vector3(pitch, yaw, 0f);
