@@ -24,15 +24,15 @@ public class AIBehaviour : MonoBehaviour
     void Update()
     {
         Vector3 p = destination.transform.position - transform.position;
-        angleToTarget = Vector3.Angle(p, transform.forward);
+        angleToTarget = Vector3.Angle (p, transform.forward);
         
         if (angleToTarget <= FOV / 2.0f)
         {
-                RaycastHit hit;
+            RaycastHit hit;
 
             if (Physics.Raycast(transform.position, p, out hit, range))
             {
-                    Debug.DrawRay(transform.position, p, Color.red);
+                Debug.DrawRay(transform.position, p, Color.red);
 
                 if (hit.collider.gameObject == destination)
                 {
