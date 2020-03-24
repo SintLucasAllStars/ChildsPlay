@@ -1,0 +1,22 @@
+Goal: 
+U have been captured en brought into the mansion, u give it a try to escape but you have to stay
+out of the guards eye sight to not get followed or captured again. When you reach the door to 
+outside you have 'won' the game.
+
+- Mainmenu:
+  = play button
+  = quit button
+
+- Main Game Scene (House)
+ = firstperson player
+ = enemy's based on navmash
+	+ follow a path
+	+ if they see the player the follow him
+	+ 3x hit = death to player
+	+ (alert other teammembers)
+
+- GameOverScreen
+  = Text with: "U have been captured try again"
+  = replay button
+  = mainmenu button
+  = exit button
