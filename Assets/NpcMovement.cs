@@ -47,11 +47,13 @@ public class NpcMovement : MonoBehaviour
                 if (Time.frameCount % 60 == 0)
                 {
                     Vector3 newDest = transform.position + new Vector3(Random.Range(-15f, 15f), transform.position.y, z: Random.Range(-15f, 15f) * 6f);
+                    GetComponent<NavMeshAgent>().speed = 0.4f;
                     nav.destination = newDest;
                 }
                 break;
             case States.Chase:
                 nav.destination = objTransform.position;
+                GetComponent<NavMeshAgent>().speed = 0.8f;
                 break;
 
         }
