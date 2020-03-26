@@ -7,6 +7,8 @@ public class CameraBehaviour : MonoBehaviour
     public Camera camera;
     private float maxFov = 80;
     private float minFov = 40;
+    
+    
     void Start()
     {
         camera = FindObjectOfType<Camera>();
