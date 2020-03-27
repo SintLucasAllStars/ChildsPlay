@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.UI;
 
 public class NpcMovement : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class NpcMovement : MonoBehaviour
 
     public ThirdPersonCharacter character;
 
+    public Transform cameraTransform;
+    public GameObject alertImage;
+
     public enum States
     {
         Patrol,
@@ -27,11 +31,16 @@ public class NpcMovement : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         //Player = GameObject.Find("Player");
         nav.updateRotation = false;
+        alertImage.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        //transform.LookAt(cameraTransform);
+        alertImage.transform.LookAt(cameraTransform);
+
         if (SeesTarget())
         {
             currentState = States.Chase;
@@ -46,12 +55,14 @@ public class NpcMovement : MonoBehaviour
             case States.Patrol:
                 if (Time.frameCount % 60 == 0)
                 {
+                    alertImage.SetActive(false);
                     Vector3 newDest = transform.position + new Vector3(Random.Range(-15f, 15f), transform.position.y, z: Random.Range(-15f, 15f) * 6f);
                     GetComponent<NavMeshAgent>().speed = 0.4f;
                     nav.destination = newDest;
                 }
                 break;
             case States.Chase:
+                alertImage.SetActive(true);
                 nav.destination = objTransform.position;
                 GetComponent<NavMeshAgent>().speed = 0.8f;
                 break;
