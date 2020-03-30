@@ -7,7 +7,7 @@ public class NpcMovement : MonoBehaviour
     private NavMeshAgent nav;
     public Transform objTransform;
     //public GameObject Player;
-    float range = 10;
+    public float range = 10;
     float fov = 150;
     public Transform firePoint;
     public States currentState = States.Patrol;
