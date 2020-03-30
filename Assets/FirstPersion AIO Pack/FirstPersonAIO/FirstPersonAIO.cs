@@ -56,7 +56,7 @@ using System.Collections.Generic;
 
 public class FirstPersonAIO : MonoBehaviour {
 
-
+    public static FirstPersonAIO Instance { get; set; }
     #region Variables
 
     #region Input Settings
@@ -266,9 +266,17 @@ public class BETA_SETTINGS{
         #endregion
 
         #region BETA_SETTINGS - Awake
-    
-#endregion
 
+        #endregion
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
@@ -308,7 +316,7 @@ public class BETA_SETTINGS{
         }
         mouseSensitivityInternal = mouseSensitivity;
         cameraStartingPosition = playerCamera.transform.localPosition;
-        if(lockAndHideCursor) { Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
+        if (lockAndHideCursor) { Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
         baseCamFOV = playerCamera.fieldOfView;
         #endregion
 
@@ -385,6 +393,10 @@ public class BETA_SETTINGS{
         #endregion
     }
 
+    public void TurnOnCursor()
+    {
+        Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
+    }
     private void FixedUpdate()
     {
         #region Look Settings - FixedUpdate
