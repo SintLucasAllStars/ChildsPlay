@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,13 +10,14 @@ public class PlayerHealth : MonoBehaviour
 
     int health, healthLeft, checker;
     float timeLeft;
-
     Text healthText;
+    public GameObject panel;
 
     private void Start()
     {
         healthText = GameObject.Find("HealthText").GetComponent<Text>(); //gets the gameobject with the name "HealthText"
         health = 3; //health is default 3
+        panel.SetActive(false);
     }
 
     private void Update()
@@ -42,7 +44,9 @@ public class PlayerHealth : MonoBehaviour
         if (healthLeft == 0)
         {
             healthText.text = "Health: " + 0;
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+            FirstPersonAIO.Instance.TurnOnCursor();
+            panel.SetActive(true);
         }
     }
 
@@ -54,5 +58,20 @@ public class PlayerHealth : MonoBehaviour
             checker = 1; //so the code will run once
             health -= 1; //subtract 1 from health
         }
+    }
+    public void MainMenuBtn()
+    {
+        SceneManager.LoadScene("MainMenu");
+        print("Main menu");
+    }
+    public void TryAgainBtn()
+    {
+        SceneManager.LoadScene("SampleScene");
+        print("Try again");
+    }
+    public void ExitBtn()
+    {
+        Application.Quit();
+        print("Quit game");
     }
 }
