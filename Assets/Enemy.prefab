@@ -110,6 +110,10 @@ MonoBehaviour:
   character: {fileID: 5316774943529736054}
   cameraTransform: {fileID: 0}
   alertImage: {fileID: 5316774943915679235}
+  blue: {fileID: 2100000, guid: 575f64eade83ddd4c9302f560bc67b22, type: 2}
+  red: {fileID: 2100000, guid: 13cada5d0b845f244a61383f743ced51, type: 2}
+  black: {fileID: 2100000, guid: 8163ef73d1bbff843919f565153fd744, type: 2}
+  green: {fileID: 2100000, guid: 2019ad135fac453488b693f57027201c, type: 2}
 --- !u!54 &5316774943529736049
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -190,7 +194,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15.84
+  m_Radius: 9
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5316774943915679235
 GameObject:
@@ -344,6 +348,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2019ad135fac453488b693f57027201c, type: 2}
+    - target: {fileID: 13700000, guid: 7e15121f5f042ed46aba81406403f2d2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e15121f5f042ed46aba81406403f2d2, type: 3}
 --- !u!4 &5316774944066817314 stripped

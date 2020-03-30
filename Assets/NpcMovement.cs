@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
-using UnityEngine.UI;
 
 public class NpcMovement : MonoBehaviour
 {
@@ -23,6 +20,13 @@ public class NpcMovement : MonoBehaviour
     public GameObject alertImage;
     private GameObject obj;
 
+    public Material blue;
+    public Material red;
+    public Material black;
+    public Material green;
+
+    private new SkinnedMeshRenderer renderer;
+
     public enum States
     {
         Patrol,
@@ -33,6 +37,25 @@ public class NpcMovement : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
         //Player = GameObject.Find("Player");
+
+        renderer = transform.GetComponentInChildren<SkinnedMeshRenderer>();
+        var randomColor = Random.Range(0, 5);
+        switch (randomColor)
+        {
+            case 1:
+                renderer.material = red;
+                break;
+            case 2:
+                renderer.material = blue;
+                break;
+            case 3:
+                renderer.material = black;
+                break;
+            case 4:
+                renderer.material = green;
+                break;
+        }
+
         objTransform = GameObject.FindWithTag("Player").transform;
         cameraTransform = GameObject.FindWithTag("MainCamera").transform;
         nav.updateRotation = false;
@@ -123,11 +146,15 @@ public class NpcMovement : MonoBehaviour
         return false;
     }
 
-    public void ChangeTarget()
+    public void StartChase()
     {
         //de state veranderd. code moet wel naar update
         seesNpc = true;//iedere NPC volgt player
         print($"change state to chase: {this.gameObject}");
+    }
+    public void StopChase()
+    {
+        seesNpc = false;
     }
     public void OnTriggerEnter(Collider other)
     {

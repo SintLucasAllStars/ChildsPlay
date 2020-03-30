@@ -22,15 +22,24 @@ public class NpcManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             GameObject obj = Instantiate(enemy, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
+            //GetComponent<Renderer>().material.color = new Color(0, 255, 0);
             obj.transform.parent = this.gameObject.transform;
         }
+
     }
 
     public void AlertMessage()
     {
-        BroadcastMessage("ChangeTarget");
+        BroadcastMessage("StartChase");
+        StartCoroutine("Timer");
+        print("Started the timer");
+    }
+    private IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(4);
+        BroadcastMessage("StopChase");
     }
 }
