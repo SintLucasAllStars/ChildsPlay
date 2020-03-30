@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
-using UnityEngine.UI;
 
 public class NpcMovement : MonoBehaviour
 {
@@ -14,11 +11,21 @@ public class NpcMovement : MonoBehaviour
     float fov = 150;
     public Transform firePoint;
     public States currentState = States.Patrol;
+    public bool seesNpc = false;
+    private bool npcInRange = false;
 
     public ThirdPersonCharacter character;
 
     public Transform cameraTransform;
     public GameObject alertImage;
+    private GameObject obj;
+
+    public Material blue;
+    public Material red;
+    public Material black;
+    public Material green;
+
+    private new SkinnedMeshRenderer renderer;
 
     public enum States
     {
@@ -30,6 +37,27 @@ public class NpcMovement : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
         //Player = GameObject.Find("Player");
+
+        renderer = transform.GetComponentInChildren<SkinnedMeshRenderer>();
+        var randomColor = Random.Range(0, 5);
+        switch (randomColor)
+        {
+            case 1:
+                renderer.material = red;
+                break;
+            case 2:
+                renderer.material = blue;
+                break;
+            case 3:
+                renderer.material = black;
+                break;
+            case 4:
+                renderer.material = green;
+                break;
+        }
+
+        objTransform = GameObject.FindWithTag("Player").transform;
+        cameraTransform = GameObject.FindWithTag("MainCamera").transform;
         nav.updateRotation = false;
         alertImage.SetActive(false);
     }
@@ -37,17 +65,28 @@ public class NpcMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //transform.LookAt(cameraTransform);
+        if (seesNpc == true)//other npc is in range
+        {
+            //sent out a call request towards other npc's to set new follow target
+            //NpcManager.Instance.AlertMessage();
+            alertImage.SetActive(true);
+            nav.destination = objTransform.position;
+            GetComponent<NavMeshAgent>().speed = 0.8f;
+            //refrence naar andere npc krijgen,verander target
+            //seesNpc = false;
+        }
+
         alertImage.transform.LookAt(cameraTransform);
 
         if (SeesTarget())
         {
             currentState = States.Chase;
+
         }
         else
         {
             currentState = States.Patrol;
+            GetComponent<SphereCollider>().enabled = false;
         }
 
         switch (currentState)
@@ -81,6 +120,7 @@ public class NpcMovement : MonoBehaviour
         {
             character.Move(Vector3.zero, false, false);
         }
+
     }
     public bool SeesTarget()
     {
@@ -93,10 +133,43 @@ public class NpcMovement : MonoBehaviour
             {
                 if (hit.collider.gameObject.CompareTag("Player"))
                 {
+                    GetComponent<SphereCollider>().enabled = true;
+                    if (npcInRange == true)
+                    {
+                        NpcManager.Instance.AlertMessage();
+                    }
                     return true;
                 }
+
             }
         }
         return false;
+    }
+
+    public void StartChase()
+    {
+        //de state veranderd. code moet wel naar update
+        seesNpc = true;//iedere NPC volgt player
+        print($"change state to chase: {this.gameObject}");
+    }
+    public void StopChase()
+    {
+        seesNpc = false;
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            npcInRange = true;
+
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            npcInRange = false;
+        }
     }
 }
