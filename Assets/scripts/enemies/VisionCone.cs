@@ -8,6 +8,8 @@ public class VisionCone : MonoBehaviour
     private EnemyBehaviour enemyBehaviour;
 
     private Vector3 origin;
+    private Vector3 vertex;
+    private RaycastHit rayHit;
 
     private int raycount = 60;
     float angle;
@@ -22,17 +24,21 @@ public class VisionCone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyBehaviour = transform.parent.GetComponent<EnemyBehaviour>();
+        enemyBehaviour = GetComponent<EnemyBehaviour>();
 
         #region vision cone
+        //creating new mesh
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-
 
         //setting array length
         vertices = new Vector3[raycount + 1 + 1];
         uv = new Vector2[vertices.Length];
         triangles = new int[raycount * 3];
+
+        //calculating angle increase
+        angleIncrease = enemyBehaviour.fov / raycount;
+
         #endregion
     }
 
@@ -43,25 +49,20 @@ public class VisionCone : MonoBehaviour
         origin = Vector3.zero;
         vertices[0] = origin;
 
-        //calculating angle increase
-        angleIncrease = enemyBehaviour.fov / raycount;
         angle = 90 + (enemyBehaviour.fov / 2);
 
         //calulating points
         int vertexIndex = 1;
         int triangleIndex = 0;
+
         for (int i = 0; i < raycount; i++)
         {
-            Vector3 vertex;
-
             //turning angle in to a position
             float angleRad = angle * (Mathf.PI / 180);
             Vector3 position = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
 
-            RaycastHit rayHit;
-            Physics.Raycast(origin, position, out rayHit, enemyBehaviour.sightRange);
-
-            print(rayHit.collider);
+            //firing raycasts
+            Physics.Raycast(transform.position, position, out rayHit, enemyBehaviour.sightRange);
 
             if (rayHit.collider == null)
             {
@@ -70,9 +71,11 @@ public class VisionCone : MonoBehaviour
             }
             else
             {
-                vertex = rayHit.point;
+                //adding position to a vertex
+                vertex = origin + position * rayHit.distance;
             }
 
+            //adding vertex
             vertices[vertexIndex] = vertex;
 
             //creating triangles if not on first run
@@ -90,6 +93,7 @@ public class VisionCone : MonoBehaviour
             angle -= angleIncrease;
         }
 
+        //adding calculated values to mesh
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;

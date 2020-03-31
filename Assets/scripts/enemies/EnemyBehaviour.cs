@@ -71,14 +71,16 @@ public class EnemyBehaviour : MonoBehaviour
                 if (angle <= (fov / 2))
                 {
                     RaycastHit hit;
-                    Debug.DrawRay(transform.position, dir);
                     //checking if their are any objects between player and enemy
                     if (Physics.Raycast(transform.position, dir, out hit))
                     {
-                        //setting new search position
-                        navAgent.SetDestination(hit.point);
-                        //setting value
-                        value = true;
+                        if (hit.collider.CompareTag("Player"))
+                        {
+                            //setting new search position
+                            navAgent.SetDestination(hit.point);
+                            //setting value
+                            value = true;
+                        }
                     }
                 }
             }
