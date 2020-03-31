@@ -61,7 +61,7 @@ public class VisionCone : MonoBehaviour
             Vector3 position = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
 
             //firing raycasts
-            Physics.Raycast(transform.position, position, out rayHit, enemyBehaviour.sightRange, 0<<7);
+            Physics.Raycast(transform.position, position, out rayHit, enemyBehaviour.sightRange, LayerMask.GetMask("obstacle"));
 
             if (rayHit.collider == null)
             {
