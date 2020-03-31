@@ -26,7 +26,7 @@ public class AIBehaviour : MonoBehaviour
     Vector3 p;
 
     public float waitTime = 3;
-
+    
     bool randomPositionResetter;
 
     // Start is called before the first frame update
@@ -43,10 +43,16 @@ public class AIBehaviour : MonoBehaviour
         p = destination.transform.position - transform.position;
         angleToTarget = Vector3.Angle (p, transform.forward);
 
-        // If the player is hidden, set the state to lookaround
+        // If the player is hidden, set the state to lookaround if it isn't already
         if (playerBehaviour.isHidden)
         {
-            StartCoroutine(SetLookAroundState(0.5f));
+            if (currentState == State.chase)
+                StartCoroutine(SetLookAroundState(0.5f));
+        }
+        else if (!playerBehaviour.isHidden)
+        {
+            if (currentState == State.lookaround)
+                currentState = State.chase;
         }
 
         // If the player has the key, increase chase speed
@@ -68,7 +74,6 @@ public class AIBehaviour : MonoBehaviour
             // The AI slowly walks around to random points
             case State.idle:
                 // If the PosResetter is not true, call the Coroutine
-                Debug.Log("Idle");
                 if (!randomPositionResetter)
                     StartCoroutine(SetRandomTarget(waitTime));
 
@@ -77,7 +82,6 @@ public class AIBehaviour : MonoBehaviour
             // The AI looks around toward random points and barely moving
             // This case is usually active after the AI loses the target
             case State.lookaround:
-                Debug.Log("Lookaround");
                 if (!randomPositionResetter)
                     StartCoroutine(SetRandomLookTarget(waitTime));
 
@@ -85,7 +89,6 @@ public class AIBehaviour : MonoBehaviour
 
             // The AI chases after the target
             case State.chase:
-                Debug.Log("chase");
                 navMesh.speed = chaseSpeed;
                 navMesh.destination = destination.transform.position;
                 break;
@@ -123,8 +126,8 @@ public class AIBehaviour : MonoBehaviour
     {
         randomPositionResetter = true;
         navMesh.speed = idleSpeed;
-
-        idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.z + Random.Range(-2, 2));
+        
+        idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.z + Random.Range(-8, 2));
         navMesh.destination = idleDestination;
 
         yield return new WaitForSeconds(waitTime);
@@ -144,6 +147,7 @@ public class AIBehaviour : MonoBehaviour
             idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
             navMesh.destination = idleDestination;
             yield return new WaitForSeconds(waitTime);
+            transform.Rotate(0, Random.Range(-70, 70), 0);
         }
 
         currentState = State.idle;
@@ -155,7 +159,10 @@ public class AIBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        currentState = State.lookaround;
+        RaycastHit hit;
+        
+        if (playerBehaviour.isHidden)
+            currentState = State.lookaround;
     }
 
     // If the ai touches the player, the game is over
