@@ -141,4 +141,13 @@ public class AIBehaviour : MonoBehaviour
 
         currentState = State.lookaround;
     }
+
+    // If the ai touches the player, the game is over
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("GameOver!");
+        }
+    }
 }
