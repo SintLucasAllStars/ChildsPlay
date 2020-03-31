@@ -137,8 +137,6 @@ public class AIBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        RaycastHit hit;
-
         currentState = State.lookaround;
     }
 
