@@ -18,7 +18,6 @@ public class EnemyBehaviour : MonoBehaviour
     public float fov;
 
     private NavMeshAgent navAgent;
-
     #endregion
 
     // Start is called before the first frame update

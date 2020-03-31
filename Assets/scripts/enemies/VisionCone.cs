@@ -38,7 +38,6 @@ public class VisionCone : MonoBehaviour
 
         //calculating angle increase
         angleIncrease = enemyBehaviour.fov / raycount;
-
         #endregion
     }
 
@@ -62,7 +61,7 @@ public class VisionCone : MonoBehaviour
             Vector3 position = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
 
             //firing raycasts
-            Physics.Raycast(transform.position, position, out rayHit, enemyBehaviour.sightRange);
+            Physics.Raycast(transform.position, position, out rayHit, enemyBehaviour.sightRange, 0<<7);
 
             if (rayHit.collider == null)
             {
