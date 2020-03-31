@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
+using System.Collections;
 
 public class NpcMovement : MonoBehaviour
 {
@@ -112,7 +113,7 @@ public class NpcMovement : MonoBehaviour
         //nav.isStopped = nav.remainingDistance > range;
         Debug.DrawRay(firePoint.position, firePoint.forward * range);
 
-        if(nav.remainingDistance > nav.stoppingDistance)
+        if (nav.remainingDistance > nav.stoppingDistance)
         {
             character.Move(nav.desiredVelocity, false, false);
         }
@@ -120,8 +121,8 @@ public class NpcMovement : MonoBehaviour
         {
             character.Move(Vector3.zero, false, false);
         }
-
     }
+
     public bool SeesTarget()
     {
         Vector3 p = objTransform.position - transform.position;
@@ -144,6 +145,19 @@ public class NpcMovement : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void TakeStunEffect()
+    {
+        //the enemy can't move for 6 seconds
+        this.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+        StartCoroutine("Timer");
+    }
+
+    private IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(6);
+        this.gameObject.GetComponent<NavMeshAgent>().isStopped = false;
     }
 
     public void StartChase()
