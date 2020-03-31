@@ -30,7 +30,6 @@ public class MovementDoggo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Turn") && hasTurned == false)
         {
-            enemy.SetActive(false);
             enemy2.SetActive(true);
             enemy.transform.Rotate(0, -180, 0);
             enemy.transform.position = (new Vector3(18.13001f, 0.2199998f, -7.020032f));
@@ -55,6 +54,7 @@ public class MovementDoggo : MonoBehaviour
                 hasTurned = false;
                 break;
             case false:
+                enemy.SetActive(false);
                 hasTurned = true;
                 break;
         }
