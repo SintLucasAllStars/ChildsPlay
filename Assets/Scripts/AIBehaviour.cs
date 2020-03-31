@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class AIBehaviour : MonoBehaviour
 {
     enum State { idle, chase, lookaround };
     State currentState;
+
+    // Tells the scene manager what scene to go to
+    public string sceneToChangeTo;
 
     public NavMeshAgent navMesh;
     public GameObject destination;
@@ -22,7 +26,7 @@ public class AIBehaviour : MonoBehaviour
     Vector3 p;
 
     public float waitTime = 3;
-
+    
     bool randomPositionResetter;
 
     // Start is called before the first frame update
@@ -39,10 +43,29 @@ public class AIBehaviour : MonoBehaviour
         p = destination.transform.position - transform.position;
         angleToTarget = Vector3.Angle (p, transform.forward);
 
-        // If the player is hidden, set the state to lookaround
+        // If the player is hidden, set the state to lookaround if it isn't already
         if (playerBehaviour.isHidden)
         {
-            StartCoroutine(SetLookAroundState(0.5f));
+            if (currentState == State.chase)
+                StartCoroutine(SetLookAroundState(0.5f));
+        }
+        else if (!playerBehaviour.isHidden)
+        {
+            if (currentState == State.lookaround)
+                currentState = State.chase;
+        }
+
+        // If the player has the key, increase chase speed
+        if (playerBehaviour.hasKey)
+        {
+            bool chaseIncrease = false;
+
+            if (!chaseIncrease)
+            {
+                chaseSpeed = chaseSpeed * 1.4f;
+
+                chaseIncrease = true;
+            }
         }
         
         // A switch case for all the different states the AI can be in
@@ -53,9 +76,7 @@ public class AIBehaviour : MonoBehaviour
                 // If the PosResetter is not true, call the Coroutine
                 if (!randomPositionResetter)
                     StartCoroutine(SetRandomTarget(waitTime));
-                randomPositionResetter = true;
-                navMesh.speed = idleSpeed;
-                navMesh.destination = idleDestination;
+
                 break;
 
             // The AI looks around toward random points and barely moving
@@ -103,11 +124,13 @@ public class AIBehaviour : MonoBehaviour
     // This Coroutine sets a random target position around the AI
     IEnumerator SetRandomTarget(float waitTime)
     {
+        randomPositionResetter = true;
+        navMesh.speed = idleSpeed;
+        
+        idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.z + Random.Range(-8, 2));
+        navMesh.destination = idleDestination;
+
         yield return new WaitForSeconds(waitTime);
-
-        Debug.Log("RandomTarget");
-
-        idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
 
         randomPositionResetter = false;
     }
@@ -121,11 +144,10 @@ public class AIBehaviour : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            Debug.Log("RandomLookTarget");
-
             idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
             navMesh.destination = idleDestination;
             yield return new WaitForSeconds(waitTime);
+            transform.Rotate(0, Random.Range(-70, 70), 0);
         }
 
         currentState = State.idle;
@@ -137,7 +159,10 @@ public class AIBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        currentState = State.lookaround;
+        RaycastHit hit;
+        
+        if (playerBehaviour.isHidden)
+            currentState = State.lookaround;
     }
 
     // If the ai touches the player, the game is over
@@ -146,6 +171,7 @@ public class AIBehaviour : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.Log("GameOver!");
+            SceneManager.LoadScene(sceneToChangeTo);
         }
     }
 }
