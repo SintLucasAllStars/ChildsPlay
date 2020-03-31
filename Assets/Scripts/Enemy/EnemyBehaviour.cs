@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI; //needed to word with the AI components
@@ -21,5 +22,13 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         nav.destination = target.position;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            //switch
+        }
     }
 }
