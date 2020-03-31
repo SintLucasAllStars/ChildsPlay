@@ -40,7 +40,11 @@ public class playerBehaviour : MonoBehaviour
             isHidden = true;
             Debug.Log("hidden!");
         }
-        else
+    }
+    //if i move out of a bush i dont get hidden
+    public void OnTriggerExit(Collider coll)
+    {
+        if (coll.gameObject.tag == "Bush")
         {
             isHidden = false;
             Debug.Log(" not hidden!");
