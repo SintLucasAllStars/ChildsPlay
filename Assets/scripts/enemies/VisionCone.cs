@@ -11,7 +11,7 @@ public class VisionCone : MonoBehaviour
     private Vector3 vertex;
     private RaycastHit rayHit;
 
-    private int raycount = 60;
+    private int raycount = 30;
     float angle;
     float angleIncrease;
 

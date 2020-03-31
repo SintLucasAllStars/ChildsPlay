@@ -41,6 +41,17 @@ public class CameraBehaviour : MonoBehaviour
         transform.Translate(hMove * movementSpeed, 0, vMove * movementSpeed, Space.Self);
         #endregion
 
+        #region camera turning
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.Rotate(0, -100 * Time.deltaTime, 0);
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            transform.Rotate(0, 100 * Time.deltaTime, 0);
+        }
+        #endregion
+
         #region camera Zoom
         //reading Key Input
         if (Input.GetKey(KeyCode.KeypadMinus))
