@@ -4,6 +4,8 @@ public class playerBehaviour : MonoBehaviour
 {
     public bool isHidden;
     public bool hasKey;
+    public bool doorRange;
+    public bool doorOpen;
     public GameObject handKey;
     public GameObject floorKey;
 
@@ -12,6 +14,8 @@ public class playerBehaviour : MonoBehaviour
     {
         isHidden = false;
         hasKey = false;
+        doorRange = false;
+        doorOpen = false;
     }
 
     // Update is called once per frame
@@ -35,9 +39,10 @@ public class playerBehaviour : MonoBehaviour
             transform.Translate(0.025f, 0, 0);
         }
 
-        if (hasKey == true && Input.GetKey(KeyCode.E))
+        if (hasKey == true && doorRange == true && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("WIN!!!");
+            doorOpen = true;
+            handKey.SetActive(false);
         }
 
         if (hasKey == false)
@@ -62,6 +67,18 @@ public class playerBehaviour : MonoBehaviour
             Debug.Log("you have the key");
             floorKey.SetActive(false);
             handKey.SetActive(true);
+        }
+
+        if (coll.gameObject.tag == "Barn")
+        {
+            Debug.Log("you dont have a key");
+            doorRange = true;
+        }
+
+        if (coll.gameObject.tag == "Barn" && hasKey == true)
+        {
+            Debug.Log("Press E to open the door");
+            doorRange = true;
         }
     }
     //if i move out of a bush i dont get hidden
