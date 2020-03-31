@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class AIBehaviour : MonoBehaviour
 {
     enum State { idle, chase, lookaround };
     State currentState;
+
+    // Tells the scene manager what scene to go to
+    public string sceneToChangeTo;
 
     public NavMeshAgent navMesh;
     public GameObject destination;
@@ -44,6 +48,19 @@ public class AIBehaviour : MonoBehaviour
         {
             StartCoroutine(SetLookAroundState(0.5f));
         }
+
+        // If the player has the key, increase chase speed
+        if (playerBehaviour.hasKey)
+        {
+            bool chaseIncrease = false;
+
+            if (!chaseIncrease)
+            {
+                chaseSpeed = chaseSpeed * 1.4f;
+
+                chaseIncrease = true;
+            }
+        }
         
         // A switch case for all the different states the AI can be in
         switch (currentState)
@@ -51,16 +68,16 @@ public class AIBehaviour : MonoBehaviour
             // The AI slowly walks around to random points
             case State.idle:
                 // If the PosResetter is not true, call the Coroutine
+                Debug.Log("Idle");
                 if (!randomPositionResetter)
                     StartCoroutine(SetRandomTarget(waitTime));
-                randomPositionResetter = true;
-                navMesh.speed = idleSpeed;
-                navMesh.destination = idleDestination;
+
                 break;
 
             // The AI looks around toward random points and barely moving
             // This case is usually active after the AI loses the target
             case State.lookaround:
+                Debug.Log("Lookaround");
                 if (!randomPositionResetter)
                     StartCoroutine(SetRandomLookTarget(waitTime));
 
@@ -68,6 +85,7 @@ public class AIBehaviour : MonoBehaviour
 
             // The AI chases after the target
             case State.chase:
+                Debug.Log("chase");
                 navMesh.speed = chaseSpeed;
                 navMesh.destination = destination.transform.position;
                 break;
@@ -103,11 +121,13 @@ public class AIBehaviour : MonoBehaviour
     // This Coroutine sets a random target position around the AI
     IEnumerator SetRandomTarget(float waitTime)
     {
+        randomPositionResetter = true;
+        navMesh.speed = idleSpeed;
+
+        idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.z + Random.Range(-2, 2));
+        navMesh.destination = idleDestination;
+
         yield return new WaitForSeconds(waitTime);
-
-        Debug.Log("RandomTarget");
-
-        idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
 
         randomPositionResetter = false;
     }
@@ -121,8 +141,6 @@ public class AIBehaviour : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            Debug.Log("RandomLookTarget");
-
             idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
             navMesh.destination = idleDestination;
             yield return new WaitForSeconds(waitTime);
@@ -146,6 +164,7 @@ public class AIBehaviour : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.Log("GameOver!");
+            SceneManager.LoadScene(sceneToChangeTo);
         }
     }
 }

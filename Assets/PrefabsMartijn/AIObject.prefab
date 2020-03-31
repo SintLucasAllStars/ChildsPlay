@@ -241,12 +241,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1971b2e77e0b014e955dc14ad4671af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToChangeTo: TitleScreen
   navMesh: {fileID: 2344808970039829365}
   destination: {fileID: 0}
   idleDestination: {x: 0, y: 0, z: 0}
   idleSpeed: 2
   chaseSpeed: 7
   FOV: 180
-  range: 40
+  range: 80
   angleToTarget: 0
   waitTime: 3
