@@ -14,10 +14,11 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private States state = States.patrolling;
 
-    private float sightRange = 50;
-    private float fov = 270;
+    public float sightRange;
+    public float fov;
 
     private NavMeshAgent navAgent;
+
     #endregion
 
     // Start is called before the first frame update
@@ -63,14 +64,14 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 //setting local variables
                 GameObject player = target.gameObject;
-                float angle = Vector3.Angle(transform.position, player.transform.position);
+                Vector3 dir = player.transform.position - transform.position;
+                float angle = Vector3.Angle(dir, transform.forward);
 
                 //checking if player is within Field Of View
-                if (angle < (fov / 2))
+                if (angle <= (fov / 2))
                 {
                     RaycastHit hit;
-                    Vector3 dir = player.transform.position - transform.position;
-
+                    Debug.DrawRay(transform.position, dir);
                     //checking if their are any objects between player and enemy
                     if (Physics.Raycast(transform.position, dir, out hit))
                     {
