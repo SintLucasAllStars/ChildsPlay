@@ -16,19 +16,19 @@ public class playerBehaviour : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0, 0, 0.01f);
+            transform.Translate(0, 0, 0.025f);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0, 0, -0.01f);
+            transform.Translate(0, 0, -0.025f);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-0.01f, 0, 0);
+            transform.Translate(-0.025f, 0, 0);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(0.01f, 0, 0);
+            transform.Translate(0.025f, 0, 0);
         }
     }
 
@@ -47,7 +47,7 @@ public class playerBehaviour : MonoBehaviour
         if (coll.gameObject.tag == "Bush")
         {
             isHidden = false;
-            Debug.Log(" not hidden!");
+            Debug.Log("not hidden!");
         }
     }
 }
