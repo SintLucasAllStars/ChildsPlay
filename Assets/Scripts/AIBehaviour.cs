@@ -12,15 +12,17 @@ public class AIBehaviour : MonoBehaviour
     public GameObject destination;
     public Vector3 idleDestination;
 
-    public float idleSpeed = 2;
-    public float chaseSpeed = 4;
+    public float idleSpeed = 1.5f;
+    public float chaseSpeed = 3;
 
     public float FOV;
     public float range = 5;
     public float angleToTarget;
     Vector3 p;
 
-    public float waitTime = 3; 
+    public float waitTime = 3;
+
+    bool randomPositionResetter;
 
     // Start is called before the first frame update
     void Start()
@@ -48,13 +50,9 @@ public class AIBehaviour : MonoBehaviour
             // The AI looks around toward random points and barely moving
             // This case is usually active after the AI loses the target
             case State.lookaround:
-                for (int i = 0; i < 4; i++)
-                {
-                    StartCoroutine(SetRandomTarget(waitTime / 2));
-                    navMesh.speed = 0.05f;
-                    navMesh.destination = idleDestination;
-                }
-                currentState = State.idle;
+                if (!randomPositionResetter)
+                StartCoroutine(SetRandomLookTarget(waitTime));
+
                 break;
 
             // The AI chases after the target
@@ -96,7 +94,29 @@ public class AIBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        idleDestination = transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
+        Debug.Log("RandomTarget");
+
+        idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
+    }
+
+    // This Coroutine sets a random target position for the looking around the AI
+    IEnumerator SetRandomLookTarget(float waitTime)
+    {
+        // Set the point resetter to true so that the Coroutine isn't called every frame from the switch case
+        randomPositionResetter = true;
+        navMesh.speed = 0.05f;
+
+        for (int i = 0; i < 4; i++)
+        {
+            Debug.Log("RandomLookTarget");
+
+            idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
+            navMesh.destination = idleDestination;
+            yield return new WaitForSeconds(waitTime);
+        }
+
+        currentState = State.idle;
+        randomPositionResetter = false;
     }
 
     // This Coroutine sets the AI to the lookaround state after waitTime if the raycast does not hit the target
