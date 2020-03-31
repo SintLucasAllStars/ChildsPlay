@@ -3,11 +3,15 @@
 public class playerBehaviour : MonoBehaviour
 {
     public bool isHidden;
+    public bool hasKey;
+    public GameObject handKey;
+    public GameObject floorKey;
 
     // Start is called before the first frame update
     void Start()
     {
         isHidden = false;
+        hasKey = false;
     }
 
     // Update is called once per frame
@@ -30,6 +34,17 @@ public class playerBehaviour : MonoBehaviour
         {
             transform.Translate(0.025f, 0, 0);
         }
+
+        if (hasKey == true && Input.GetKey(KeyCode.E))
+        {
+            Debug.Log("WIN!!!");
+        }
+
+        if (hasKey == false)
+        {
+            handKey.SetActive(false);
+            floorKey.SetActive(true);
+        }
     }
 
     //if i move into a bush i will get hidden
@@ -39,6 +54,14 @@ public class playerBehaviour : MonoBehaviour
         {
             isHidden = true;
             Debug.Log("hidden!");
+        }
+
+        if (coll.gameObject.tag == "Key")
+        {
+            hasKey = true;
+            Debug.Log("you have the key");
+            floorKey.SetActive(false);
+            handKey.SetActive(true);
         }
     }
     //if i move out of a bush i dont get hidden

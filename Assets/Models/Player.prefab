@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHidden: 0
+  hasKey: 0
+  handKey: {fileID: 0}
+  floorKey: {fileID: 0}
 --- !u!114 &423986386108092983
 MonoBehaviour:
   m_ObjectHideFlags: 0
