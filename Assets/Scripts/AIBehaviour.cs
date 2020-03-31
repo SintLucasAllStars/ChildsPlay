@@ -10,6 +10,7 @@ public class AIBehaviour : MonoBehaviour
 
     public NavMeshAgent navMesh;
     public GameObject destination;
+    playerBehaviour playerBehaviour;
     public Vector3 idleDestination;
 
     public float idleSpeed = 1.5f;
@@ -28,6 +29,7 @@ public class AIBehaviour : MonoBehaviour
     void Start()
     {
         navMesh = GetComponent<NavMeshAgent>();
+        playerBehaviour = destination.GetComponent<playerBehaviour>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,12 @@ public class AIBehaviour : MonoBehaviour
         // Calculate the viariable p and the angleToTarget
         p = destination.transform.position - transform.position;
         angleToTarget = Vector3.Angle (p, transform.forward);
+
+        // If the player is hidden, set the state to lookaround
+        if (playerBehaviour.isHidden)
+        {
+            StartCoroutine(SetLookAroundState(0.5f));
+        }
         
         // A switch case for all the different states the AI can be in
         switch (currentState)
@@ -131,9 +139,6 @@ public class AIBehaviour : MonoBehaviour
 
         RaycastHit hit;
 
-        if (!(Physics.Raycast(transform.position, p, out hit, range)))
-        {
-            currentState = State.lookaround;
-        }
+        currentState = State.lookaround;
     }
 }
