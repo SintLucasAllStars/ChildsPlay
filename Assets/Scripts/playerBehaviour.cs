@@ -39,6 +39,7 @@ public class playerBehaviour : MonoBehaviour
             transform.Translate(0.025f, 0, 0);
         }
 
+        //if i put key in door open the door
         if (hasKey == true && doorRange == true && Input.GetKey(KeyCode.E))
         {
             doorOpen = true;
@@ -61,6 +62,7 @@ public class playerBehaviour : MonoBehaviour
             Debug.Log("hidden!");
         }
 
+        //if i take the key of the ground hold it on your back
         if (coll.gameObject.tag == "Key")
         {
             hasKey = true;
@@ -69,6 +71,7 @@ public class playerBehaviour : MonoBehaviour
             handKey.SetActive(true);
         }
 
+        //if i am inrange of the barn  look if i have a key if not do something
         if (coll.gameObject.tag == "Barn")
         {
             Debug.Log("you dont have a key");

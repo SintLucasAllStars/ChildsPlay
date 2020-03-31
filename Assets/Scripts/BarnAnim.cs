@@ -8,14 +8,15 @@ public class BarnAnim : MonoBehaviour
     Animator Animator;
     public GameObject player;
     public bool winCondition;
-    // Start is called before the first frame update
+
+    // find reference to animator
     void Start()
     {
         Animator = gameObject.GetComponent<Animator>();
         winCondition = false;
     }
 
-    // Update is called once per frame
+    // if door is open play animation
     void Update()
     {
         if(player.GetComponent<playerBehaviour>().doorOpen == true)
