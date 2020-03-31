@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class playerBehaviour : MonoBehaviour
 {
@@ -8,15 +9,28 @@ public class playerBehaviour : MonoBehaviour
     public bool doorOpen;
     public GameObject handKey;
     public GameObject floorKey;
+    public GameObject pressE;
+    public GameObject nokey;
+    public GameObject keyUI;
+    public GameObject hidden;
+    public GameObject objective1;
+    public GameObject objective2;
 
     // Start is called before the first frame update
     void Start()
     {
+        objective2.SetActive(false);
+        objective1.SetActive(true);
+        hidden.SetActive(false);
+        keyUI.SetActive(false);
+        nokey.SetActive(false);
+        pressE.SetActive(false);
         isHidden = false;
         hasKey = false;
         doorRange = false;
         doorOpen = false;
     }
+    
 
     // Update is called once per frame
     // Every movement
@@ -42,14 +56,18 @@ public class playerBehaviour : MonoBehaviour
         //if i put key in door open the door
         if (hasKey == true && doorRange == true && Input.GetKey(KeyCode.E))
         {
+            keyUI.SetActive(false);
+            pressE.SetActive(false);
             doorOpen = true;
             handKey.SetActive(false);
+            objective2.SetActive(false);
         }
 
         if (hasKey == false)
         {
             handKey.SetActive(false);
             floorKey.SetActive(true);
+            keyUI.SetActive(false);
         }
     }
 
@@ -60,6 +78,7 @@ public class playerBehaviour : MonoBehaviour
         {
             isHidden = true;
             Debug.Log("hidden!");
+            hidden.SetActive(true);
         }
 
         //if i take the key of the ground hold it on your back
@@ -69,18 +88,23 @@ public class playerBehaviour : MonoBehaviour
             Debug.Log("you have the key");
             floorKey.SetActive(false);
             handKey.SetActive(true);
+            keyUI.SetActive(true);
+            objective1.SetActive(false);
+            objective2.SetActive(true);
         }
 
         //if i am inrange of the barn  look if i have a key if not do something
-        if (coll.gameObject.tag == "Barn")
+        if (coll.gameObject.tag == "Barn" && hasKey == false)
         {
             Debug.Log("you dont have a key");
             doorRange = true;
+            nokey.SetActive(true);
         }
 
         if (coll.gameObject.tag == "Barn" && hasKey == true)
         {
             Debug.Log("Press E to open the door");
+            pressE.SetActive(true);
             doorRange = true;
         }
     }
@@ -91,6 +115,14 @@ public class playerBehaviour : MonoBehaviour
         {
             isHidden = false;
             Debug.Log("not hidden!");
+            hidden.SetActive(false);
+        }
+
+        if (coll.gameObject.tag == "Barn")
+        {
+            Debug.Log("you dont have a key");
+            doorRange = true;
+            nokey.SetActive(false);
         }
     }
 }
