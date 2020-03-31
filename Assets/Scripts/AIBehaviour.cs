@@ -19,6 +19,7 @@ public class AIBehaviour : MonoBehaviour
 
     public float idleSpeed = 1.5f;
     public float chaseSpeed = 3;
+    float hasKeyChaseSpeed;
 
     public float FOV;
     public float range = 5;
@@ -34,6 +35,8 @@ public class AIBehaviour : MonoBehaviour
     {
         navMesh = GetComponent<NavMeshAgent>();
         playerBehaviour = destination.GetComponent<playerBehaviour>();
+
+        hasKeyChaseSpeed = chaseSpeed * 1.4f;
     }
 
     // Update is called once per frame
@@ -51,21 +54,14 @@ public class AIBehaviour : MonoBehaviour
         }
         else if (!playerBehaviour.isHidden)
         {
-            if (currentState == State.lookaround)
+            if (currentState != State.chase)
                 currentState = State.chase;
         }
 
         // If the player has the key, increase chase speed
         if (playerBehaviour.hasKey)
         {
-            bool chaseIncrease = false;
-
-            if (!chaseIncrease)
-            {
-                chaseSpeed = chaseSpeed * 1.4f;
-
-                chaseIncrease = true;
-            }
+            chaseSpeed = hasKeyChaseSpeed;
         }
         
         // A switch case for all the different states the AI can be in
@@ -89,35 +85,33 @@ public class AIBehaviour : MonoBehaviour
 
             // The AI chases after the target
             case State.chase:
-                navMesh.speed = chaseSpeed;
-                navMesh.destination = destination.transform.position;
+                // If the angle to the target is in the range of sight
+                if (angleToTarget <= FOV / 2.0f)
+                {
+                    RaycastHit hit;
+
+                    // Shoots a raycast out toward the target, it's as long as its range is
+                    if (Physics.Raycast(transform.position, p, out hit, range))
+                    {
+                        Debug.DrawRay(transform.position, p, Color.red);
+
+                        // If the raycast hits the target, give chase
+                        if (hit.collider.gameObject == destination)
+                        {
+                            navMesh.speed = chaseSpeed;
+                            navMesh.destination = destination.transform.position;
+                        }
+                        // If the raycast does not hit the target, start looking around
+                        else
+                        {
+                            StartCoroutine(SetLookAroundState(waitTime));
+                        }
+                    }
+                }
                 break;
                 
             default:
                 break;
-        }
-
-        // If the angle to the target is in the range of sight
-        if (angleToTarget <= FOV / 2.0f)
-        {
-            RaycastHit hit;
-
-            // Shoots a raycast out toward the target, it's as long as its range is
-            if (Physics.Raycast(transform.position, p, out hit, range))
-            {
-                Debug.DrawRay(transform.position, p, Color.red);
-
-                // If the raycast hits the target, give chase
-                if (hit.collider.gameObject == destination)
-                {
-                    currentState = State.chase;
-                }
-                // If the raycast does not hit the target, start looking around
-                else
-                {
-                    StartCoroutine(SetLookAroundState(waitTime));
-                }
-            }
         }
     }
 
@@ -158,8 +152,6 @@ public class AIBehaviour : MonoBehaviour
     IEnumerator SetLookAroundState(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-
-        RaycastHit hit;
         
         if (playerBehaviour.isHidden)
             currentState = State.lookaround;
