@@ -42,7 +42,10 @@ public class AIBehaviour : MonoBehaviour
         {
             // The AI slowly walks around to random points
             case State.idle:
-                StartCoroutine(SetRandomTarget(waitTime));
+                // If the PosResetter is not true, call the Coroutine
+                if (!randomPositionResetter)
+                    StartCoroutine(SetRandomTarget(waitTime));
+                randomPositionResetter = true;
                 navMesh.speed = idleSpeed;
                 navMesh.destination = idleDestination;
                 break;
@@ -51,7 +54,7 @@ public class AIBehaviour : MonoBehaviour
             // This case is usually active after the AI loses the target
             case State.lookaround:
                 if (!randomPositionResetter)
-                StartCoroutine(SetRandomLookTarget(waitTime));
+                    StartCoroutine(SetRandomLookTarget(waitTime));
 
                 break;
 
@@ -97,6 +100,8 @@ public class AIBehaviour : MonoBehaviour
         Debug.Log("RandomTarget");
 
         idleDestination = this.transform.position + new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z + Random.Range(-2.5f, 2.5f));
+
+        randomPositionResetter = false;
     }
 
     // This Coroutine sets a random target position for the looking around the AI
