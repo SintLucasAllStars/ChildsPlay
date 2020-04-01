@@ -19,6 +19,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     private NavMeshAgent navAgent;
 
+    [Header("set to true if you want enemy to follow \nthe points back instead of reseting")]
+    public bool backTrackPath;
+    [Space(20)]
+    private int pathModifier = 1;
+
     private Transform pathMarkerGroup;
     private Transform[] pathMarkers;
     private int currentPathIndex;
@@ -66,16 +71,23 @@ public class EnemyBehaviour : MonoBehaviour
     private void Patrolling()
     {
         //check if position has been reach
-        if(Vector3.Distance(transform.position, pathMarkers[currentPathIndex].position) < 3)
+        if (Vector3.Distance(transform.position, pathMarkers[currentPathIndex].position) < 3)
         {
-            //increase position
-            currentPathIndex++;
-
             //reset when at the end
-            if (currentPathIndex > pathMarkers.Length - 1)
+            if (currentPathIndex + 1 > pathMarkers.Length - 1)
             {
-                currentPathIndex = 0;
+                if (backTrackPath)
+                {
+                    pathModifier = -pathModifier;
+                }
+                else
+                {
+                    currentPathIndex = 0;
+                }
             }
+
+            //increase position
+            currentPathIndex += pathModifier;
 
             //setting new position
             navAgent.destination = pathMarkers[currentPathIndex].position;
