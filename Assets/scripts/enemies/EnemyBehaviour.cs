@@ -16,8 +16,12 @@ public class EnemyBehaviour : MonoBehaviour
 
     public float sightRange;
     public float fov;
+    private float detection;
+    private float timer;
 
     private NavMeshAgent navAgent;
+
+    #region patrolling
 
     [Header("walk back")]
     [Tooltip("set to true, the enemy will walk back the path oppone completen")]
@@ -28,6 +32,8 @@ public class EnemyBehaviour : MonoBehaviour
     private Transform pathMarkerGroup;
     private Transform[] pathMarkers;
     private int currentPathIndex;
+    #endregion
+
     #endregion
 
     // Start is called before the first frame update
@@ -51,13 +57,34 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (detection > 0 || state != States.alert)
+        {
+            detection -= Time.deltaTime;
+        }
+        else if (detection < 0 || state != States.patrolling)
+        {
+            state = States.patrolling;
+        }
+
         #region disition making
         //work based on enemy state
         if (state == States.patrolling)
         {
-            if (!seeing())
+            if (!seeing() && detection <= 0)
             {
                 Patrolling();
+            }
+        }
+        else if (state == States.searching)
+        {
+            seeing();
+            WalkAround();
+        }
+        else if (state == States.alert)
+        {
+            if (!seeing() && detection > 0)
+            {
+                state = States.searching;
             }
         }
         #endregion
@@ -98,6 +125,20 @@ public class EnemyBehaviour : MonoBehaviour
             navAgent.destination = pathMarkers[currentPathIndex].position;
         }
     }
+
+    private void WalkAround()
+    {
+        if (timer <= 0)
+        {
+            navAgent.destination = new Vector3(transform.position.x + Random.Range(-5, 5), transform.position.y, transform.position.z + Random.Range(-5, 5));
+            timer = 3;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+    }
+
     #endregion
 
 
@@ -134,10 +175,24 @@ public class EnemyBehaviour : MonoBehaviour
                     {
                         if (hit.collider.CompareTag("Player"))
                         {
-                            //setting new search position
-                            navAgent.SetDestination(hit.point);
-                            //setting value
-                            value = true;
+                            if (detection > 100)
+                            {
+                                detection = 100;
+                                continue;
+                            }
+                            else if (detection > 50)
+                            {
+                                //setting new search position
+                                navAgent.SetDestination(hit.point);
+                                state = States.alert;
+                                //setting value
+                                value = true;
+                            }
+                            else
+                            {
+                                //setting search time
+                                detection += 5 * Time.deltaTime;
+                            }
                         }
                     }
                 }
