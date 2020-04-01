@@ -44,9 +44,6 @@ public class EnemyBehaviour : MonoBehaviour
         {
             pathMarkers[i] = pathMarkerGroup.GetChild(i);
         }
-
-        //setting position
-        navAgent.destination = pathMarkers[currentPathIndex].position;
         #endregion
     }
 
@@ -70,6 +67,12 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     private void Patrolling()
     {
+        //setting position
+        if (navAgent.destination != pathMarkers[currentPathIndex].position)
+        {
+            navAgent.destination = pathMarkers[currentPathIndex].position;
+        }
+
         //check if position has been reach
         if (Vector3.Distance(transform.position, pathMarkers[currentPathIndex].position) < 2)
         {
