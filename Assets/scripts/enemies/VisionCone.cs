@@ -6,12 +6,13 @@ public class VisionCone : MonoBehaviour
 {
     #region vision Cone
     private EnemyBehaviour enemyBehaviour;
+    private GameObject visioncone;
 
     private Vector3 origin;
     private Vector3 vertex;
     private RaycastHit rayHit;
 
-    private int raycount = 30;
+    private int raycount = 60;
     float angle;
     float angleIncrease;
 
@@ -26,10 +27,12 @@ public class VisionCone : MonoBehaviour
     {
         enemyBehaviour = GetComponent<EnemyBehaviour>();
 
+        visioncone = transform.GetChild(0).gameObject;
+
         #region vision cone
         //creating new mesh
         mesh = new Mesh();
-        GetComponent<MeshFilter>().mesh = mesh;
+        visioncone.GetComponent<MeshFilter>().mesh = mesh;
 
         //setting array length
         vertices = new Vector3[raycount + 1 + 1];
@@ -44,11 +47,19 @@ public class VisionCone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //making sure that mesh doesn't over rotate
+        //TODO: make this solutions less ugly
+        if(transform.rotation.y != -visioncone.transform.rotation.y)
+        {
+            visioncone.transform.rotation = Quaternion.Euler(0, -transform.rotation.y, 0);
+        }
+
         //setting starting point
         origin = Vector3.zero;
         vertices[0] = origin;
 
-        angle = 90 + (enemyBehaviour.fov / 2);
+        //adjusting angle for enemy rotation, FOV and misalignment
+        angle = -transform.rotation.eulerAngles.y + 90 + (enemyBehaviour.fov / 2);
 
         //calulating points
         int vertexIndex = 1;
@@ -56,9 +67,12 @@ public class VisionCone : MonoBehaviour
 
         for (int i = 0; i < raycount; i++)
         {
+
             //turning angle in to a position
-            float angleRad = angle * (Mathf.PI / 180);
+            float angleRad = angle * Mathf.Deg2Rad;
             Vector3 position = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
+
+            Debug.DrawRay(transform.position, position * 10, Color.green);
 
             //firing raycasts
             Physics.Raycast(transform.position, position, out rayHit, enemyBehaviour.sightRange, LayerMask.GetMask("obstacle"));
@@ -66,11 +80,13 @@ public class VisionCone : MonoBehaviour
             if (rayHit.collider == null)
             {
                 //adding position to a vertex
+                Debug.DrawRay(transform.position, origin + position * enemyBehaviour.sightRange, Color.red);
                 vertex = origin + position * enemyBehaviour.sightRange;
             }
             else
             {
                 //adding position to a vertex
+                Debug.DrawRay(transform.position, origin + position * rayHit.distance, Color.red);
                 vertex = origin + position * rayHit.distance;
             }
 
