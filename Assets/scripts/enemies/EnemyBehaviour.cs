@@ -260,7 +260,7 @@ public class EnemyBehaviour : MonoBehaviour
                     }
                 }
 
-                if (distance < 15)
+                if (distance < hearingRange / 2)
                 {
                     detection = 50;
 

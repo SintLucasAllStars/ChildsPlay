@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725cb3846bf2f904e803198653ba51ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearingRange: 10000
+  hearingRange: 40
   sightRange: 10
   fov: 90
   backTrackPath: 0
