@@ -1107,6 +1107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRange: 10
   fov: 90
+  backTrackPath: 0
 --- !u!4 &1207915835
 Transform:
   m_ObjectHideFlags: 0

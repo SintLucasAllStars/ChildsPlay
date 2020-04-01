@@ -72,21 +72,17 @@ public class VisionCone : MonoBehaviour
             float angleRad = angle * Mathf.Deg2Rad;
             Vector3 position = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
 
-            Debug.DrawRay(transform.position, position * 10, Color.green);
-
             //firing raycasts
             Physics.Raycast(transform.position, position, out rayHit, enemyBehaviour.sightRange, LayerMask.GetMask("obstacle"));
 
             if (rayHit.collider == null)
             {
                 //adding position to a vertex
-                Debug.DrawRay(transform.position, origin + position * enemyBehaviour.sightRange, Color.red);
                 vertex = origin + position * enemyBehaviour.sightRange;
             }
             else
             {
                 //adding position to a vertex
-                Debug.DrawRay(transform.position, origin + position * rayHit.distance, Color.red);
                 vertex = origin + position * rayHit.distance;
             }
 
