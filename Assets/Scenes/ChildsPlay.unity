@@ -1105,6 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725cb3846bf2f904e803198653ba51ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearingRange: 10000
   sightRange: 10
   fov: 90
   backTrackPath: 0
@@ -1494,6 +1495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15ba1e49d04b846a2d70b9ee000248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPing: {fileID: 1738771802261302905, guid: 0c779bf268808bd4e88e89a8e7ce4cd9,
+    type: 3}
 --- !u!195 &1554688249
 NavMeshAgent:
   m_ObjectHideFlags: 0

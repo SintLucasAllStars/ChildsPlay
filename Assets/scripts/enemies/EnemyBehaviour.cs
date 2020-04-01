@@ -14,6 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private States state = States.patrolling;
 
+    public float hearingRange;
     public float sightRange;
     public float fov;
     private float detection;
@@ -70,7 +71,7 @@ public class EnemyBehaviour : MonoBehaviour
         //work based on enemy state
         if (state == States.patrolling)
         {
-            if (!seeing() && detection <= 0)
+            if (!seeing() && !Hearing() && detection <= 0)
             {
                 Patrolling();
             }
@@ -78,6 +79,7 @@ public class EnemyBehaviour : MonoBehaviour
         else if (state == States.searching)
         {
             seeing();
+            Hearing();
             WalkAround();
         }
         else if (state == States.alert)
@@ -227,6 +229,48 @@ public class EnemyBehaviour : MonoBehaviour
                 }
             }
         }
+        return value;
+    }
+
+    private bool Hearing()
+    {
+        bool value = false;
+
+        //searching all colliders in range
+        Collider[] targets = Physics.OverlapSphere(transform.position, sightRange);
+
+        //looping through all colliders
+        foreach (Collider target in targets)
+        {
+            if (target.CompareTag("SoundPing"))
+            {
+                NavMeshPath path = new NavMeshPath();
+                NavMesh.CalculatePath(transform.position, target.transform.position, NavMesh.AllAreas, path);
+                float distance = 0;
+
+                for (int i = 0; i < path.corners.Length - 1; i++)
+                {
+                    if (i > 0)
+                    {
+                        distance += Vector3.Distance(transform.position, path.corners[i]);
+                    }
+                    else
+                    {
+                        distance += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+                    }
+                }
+
+                if (distance < 15)
+                {
+                    detection = 50;
+
+                    navAgent.destination = target.transform.position;
+
+                    value = true;
+                }
+            }
+        }
+
         return value;
     }
     #endregion

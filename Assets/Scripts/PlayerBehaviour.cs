@@ -6,9 +6,13 @@ using UnityEngine.AI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public GameObject soundPing;
+
     private Camera cam;
 
     private NavMeshAgent agent;
+
+    private RaycastHit hit;
 
     private void Start()
     {
@@ -21,11 +25,20 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
                 agent.SetDestination(hit.point);
+            }
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+               GameObject sound = Instantiate(soundPing, hit.point, Quaternion.identity);
+                Destroy(sound, 0.1f);
             }
         }
     }
