@@ -19,7 +19,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     private NavMeshAgent navAgent;
 
-    [Header("set to true if you want enemy to follow \nthe points back instead of reseting")]
+    [Header("walk back")]
+    [Tooltip("set to true, the enemy will walk back the path oppone completen")]
     public bool backTrackPath;
     [Space(20)]
     private int pathModifier = 1;
@@ -62,6 +63,7 @@ public class EnemyBehaviour : MonoBehaviour
         #endregion
     }
 
+    #region disitions
     /// <summary>
     /// patrol between preset points
     /// </summary>
@@ -96,7 +98,10 @@ public class EnemyBehaviour : MonoBehaviour
             navAgent.destination = pathMarkers[currentPathIndex].position;
         }
     }
+    #endregion
 
+
+    #region senses
     /// <summary>
     /// returns bool if player is within sight and chase the player when seen
     /// </summary>
@@ -140,4 +145,5 @@ public class EnemyBehaviour : MonoBehaviour
         }
         return value;
     }
+    #endregion
 }
