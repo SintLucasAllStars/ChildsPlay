@@ -18,6 +18,10 @@ public class EnemyBehaviour : MonoBehaviour
     public float fov;
 
     private NavMeshAgent navAgent;
+
+    private Transform pathMarkerGroup;
+    private Transform[] pathMarkers;
+    private int currentPathIndex;
     #endregion
 
     // Start is called before the first frame update
@@ -25,6 +29,19 @@ public class EnemyBehaviour : MonoBehaviour
     {
         #region assigning nav agent
         navAgent = GetComponent<NavMeshAgent>();
+        #endregion
+
+        #region path assigning
+        pathMarkerGroup = transform.parent.GetChild(1);
+        pathMarkers = new Transform[pathMarkerGroup.childCount];
+
+        for (int i = 0; i < pathMarkerGroup.childCount; i++)
+        {
+            pathMarkers[i] = pathMarkerGroup.GetChild(i);
+        }
+
+        //setting position
+        navAgent.destination = pathMarkers[currentPathIndex].position;
         #endregion
     }
 
@@ -37,10 +54,32 @@ public class EnemyBehaviour : MonoBehaviour
         {
             if (!seeing())
             {
-                //TODO: add patrolling AI
+                Patrolling();
             }
         }
         #endregion
+    }
+
+    /// <summary>
+    /// patrol between preset points
+    /// </summary>
+    private void Patrolling()
+    {
+        //check if position has been reach
+        if(Vector3.Distance(transform.position, pathMarkers[currentPathIndex].position) < 3)
+        {
+            //increase position
+            currentPathIndex++;
+
+            //reset when at the end
+            if (currentPathIndex > pathMarkers.Length - 1)
+            {
+                currentPathIndex = 0;
+            }
+
+            //setting new position
+            navAgent.destination = pathMarkers[currentPathIndex].position;
+        }
     }
 
     /// <summary>
