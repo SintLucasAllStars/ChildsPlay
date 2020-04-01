@@ -166,10 +166,10 @@ public class EnemyBehaviour : MonoBehaviour
                 Vector3 dir = player.transform.position - transform.position;
                 float angle = Vector3.Angle(dir, transform.forward);
 
+                RaycastHit hit;
                 //checking if player is within Field Of View
                 if (angle <= (fov / 2))
                 {
-                    RaycastHit hit;
                     //checking if their are any objects between player and enemy
                     if (Physics.Raycast(transform.position, dir, out hit))
                     {
@@ -192,6 +192,35 @@ public class EnemyBehaviour : MonoBehaviour
                             {
                                 //setting search time
                                 detection += 5 * Time.deltaTime;
+                            }
+                        }
+                    }
+                }
+                else if (Vector3.Distance(transform.position, player.transform.position) < 2.5f)
+                {
+                    //checking if their are any objects between player and enemy
+                    if (Physics.Raycast(transform.position, dir, out hit))
+                    {
+                        if (hit.collider.CompareTag("Player"))
+                        {
+                            if (detection > 100)
+                            {
+                                detection = 100;
+                                continue;
+                            }
+                            else if (detection > 50)
+                            {
+                                //setting new search position
+                                navAgent.SetDestination(hit.point);
+                                state = States.alert;
+                                //setting value
+                                value = true;
+                            }
+                            else
+                            {
+                                //setting search time
+                                detection += 2.5f * Time.deltaTime;
+                                print(detection);
                             }
                         }
                     }
