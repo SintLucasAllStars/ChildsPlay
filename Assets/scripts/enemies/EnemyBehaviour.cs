@@ -71,7 +71,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void Patrolling()
     {
         //check if position has been reach
-        if (Vector3.Distance(transform.position, pathMarkers[currentPathIndex].position) < 1)
+        if (Vector3.Distance(transform.position, pathMarkers[currentPathIndex].position) < 2)
         {
             //reset when at the end
             if (currentPathIndex + 1 > pathMarkers.Length - 1)
