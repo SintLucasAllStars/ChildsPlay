@@ -49,9 +49,9 @@ public class EnemyBehaviour : MonoBehaviour
             switch (currentState)
             {
                 case States.Patrol:
-                    if (Time.frameCount % 30 == 0)
+                    if (Time.frameCount % 300 == 0)
                     {
-                        Vector3 newDest = transform.position + new Vector3(Random.Range(-1f, 1f), transform.position.y, Random.Range(-1f, 1f)) * 6;
+                        Vector3 newDest = transform.position + new Vector3(Random.Range(-10f, 10f), transform.position.y, Random.Range(-10f, 10f)) * 4;
                         nvmesh.destination = newDest;
                     }
                     break;
