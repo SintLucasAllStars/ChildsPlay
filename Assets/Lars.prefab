@@ -45,7 +45,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 10
-  m_SpotAngle: 70
+  m_SpotAngle: 90
   m_InnerSpotAngle: 7
   m_CookieSize: 10
   m_Shadows:
@@ -205,6 +205,7 @@ MonoBehaviour:
   target: {fileID: 1161860433904139111, guid: 003fc8673f7c7bf4ea33571e2bd97ccb, type: 3}
   fov: 120
   range: 5
+  startCountdown: 3
   currentState: 0
   gameStarted: 0
 --- !u!195 &7870903917864113311

@@ -12,21 +12,25 @@ public class EnemyBehaviour : MonoBehaviour
 
     public Transform target;
     NavMeshAgent nvmesh;
-    public float fov = 60; 
+    public float fov = 60;
     public float range = 3;
+    public float startCountdown = 3;
     public States currentState = States.Patrol;
     public bool gameStarted = false;
 
     void Start()
     {
-        Debug.Log(target.position);
         nvmesh = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (startCountdown > 0)
+        {
+            startCountdown -= Time.deltaTime;
+        }
+        else
         {
             gameStarted = true;
         }
