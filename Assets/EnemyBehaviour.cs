@@ -43,11 +43,11 @@ public class EnemyBehaviour : MonoBehaviour
                 currentState = States.Rage;
             }
 
-            if (SeesTarget())
+            if (SeesTarget() && currentState != States.Rage)
             {
                 currentState = States.Chase;
             }
-            else if (rageCountdown > 0)
+            else if (currentState != States.Rage)
             {
                 currentState = States.Patrol;
             }
@@ -82,10 +82,13 @@ public class EnemyBehaviour : MonoBehaviour
                     rageCountdown -= Time.deltaTime;
                     if (rageCountdown < -10)
                     {
-                        rageCountdown = 10;
+                        currentState = States.Chase;
                     }
 
                     nvmesh.destination = target.position;
+                    break;
+
+                default:
                     break;
 
             }
