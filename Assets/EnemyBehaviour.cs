@@ -7,14 +7,15 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public enum States
     {
-        Patrol, Chase
+        Patrol, Chase, Rage
     }
 
     public Transform target;
     NavMeshAgent nvmesh;
-    public float fov = 60;
-    public float range = 3;
+    public float fov;
+    public float range;
     public float startCountdown = 3;
+    public float rageCountdown = 10;
     public States currentState = States.Patrol;
     public bool gameStarted = false;
 
@@ -37,11 +38,16 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (gameStarted)
         {
+            if (rageCountdown < 0)
+            {
+                currentState = States.Rage;
+            }
+
             if (SeesTarget())
             {
                 currentState = States.Chase;
             }
-            else
+            else if (rageCountdown > 0)
             {
                 currentState = States.Patrol;
             }
@@ -49,15 +55,39 @@ public class EnemyBehaviour : MonoBehaviour
             switch (currentState)
             {
                 case States.Patrol:
+                    range = 10;
+                    fov = 150;
+                    nvmesh.speed = 3.5f;
+                    rageCountdown -= Time.deltaTime;
+
                     if (Time.frameCount % 300 == 0)
                     {
                         Vector3 newDest = transform.position + new Vector3(Random.Range(-10f, 10f), transform.position.y, Random.Range(-10f, 10f)) * 4;
                         nvmesh.destination = newDest;
                     }
                     break;
+
                 case States.Chase:
+                    range = 10;
+                    fov = 150;
+                    nvmesh.speed = 4f;
+                    nvmesh.destination = target.position;
+                    rageCountdown = 10;
+                    break;
+
+                case States.Rage:
+                    range = 100;
+                    fov = 360;
+                    nvmesh.speed = 6f;
+                    rageCountdown -= Time.deltaTime;
+                    if (rageCountdown < -10)
+                    {
+                        rageCountdown = 10;
+                    }
+
                     nvmesh.destination = target.position;
                     break;
+
             }
         }
     }

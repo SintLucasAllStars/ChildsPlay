@@ -479,6 +479,11 @@ PrefabInstance:
       propertyPath: range
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7870903917864113310, guid: b4d0c9de863fe784a80760f443856b3e,
+        type: 3}
+      propertyPath: rageCountdown
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7870903917864113376, guid: b4d0c9de863fe784a80760f443856b3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2030,7 +2035,7 @@ PrefabInstance:
     - target: {fileID: 1161860433904139110, guid: 003fc8673f7c7bf4ea33571e2bd97ccb,
         type: 3}
       propertyPath: speed
-      value: 0.05
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1161860433904139111, guid: 003fc8673f7c7bf4ea33571e2bd97ccb,
         type: 3}
