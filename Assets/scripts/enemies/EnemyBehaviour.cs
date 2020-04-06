@@ -198,7 +198,7 @@ public class EnemyBehaviour : MonoBehaviour
                         }
                     }
                 }
-                else if (Vector3.Distance(transform.position, player.transform.position) < 2.5f)
+                else if (Vector3.Distance(transform.position, player.transform.position) < 1.5f)
                 {
                     //checking if their are any objects between player and enemy
                     if (Physics.Raycast(transform.position, dir, out hit))
