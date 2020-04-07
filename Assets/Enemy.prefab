@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 5316774943529736008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.37, y: 1.008, z: -13.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 5316774944066817314}
   - {fileID: 5316774943915679233}
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objTransform: {fileID: 0}
+  range: 10
   firePoint: {fileID: 5316774942669835512}
   currentState: 0
   seesNpc: 0
