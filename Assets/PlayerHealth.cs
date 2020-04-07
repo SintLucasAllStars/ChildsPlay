@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     Text healthText;
     public GameObject panel;
     private Camera cam;
+    Text panelText;
 
     private void Start()
     {
@@ -61,6 +62,19 @@ public class PlayerHealth : MonoBehaviour
             timeLeft = 3; //reset the timer
             checker = 1; //so the code will run once
             health -= 1; //subtract 1 from health
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            cam.enabled = true;
+            panel.SetActive(true);
+            panelText = GameObject.Find("Text").GetComponent<Text>();
+            this.gameObject.SetActive(false);
+            FirstPersonAIO.Instance.TurnOnCursor();
+            panelText.text = "Congratulations u escaped the Facility";
         }
     }
     public void MainMenuBtn()
