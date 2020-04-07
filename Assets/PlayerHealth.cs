@@ -12,9 +12,12 @@ public class PlayerHealth : MonoBehaviour
     float timeLeft;
     Text healthText;
     public GameObject panel;
+    private Camera cam;
 
     private void Start()
     {
+        cam = GameObject.Find("Camera").GetComponent<Camera>();
+        cam.enabled = false;
         healthText = GameObject.Find("HealthText").GetComponent<Text>(); //gets the gameobject with the name "HealthText"
         health = 3; //health is default 3
         panel.SetActive(false);
@@ -46,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
             healthText.text = "Health: " + 0;
             this.gameObject.SetActive(false);
             FirstPersonAIO.Instance.TurnOnCursor();
+            cam.enabled = true;
             panel.SetActive(true);
         }
     }
@@ -66,7 +70,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TryAgainBtn()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("House");
         print("Try again");
     }
     public void ExitBtn()
