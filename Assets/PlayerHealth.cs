@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     Text healthText;
     public GameObject panel;
     private Camera cam;
+    Text panelText;
 
     private void Start()
     {
@@ -63,7 +64,20 @@ public class PlayerHealth : MonoBehaviour
             health -= 1; //subtract 1 from health
         }
     }
-    public void MainMenuBtn()//button for game over panel
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            cam.enabled = true;
+            panel.SetActive(true);
+            panelText = GameObject.Find("Text").GetComponent<Text>();
+            this.gameObject.SetActive(false);
+            FirstPersonAIO.Instance.TurnOnCursor();
+            panelText.text = "Congratulations u escaped the Facility";
+        }
+    }
+    public void MainMenuBtn()
     {
         SceneManager.LoadScene("MainMenu");
         print("Main menu");
