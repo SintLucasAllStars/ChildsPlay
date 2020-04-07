@@ -39,7 +39,7 @@ public class NpcMovement : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         //Player = GameObject.Find("Player");
 
-        renderer = transform.GetComponentInChildren<SkinnedMeshRenderer>();
+        renderer = transform.GetComponentInChildren<SkinnedMeshRenderer>();//gives every npc a random color
         var randomColor = Random.Range(0, 5);
         switch (randomColor)
         {
@@ -68,18 +68,14 @@ public class NpcMovement : MonoBehaviour
     {
         if (seesNpc == true)//other npc is in range
         {
-            //sent out a call request towards other npc's to set new follow target
-            //NpcManager.Instance.AlertMessage();
-            alertImage.SetActive(true);
-            nav.destination = objTransform.position;
-            GetComponent<NavMeshAgent>().speed = 0.8f;
-            //refrence naar andere npc krijgen,verander target
-            //seesNpc = false;
+            alertImage.SetActive(true);//puts a black triangle on top of the npc's head
+            nav.destination = objTransform.position;//makes the npc goes after the player
+            GetComponent<NavMeshAgent>().speed = 0.8f;//changes the movement speed of the npc
         }
 
         alertImage.transform.LookAt(cameraTransform);
 
-        if (SeesTarget())
+        if (SeesTarget())//state machine
         {
             currentState = States.Chase;
 
@@ -93,7 +89,7 @@ public class NpcMovement : MonoBehaviour
         switch (currentState)
         {
             case States.Patrol:
-                if (Time.frameCount % 60 == 0)
+                if (Time.frameCount % 60 == 0)//makes the npc walk random
                 {
                     alertImage.SetActive(false);
                     Vector3 newDest = transform.position + new Vector3(Random.Range(-15f, 15f), transform.position.y, z: Random.Range(-15f, 15f) * 6f);
@@ -101,17 +97,14 @@ public class NpcMovement : MonoBehaviour
                     nav.destination = newDest;
                 }
                 break;
-            case States.Chase:
+            case States.Chase://the chase state of the npc
                 alertImage.SetActive(true);
                 nav.destination = objTransform.position;
                 GetComponent<NavMeshAgent>().speed = 0.8f;
                 break;
 
         }
-        //objTransform = Player.gameObject.GetComponent<Transform>();
-        //nav.destination = objTransform.position;
-        //nav.isStopped = nav.remainingDistance > range;
-        Debug.DrawRay(firePoint.position, firePoint.forward * range);
+        Debug.DrawRay(firePoint.position, firePoint.forward * range);//draws visual indication of field of view
 
         if (nav.remainingDistance > nav.stoppingDistance)
         {
@@ -137,7 +130,7 @@ public class NpcMovement : MonoBehaviour
                     GetComponent<SphereCollider>().enabled = true;
                     if (npcInRange == true)
                     {
-                        NpcManager.Instance.AlertMessage();
+                        NpcManager.Instance.AlertMessage();//sent out a call request towards other npc's to set new follow target
                     }
                     return true;
                 }
@@ -162,15 +155,14 @@ public class NpcMovement : MonoBehaviour
 
     public void StartChase()
     {
-        //de state veranderd. code moet wel naar update
-        seesNpc = true;//iedere NPC volgt player
+        seesNpc = true;//all npc's go into chase mode
         print($"change state to chase: {this.gameObject}");
     }
-    public void StopChase()
+    public void StopChase()//stops chase mode after timer
     {
         seesNpc = false;
     }
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)//checks if other npc is in range. if other npc in range and sees player. 
     {
         if (other.CompareTag("Enemy"))
         {

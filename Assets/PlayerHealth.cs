@@ -48,8 +48,8 @@ public class PlayerHealth : MonoBehaviour
         if (healthLeft == 0)
         {
             healthText.text = "Health: " + 0;
-            this.gameObject.SetActive(false);
-            FirstPersonAIO.Instance.TurnOnCursor();
+            this.gameObject.SetActive(false);//set gameobject false
+            FirstPersonAIO.Instance.TurnOnCursor();//turns on cursor, so you can use the game over panel with your cursor
             cam.enabled = true;
             panel.SetActive(true);
         }
@@ -82,12 +82,12 @@ public class PlayerHealth : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         print("Main menu");
     }
-    public void TryAgainBtn()
+    public void TryAgainBtn()//button for game over panel
     {
         SceneManager.LoadScene("House");
         print("Try again");
     }
-    public void ExitBtn()
+    public void ExitBtn()//button for game over panel
     {
         Application.Quit();
         print("Quit game");
