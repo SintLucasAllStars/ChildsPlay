@@ -13,6 +13,7 @@ outside you have 'won' the game.
 	+ follow a path
 	+ if they see the player the follow him
 	+ 3x hit = death to player
+	+ Nice enviroment
 	+ (alert other teammembers)
 
 - GameOverScreen
