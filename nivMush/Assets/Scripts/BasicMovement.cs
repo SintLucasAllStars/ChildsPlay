@@ -12,12 +12,12 @@ public class BasicMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl)) { speed = 4.5f;  }
         if (Input.GetKeyUp(KeyCode.LeftControl)) { speed = 3f;  }
         if (Input.GetKey(KeyCode.W)) { transform.Translate(0, 0, speed * Time.deltaTime); }
-        if (Input.GetKey(KeyCode.A)) { transform.Rotate(0, -64 * Time.deltaTime, 0); }
-        if (Input.GetKey(KeyCode.D)) { transform.Rotate(0, 64 * Time.deltaTime, 0); }
+        if (Input.GetKey(KeyCode.A)) { transform.Rotate(0, -96 * Time.deltaTime, 0); }
+        if (Input.GetKey(KeyCode.D)) { transform.Rotate(0, 96 * Time.deltaTime, 0); }
     }
 }
