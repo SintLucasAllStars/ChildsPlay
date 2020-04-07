@@ -52,46 +52,12 @@ public class EnemyBehaviour : MonoBehaviour
                 currentState = States.Patrol;
             }
 
-            switch (currentState)
+            if (rageCountdown < -10)
             {
-                case States.Patrol:
-                    range = 10;
-                    fov = 150;
-                    nvmesh.speed = 3.5f;
-                    rageCountdown -= Time.deltaTime;
-
-                    if (Time.frameCount % 300 == 0)
-                    {
-                        Vector3 newDest = transform.position + new Vector3(Random.Range(-10f, 10f), transform.position.y, Random.Range(-10f, 10f)) * 4;
-                        nvmesh.destination = newDest;
-                    }
-                    break;
-
-                case States.Chase:
-                    range = 10;
-                    fov = 150;
-                    nvmesh.speed = 4f;
-                    nvmesh.destination = target.position;
-                    rageCountdown = 10;
-                    break;
-
-                case States.Rage:
-                    range = 100;
-                    fov = 360;
-                    nvmesh.speed = 6f;
-                    rageCountdown -= Time.deltaTime;
-                    if (rageCountdown < -10)
-                    {
-                        currentState = States.Chase;
-                    }
-
-                    nvmesh.destination = target.position;
-                    break;
-
-                default:
-                    break;
-
+                currentState = States.Chase;
             }
+
+            SwitchState();
         }
     }
 
@@ -114,4 +80,48 @@ public class EnemyBehaviour : MonoBehaviour
 
             return false;
         }
+
+    void SwitchState()
+    {
+        switch (currentState)
+        {
+            case States.Patrol:
+                range = 10;
+                fov = 150;
+                nvmesh.speed = 3.5f;
+                rageCountdown -= Time.deltaTime;
+
+                if (Time.frameCount % 300 == 0)
+                {
+                    Vector3 newDest = transform.position + new Vector3(Random.Range(-10f, 10f), transform.position.y, Random.Range(-10f, 10f)) * 4;
+                    nvmesh.destination = newDest;
+                }
+
+                print("Partol");
+                break;
+
+            case States.Chase:
+                range = 10;
+                fov = 180;
+                nvmesh.speed = 4f;
+                nvmesh.destination = target.position;
+                rageCountdown = 10;
+                print("Chase");
+                break;
+
+            case States.Rage:
+                range = 100;
+                fov = 360;
+                nvmesh.speed = 6f;
+                rageCountdown -= Time.deltaTime;
+
+                nvmesh.destination = target.position;
+                print("Rage");
+                break;
+
+            default:
+                break;
+
+        }
+    }
 }
