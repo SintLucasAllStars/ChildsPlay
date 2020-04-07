@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 
 public class BarnAnim : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class BarnAnim : MonoBehaviour
         {
             Animator.SetBool("Haskey", true);
             winCondition = true;
+            SceneManager.LoadScene("Winscreen");
         }
     }
 }

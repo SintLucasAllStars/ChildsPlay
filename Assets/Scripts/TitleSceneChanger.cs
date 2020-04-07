@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TitleSceneChanger : MonoBehaviour
@@ -14,5 +15,10 @@ public class TitleSceneChanger : MonoBehaviour
         {
             SceneManager.LoadScene(sceneToChangeTo);
         }
+
+    }
+    public void Title()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 }
