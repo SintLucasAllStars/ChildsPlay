@@ -1,0 +1,2396 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -530159753, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 3
+  lastUpdatedAtString: 2020-04-05T22:05:44.419+02:00
+  initializedAtString: 2020-04-05T22:05:44.419+02:00
+  log:
+  - commitID: e96418f6170c6321ca7aff7f43bede03ec13db53
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Fixed stuff, added basic lobby system
+    description: 
+    timeString: 2020-03-19T13:29:53.000+01:00
+    commitTimeString: 2020-03-19T13:29:53.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\LobbyPlayerManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\LobbyPlayerManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\LobbyPlayerManager.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\LobbyPlayerManager.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\LobbyPlayerManager.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\LobbyPlayerManager.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: bd912f6c8eac77285111b2520919935b682f7eb5
+    mergeA: 96f4c16277e18d22b309f12100727c15ffd087c2
+    mergeB: fcab9a42312a24f64c9f5f39a243477017600bc3
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Merge branch 'WebDevBuild'
+    description: 
+    timeString: 2020-03-12T15:57:24.000+01:00
+    commitTimeString: 2020-03-12T15:57:24.000+01:00
+    changes: []
+  - commitID: fcab9a42312a24f64c9f5f39a243477017600bc3
+    mergeA: 
+    mergeB: 
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Register system works 100% now! Updated the site to have an button
+    description: 
+    timeString: 2020-03-12T15:57:11.000+01:00
+    commitTimeString: 2020-03-12T15:57:11.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\index.html
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\index.html
+      projectPath: ..\Boardgame-KZD-Input-Server\website\index.html
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\register.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\register.js
+      projectPath: ..\Boardgame-KZD-Input-Server\website\register.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 96f4c16277e18d22b309f12100727c15ffd087c2
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Fixed merge issues
+    description: 
+    timeString: 2020-03-12T14:35:31.000+01:00
+    commitTimeString: 2020-03-12T14:35:31.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: 1e20aa5c5167a67e23c80147d767e51f1663e69a
+    mergeA: ecf347217665ba91fd5340a71b7d7a1d1217201c
+    mergeB: 0520fb5139961a12dfbab2929612b480937788ba
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Merge remote-tracking branch 'origin/master'
+    description: 
+    timeString: 2020-03-12T14:30:48.000+01:00
+    commitTimeString: 2020-03-12T14:30:48.000+01:00
+    changes: []
+  - commitID: 0520fb5139961a12dfbab2929612b480937788ba
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Fixed ConnectionManager event names
+    description: 
+    timeString: 2020-03-12T14:30:02.000+01:00
+    commitTimeString: 2020-03-12T14:30:02.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: ecf347217665ba91fd5340a71b7d7a1d1217201c
+    mergeA: fa02a130bd399b049ff3c1541bea16ab0f48c868
+    mergeB: 28dd2d77aeced52524c7c52d6270294b37725ef6
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Merge branch 'WebDevBuild'
+    description: 
+    timeString: 2020-03-12T14:29:47.000+01:00
+    commitTimeString: 2020-03-12T14:29:47.000+01:00
+    changes: []
+  - commitID: 28dd2d77aeced52524c7c52d6270294b37725ef6
+    mergeA: 
+    mergeB: 
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Removed gampin from playerJoined event
+    description: 
+    timeString: 2020-03-12T14:29:11.000+01:00
+    commitTimeString: 2020-03-12T14:29:11.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 89103fc68cd3bf4f9353aa8f873c7ac947419cfc
+    mergeA: 
+    mergeB: 
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Gave username to unity and changed json names
+    description: 
+    timeString: 2020-03-12T14:26:43.000+01:00
+    commitTimeString: 2020-03-12T14:26:43.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: fa02a130bd399b049ff3c1541bea16ab0f48c868
+    mergeA: 54aece210308866481ae507f4c2e9f837f1255ec
+    mergeB: 2da93b5c1db689a50830d24b3112f303448f16a5
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Merge branch 'WebDevBuild'
+    description: 
+    timeString: 2020-03-12T14:19:13.000+01:00
+    commitTimeString: 2020-03-12T14:19:13.000+01:00
+    changes: []
+  - commitID: 2da93b5c1db689a50830d24b3112f303448f16a5
+    mergeA: 
+    mergeB: 
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Added a basic register system for unity and players
+    description: 
+    timeString: 2020-03-12T14:17:38.000+01:00
+    commitTimeString: 2020-03-12T14:17:38.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\assets\bootstrap\css\bootstrap.min.css
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\assets\bootstrap\css\bootstrap.min.css
+      projectPath: ..\Boardgame-KZD-Input-Server\website\assets\bootstrap\css\bootstrap.min.css
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\assets\bootstrap\js\bootstrap.min.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\assets\bootstrap\js\bootstrap.min.js
+      projectPath: ..\Boardgame-KZD-Input-Server\website\assets\bootstrap\js\bootstrap.min.js
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\assets\css\styles.css
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\assets\css\styles.css
+      projectPath: ..\Boardgame-KZD-Input-Server\website\assets\css\styles.css
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\assets\js\jquery.min.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\assets\js\jquery.min.js
+      projectPath: ..\Boardgame-KZD-Input-Server\website\assets\js\jquery.min.js
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\game.html
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\game.html
+      projectPath: ..\Boardgame-KZD-Input-Server\website\game.html
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\index.html
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\index.html
+      projectPath: ..\Boardgame-KZD-Input-Server\website\index.html
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\register.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\register.js
+      projectPath: ..\Boardgame-KZD-Input-Server\website\register.js
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 54aece210308866481ae507f4c2e9f837f1255ec
+    mergeA: 
+    mergeB: 
+    authorName: Squirrel
+    authorEmail: RensLinnemans@gmail.com
+    commitEmail: RensLinnemans@gmail.com
+    commitName: Squirrel
+    summary: Unity refresh
+    description: Hachoo
+    timeString: 2020-03-12T13:14:30.000+01:00
+    commitTimeString: 2020-03-12T13:14:30.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: d5c52d3a1167c60dee9ba46893788293c586521b
+    mergeA: 
+    mergeB: 
+    authorName: Squirrel
+    authorEmail: RensLinnemans@gmail.com
+    commitEmail: RensLinnemans@gmail.com
+    commitName: Squirrel
+    summary: Changed input system Sumo game.
+    description: "- Changed input system Sumo game.\r\n- Renamed gameManager to sumoManager.\r\n\r\nWorked
+      together with Vlams."
+    timeString: 2020-03-12T13:12:51.000+01:00
+    commitTimeString: 2020-03-12T13:12:51.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\SumoManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\SumoManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\SumoManager.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\SumoManager.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\SumoManager.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\SumoManager.cs.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+  - commitID: 1b48c73c6e26c2e6ff73a9df89888c9f170989ce
+    mergeA: 41cee9d98e2651a61e1e06adbf47854df5709f51
+    mergeB: 6f41affcfecec880e1c0bfa7d73c4d6070766c0b
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Merge branch 'master' of https://github.com/vlams1/Boardgame-KZD-Input
+    description: 
+    timeString: 2020-03-12T12:38:02.000+01:00
+    commitTimeString: 2020-03-12T12:38:02.000+01:00
+    changes: []
+  - commitID: 41cee9d98e2651a61e1e06adbf47854df5709f51
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Added Singleton behaviour to ConnectionManager
+    description: 
+    timeString: 2020-03-12T12:37:45.000+01:00
+    commitTimeString: 2020-03-12T12:37:45.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 6f41affcfecec880e1c0bfa7d73c4d6070766c0b
+    mergeA: 
+    mergeB: 
+    authorName: Squirrel
+    authorEmail: RensLinnemans@gmail.com
+    commitEmail: RensLinnemans@gmail.com
+    commitName: Squirrel
+    summary: refresh 2
+    description: refresh 2 cuz Unity autistic
+    timeString: 2020-03-12T12:24:07.000+01:00
+    commitTimeString: 2020-03-12T12:24:07.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: c439eff6a6eead34371f68fb2fd49ac76396f823
+    mergeA: 
+    mergeB: 
+    authorName: Squirrel
+    authorEmail: RensLinnemans@gmail.com
+    commitEmail: RensLinnemans@gmail.com
+    commitName: Squirrel
+    summary: Refreshed solution
+    description: KZD-Input-Unity.sln got a refresh
+    timeString: 2020-03-12T12:19:40.000+01:00
+    commitTimeString: 2020-03-12T12:19:40.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: c9cdbfc21e8e9ae6fd71e0a9e31d5ae0b31d88d8
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Added singleton behaviour to CustomSocketIOComponent
+    description: 
+    timeString: 2020-03-12T12:17:46.000+01:00
+    commitTimeString: 2020-03-12T12:17:46.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 9a4b90020934c74af92bf7c61f64a15417fe3489
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Renamed InitSocketIO to ConnectionManager, added more events
+    description: 
+    timeString: 2020-03-12T11:55:03.000+01:00
+    commitTimeString: 2020-03-12T11:55:03.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\ConnectionManager.cs.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: d16d7847a082acd0d0ac4111aa01771f02d71e6f
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Fixed Persistent scene
+    description: 
+    timeString: 2020-03-11T21:31:57.000+01:00
+    commitTimeString: 2020-03-11T21:31:57.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: f9201c8012651a2e86d3826be57d3dbeaa63936b
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Fixed issues
+    description: 
+    timeString: 2020-03-11T21:29:32.000+01:00
+    commitTimeString: 2020-03-11T21:29:32.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketManager.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketManager.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: 20c82a1d403379ed3e57a4d6c37373ba030ab1c7
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Merged InitSocketIO & UnityClient into SocketManager
+    description: 
+    timeString: 2020-03-11T21:21:23.000+01:00
+    commitTimeString: 2020-03-11T21:21:23.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketManager.cs
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketManager.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketManager.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketManager.cs.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: 1d139f740821d5180e34bb340d933d7e88dc944d
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Updated Persistent scene
+    description: 
+    timeString: 2020-03-11T21:17:31.000+01:00
+    commitTimeString: 2020-03-11T21:17:31.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\EditorBuildSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\EditorBuildSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\EditorBuildSettings.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: cfd8a14134869ae65c69b7e80867fd11e2513da4
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Init connection
+    description: "Copied SocketIOComponent and modified into CustomSockedIoComponent\r\n\r\nAdded
+      InitSockedIO\r\n\r\nAdded SceneLoader\r\n\r\nModified UnityClient"
+    timeString: 2020-03-11T20:51:15.000+01:00
+    commitTimeString: 2020-03-11T20:51:15.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Lobby.unity.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\CustomSocketIOComponent.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\InitSocketIO.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SceneLoader.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 47d3abcde7abc69822e2946afd40d5a7a0f75f71
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Added new unity scene || .gitignore package-lock.json
+    description: 
+    timeString: 2020-03-11T19:03:08.000+01:00
+    commitTimeString: 2020-03-11T19:03:08.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Server\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\package-lock.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\package-lock.json
+      projectPath: ..\Boardgame-KZD-Input-Server\package-lock.json
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Network
+        Test.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Persistent.unity.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 5b8a48a201d8f412454232b4746cf488a8bea675
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Removed Sumo folder meta file
+    description: 
+    timeString: 2020-03-11T18:53:28.000+01:00
+    commitTimeString: 2020-03-11T18:53:28.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: e3039a5ef4f101d131f938abef1e069adac2a33a
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Removed folder meta files
+    description: 
+    timeString: 2020-03-11T18:52:30.000+01:00
+    commitTimeString: 2020-03-11T18:52:30.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Resources.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Resources.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Resources.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: d5a680a1c05a2a4c4629505590f65e6ea0e1f5b0
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Update .gitignore
+    description: 
+    timeString: 2020-03-11T18:48:22.000+01:00
+    commitTimeString: 2020-03-11T18:48:22.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Unity\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 531b1a47dd32aee672dea98cd0875e2cbd358841
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Removed .gitignore "never ignore asset meta files"
+    description: 
+    timeString: 2020-03-11T18:43:16.000+01:00
+    commitTimeString: 2020-03-11T18:43:16.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Unity\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 3a84b622de77751dbe553ed0552797042143d255
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Updated .gitignore folder meta files
+    description: 
+    timeString: 2020-03-11T18:41:23.000+01:00
+    commitTimeString: 2020-03-11T18:41:23.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Unity\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 671c2a21e8ea11e4bbf2132b8f4bed125d82dac8
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Unity Refresh
+    description: 
+    timeString: 2020-03-11T18:38:09.000+01:00
+    commitTimeString: 2020-03-11T18:38:09.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Unity\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 4580b15510fae4fc9d480f8dd64b0e2d02865e07
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: New Networking Documentation
+    description: 
+    timeString: 2020-03-10T22:27:29.000+01:00
+    commitTimeString: 2020-03-10T22:27:29.000+01:00
+    changes:
+    - path: Networking.md
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Networking.md
+      projectPath: ..\Networking.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: cf40be492722345dcb2aaaf630b471e83cbf0b13
+    mergeA: 9199c473d5760e36f0e36b0fb015149ad3d26664
+    mergeB: be1047d90d3003aeeb493a4d14e48a43c6661c0d
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Merge remote-tracking branch 'origin/master'
+    description: 
+    timeString: 2020-03-10T15:52:55.000+01:00
+    commitTimeString: 2020-03-10T15:52:55.000+01:00
+    changes: []
+  - commitID: 9199c473d5760e36f0e36b0fb015149ad3d26664
+    mergeA: 
+    mergeB: 
+    authorName: Ivo
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: Ivo
+    summary: Updated website player location fixed unity connection
+    description: 
+    timeString: 2020-03-10T15:52:44.000+01:00
+    commitTimeString: 2020-03-10T15:52:44.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\chat.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\chat.js
+      projectPath: ..\Boardgame-KZD-Input-Server\website\chat.js
+      originalPath: Boardgame-KZD-Input-Site\chat.js
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\website\index.html
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\website\index.html
+      projectPath: ..\Boardgame-KZD-Input-Server\website\index.html
+      originalPath: Boardgame-KZD-Input-Site\index.html
+      indexStatus: 6
+      workTreeStatus: 0
+  - commitID: be1047d90d3003aeeb493a4d14e48a43c6661c0d
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Unity Stuff
+    description: 
+    timeString: 2020-03-10T15:50:07.000+01:00
+    commitTimeString: 2020-03-10T15:50:07.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Network
+        Test.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: a54b8cbb0342a93bffbabf28965a9a213da5d896
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Unity stuff
+    description: 
+    timeString: 2020-03-10T15:49:45.000+01:00
+    commitTimeString: 2020-03-10T15:49:45.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\GraphicsSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\GraphicsSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\GraphicsSettings.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 662a500064c5be716e1727ae8d340ba28923ea76
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: FOUND OUT FIX
+    description: Unity client may only revieve JSON data
+    timeString: 2020-03-10T14:55:13.000+01:00
+    commitTimeString: 2020-03-10T14:55:13.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Network
+        Test.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Packages\manifest.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Packages\manifest.json
+      projectPath: ..\Boardgame-KZD-Input-Unity\Packages\manifest.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 4562ccee22ee8529c21063e08ec9f4ee2a936d82
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Scene changes
+    description: 
+    timeString: 2020-03-09T11:04:32.000+01:00
+    commitTimeString: 2020-03-09T11:04:32.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Network
+        Test.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: ce452a28aa09812bbc765422f288e593ae15e001
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: New client structure
+    description: 
+    timeString: 2020-03-09T10:22:07.000+01:00
+    commitTimeString: 2020-03-09T10:22:07.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\TestSocketIO.cs.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\UnityClient.cs.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 1c43e55066c0adc490bf89e75929439f2d167533
+    mergeA: 
+    mergeB: 
+    authorName: Squirrel
+    authorEmail: RensLinnemans@gmail.com
+    commitEmail: RensLinnemans@gmail.com
+    commitName: Squirrel
+    summary: Fixed inspawning so it works better.
+    description: "Put the players in a list.\r\nFixed inspawning (32 is the max dont
+      go over it)\r\nFixed that they get set as a child of the playerParent transform
+      for non bad shizzle."
+    timeString: 2020-02-17T10:20:02.000+01:00
+    commitTimeString: 2020-02-17T10:20:02.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.prefab
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.prefab
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.prefab
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Cube (1).prefab
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.prefab.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.prefab.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.prefab.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Cube (1).prefab.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Resources.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Resources.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Resources.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Resources\DOTweenSettings.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 7470d58cc113ad44335730c210fb1396837aa1a6
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Commit edited SocketIOComponent
+    description: 
+    timeString: 2020-02-17T09:53:00.000+01:00
+    commitTimeString: 2020-02-17T09:53:00.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\SocketIOComponent.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 8e57221d2584d9ad6b3604a712c0787f6681d59e
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Networking test Unity 2
+    description: 
+    timeString: 2020-02-13T16:31:26.000+01:00
+    commitTimeString: 2020-02-13T16:31:26.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Network
+        Test.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 18928a1367dac7b9dd93d263d5c679a2179413b4
+    mergeA: 548cae078dc7e4ecf87f013f21536a13dd3a451f
+    mergeB: 4326ed0c873b144623468fcd9919b4be919aa96c
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Merge branch 'master' of https://github.com/vlams1/Boardgame-KZD-Input
+    description: 
+    timeString: 2020-02-13T16:30:51.000+01:00
+    commitTimeString: 2020-02-13T16:30:51.000+01:00
+    changes: []
+  - commitID: 548cae078dc7e4ecf87f013f21536a13dd3a451f
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Networrking test Unity
+    description: 
+    timeString: 2020-02-13T16:30:44.000+01:00
+    commitTimeString: 2020-02-13T16:30:44.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Unity\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Cube.prefab
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Cube.prefab
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Cube.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Cube.prefab.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Cube.prefab.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Cube.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Demigiant.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\JSONObject.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Network
+        Test.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scenes\SampleScene.unity
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\Network
+        Test.unity.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\Network Test.unity.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\Scenes\SampleScene.unity.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scripts\NetworkingClientTest.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\WebsocketSharp.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 4326ed0c873b144623468fcd9919b4be919aa96c
+    mergeA: 
+    mergeB: 
+    authorName: RensLinnemans
+    authorEmail: 60392061+RensLinnemans@users.noreply.github.com
+    commitEmail: 60392061+RensLinnemans@users.noreply.github.com
+    commitName: RensLinnemans
+    summary: Made instantiate in circle script
+    description: The script instantiates the players in a circle.
+    timeString: 2020-02-13T15:10:22.000+01:00
+    commitTimeString: 2020-02-13T15:10:22.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Cube (1).prefab
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Cube
+        (1).prefab
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Cube (1).prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Cube (1).prefab.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Cube
+        (1).prefab.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Cube (1).prefab.meta
+      originalPath: Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\GameManager.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: c2367133e14da714146e6542078b32beff6e5034
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Added a checker
+    description: '- Made it so when someone is typing with a name longer then 32 characters
+      that it won''t display!'
+    timeString: 2020-02-11T13:45:10.000+01:00
+    commitTimeString: 2020-02-11T13:45:10.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Site\chat.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\chat.js
+      projectPath: ..\Boardgame-KZD-Input-Site\chat.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 830a9478072bf6727d3bfc3f068a05f021fba304
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Added checkers
+    description: "- Now checks if the message is less then 2000 characters\r\n- Checks
+      if there aren't any illegal characters\r\n- Now checks if the username isn't
+      longer then 32 characters"
+    timeString: 2020-02-11T11:51:28.000+01:00
+    commitTimeString: 2020-02-11T11:51:28.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Site\chat.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\chat.js
+      projectPath: ..\Boardgame-KZD-Input-Site\chat.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 231ce49a76b07804f103acb1ed7d49222f630da5
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Added chat history of that session
+    description: "- Added a chat history system om the current session.\r\n- Added
+      a forgotten ';'\r\n- Added a test function for unity connection"
+    timeString: 2020-02-11T10:57:42.000+01:00
+    commitTimeString: 2020-02-11T10:57:42.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\chat.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\chat.js
+      projectPath: ..\Boardgame-KZD-Input-Site\chat.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 157a442193a600173963475c2b217363f052abf8
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Added a typing listner
+    description: "- Made a callback for the client and the server to listen to keypresses.\r\n-
+      Made it so typing can only occour once\r\n- Added a UL to set the feedback in"
+    timeString: 2020-02-11T01:38:06.000+01:00
+    commitTimeString: 2020-02-11T01:38:06.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\chat.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\chat.js
+      projectPath: ..\Boardgame-KZD-Input-Site\chat.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\index.html
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\index.html
+      projectPath: ..\Boardgame-KZD-Input-Site\index.html
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 384b8aeef0a896152e4cdc7796f2cf8ccfe4e6e5
+    mergeA: 45a4872fac99b3b13b9f24dc35c19785e09378e1
+    mergeB: e78827ebbb6eb3c20f5458a129879b4e98bfaac9
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Merge branch 'master' of https://github.com/vlams1/Boardgame-KZD-Input
+    description: 
+    timeString: 2020-02-11T01:02:31.000+01:00
+    commitTimeString: 2020-02-11T01:02:31.000+01:00
+    changes: []
+  - commitID: 45a4872fac99b3b13b9f24dc35c19785e09378e1
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Reconstructed everything
+    description: "- Rewrote the code so it's easier to understand.\r\n- Client now
+      sees their own message when clicking on send!\r\n- Chnaged up the client html."
+    timeString: 2020-02-11T01:02:27.000+01:00
+    commitTimeString: 2020-02-11T01:02:27.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\chat.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\chat.js
+      projectPath: ..\Boardgame-KZD-Input-Site\chat.js
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\index.html
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\index.html
+      projectPath: ..\Boardgame-KZD-Input-Site\index.html
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: e78827ebbb6eb3c20f5458a129879b4e98bfaac9
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Import SocketIO
+    description: 
+    timeString: 2020-02-10T09:59:55.000+01:00
+    commitTimeString: 2020-02-10T09:59:55.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Unity\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\SocketIO.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 5170d3c256eae13f7b19963e4ed1882da2a507fc
+    mergeA: 09e9161c203a17ca7f26aafd269b5eb20fd13601
+    mergeB: b2784cc0ca9d82e490e4a99712a1008880c9f15d
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Merge branch 'master' of https://github.com/vlams1/Boardgame-KZD-Input
+    description: 
+    timeString: 2020-02-10T09:54:55.000+01:00
+    commitTimeString: 2020-02-10T09:54:55.000+01:00
+    changes: []
+  - commitID: 09e9161c203a17ca7f26aafd269b5eb20fd13601
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Updated how server gets the index file
+    description: '- Changed it so it can actually access the file'
+    timeString: 2020-02-10T09:54:49.000+01:00
+    commitTimeString: 2020-02-10T09:54:49.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: b2784cc0ca9d82e490e4a99712a1008880c9f15d
+    mergeA: 
+    mergeB: 
+    authorName: RensLinnemans
+    authorEmail: 60392061+RensLinnemans@users.noreply.github.com
+    commitEmail: 60392061+RensLinnemans@users.noreply.github.com
+    commitName: RensLinnemans
+    summary: Edited the keycode to be public so now you can chose which responds to
+      what key
+    description: This is done in the script used for Sumo movement
+    timeString: 2020-02-06T15:54:34.000+01:00
+    commitTimeString: 2020-02-06T15:54:34.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 654f706f65dad707a767dde7165d983e8de92c64
+    mergeA: 
+    mergeB: 
+    authorName: RensLinnemans
+    authorEmail: 60392061+RensLinnemans@users.noreply.github.com
+    commitEmail: 60392061+RensLinnemans@users.noreply.github.com
+    commitName: RensLinnemans
+    summary: Made Sumo game in the unity project
+    description: made basic launch at middle script
+    timeString: 2020-02-06T15:35:26.000+01:00
+    commitTimeString: 2020-02-06T15:35:26.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Assets\Games.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Bounce.physicMaterial
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Bounce.physicMaterial
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Bounce.physicMaterial
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Bounce.physicMaterial.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Bounce.physicMaterial.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Bounce.physicMaterial.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\MoveToMid.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.mat
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.mat
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.mat.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.mat.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Player.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Sumo.unity.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Ultra bounce.physicMaterial
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Ultra
+        bounce.physicMaterial
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Ultra bounce.physicMaterial
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Ultra bounce.physicMaterial.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Ultra
+        bounce.physicMaterial.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\Ultra bounce.physicMaterial.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\highlights.mat
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\highlights.mat
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\highlights.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Games\Sumo\highlights.mat.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\highlights.mat.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Games\Sumo\highlights.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input-Unity.sln
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: a3f8707dafca1f381f71a431624ba203b2de4227
+    mergeA: 
+    mergeB: 
+    authorName: RensLinnemans
+    authorEmail: 60392061+RensLinnemans@users.noreply.github.com
+    commitEmail: 60392061+RensLinnemans@users.noreply.github.com
+    commitName: RensLinnemans
+    summary: Unity update
+    description: Updated to newer unity version
+    timeString: 2020-02-06T13:50:20.000+01:00
+    commitTimeString: 2020-02-06T13:50:20.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\Packages\manifest.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Packages\manifest.json
+      projectPath: ..\Boardgame-KZD-Input-Unity\Packages\manifest.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\EditorSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\EditorSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\EditorSettings.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: f66dc39257600413771e49c3cc958aac7dc84898
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Fixed folder structure
+    description: 
+    timeString: 2020-02-03T12:15:13.000+01:00
+    commitTimeString: 2020-02-03T12:15:13.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Server\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\package-lock.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\package-lock.json
+      projectPath: ..\Boardgame-KZD-Input-Server\package-lock.json
+      originalPath: Boardgame-KZD-Input-Site\package-lock.json
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\package.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\package.json
+      projectPath: ..\Boardgame-KZD-Input-Server\package.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Site\.gitignore
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\index.html
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\index.html
+      projectPath: ..\Boardgame-KZD-Input-Site\index.html
+      originalPath: Boardgame-KZD-Input-Site\HTMLFiles\index.html
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\index.js
+      projectPath: ..\Boardgame-KZD-Input-Site\index.js
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\package.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\package.json
+      projectPath: ..\Boardgame-KZD-Input-Site\package.json
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: 43a1151065389f612f7514454b46f3da926c0cee
+    mergeA: 7f5aad116779fc3601781901fef78a3e3d9b66cd
+    mergeB: 27fba699afe3ebc13a86c9853a346466eff1dd86
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Merge branch 'master' of https://github.com/vlams1/Boardgame-KZD-Input
+    description: 
+    timeString: 2020-02-03T12:03:59.000+01:00
+    commitTimeString: 2020-02-03T12:03:59.000+01:00
+    changes: []
+  - commitID: 7f5aad116779fc3601781901fef78a3e3d9b66cd
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Added console response from web
+    description: "- Removed wrongly installed IPA of socket.io\r\n- Added the right
+      IPA of socket.io\r\n- Made a connection between user and client\r\n- Made it
+      so when a new user wants to chat it makes a new html\r\n- User can chat to the
+      console"
+    timeString: 2020-02-03T12:03:56.000+01:00
+    commitTimeString: 2020-02-03T12:03:56.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Site\HTMLFiles\index.html
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\HTMLFiles\index.html
+      projectPath: ..\Boardgame-KZD-Input-Site\HTMLFiles\index.html
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\index.js
+      projectPath: ..\Boardgame-KZD-Input-Site\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\package-lock.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\package-lock.json
+      projectPath: ..\Boardgame-KZD-Input-Site\package-lock.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\package.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\package.json
+      projectPath: ..\Boardgame-KZD-Input-Site\package.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 27fba699afe3ebc13a86c9853a346466eff1dd86
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: New networking documentation
+    description: 
+    timeString: 2020-02-03T10:17:46.000+01:00
+    commitTimeString: 2020-02-03T10:17:46.000+01:00
+    changes:
+    - path: Networking.md
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Networking.md
+      projectPath: ..\Networking.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 8640bf54a98e5b1eacd227be2b697d47825c10fe
+    mergeA: dbde33d71b5ff81f7ca0fa14d786d2471215f9de
+    mergeB: 4b3f58b390b9a6d1fd026fe416bbdbe23b11f157
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Merge branch 'master' of https://github.com/vlams1/Boardgame-KZD-Input
+    description: 
+    timeString: 2020-02-03T10:10:14.000+01:00
+    commitTimeString: 2020-02-03T10:10:14.000+01:00
+    changes: []
+  - commitID: dbde33d71b5ff81f7ca0fa14d786d2471215f9de
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Fixed Error
+    description: "- Fixed error getting the express api\r\n- Changed all vars to const"
+    timeString: 2020-02-03T10:09:59.000+01:00
+    commitTimeString: 2020-02-03T10:09:59.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Site\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\index.js
+      projectPath: ..\Boardgame-KZD-Input-Site\index.js
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 4b3f58b390b9a6d1fd026fe416bbdbe23b11f157
+    mergeA: db9d8e31b5538b7e5f8d2671bd46a5e11ac86f40
+    mergeB: b01afcd427c00fc2695a082b398eababb54ffa32
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Merge branch 'master' of https://github.com/vlams1/Boardgame-KZD-Input
+    description: 
+    timeString: 2020-02-03T10:04:24.000+01:00
+    commitTimeString: 2020-02-03T10:04:24.000+01:00
+    changes: []
+  - commitID: db9d8e31b5538b7e5f8d2671bd46a5e11ac86f40
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Original Server Commit
+    description: 
+    timeString: 2020-02-03T10:04:11.000+01:00
+    commitTimeString: 2020-02-03T10:04:11.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Server\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Server\.gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\index.js
+      projectPath: ..\Boardgame-KZD-Input-Server\index.js
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Server\package.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Server\package.json
+      projectPath: ..\Boardgame-KZD-Input-Server\package.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: b01afcd427c00fc2695a082b398eababb54ffa32
+    mergeA: 
+    mergeB: 
+    authorName: IvoDeK
+    authorEmail: ivodoetyt@gmail.com
+    commitEmail: ivodoetyt@gmail.com
+    commitName: IvoDeK
+    summary: Created a NodeJS project
+    description: "- Created a NodeJS project\r\n- Added Express api\r\n- Added socket.io\r\n-
+      Added test script for index.js"
+    timeString: 2020-02-03T10:01:16.000+01:00
+    commitTimeString: 2020-02-03T10:01:16.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Site\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Site\.gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\index.js
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\index.js
+      projectPath: ..\Boardgame-KZD-Input-Site\index.js
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\package-lock.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\package-lock.json
+      projectPath: ..\Boardgame-KZD-Input-Site\package-lock.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Site\package.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Site\package.json
+      projectPath: ..\Boardgame-KZD-Input-Site\package.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 2a1c86020778bfd3d35f75c87cd64167c1ec3514
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: fixed Networking.md extension
+    description: 
+    timeString: 2020-01-31T10:21:44.000+01:00
+    commitTimeString: 2020-01-31T10:21:44.000+01:00
+    changes:
+    - path: Networking.md
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Networking.md
+      projectPath: ..\Networking.md
+      originalPath: Networking.md.txt
+      indexStatus: 6
+      workTreeStatus: 0
+  - commitID: 295772cb90316b81bf40203dcb50777831c93e79
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Networking structure documentation
+    description: 
+    timeString: 2020-01-31T09:16:56.000+01:00
+    commitTimeString: 2020-01-31T09:16:56.000+01:00
+    changes:
+    - path: Networking.md.txt
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Networking.md.txt
+      projectPath: ..\Networking.md.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 4e3207f59e186770726c5ad23a81e5badf07b55d
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Update README.md
+    description: 
+    timeString: 2020-01-30T14:11:07.000+01:00
+    commitTimeString: 2020-01-30T14:11:07.000+01:00
+    changes:
+    - path: README.md
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: e3243b7fd9dabfa50fb9fad5f4d9068b62fdcc63
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Fixed folder structure
+    description: 
+    timeString: 2020-01-30T14:06:17.000+01:00
+    commitTimeString: 2020-01-30T14:06:17.000+01:00
+    changes:
+    - path: Boardgame-KZD-Input-Unity\.gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\.gitignore
+      projectPath: ..\Boardgame-KZD-Input-Unity\.gitignore
+      originalPath: .gitignore
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes.meta
+      originalPath: Assets\Scenes.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\SampleScene.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\SampleScene.unity
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\SampleScene.unity
+      originalPath: Assets\Scenes\SampleScene.unity
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Assets\Scenes\SampleScene.unity.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Assets\Scenes\SampleScene.unity.meta
+      projectPath: ..\Boardgame-KZD-Input-Unity\Assets\Scenes\SampleScene.unity.meta
+      originalPath: Assets\Scenes\SampleScene.unity.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Boardgame-KZD-Input.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input.sln
+      projectPath: ..\Boardgame-KZD-Input-Unity\Boardgame-KZD-Input.sln
+      originalPath: Boardgame-KZD-Input.sln
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\Packages\manifest.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\Packages\manifest.json
+      projectPath: ..\Boardgame-KZD-Input-Unity\Packages\manifest.json
+      originalPath: Packages\manifest.json
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\AudioManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\AudioManager.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\AudioManager.asset
+      originalPath: ProjectSettings\AudioManager.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\ClusterInputManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\ClusterInputManager.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\ClusterInputManager.asset
+      originalPath: ProjectSettings\ClusterInputManager.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\DynamicsManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\DynamicsManager.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\DynamicsManager.asset
+      originalPath: ProjectSettings\DynamicsManager.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\EditorBuildSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\EditorBuildSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\EditorBuildSettings.asset
+      originalPath: ProjectSettings\EditorBuildSettings.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\EditorSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\EditorSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\EditorSettings.asset
+      originalPath: ProjectSettings\EditorSettings.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\GraphicsSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\GraphicsSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\GraphicsSettings.asset
+      originalPath: ProjectSettings\GraphicsSettings.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\InputManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\InputManager.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\InputManager.asset
+      originalPath: ProjectSettings\InputManager.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\NavMeshAreas.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\NavMeshAreas.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\NavMeshAreas.asset
+      originalPath: ProjectSettings\NavMeshAreas.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\Physics2DSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\Physics2DSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\Physics2DSettings.asset
+      originalPath: ProjectSettings\Physics2DSettings.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\PresetManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\PresetManager.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\PresetManager.asset
+      originalPath: ProjectSettings\PresetManager.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\ProjectSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\ProjectSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\ProjectSettings.asset
+      originalPath: ProjectSettings\ProjectSettings.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\ProjectVersion.txt
+      originalPath: ProjectSettings\ProjectVersion.txt
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\QualitySettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\QualitySettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\QualitySettings.asset
+      originalPath: ProjectSettings\QualitySettings.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\TagManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\TagManager.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\TagManager.asset
+      originalPath: ProjectSettings\TagManager.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\TimeManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\TimeManager.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\TimeManager.asset
+      originalPath: ProjectSettings\TimeManager.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\UnityConnectSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\UnityConnectSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\UnityConnectSettings.asset
+      originalPath: ProjectSettings\UnityConnectSettings.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\VFXManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\VFXManager.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\VFXManager.asset
+      originalPath: ProjectSettings\VFXManager.asset
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input-Unity\ProjectSettings\XRSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input-Unity\ProjectSettings\XRSettings.asset
+      projectPath: ..\Boardgame-KZD-Input-Unity\ProjectSettings\XRSettings.asset
+      originalPath: ProjectSettings\XRSettings.asset
+      indexStatus: 6
+      workTreeStatus: 0
+  - commitID: 3ea2ca2cf6115e7556f75f7f9de8d6e317741d1a
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Push solution
+    description: fixed .gitignore
+    timeString: 2020-01-30T14:03:45.000+01:00
+    commitTimeString: 2020-01-30T14:03:45.000+01:00
+    changes:
+    - path: .gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\.gitignore
+      projectPath: ..\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Boardgame-KZD-Input.sln
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Boardgame-KZD-Input.sln
+      projectPath: ..\Boardgame-KZD-Input.sln
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: f36c8b8df87f0e94913538bef4e9e6228b6c3ac2
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Initial Unity Commit
+    description: Unity project setup
+    timeString: 2020-01-30T14:01:06.000+01:00
+    commitTimeString: 2020-01-30T14:01:06.000+01:00
+    changes:
+    - path: .gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\.gitignore
+      projectPath: ..\.gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scenes.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Assets\Scenes.meta
+      projectPath: ..\Assets\Scenes.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene.unity
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Assets\Scenes\SampleScene.unity
+      projectPath: ..\Assets\Scenes\SampleScene.unity
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene.unity.meta
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Assets\Scenes\SampleScene.unity.meta
+      projectPath: ..\Assets\Scenes\SampleScene.unity.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Packages\manifest.json
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\Packages\manifest.json
+      projectPath: ..\Packages\manifest.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\AudioManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\AudioManager.asset
+      projectPath: ..\ProjectSettings\AudioManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\ClusterInputManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\ClusterInputManager.asset
+      projectPath: ..\ProjectSettings\ClusterInputManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\DynamicsManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\DynamicsManager.asset
+      projectPath: ..\ProjectSettings\DynamicsManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\EditorBuildSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\EditorBuildSettings.asset
+      projectPath: ..\ProjectSettings\EditorBuildSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\EditorSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\EditorSettings.asset
+      projectPath: ..\ProjectSettings\EditorSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\GraphicsSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\GraphicsSettings.asset
+      projectPath: ..\ProjectSettings\GraphicsSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\InputManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\InputManager.asset
+      projectPath: ..\ProjectSettings\InputManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\NavMeshAreas.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\NavMeshAreas.asset
+      projectPath: ..\ProjectSettings\NavMeshAreas.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\Physics2DSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\Physics2DSettings.asset
+      projectPath: ..\ProjectSettings\Physics2DSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\PresetManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\PresetManager.asset
+      projectPath: ..\ProjectSettings\PresetManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\ProjectSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\ProjectSettings.asset
+      projectPath: ..\ProjectSettings\ProjectSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\ProjectVersion.txt
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\ProjectVersion.txt
+      projectPath: ..\ProjectSettings\ProjectVersion.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\QualitySettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\QualitySettings.asset
+      projectPath: ..\ProjectSettings\QualitySettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\TagManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\TagManager.asset
+      projectPath: ..\ProjectSettings\TagManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\TimeManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\TimeManager.asset
+      projectPath: ..\ProjectSettings\TimeManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\UnityConnectSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\UnityConnectSettings.asset
+      projectPath: ..\ProjectSettings\UnityConnectSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\VFXManager.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\VFXManager.asset
+      projectPath: ..\ProjectSettings\VFXManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\XRSettings.asset
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\ProjectSettings\XRSettings.asset
+      projectPath: ..\ProjectSettings\XRSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: d18e4f868ecd3eab89d3d466ea05cb6fb598ae9f
+    mergeA: 
+    mergeB: 
+    authorName: Vlams
+    authorEmail: flvlams@gmail.com
+    commitEmail: flvlams@gmail.com
+    commitName: Vlams
+    summary: Initial commit
+    description: 
+    timeString: 2020-01-30T13:53:28.000+01:00
+    commitTimeString: 2020-01-30T13:53:28.000+01:00
+    changes:
+    - path: .gitattributes
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\.gitattributes
+      projectPath: ..\.gitattributes
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: .gitignore
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\.gitignore
+      projectPath: ..\.gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: README.md
+      fullPath: C:\Users\Squirrel\Documents\Git\Boardgame-KZD-Input\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
