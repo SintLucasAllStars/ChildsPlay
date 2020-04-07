@@ -16,6 +16,7 @@ public class AIMovement : MonoBehaviour
     public Material Infected;
 
     public float timeAlive;
+    public bool infec;
 
     // Start is called before the first frame update
     void Start()
@@ -34,13 +35,9 @@ public class AIMovement : MonoBehaviour
 
         if (Physics.Raycast(transform.position, patient0.position - transform.position, out hit, range))
         {
-            if (hit.collider.gameObject.CompareTag("Player") && currentState != States.Infected)
+            if (hit.collider.gameObject.CompareTag("Player") && infec == false)
             {
                 currentState = States.Flee;
-            }
-            else if (!hit.collider.gameObject.CompareTag("Player") && currentState != States.Infected)
-            {
-                currentState = States.Uninfected;
             }
             Debug.DrawRay(transform.position, patient0.position - transform.position, Color.red, 0.1f);
         }
@@ -56,6 +53,7 @@ public class AIMovement : MonoBehaviour
 
             case States.Flee:
                 flee();
+                StartCoroutine(bonk(2));
                 break;
 
             case States.Infected:
@@ -76,10 +74,17 @@ public class AIMovement : MonoBehaviour
         }
     }
 
+    private IEnumerator bonk(float waitTime)
+    {
+            yield return new WaitForSeconds(waitTime);
+        currentState = States.Uninfected;
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Infected"))
         {
+            infec = true;
             nav.speed = 2;
             gameObject.tag = "Infected";
             currentState = States.Infected;
