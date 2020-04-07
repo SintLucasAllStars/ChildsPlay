@@ -27,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
         float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float z = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
-        rbPlayer.velocity = new Vector3(h, 0, z);
+        transform.Translate(h, 0, z);
+        //rbPlayer.velocity = new Vector3(h, 0, z);
     }
 }
