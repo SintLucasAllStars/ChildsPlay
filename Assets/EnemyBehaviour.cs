@@ -96,8 +96,6 @@ public class EnemyBehaviour : MonoBehaviour
                     Vector3 newDest = transform.position + new Vector3(Random.Range(-10f, 10f), transform.position.y, Random.Range(-10f, 10f)) * 4;
                     nvmesh.destination = newDest;
                 }
-
-                print("Partol");
                 break;
 
             case States.Chase:
@@ -106,7 +104,6 @@ public class EnemyBehaviour : MonoBehaviour
                 nvmesh.speed = 4f;
                 nvmesh.destination = target.position;
                 rageCountdown = 10;
-                print("Chase");
                 break;
 
             case States.Rage:
@@ -116,7 +113,6 @@ public class EnemyBehaviour : MonoBehaviour
                 rageCountdown -= Time.deltaTime;
 
                 nvmesh.destination = target.position;
-                print("Rage");
                 break;
 
             default:
