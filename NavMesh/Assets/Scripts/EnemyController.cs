@@ -39,8 +39,10 @@ public class EnemyController : MonoBehaviour {
                         currentState = State.Follow;
                 else if (!agent.pathPending)
                     if (agent.remainingDistance <= agent.stoppingDistance)
-                        if (Random.value > .7f)
-                            currentState = State.Look;
+                        if (Random.value > .5f)
+                            if (Random.value > .5f)
+                                currentState = State.Look;
+                            else currentState = State.Idle;
                         else agent.destination = transform.position + Vector3.forward * Random.Range(-10f, 10f) + Vector3.right * Random.Range(-10f, 10f);
                 break;
             case State.Look:
